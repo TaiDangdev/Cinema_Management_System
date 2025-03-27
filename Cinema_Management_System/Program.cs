@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinema_Management_System.Views.MessageBox;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

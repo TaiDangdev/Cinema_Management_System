@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Cinema_Management_System.Views.MessageBox;
 
 namespace Cinema_Management_System
 {
@@ -76,7 +77,7 @@ namespace Cinema_Management_System
                 avatar_pic.Image = Image.FromFile(imagePath);
 
 
-                //chuyển đổi ảnh sang mảng byte
+                // chuyển đổi ảnh sang mảng byte
                 byte[] imageBytes = File.ReadAllBytes(imagePath);
 
                 using (var db = new ConnectDataContext())
@@ -86,7 +87,8 @@ namespace Cinema_Management_System
                     {
                         user.ImageSource = imageBytes;
                         db.SubmitChanges();
-                        MessageBox.Show("Lưu ảnh thành công!");
+                        YesMessage msgBox = new YesMessage("Thông báo","Cập nhật ảnh đại diện thành công!");
+                        msgBox.ShowDialog();
                     }
                 }
             }

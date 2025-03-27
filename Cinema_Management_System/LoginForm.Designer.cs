@@ -166,7 +166,7 @@
             // 
             this.username_Txt.BorderRadius = 8;
             this.username_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.username_Txt.DefaultText = "";
+            this.username_Txt.DefaultText = "admin";
             this.username_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.username_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.username_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -189,7 +189,7 @@
             // 
             this.password_Txt.BorderRadius = 8;
             this.password_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.password_Txt.DefaultText = "";
+            this.password_Txt.DefaultText = "admin123";
             this.password_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.password_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.password_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -234,6 +234,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseUp);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();

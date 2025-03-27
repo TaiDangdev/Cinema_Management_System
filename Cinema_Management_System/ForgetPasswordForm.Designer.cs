@@ -216,6 +216,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForgetPasswordForm";
             this.Load += new System.EventHandler(this.ForgetPasswordForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ForgetPasswordForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ForgetPasswordForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ForgetPasswordForm_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();

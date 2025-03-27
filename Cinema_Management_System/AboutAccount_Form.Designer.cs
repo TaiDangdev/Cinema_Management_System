@@ -47,7 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.changeAvatar_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.avatar_pic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -60,11 +59,12 @@
             this.label18 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label20 = new System.Windows.Forms.Label();
+            this.avatar_pic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatar_pic)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar_pic)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -404,19 +404,6 @@
             this.changeAvatar_Btn.Text = "Thay đổi ảnh";
             this.changeAvatar_Btn.Click += new System.EventHandler(this.changeAvatar_Btn_Click);
             // 
-            // avatar_pic
-            // 
-            this.avatar_pic.BackColor = System.Drawing.Color.Transparent;
-            this.avatar_pic.ImageRotate = 0F;
-            this.avatar_pic.Location = new System.Drawing.Point(89, 105);
-            this.avatar_pic.Name = "avatar_pic";
-            this.avatar_pic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.avatar_pic.Size = new System.Drawing.Size(183, 182);
-            this.avatar_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.avatar_pic.TabIndex = 1;
-            this.avatar_pic.TabStop = false;
-            this.avatar_pic.UseTransparentBackground = true;
-            // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.Controls.Add(this.label1);
@@ -598,6 +585,19 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Đổi mật khẩu";
             // 
+            // avatar_pic
+            // 
+            this.avatar_pic.BackColor = System.Drawing.Color.Transparent;
+            this.avatar_pic.ImageRotate = 0F;
+            this.avatar_pic.Location = new System.Drawing.Point(89, 105);
+            this.avatar_pic.Name = "avatar_pic";
+            this.avatar_pic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.avatar_pic.Size = new System.Drawing.Size(183, 182);
+            this.avatar_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatar_pic.TabIndex = 1;
+            this.avatar_pic.TabStop = false;
+            this.avatar_pic.UseTransparentBackground = true;
+            // 
             // AboutAccount_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -611,13 +611,13 @@
             this.Load += new System.EventHandler(this.AboutAccount_Form_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatar_pic)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar_pic)).EndInit();
             this.ResumeLayout(false);
 
         }

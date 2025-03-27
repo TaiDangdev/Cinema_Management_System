@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
 namespace Cinema_Management_System
@@ -16,6 +17,8 @@ namespace Cinema_Management_System
     public partial class ForgetPasswordForm : Form
     {
         private ConnectDataContext db = new ConnectDataContext();
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
 
         public ForgetPasswordForm()
         {
@@ -155,6 +158,29 @@ namespace Cinema_Management_System
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ForgetPasswordForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                this.Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void ForgetPasswordForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void ForgetPasswordForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Y <= 50)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
         }
     }
 }

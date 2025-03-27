@@ -9,12 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Linq;
+using System.Runtime.InteropServices;
 using static Cinema_Management_System.AboutAccount_Form;
 
 namespace Cinema_Management_System
 {
     public partial class LoginForm : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         public LoginForm()
         {
             InitializeComponent();
@@ -104,6 +108,29 @@ namespace Cinema_Management_System
                 password_Txt.UseSystemPasswordChar = true;
                 guna2PictureBox2.Image = Properties.Resources.eye;
             }
+        }
+
+        private void LoginForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Y <= 50)
+            {
+                dragging = true;
+                startPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void LoginForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                this.Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void LoginForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }
