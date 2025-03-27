@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Connect">
+  <DataContextMoniker Name="/ConnectDataContext" />
+  <nestedChildShapes>
+    <classShape Id="938aa598-64e5-4152-ba68-fde611e64e6a" absoluteBounds="1.125, 1.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ConnectDataContext/STAFF" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97a0b9fa-67fe-46ad-adfe-317f75b2f4a9" absoluteBounds="1.1400000000000001, 2.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3761353-d52f-4ca3-97df-a4e62d83d63a" absoluteBounds="4.25, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ConnectDataContext/ACCOUNT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="104ec92b-3a96-40b0-a7b4-6348ab14a111" absoluteBounds="4.265, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 2.10179768880208); (4.25 : 2.10179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ConnectDataContext/STAFF/STAFF_ACCOUNT" />
+      <nodes>
+        <classShapeMoniker Id="938aa598-64e5-4152-ba68-fde611e64e6a" />
+        <classShapeMoniker Id="f3761353-d52f-4ca3-97df-a4e62d83d63a" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
