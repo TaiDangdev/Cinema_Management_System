@@ -82,6 +82,9 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAOs\MovieDA.cs" />
+    <Compile Include="Models\DAOs\UserDA.cs" />
+    <Compile Include="Models\DTOs\MovieDTO.cs" />
     <Compile Include="Models\DTOs\UserDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,13 +93,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ImageVsSQL.cs" />
     <Compile Include="ViewModels\InformationManagement\Feature\ChangePassword.cs" />
     <Compile Include="ViewModels\InformationManagement\Feature\EditAvatar.cs" />
+    <Compile Include="ViewModels\LoginVM\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainBaseViewModel.cs" />
+    <Compile Include="ViewModels\MovieManagementVM\Feature\AddMovieViewModel.cs" />
+    <Compile Include="ViewModels\MovieManagementVM\MovieManagementViewModel.cs" />
     <Compile Include="Views\MessageBox\YesMessage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\MessageBox\YesMessage.Designer.cs">
       <DependentUpon>YesMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MovieManagement\AddMovieView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MovieManagement\AddMovieView.Designer.cs">
+      <DependentUpon>AddMovieView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MovieManagement\MovieManagementView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MovieManagement\MovieManagementView.Designer.cs">
+      <DependentUpon>MovieManagementView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AboutAccount_Form.resx">
       <DependentUpon>AboutAccount_Form.cs</DependentUpon>
@@ -117,6 +138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MessageBox\YesMessage.resx">
       <DependentUpon>YesMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MovieManagement\AddMovieView.resx">
+      <DependentUpon>AddMovieView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MovieManagement\MovieManagementView.resx">
+      <DependentUpon>MovieManagementView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connect.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -205,7 +232,6 @@
     <Folder Include="Models\DTOs\StaffManagement\" />
     <Folder Include="ViewModels\CustomerManagement\" />
     <Folder Include="ViewModels\ForgotPassword\" />
-    <Folder Include="ViewModels\MovieManagementVM\" />
     <Folder Include="ViewModels\ProductManagement\" />
     <Folder Include="ViewModels\ShowTimeManagementVM\" />
     <Folder Include="ViewModels\StaffManagementVM\" />
@@ -213,7 +239,6 @@
     <Folder Include="ViewModels\VoucherManagement\" />
     <Folder Include="Views\CustomerManagement\" />
     <Folder Include="Views\InformationManagement\" />
-    <Folder Include="Views\MovieManagement\" />
     <Folder Include="Views\Password\" />
     <Folder Include="Views\ProductManagement\" />
     <Folder Include="Views\ShowTimeManagement\" />
@@ -226,6 +251,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\icons\clapboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\movieManagementForm\icons8-magnifying-glass-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\movieManagementForm\icons8-plus-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\movieManagementForm\photo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

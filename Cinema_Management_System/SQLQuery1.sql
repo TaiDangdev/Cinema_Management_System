@@ -37,3 +37,31 @@ VALUES ('DevPro', '1990-08-02', 'Nam', 'tnhatnguyen.dev2805@gmail.com', '0123456
 INSERT INTO ACCOUNTS (Username, Password, Staff_Id)
 VALUES ('admin', 'admin123', 1);
 
+GO 
+-- bảng MOVIES 
+
+CREATE TABLE MOVIE
+(
+    id INT PRIMARY KEY IDENTITY(1, 1),
+    Title NVARCHAR(100) not null,
+    Description NVARCHAR(500) not null,
+    Genre nvarchar(100) not null,
+    Director NVARCHAR(50) not null,
+    ReleaseYear int not null,
+    Language NVARCHAR(20) not null,
+    Country NVARCHAR(20) not null,
+    Length INT not null,
+    Trailer NVARCHAR(200) not null,
+    StartDate SMALLDATETIME not null,
+    Status nvarchar(50) not null,
+	ImportPrice int not null,
+    ImageSource varbinary(max) not null,
+);
+
+--tân từ: mỗi bộ phim có 1 id riêng để phân biệt với các bộ phim khác,có tiêu đề,miêu tả về phim,thể loại phim,đạo diễn 
+--năm ra mắt,ngôn ngữ trong phim,quốc gia sx,thời lượng phim(phút),link trailer,ngày ra mắt phim,trạng thái phim trong rạp(đang phát hành,ngừng ph),đường dẫn ảnh phim
+
+SELECT * FROM MOVIE
+
+
+DROP TABLE MOVIE;

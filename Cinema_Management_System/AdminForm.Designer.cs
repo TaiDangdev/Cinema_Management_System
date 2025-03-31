@@ -35,6 +35,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.movieManagementView1 = new Cinema_Management_System.Views.MovieManagement.MovieManagementView();
+            this.aboutAccount_Form2 = new Cinema_Management_System.AboutAccount_Form();
+            this.aboutAccount_Form1 = new Cinema_Management_System.AboutAccount_Form();
             this.logout_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.profile_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.thongKe_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -44,9 +48,6 @@
             this.staffManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.showtimeManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.filmManage_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.aboutAccount_Form1 = new Cinema_Management_System.AboutAccount_Form();
-            this.aboutAccount_Form2 = new Cinema_Management_System.AboutAccount_Form();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -93,7 +94,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(58, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 20);
+            this.label2.Size = new System.Drawing.Size(128, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Dành cho quản trị viên";
             // 
@@ -104,7 +105,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label1.Location = new System.Drawing.Point(46, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 25);
+            this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "StarCinema\r\n";
             // 
@@ -125,6 +126,46 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(200, 682);
             this.guna2Panel2.TabIndex = 1;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.Controls.Add(this.movieManagementView1);
+            this.guna2Panel3.Controls.Add(this.aboutAccount_Form2);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel3.Location = new System.Drawing.Point(200, 45);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(1022, 682);
+            this.guna2Panel3.TabIndex = 2;
+            // 
+            // movieManagementView1
+            // 
+            this.movieManagementView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.movieManagementView1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.movieManagementView1.Location = new System.Drawing.Point(0, 0);
+            this.movieManagementView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.movieManagementView1.Name = "movieManagementView1";
+            this.movieManagementView1.Size = new System.Drawing.Size(1022, 682);
+            this.movieManagementView1.TabIndex = 1;
+         
+            // 
+            // aboutAccount_Form2
+            // 
+            this.aboutAccount_Form2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.aboutAccount_Form2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutAccount_Form2.Location = new System.Drawing.Point(0, 0);
+            this.aboutAccount_Form2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.aboutAccount_Form2.Name = "aboutAccount_Form2";
+            this.aboutAccount_Form2.Size = new System.Drawing.Size(1022, 682);
+            this.aboutAccount_Form2.TabIndex = 0;
+            // 
+            // aboutAccount_Form1
+            // 
+            this.aboutAccount_Form1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutAccount_Form1.Location = new System.Drawing.Point(0, 0);
+            this.aboutAccount_Form1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.aboutAccount_Form1.Name = "aboutAccount_Form1";
+            this.aboutAccount_Form1.Size = new System.Drawing.Size(1022, 682);
+            this.aboutAccount_Form1.TabIndex = 0;
             // 
             // logout_Btn
             // 
@@ -360,37 +401,9 @@
             this.filmManage_Btn.UseTransparentBackground = true;
             this.filmManage_Btn.Click += new System.EventHandler(this.filmManage_Btn_Click);
             // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.Controls.Add(this.aboutAccount_Form2);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(200, 45);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1022, 682);
-            this.guna2Panel3.TabIndex = 2;
-            // 
-            // aboutAccount_Form1
-            // 
-            this.aboutAccount_Form1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutAccount_Form1.Location = new System.Drawing.Point(0, 0);
-            this.aboutAccount_Form1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.aboutAccount_Form1.Name = "aboutAccount_Form1";
-            this.aboutAccount_Form1.Size = new System.Drawing.Size(1022, 682);
-            this.aboutAccount_Form1.TabIndex = 0;
-            // 
-            // aboutAccount_Form2
-            // 
-            this.aboutAccount_Form2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.aboutAccount_Form2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutAccount_Form2.Location = new System.Drawing.Point(0, 0);
-            this.aboutAccount_Form2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.aboutAccount_Form2.Name = "aboutAccount_Form2";
-            this.aboutAccount_Form2.Size = new System.Drawing.Size(1022, 682);
-            this.aboutAccount_Form2.TabIndex = 0;
-            // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1222, 727);
@@ -432,6 +445,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private AboutAccount_Form aboutAccount_Form1;
         private AboutAccount_Form aboutAccount_Form2;
+        private Views.MovieManagement.MovieManagementView movieManagementView1;
     }
 }
 
