@@ -13,7 +13,7 @@
 + 23110207 - Nguyễn Hoàng Hà - 
 + 23110222 - Nghiêm Quang Huy
 + 23110304 - Đặng Ngọc Tài
-+ 2311     - Nguyễn Tấn Yên
++ 23110369 - Nguyễn Tấn Yên 
 
 
 > # IV. Danh Sách Tính Năng:
