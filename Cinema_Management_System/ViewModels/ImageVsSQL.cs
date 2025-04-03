@@ -17,8 +17,17 @@ namespace Cinema_Management_System.ViewModels
             if (bitmap == null) return null;
             using (MemoryStream ms = new MemoryStream())
             {
-                bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                return ms.ToArray();
+                try
+                {
+                    Bitmap clone = new Bitmap(bitmap);  // Tạo bản sao trước khi lưu
+                    clone.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    clone.Dispose();
+                    return ms.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi chuyển đổi Bitmap sang ByteArray: " + ex.Message);
+                }
             }
         }
 

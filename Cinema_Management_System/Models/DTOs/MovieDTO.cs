@@ -25,6 +25,8 @@ namespace Cinema_Management_System.Models.DTOs
         public string Status { get; set; }
         public Bitmap ImageSource { get; set; }
 
+        public MovieDTO() { }
+
         //hàm khởi tạo phục vụ get  1 movie
         public MovieDTO(int id, string title, string decrip, string direc, string release, string language, string country, int lenght, string trailer, string startdate, string genre, string status, Bitmap imageSource, int importPrice)
         {

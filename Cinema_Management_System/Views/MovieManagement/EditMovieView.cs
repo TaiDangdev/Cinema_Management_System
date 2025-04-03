@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Cinema_Management_System.Models.DTOs;
+using Cinema_Management_System.ViewModels.MovieManagementVM.Feature;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,29 +10,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Cinema_Management_System.ViewModels.MovieManagementVM;
-using Cinema_Management_System.ViewModels.MovieManagementVM.Feature;
-using Guna.UI2.WinForms;
 
 namespace Cinema_Management_System.Views.MovieManagement
 {
-    public partial class AddMovieView : Form
+    public partial class EditMovieView : Form
     {
         private MovieManagementViewModel viewModel;
 
-        public AddMovieView()
+        public EditMovieView(MovieDTO movie = null)
         {
             InitializeComponent();
-            startDateMovie_Txt.Value = DateTime.Today;
 
-            viewModel = new MovieManagementViewModel();
+
+            viewModel = new MovieManagementViewModel(movie);
 
 
             acceptMovie_Btn.DataBindings.Add("Enabled", viewModel, "CanAccept", true, DataSourceUpdateMode.OnPropertyChanged);
 
             titleError_Txt.DataBindings.Add("Text", viewModel, "TitleError", true, DataSourceUpdateMode.OnPropertyChanged);
             titleMovie_Txt.DataBindings.Add("Text", viewModel, "Title", true, DataSourceUpdateMode.OnPropertyChanged);
-           
+
             directorError_Txt.DataBindings.Add("Text", viewModel, "DirectorError", true, DataSourceUpdateMode.OnPropertyChanged);
             directorMovie_Txt.DataBindings.Add("Text", viewModel, "Director", true, DataSourceUpdateMode.OnPropertyChanged);
 
@@ -58,8 +58,6 @@ namespace Cinema_Management_System.Views.MovieManagement
             releaseYearMovie_Txt.DataBindings.Add("Text", viewModel, "ReleaseYear", true, DataSourceUpdateMode.OnPropertyChanged);
 
             startDateMovie_Txt.DataBindings.Add("Value", viewModel, nameof(viewModel.StartDate), true, DataSourceUpdateMode.OnPropertyChanged);
-
-
 
             var validationMap = new Dictionary<Guna2TextBox, string>
             {
@@ -94,8 +92,7 @@ namespace Cinema_Management_System.Views.MovieManagement
 
         private void acceptMovie_Btn_Click(object sender, EventArgs e)
         {
-            viewModel.Accept();
-            this.Close();
+
         }
     }
 }

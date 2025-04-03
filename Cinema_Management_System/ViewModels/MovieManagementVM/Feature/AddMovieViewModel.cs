@@ -1,31 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
-using System.IO; // dùng để xử lý ảnh từ file
-using Cinema_Management_System.Views.MovieManagement;
+using System.IO;
 using System.Windows.Forms;
+using Cinema_Management_System.Views.MovieManagement;
 using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.Views.MessageBox;
-using System.ComponentModel;
 
 namespace Cinema_Management_System.ViewModels.MovieManagementVM.Feature
 {
-    public partial class MovieManagementViewModel
+    public partial class MovieManagementViewModel : MainBaseViewModel
     {
-        private void AddMovie()
-        {
-            AddMovieView addMovieView = new AddMovieView();
-            addMovieView.ShowDialog();
-        }
-    }
+        private Dictionary<string, bool> _isFocusedMap = new Dictionary<string, bool>();
+        private Dictionary<string, string> _errors = new Dictionary<string, string>();
+        private bool checkImage = false;
+        private MovieDA _movieDA = new MovieDA();
 
-    public class AddMovieViewModel : MainBaseViewModel
-    {
-        private ConnectDataContext db = new ConnectDataContext();
+        public bool IsEditing { get; set; }
+
+        //tiêu đề
         private string title;
         public string Title
         {
@@ -33,276 +28,340 @@ namespace Cinema_Management_System.ViewModels.MovieManagementVM.Feature
             set
             {
                 title = value;
-                ValidateTitle();
+                ValidateField(nameof(Title));
 
             }
         }
+        public string TitleError => _errors.TryGetValue(nameof(Title), out var error) ? error : "";
 
-        private bool isFocused = false;
-        public bool IsFocused
+        //chi tiết
+        private string description;
+        public string Description
         {
-            get => isFocused;
+            get => description;
             set
             {
-                isFocused = value;
-                OnPropertyChanged(nameof(IsFocused));
+                description = value;
+                ValidateField(nameof(Description));
             }
         }
-        public string Description { get; set; }
-        public string Genre { get; set; }
-        public string Director { get; set; }
-        public string ReleaseYear { get; set; }
-        public string Language { get; set; }
-        public string Country { get; set; }
-        public string Length { get; set; }
-        public string Trailer { get; set; }
-        public DateTime? StartDate { get; set; }
-        public string Status { get; set; }
-        public string ImportPrice { get; set; }
-        public string DescriptionError { get; set; }
-        public string DirectorError { get; set; }
-        public string ReleaseYearError { get; set; }
-        public string LanguageError { get; set; }
-        public string CountryError { get; set; }
-        public string LengthError { get; set; }
-        public string TrailerError { get; set; }
-        public string ImportPriceError { get; set; }
+        public string DescriptionError => _errors.TryGetValue(nameof(Description), out var error) ? error : "";
 
-        private AddMovieView addMovieView;
-
-        public AddMovieViewModel(AddMovieView addMovieView)
+        private string genre;
+        public string Genre
         {
-            this.addMovieView = addMovieView;
-            StartDate = DateTime.Now;
-            Status = "Đang phát hành";
+            get => genre;
+            set
+            {
+                genre = value;
+                ValidateField(nameof(Genre));
+            }
+        }
+        public string GenreError => _errors.TryGetValue(nameof(Genre), out var error) ? error : "";
+
+        private string director;
+        public string Director
+        {
+            get => director;
+            set
+            {
+                director = value;
+                ValidateField(nameof(Director));
+            }
+        }
+        public string DirectorError => _errors.TryGetValue(nameof(Director), out var error) ? error : "";
+
+        //năm phát hành
+        private string releaseYear;
+        public string ReleaseYear
+        {
+            get => releaseYear;
+            set
+            {
+                releaseYear = value;
+                ValidateField(nameof(ReleaseYear));
+            }
+        }
+        public string ReleaseYearError => _errors.TryGetValue(nameof(ReleaseYear), out var error) ? error : "";
+
+        //thời lượng
+        //dùng string để nao xử lý lỗi người dùng
+        private string length;
+        public string Length
+        {
+            get => length;
+            set
+            {
+                length = value;
+                ValidateField(nameof(Length));
+            }
+        }
+        public string LengthError => _errors.TryGetValue(nameof(Length), out var error) ? error : "";
+
+        // giá nhập
+        private string importPrice;
+        public string ImportPrice
+        {
+            get => importPrice;
+            set
+            {
+                importPrice = value;
+                ValidateField(nameof(ImportPrice));
+            }
+        }
+        public string ImportPriceError => _errors.TryGetValue(nameof(ImportPrice), out var error) ? error : "";
+
+        //quốc gia
+        private string country;
+        public string Country
+        {
+            get => country;
+            set
+            {
+                country = value;
+                ValidateField(nameof(Country));
+            }
+        }
+        public string CountryError => _errors.TryGetValue(nameof(Country), out var error) ? error : "";
+
+        //ngôn ngữ
+        private string language;
+        public string Language
+        {
+            get => language;
+            set
+            {
+                language = value;
+                ValidateField(nameof(Language));
+            }
+        }
+        public string LanguageError => _errors.TryGetValue(nameof(Language), out var error) ? error : "";
+
+        //trailer
+        private string trailer;
+        public string Trailer
+        {
+            get => trailer;
+            set
+            {
+                trailer = value;
+                ValidateField(nameof(Trailer));
+            }
+        }
+        public string TrailerError => _errors.TryGetValue(nameof(Trailer), out var error) ? error : "";
+
+        //ngày bắt đầu
+        private DateTime startDate = DateTime.Now;
+        public DateTime StartDate
+        {
+            get => startDate;
+            set
+            {   
+                startDate = value;
+                OnPropertyChanged(nameof(StartDate));
+            }
         }
 
-        private bool checkImage = false;
+        //trạng thái
+        private string status ="Đang phát hành";
+        public string Status
+        {
+            get => status;
+            set
+            {
+                status = value;
+                OnPropertyChanged(nameof(Status));
+            }
+        }
 
-        public void accept()
+        //poster
+        private Bitmap imageSource;
+        public Bitmap ImageSource
+        {
+            get => imageSource;
+            set
+            {
+                if (imageSource != value)
+                {
+                    imageSource = value;
+                    OnPropertyChanged(nameof(ImageSource));
+                }
+            }
+        }
+
+        public bool CanAccept => _errors.Values.All(e => string.IsNullOrWhiteSpace(e)) && checkImage;
+
+        public void SetIsFocused(string field, bool isFocused)
+        {
+            _isFocusedMap[field] = isFocused;
+            if (!isFocused)
+            {
+                _errors[field] = "";
+            }
+            else
+            {
+                ValidateField(field);
+            }
+            OnPropertyChanged($"{field}Error");
+            OnPropertyChanged(nameof(CanAccept));
+        }
+
+        private void ValidateField(string field)
+        {
+            string value = GetPropertyValue(field);
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                _errors[field] = "*Không để trống!";
+            }
+            else if (IsNumberField(field) && (!int.TryParse(value, out int number) || number <= 0))
+            {
+                _errors[field] = "*Không hợp lệ!";
+            }
+            else
+            {
+                _errors[field] = "";
+            }
+            OnPropertyChanged($"{field}Error");
+            OnPropertyChanged(nameof(CanAccept));
+        }
+
+        private string GetPropertyValue(string field)
+        {
+            var property = GetType().GetProperty(field);
+            return property?.GetValue(this)?.ToString() ?? "";
+        }
+
+        private static readonly HashSet<string> NumberFields = new HashSet<string>
+        {
+            "ReleaseYear", "Length", "ImportPrice"
+        };
+
+        private bool IsNumberField(string field) => NumberFields.Contains(field);
+
+        public MovieManagementViewModel(MovieDTO movie = null)
+        {
+            if (movie != null)
+            {
+                // Nếu có dữ liệu -> Chế độ Edit
+                IsEditing = true;
+                LoadMovieData(movie);
+            }
+            else
+            {
+                // Không có dữ liệu -> Chế độ Add
+                IsEditing = false;
+                StartDate = DateTime.Today; // Mặc định ngày hiện tại
+            }
+        }
+
+        private void LoadMovieData(MovieDTO movie)
+        {
+            Title = movie.Title;
+            Description = movie.Description;
+            Director = movie.Director;
+            ReleaseYear = movie.ReleaseYear;
+            Language = movie.Language;
+            Country = movie.Country;
+            Length = movie.Length.ToString();
+            Trailer = movie.Trailer;
+            Genre = movie.Genre;
+            Status = movie.Status;
+            ImageSource = movie.ImageSource;
+            ImportPrice = movie.ImportPrice.ToString();
+            StartDate = DateTime.Parse(movie.StartDate);
+        }
+
+        public void SaveMovie()
+        {
+            if (IsEditing)
+            {
+                // Chế độ Edit -> Cập nhật phim
+                _movieDA.editMovie(new MovieDTO
+                {
+                    Title = Title,
+                    Description = Description,
+                    Director = Director,
+                    ReleaseYear = ReleaseYear,
+                    Language = Language,
+                    Country = Country,
+                    Length = int.TryParse(Length, out int length) ? length : 0,
+                    Trailer = Trailer,
+                    Genre = Genre,
+                    Status = Status,
+                    ImageSource = ImageSource,
+                    ImportPrice = int.TryParse(ImportPrice, out int importPrice) ? importPrice : 0,
+                    StartDate = StartDate.ToString()
+                });
+            }
+            else
+            {
+                // Chế độ Add -> Thêm phim mới
+                _movieDA.addMovie(new MovieDTO
+                {
+                    Title = Title,
+                    Description = Description,
+                    Director = Director,
+                    ReleaseYear = ReleaseYear,
+                    Language = Language,
+                    Country = Country,
+                    Length = int.TryParse(Length, out int length) ? length : 0,
+                    Trailer = Trailer,
+                    Genre = Genre,
+                    Status = Status,
+                    ImageSource = ImageSource,
+                    ImportPrice = int.TryParse(ImportPrice, out int importPrice) ? importPrice : 0,
+                    StartDate = StartDate.ToString()
+                });
+            }
+        }
+
+        public Bitmap AddImage()
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image Files (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|All files (*.*)|*.*"
+            })
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    byte[] imageData = File.ReadAllBytes(openFileDialog.FileName);
+                    checkImage = true;
+                    OnPropertyChanged(nameof(CanAccept));
+                    return ImageVsSQL.ByteArrayToBitmap(imageData);
+                }
+            }
+            return null;
+        }
+
+        public void Accept()
         {
             if (!checkImage)
             {
                 MessageBox.Show("Bạn chưa thêm poster!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            MovieDA movieDA = new MovieDA();
-            movieDA.addMovie(new MovieDTO(Title, Description, Director, ReleaseYear, Language, Country, int.Parse(Length), Trailer, StartDate.Value.ToString("yyyy-MM-dd"), Genre, Status, ImageSource, int.Parse(ImportPrice)));
+            string startDateStr = StartDate.ToString("yyyy-MM-dd");
 
-            YesMessage mb = new YesMessage("Thông báo", "Thêm phim thành công");
-            mb.ShowDialog();
-            addMovieView.Close();
-        }
+            int movieLength, movieImportPrice;
 
-        private Bitmap _imageSource;
-        public Bitmap ImageSource
-        {
-            get { return _imageSource; }
-            set
+            if (!int.TryParse(Length, out movieLength) || movieLength <= 0)
             {
-                _imageSource = value;
-                OnPropertyChanged(nameof(ImageSource)); // thông báo rằng ImageSource đã thay đổi
+                MessageBox.Show("Thời lượng không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-        }
 
-        public void addImage()
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|All files (*.*)|*.*";
+            if (!int.TryParse(ImportPrice, out movieImportPrice) || movieImportPrice < 0)
+            {
+                MessageBox.Show("Giá nhập không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                byte[] imageData = File.ReadAllBytes(openFileDialog.FileName);
-                ImageSource = ImageVsSQL.ByteArrayToBitmap(imageData); // khi ImageSource thay đổi, UI sẽ tự cập nhật
-            }
-        }
+            var movie = new MovieDTO(Title, Description, Director, ReleaseYear, Language, Country,
+                movieLength, Trailer, startDateStr, Genre, Status, ImageSource, movieImportPrice);
 
-        private string titleError;
-        public string TitleError
-        {
-            get => titleError;
-            set
-            {
-                titleError = value;
-                OnPropertyChanged(nameof(TitleError));
-            }
-        }
+            new MovieDA().addMovie(movie);
 
-
-        // phần các hàm validate _ báo lỗi
-        private bool[] _canAccept = new bool[9];//phục vụ việc có cho nhấn button accept ko
-        public bool CanAccept
-        {
-            get => _canAccept.All(x => x); // Kiểm tra tất cả điều kiện hợp lệ
+            new YesMessage("Thông báo", "Thêm phim thành công").ShowDialog();
         }
-        public void ValidateTitle()
-        {
-            if (string.IsNullOrWhiteSpace(Title))
-            {
-                TitleError = "Không để trống!";
-                _canAccept[0] = false;
-            }
-            else
-            {
-                TitleError = "";
-                _canAccept[0] = true;
-            }
-            OnPropertyChanged(nameof(CanAccept));
-            OnPropertyChanged(nameof(TitleError));
-        }
-
-        public void ValidateDescription()
-        {
-            if (string.IsNullOrWhiteSpace(Description))
-            {
-                DescriptionError = "Không để trống!";
-                _canAccept[1] = false;
-            }
-            else
-            {
-                DescriptionError = "";
-                _canAccept[1] = true;
-            }
-            OnPropertyChanged(nameof(CanAccept));
-        }
-
-        public void ValidateDirector()
-        {
-            if (string.IsNullOrWhiteSpace(Director))
-            {
-                DirectorError = "Không để trống!";
-                _canAccept[2] = false;
-            }
-            else
-            {
-                DirectorError = "";
-                _canAccept[2] = true;
-            }
-            OnPropertyChanged(nameof(CanAccept));
-        }
-
-        public void ValidateLength()
-        {
-            if (string.IsNullOrWhiteSpace(Length))
-            {
-                LengthError = "Không để trống!";
-                _canAccept[3] = false;
-            }
-            else if (!Length.All(char.IsDigit))
-            {
-                LengthError = "Không hợp lệ!";
-                _canAccept[3] = false;
-            }
-            else if (!int.TryParse(Length, out int lengthvalue))
-            {
-                LengthError = "Không hợp lệ!";
-                _canAccept[3] = false;
-            }
-            else
-            {
-                LengthError = "";
-                _canAccept[3] = true;
-            }
-            OnPropertyChanged(nameof(CanAccept));
-        }
-
-        public void ValidateLanguage()
-        {
-            if (string.IsNullOrWhiteSpace(Language))
-            {
-                LanguageError = "Không để trống!";
-                _canAccept[4] = false;
-            }
-            else if (Language.Length > 20)
-            {
-                LanguageError = "Không được dài quá";
-                _canAccept[4] = false;
-            }
-            else
-            {
-                LanguageError = "";
-                _canAccept[4] = true;
-            }
-            OnPropertyChanged(nameof(CanAccept));
-        }
-
-        public void ValidateCountry()
-        {
-            if (string.IsNullOrWhiteSpace(Country))
-            {
-                CountryError = "Không để trống!";
-                _canAccept[5] = false;
-            }
-            else
-            {
-                CountryError = "";
-                _canAccept[5] = true;
-            }
-            OnPropertyChanged(nameof(CanAccept));
-        }
-
-        public void ValidateTrailer()
-        {
-            if (string.IsNullOrWhiteSpace(Trailer))
-            {
-                TrailerError = "Không để trống!";
-                _canAccept[6] = false;
-            }
-            else
-            {
-                TrailerError = "";
-                _canAccept[6] = true;
-            }
-            OnPropertyChanged(nameof(CanAccept));
-        }
-        public void ValidateReleaseYear()
-        {
-            if (string.IsNullOrWhiteSpace(ReleaseYear))
-            {
-                ReleaseYearError = "Không để trống!";
-                _canAccept[7] = false;
-            }
-            else if (!ReleaseYear.All(char.IsDigit))
-            {
-                ReleaseYearError = "Không hợp lệ!";
-                _canAccept[7] = false;
-            }
-            else if (int.Parse(ReleaseYear) < 0)
-            {
-                ReleaseYearError = "Không hợp lệ!";
-                _canAccept[7] = false;
-            }
-            else
-            {
-                ReleaseYearError = "";
-                _canAccept[7] = true;
-            }
-            OnPropertyChanged(nameof(CanAccept));
-        }
-        public void ValidateImportPrice()
-        {
-            if (string.IsNullOrWhiteSpace(ImportPrice))
-            {
-                ImportPriceError = "Không để trống!";
-                _canAccept[8] = false;
-            }
-            else if (!ImportPrice.All(char.IsDigit))
-            {
-                ImportPriceError = "Không hợp lệ!";
-                _canAccept[8] = false;
-            }
-            else if (!int.TryParse(ImportPrice, out int importPriceValue))
-            {
-                ImportPriceError = "Không hợp lệ!";
-                _canAccept[8] = false;
-            }
-            else
-            {
-                ImportPriceError = "";
-                _canAccept[8] = true;
-            }
-            OnPropertyChanged(nameof(CanAccept));
-        }
-
     }
 }

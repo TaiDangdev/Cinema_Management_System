@@ -100,7 +100,7 @@
     <Compile Include="ViewModels\LoginVM\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainBaseViewModel.cs" />
     <Compile Include="ViewModels\MovieManagementVM\Feature\AddMovieViewModel.cs" />
-    <Compile Include="ViewModels\MovieManagementVM\MovieManagementViewModel.cs" />
+    <Compile Include="ViewModels\MovieManagementVM\Feature\EditMovieViewModel.cs" />
     <Compile Include="Views\MessageBox\YesMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +112,12 @@
     </Compile>
     <Compile Include="Views\MovieManagement\AddMovieView.Designer.cs">
       <DependentUpon>AddMovieView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MovieManagement\EditMovieView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MovieManagement\EditMovieView.Designer.cs">
+      <DependentUpon>EditMovieView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MovieManagement\MovieManagementView.cs">
       <SubType>UserControl</SubType>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MovieManagement\AddMovieView.resx">
       <DependentUpon>AddMovieView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MovieManagement\EditMovieView.resx">
+      <DependentUpon>EditMovieView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MovieManagement\MovieManagementView.resx">
       <DependentUpon>MovieManagementView.cs</DependentUpon>
@@ -260,6 +269,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\movieManagementForm\photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\movieManagementForm\delete_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\movieManagementForm\update_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

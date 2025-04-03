@@ -52,15 +52,15 @@ namespace Cinema_Management_System.Models.DAOs
                     Title = movieDTO.Title,
                     Description = movieDTO.Description,
                     Director = movieDTO.Director,
-                    ReleaseYear = int.Parse(movieDTO.ReleaseYear),
+                    ReleaseYear = string.IsNullOrWhiteSpace(movieDTO.ReleaseYear) ? 0 : int.Parse(movieDTO.ReleaseYear),
                     Language = movieDTO.Language,
                     Country = movieDTO.Country,
                     Length = movieDTO.Length,
                     Trailer = movieDTO.Trailer,
-                    StartDate = DateTime.Parse(movieDTO.StartDate),
+                    StartDate = string.IsNullOrWhiteSpace(movieDTO.StartDate) ? DateTime.MinValue : DateTime.Parse(movieDTO.StartDate),
                     Genre = movieDTO.Genre,
                     Status = movieDTO.Status,
-                    ImageSource = ImageVsSQL.BitmapToByteArray(movieDTO.ImageSource),
+                    ImageSource = movieDTO.ImageSource != null ? ImageVsSQL.BitmapToByteArray(movieDTO.ImageSource) : null,
                     ImportPrice = movieDTO.ImportPrice
                 };
 
@@ -70,6 +70,39 @@ namespace Cinema_Management_System.Models.DAOs
             catch (Exception ex)
             {
                 throw new Exception("Lỗi: " + ex.Message);
+            }
+        }
+
+        //update(edit) movie
+        public void editMovie(MovieDTO movieDTO)
+        {
+            try
+            {
+                var movie = db.MOVIEs.FirstOrDefault(m => m.id == movieDTO.Id);
+                if (movie == null)
+                {
+                    throw new Exception("Không tìm thấy phim để cập nhật.");
+                }
+
+                movie.Title = movieDTO.Title;
+                movie.Description = movieDTO.Description;
+                movie.Director = movieDTO.Director;
+                movie.ReleaseYear = string.IsNullOrWhiteSpace(movieDTO.ReleaseYear) ? 0 : int.Parse(movieDTO.ReleaseYear);
+                movie.Language = movieDTO.Language;
+                movie.Country = movieDTO.Country;
+                movie.Length = movieDTO.Length;
+                movie.Trailer = movieDTO.Trailer;
+                movie.StartDate = string.IsNullOrWhiteSpace(movieDTO.StartDate) ? DateTime.MinValue : DateTime.Parse(movieDTO.StartDate);
+                movie.Genre = movieDTO.Genre;
+                movie.Status = movieDTO.Status;
+                movie.ImageSource = movieDTO.ImageSource != null ? ImageVsSQL.BitmapToByteArray(movieDTO.ImageSource) : movie.ImageSource;
+                movie.ImportPrice = movieDTO.ImportPrice;
+
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi cập nhật phim: " + ex.Message);
             }
         }
     }
