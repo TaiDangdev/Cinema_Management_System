@@ -27,7 +27,6 @@ namespace Cinema_Management_System.ViewModels.MovieManagementVM.Feature
 
                     if (selectedMovie != null)
                     {
-                        // Gán thông tin phim vào ViewModel
                         Title = selectedMovie.Title;
                         Description = selectedMovie.Description;
                         Director = selectedMovie.Director;

@@ -24,6 +24,43 @@ namespace Cinema_Management_System.Models.DAOs
             }
         }
 
+        public static bool ChangePassword(int staffId, string oldPassword, string newPassword)
+        {
+            // còn thiếu việc kiểm tra password mới có hợp lệ hay chưa
+            using (var db = new ConnectDataContext())
+            {
+                // Kiểm tra mật khẩu cũ có đúng không
+                var account = db.ACCOUNTs
+                                .FirstOrDefault(acc => acc.Staff_Id == staffId && acc.Password == oldPassword);
+                if (account != null)
+                {
+                    // Cập nhật mật khẩu mới
+                    account.Password = newPassword;
+                    db.SubmitChanges();  // Lưu thay đổi vào cơ sở dữ liệu
+                    return true;  // Thành công
+                }
+                return false;  // Thất bại, mật khẩu cũ không đúng
+            }
+        }
+
+        public static UserDTO GetUserByStaffId(int staffId)
+        {
+            using (var db = new ConnectDataContext())
+            {
+                var user = (from acc in db.ACCOUNTs
+                            join staff in db.STAFFs on acc.Staff_Id equals staff.Id
+                            where staff.Id == staffId
+                            select new UserDTO
+                            {
+                                Id = staff.Id,
+                                Username = acc.Username,
+                            }).FirstOrDefault();
+                return user;
+            }
+        }
+
+
+
 
 
     }

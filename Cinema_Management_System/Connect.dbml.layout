@@ -21,10 +21,10 @@
         <classShapeMoniker Id="f3761353-d52f-4ca3-97df-a4e62d83d63a" />
       </nodes>
     </associationConnector>
-    <classShape Id="772a73cb-9f48-4211-882f-9e2cd0ee0e60" absoluteBounds="5.25, 3, 2, 3.5016097005208326">
+    <classShape Id="54d9c97a-7635-4b20-9420-241ac6f39fa1" absoluteBounds="4, 2.875, 2, 3.6939111328124996">
       <DataClassMoniker Name="/ConnectDataContext/MOVIE" />
       <nestedChildShapes>
-        <elementListCompartment Id="c455c5d9-af61-4603-a2d9-ca2cf6849b98" absoluteBounds="5.265, 3.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="031c13e1-a435-4eb2-a56d-6edeebd247d3" absoluteBounds="4.015, 3.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

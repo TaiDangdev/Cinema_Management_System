@@ -21,6 +21,7 @@ namespace Cinema_Management_System.Models.DAOs
             {
                 return db.MOVIEs.Select(movie => new MovieDTO(
                     movie.id,
+                    movie.MovieCode,
                     movie.Title,
                     movie.Description,
                     movie.Director,
@@ -49,6 +50,7 @@ namespace Cinema_Management_System.Models.DAOs
             {
                 MOVIE movie = new MOVIE
                 {
+                    MovieCode = movieDTO.MovieCode,
                     Title = movieDTO.Title,
                     Description = movieDTO.Description,
                     Director = movieDTO.Director,
@@ -73,12 +75,12 @@ namespace Cinema_Management_System.Models.DAOs
             }
         }
 
-        //update(edit) movie
+        // update(edit) movie
         public void editMovie(MovieDTO movieDTO)
         {
             try
             {
-                var movie = db.MOVIEs.FirstOrDefault(m => m.id == movieDTO.Id);
+                var movie = db.MOVIEs.FirstOrDefault(m => m.MovieCode == movieDTO.MovieCode);
                 if (movie == null)
                 {
                     throw new Exception("Không tìm thấy phim để cập nhật.");
@@ -105,5 +107,56 @@ namespace Cinema_Management_System.Models.DAOs
                 throw new Exception("Lỗi khi cập nhật phim: " + ex.Message);
             }
         }
+
+       
+
+
+        
+        // xóa một phim theo MovieCode
+        public void DeleteMovie(string movieCode)
+        {
+            try
+            {
+                var movie = db.MOVIEs.FirstOrDefault(m => m.MovieCode == movieCode);
+                if (movie == null)
+                {
+                    throw new Exception("Không tìm thấy phim để xóa.");
+                }
+
+                db.MOVIEs.DeleteOnSubmit(movie);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi xóa phim: " + ex.Message);
+            }
+        }
+
+        // lấy danh sách tên phim đang phát hành
+
+        // * Hiện tại chưa sài vì đang thiết kế theo View chứ chưa có ViewModel
+        public List<Tuple<string, string>> GetDSTitleDPH()
+        {
+            try
+            {
+                using (var db = new ConnectDataContext())
+                {
+                    var result = db.MOVIEs
+                        .Where(m => m.Status == "Đang phát hành")
+                        .Select(m => new Tuple<string, string>(m.MovieCode, m.Title))
+                        .ToList();
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi: " + ex.Message);
+            }
+        }
+
+        // còn các hàm hỗ trợ cho việc thống kê
+
+
     }
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Cinema_Management_System.Views.MovieManagement
 {
@@ -17,15 +18,19 @@ namespace Cinema_Management_System.Views.MovieManagement
     {
         private MovieManagementViewModel viewModel;
 
+        private MovieDTO movie;
+
         public EditMovieView(MovieDTO movie = null)
         {
             InitializeComponent();
+            this.movie = movie;
 
 
             viewModel = new MovieManagementViewModel(movie);
+            loadMovieFilm(movie);
 
 
-            acceptMovie_Btn.DataBindings.Add("Enabled", viewModel, "CanAccept", true, DataSourceUpdateMode.OnPropertyChanged);
+            //acceptMovie_Btn.DataBindings.Add("Enabled", viewModel, "CanAccept", true, DataSourceUpdateMode.OnPropertyChanged);
 
             titleError_Txt.DataBindings.Add("Text", viewModel, "TitleError", true, DataSourceUpdateMode.OnPropertyChanged);
             titleMovie_Txt.DataBindings.Add("Text", viewModel, "Title", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -57,7 +62,12 @@ namespace Cinema_Management_System.Views.MovieManagement
             releaseYearError_Txt.DataBindings.Add("Text", viewModel, "ReleaseYearError", true, DataSourceUpdateMode.OnPropertyChanged);
             releaseYearMovie_Txt.DataBindings.Add("Text", viewModel, "ReleaseYear", true, DataSourceUpdateMode.OnPropertyChanged);
 
+            codeMovie_Txt.DataBindings.Add("Text", viewModel, "MovieCode", true, DataSourceUpdateMode.OnPropertyChanged);
+            codeError_Txt.DataBindings.Add("Text", viewModel, "MovieCodeError", true, DataSourceUpdateMode.OnPropertyChanged);
+
             startDateMovie_Txt.DataBindings.Add("Value", viewModel, nameof(viewModel.StartDate), true, DataSourceUpdateMode.OnPropertyChanged);
+
+            statusMovie_Txt.DataBindings.Add("SelectedItem", viewModel, "Status", true, DataSourceUpdateMode.OnPropertyChanged);
 
             var validationMap = new Dictionary<Guna2TextBox, string>
             {
@@ -70,7 +80,8 @@ namespace Cinema_Management_System.Views.MovieManagement
                 { countryMovie_Txt, "Country" },
                 { trailerMovie_Txt, "Trailer" },
                 { genreMovie_Txt, "Genre" },
-                { languageMovie_Txt, "Language" }
+                { languageMovie_Txt, "Language" },
+                { codeMovie_Txt, "MovieCode" }
             };
 
             foreach (var entry in validationMap)
@@ -78,21 +89,73 @@ namespace Cinema_Management_System.Views.MovieManagement
                 entry.Key.Enter += (s, e) => { viewModel.SetIsFocused(entry.Value, true); };
                 entry.Key.Leave += (s, e) => { viewModel.SetIsFocused(entry.Value, false); };
             }
+
+        }
+
+        private void loadMovieFilm(MovieDTO movie)
+        {
+            titleMovie_Txt.Text = movie.Title;
+            codeMovie_Txt.Text = movie.MovieCode;
+            lengthMovie_Txt.Text = movie.Length.ToString();
+            genreMovie_Txt.Text = movie.Genre;
+            descriptionMovie_Txt.Text = movie.Description;
+            directorMovie_Txt.Text = movie.Director;
+            releaseYearMovie_Txt.Text = movie.ReleaseYear;
+            languageMovie_Txt.Text = movie.Language;
+            countryMovie_Txt.Text = movie.Country;
+            startDateMovie_Txt.Value = DateTime.TryParse(movie.StartDate, out DateTime parsedDate) ? parsedDate : DateTime.Now;
+            trailerMovie_Txt.Text = movie.Trailer;
+            priceMovie_Txt.Text = movie.ImportPrice.ToString("N0");
+
+            if (movie.ImageSource != null)
+            {
+                poster_Pic.Image = movie.ImageSource;
+            }
+        }
+
+
+
+        private void resetFilm_Btn_Click(object sender, EventArgs e)
+        {
+            loadMovieFilm(movie);
+            System.Windows.Forms.MessageBox.Show("Đã khôi phục lại thông tin phim", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void chooseImage_Btn_Click(object sender, EventArgs e)
         {
-            var image = viewModel.AddImage();
-            if (image != null)
+            try
             {
-                poster_Pic.Image = image;
-                viewModel.ImageSource = image;
+                var image = viewModel.AddImage();
+                if (image != null)
+                {
+                    poster_Pic.Image = image;
+                    viewModel.ImageSource = image;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Đã xảy ra lỗi khi chọn ảnh:\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void acceptMovie_Btn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                viewModel.SaveMovie();
 
+                if (viewModel.IsEditing)
+                {
+                    System.Windows.Forms.MessageBox.Show("Cập nhật phim thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Đã xảy ra lỗi khi lưu phim: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

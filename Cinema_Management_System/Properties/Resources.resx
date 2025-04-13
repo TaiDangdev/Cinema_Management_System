@@ -118,70 +118,109 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="clapperboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\adminForm\clapperboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\adminForm\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="visible" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\loginForm\visible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clapboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\clapboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\loginForm\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\loginForm\icon_mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-magnifying-glass-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\movieManagementForm\icons8-magnifying-glass-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\messageBox\icon_Error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-plus-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\movieManagementForm\icons8-plus-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="starcinema-bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\loginForm\starcinema-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\adminForm\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-person-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\adminForm\icons8-person-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon-lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\loginForm\icon-lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon-person" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\loginForm\icon-person.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="QLProduct" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\adminForm\QLProduct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="promo-code" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\adminForm\promo-code.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="film-reel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\film-reel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\movieManagementForm\photo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\adminForm\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="update_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\movieManagementForm\update_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="audience" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\adminForm\audience.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\adminForm\data.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\messageBox\icon_Info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="watching-a-movie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\adminForm\watching-a-movie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-left-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\loginForm\icons8-left-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\movieManagementForm\delete_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="update_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\movieManagementForm\update_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\adminForm\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="starcinema-bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\loginForm\starcinema-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="promo-code" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\adminForm\promo-code.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\logo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clapboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\clapboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\adminForm\data.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="film-reel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\film-reel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-person-321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\loginForm\icons8-person-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\loginForm\icon-lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="watching-a-movie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\adminForm\watching-a-movie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\movieManagementForm\photo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-more-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\movieManagementForm\icons8-more-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-person" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\loginForm\icon-person.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clapperboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\adminForm\clapperboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_Question" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\messageBox\icon_Question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-cinema-ticket-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons8-cinema-ticket-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-person-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\adminForm\icons8-person-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_Succes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\messageBox\icon_Succes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\loginForm\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QLProduct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\adminForm\QLProduct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\loginForm\icon_mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-lock-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\loginForm\icons8-lock-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="visible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\loginForm\visible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-magnifying-glass-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\movieManagementForm\icons8-magnifying-glass-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\messageBox\icon_Warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErrorIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\messageBox\ErrorIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

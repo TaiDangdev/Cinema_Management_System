@@ -585,6 +585,8 @@ namespace Cinema_Management_System
 		
 		private int _id;
 		
+		private string _MovieCode;
+		
 		private string _Title;
 		
 		private string _Description;
@@ -617,6 +619,8 @@ namespace Cinema_Management_System
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
+    partial void OnMovieCodeChanging(string value);
+    partial void OnMovieCodeChanged();
     partial void OnTitleChanging(string value);
     partial void OnTitleChanged();
     partial void OnDescriptionChanging(string value);
@@ -670,6 +674,26 @@ namespace Cinema_Management_System
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MovieCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MovieCode
+		{
+			get
+			{
+				return this._MovieCode;
+			}
+			set
+			{
+				if ((this._MovieCode != value))
+				{
+					this.OnMovieCodeChanging(value);
+					this.SendPropertyChanging();
+					this._MovieCode = value;
+					this.SendPropertyChanged("MovieCode");
+					this.OnMovieCodeChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string Title
 		{
@@ -690,7 +714,7 @@ namespace Cinema_Management_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string Description
 		{
 			get

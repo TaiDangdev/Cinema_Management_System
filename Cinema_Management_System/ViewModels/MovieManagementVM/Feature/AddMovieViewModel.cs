@@ -8,6 +8,7 @@ using Cinema_Management_System.Views.MovieManagement;
 using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.Views.MessageBox;
+using System.Diagnostics;
 
 namespace Cinema_Management_System.ViewModels.MovieManagementVM.Feature
 {
@@ -19,6 +20,20 @@ namespace Cinema_Management_System.ViewModels.MovieManagementVM.Feature
         private MovieDA _movieDA = new MovieDA();
 
         public bool IsEditing { get; set; }
+
+        // mã film
+        private string movieCode;
+        public string MovieCode
+        {
+            get => movieCode;
+            set
+            {
+                movieCode = value;
+                ValidateField(nameof(MovieCode));
+            }
+        }
+
+        public string MovieCodeError => _errors.TryGetValue(nameof(MovieCode), out var error) ? error : "";
 
         //tiêu đề
         private string title;
@@ -185,6 +200,7 @@ namespace Cinema_Management_System.ViewModels.MovieManagementVM.Feature
                 {
                     imageSource = value;
                     OnPropertyChanged(nameof(ImageSource));
+                    OnPropertyChanged(nameof(CanAccept));
                 }
             }
         }
@@ -256,6 +272,7 @@ namespace Cinema_Management_System.ViewModels.MovieManagementVM.Feature
 
         private void LoadMovieData(MovieDTO movie)
         {
+            MovieCode = movie.MovieCode;
             Title = movie.Title;
             Description = movie.Description;
             Director = movie.Director;
@@ -278,6 +295,7 @@ namespace Cinema_Management_System.ViewModels.MovieManagementVM.Feature
                 // Chế độ Edit -> Cập nhật phim
                 _movieDA.editMovie(new MovieDTO
                 {
+                    MovieCode = MovieCode,
                     Title = Title,
                     Description = Description,
                     Director = Director,
@@ -298,6 +316,7 @@ namespace Cinema_Management_System.ViewModels.MovieManagementVM.Feature
                 // Chế độ Add -> Thêm phim mới
                 _movieDA.addMovie(new MovieDTO
                 {
+                    MovieCode = MovieCode,
                     Title = Title,
                     Description = Description,
                     Director = Director,
@@ -356,12 +375,12 @@ namespace Cinema_Management_System.ViewModels.MovieManagementVM.Feature
                 return;
             }
 
-            var movie = new MovieDTO(Title, Description, Director, ReleaseYear, Language, Country,
+            var movie = new MovieDTO(MovieCode,Title, Description, Director, ReleaseYear, Language, Country,
                 movieLength, Trailer, startDateStr, Genre, Status, ImageSource, movieImportPrice);
 
             new MovieDA().addMovie(movie);
 
-            new YesMessage("Thông báo", "Thêm phim thành công").ShowDialog();
+            //new YesMessage("Thông báo", "Thêm phim thành công").ShowDialog();
         }
     }
 }

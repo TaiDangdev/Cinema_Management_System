@@ -11,6 +11,7 @@ namespace Cinema_Management_System.Models.DTOs
     public class MovieDTO
     {
         public int Id { get; set; }
+        public string MovieCode { get; set; } 
         public string Title { get; set; }
         public string Description { get; set; }
         public string Director { get; set; }
@@ -27,10 +28,10 @@ namespace Cinema_Management_System.Models.DTOs
 
         public MovieDTO() { }
 
-        //hàm khởi tạo phục vụ get  1 movie
-        public MovieDTO(int id, string title, string decrip, string direc, string release, string language, string country, int lenght, string trailer, string startdate, string genre, string status, Bitmap imageSource, int importPrice)
+        public MovieDTO(int id, string movieCode, string title, string decrip, string direc, string release, string language, string country, int lenght, string trailer, string startdate, string genre, string status, Bitmap imageSource, int importPrice)
         {
             Id = id;
+            MovieCode = movieCode; 
             Title = title;
             Description = decrip;
             Director = direc;
@@ -46,9 +47,9 @@ namespace Cinema_Management_System.Models.DTOs
             ImportPrice = importPrice;
         }
 
-        //hàm khởi tạo phục vụ add 1 movie
-        public MovieDTO(string title, string decrip, string direc, string release, string language, string country, int lenght, string trailer, string startdate, string genre, string status, Bitmap imageSource, int importPrice)
+        public MovieDTO(string movieCode, string title, string decrip, string direc, string release, string language, string country, int lenght, string trailer, string startdate, string genre, string status, Bitmap imageSource, int importPrice)
         {
+            MovieCode = movieCode; 
             Title = title;
             Description = decrip;
             Director = direc;
