@@ -36,6 +36,9 @@ namespace Cinema_Management_System
     partial void InsertACCOUNT(ACCOUNT instance);
     partial void UpdateACCOUNT(ACCOUNT instance);
     partial void DeleteACCOUNT(ACCOUNT instance);
+    partial void InsertMOVIE(MOVIE instance);
+    partial void UpdateMOVIE(MOVIE instance);
+    partial void DeleteMOVIE(MOVIE instance);
     #endregion
 		
 		public ConnectDataContext() : 
@@ -81,6 +84,14 @@ namespace Cinema_Management_System
 			get
 			{
 				return this.GetTable<ACCOUNT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MOVIE> MOVIEs
+		{
+			get
+			{
+				return this.GetTable<MOVIE>();
 			}
 		}
 	}
@@ -541,6 +552,404 @@ namespace Cinema_Management_System
 						this._Staff_Id = default(int);
 					}
 					this.SendPropertyChanged("STAFF");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MOVIE")]
+	public partial class MOVIE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _MovieCode;
+		
+		private string _Title;
+		
+		private string _Description;
+		
+		private string _Genre;
+		
+		private string _Director;
+		
+		private int _ReleaseYear;
+		
+		private string _Language;
+		
+		private string _Country;
+		
+		private int _Length;
+		
+		private string _Trailer;
+		
+		private System.DateTime _StartDate;
+		
+		private string _Status;
+		
+		private int _ImportPrice;
+		
+		private System.Data.Linq.Binary _ImageSource;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnMovieCodeChanging(string value);
+    partial void OnMovieCodeChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnGenreChanging(string value);
+    partial void OnGenreChanged();
+    partial void OnDirectorChanging(string value);
+    partial void OnDirectorChanged();
+    partial void OnReleaseYearChanging(int value);
+    partial void OnReleaseYearChanged();
+    partial void OnLanguageChanging(string value);
+    partial void OnLanguageChanged();
+    partial void OnCountryChanging(string value);
+    partial void OnCountryChanged();
+    partial void OnLengthChanging(int value);
+    partial void OnLengthChanged();
+    partial void OnTrailerChanging(string value);
+    partial void OnTrailerChanged();
+    partial void OnStartDateChanging(System.DateTime value);
+    partial void OnStartDateChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    partial void OnImportPriceChanging(int value);
+    partial void OnImportPriceChanged();
+    partial void OnImageSourceChanging(System.Data.Linq.Binary value);
+    partial void OnImageSourceChanged();
+    #endregion
+		
+		public MOVIE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MovieCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MovieCode
+		{
+			get
+			{
+				return this._MovieCode;
+			}
+			set
+			{
+				if ((this._MovieCode != value))
+				{
+					this.OnMovieCodeChanging(value);
+					this.SendPropertyChanging();
+					this._MovieCode = value;
+					this.SendPropertyChanged("MovieCode");
+					this.OnMovieCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Genre", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Genre
+		{
+			get
+			{
+				return this._Genre;
+			}
+			set
+			{
+				if ((this._Genre != value))
+				{
+					this.OnGenreChanging(value);
+					this.SendPropertyChanging();
+					this._Genre = value;
+					this.SendPropertyChanged("Genre");
+					this.OnGenreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Director", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Director
+		{
+			get
+			{
+				return this._Director;
+			}
+			set
+			{
+				if ((this._Director != value))
+				{
+					this.OnDirectorChanging(value);
+					this.SendPropertyChanging();
+					this._Director = value;
+					this.SendPropertyChanged("Director");
+					this.OnDirectorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReleaseYear", DbType="Int NOT NULL")]
+		public int ReleaseYear
+		{
+			get
+			{
+				return this._ReleaseYear;
+			}
+			set
+			{
+				if ((this._ReleaseYear != value))
+				{
+					this.OnReleaseYearChanging(value);
+					this.SendPropertyChanging();
+					this._ReleaseYear = value;
+					this.SendPropertyChanged("ReleaseYear");
+					this.OnReleaseYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Language", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Language
+		{
+			get
+			{
+				return this._Language;
+			}
+			set
+			{
+				if ((this._Language != value))
+				{
+					this.OnLanguageChanging(value);
+					this.SendPropertyChanging();
+					this._Language = value;
+					this.SendPropertyChanged("Language");
+					this.OnLanguageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Country
+		{
+			get
+			{
+				return this._Country;
+			}
+			set
+			{
+				if ((this._Country != value))
+				{
+					this.OnCountryChanging(value);
+					this.SendPropertyChanging();
+					this._Country = value;
+					this.SendPropertyChanged("Country");
+					this.OnCountryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="Int NOT NULL")]
+		public int Length
+		{
+			get
+			{
+				return this._Length;
+			}
+			set
+			{
+				if ((this._Length != value))
+				{
+					this.OnLengthChanging(value);
+					this.SendPropertyChanging();
+					this._Length = value;
+					this.SendPropertyChanged("Length");
+					this.OnLengthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trailer", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string Trailer
+		{
+			get
+			{
+				return this._Trailer;
+			}
+			set
+			{
+				if ((this._Trailer != value))
+				{
+					this.OnTrailerChanging(value);
+					this.SendPropertyChanging();
+					this._Trailer = value;
+					this.SendPropertyChanged("Trailer");
+					this.OnTrailerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportPrice", DbType="Int NOT NULL")]
+		public int ImportPrice
+		{
+			get
+			{
+				return this._ImportPrice;
+			}
+			set
+			{
+				if ((this._ImportPrice != value))
+				{
+					this.OnImportPriceChanging(value);
+					this.SendPropertyChanging();
+					this._ImportPrice = value;
+					this.SendPropertyChanged("ImportPrice");
+					this.OnImportPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageSource", DbType="VarBinary(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary ImageSource
+		{
+			get
+			{
+				return this._ImageSource;
+			}
+			set
+			{
+				if ((this._ImageSource != value))
+				{
+					this.OnImageSourceChanging(value);
+					this.SendPropertyChanging();
+					this._ImageSource = value;
+					this.SendPropertyChanged("ImageSource");
+					this.OnImageSourceChanged();
 				}
 			}
 		}

@@ -44,8 +44,9 @@
             this.staffManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.showtimeManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.filmManage_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.aboutAccount_Form1 = new Cinema_Management_System.AboutAccount_Form();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.movieManagementView1 = new Cinema_Management_System.Views.MovieManagement.MovieManagementView();
             this.aboutAccount_Form2 = new Cinema_Management_System.AboutAccount_Form();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -93,7 +94,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(58, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 20);
+            this.label2.Size = new System.Drawing.Size(128, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Dành cho quản trị viên";
             // 
@@ -104,7 +105,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label1.Location = new System.Drawing.Point(46, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 25);
+            this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "StarCinema\r\n";
             // 
@@ -187,7 +188,7 @@
             this.thongKe_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.thongKe_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.thongKe_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.thongKe_Btn.FillColor = System.Drawing.Color.White;
+            this.thongKe_Btn.FillColor = System.Drawing.Color.Transparent;
             this.thongKe_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.thongKe_Btn.ForeColor = System.Drawing.Color.Black;
             this.thongKe_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
@@ -213,7 +214,7 @@
             this.voucher_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.voucher_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.voucher_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.voucher_Btn.FillColor = System.Drawing.Color.White;
+            this.voucher_Btn.FillColor = System.Drawing.Color.Transparent;
             this.voucher_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.voucher_Btn.ForeColor = System.Drawing.Color.Black;
             this.voucher_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
@@ -360,15 +361,6 @@
             this.filmManage_Btn.UseTransparentBackground = true;
             this.filmManage_Btn.Click += new System.EventHandler(this.filmManage_Btn_Click);
             // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.Controls.Add(this.aboutAccount_Form2);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(200, 45);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1022, 682);
-            this.guna2Panel3.TabIndex = 2;
-            // 
             // aboutAccount_Form1
             // 
             this.aboutAccount_Form1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -377,6 +369,27 @@
             this.aboutAccount_Form1.Name = "aboutAccount_Form1";
             this.aboutAccount_Form1.Size = new System.Drawing.Size(1022, 682);
             this.aboutAccount_Form1.TabIndex = 0;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.Controls.Add(this.movieManagementView1);
+            this.guna2Panel3.Controls.Add(this.aboutAccount_Form2);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel3.Location = new System.Drawing.Point(200, 45);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(1022, 682);
+            this.guna2Panel3.TabIndex = 2;
+            // 
+            // movieManagementView1
+            // 
+            this.movieManagementView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.movieManagementView1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.movieManagementView1.Location = new System.Drawing.Point(0, 0);
+            this.movieManagementView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.movieManagementView1.Name = "movieManagementView1";
+            this.movieManagementView1.Size = new System.Drawing.Size(1022, 682);
+            this.movieManagementView1.TabIndex = 1;
+            //this.movieManagementView1.Load += new System.EventHandler(this.movieManagementView1_Load);
             // 
             // aboutAccount_Form2
             // 
@@ -390,7 +403,7 @@
             // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1222, 727);
@@ -429,8 +442,9 @@
         private Guna.UI2.WinForms.Guna2Button logout_Btn;
         private Guna.UI2.WinForms.Guna2Button profile_Btn;
         private Guna.UI2.WinForms.Guna2Button thongKe_Btn;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private AboutAccount_Form aboutAccount_Form1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Views.MovieManagement.MovieManagementView movieManagementView1;
         private AboutAccount_Form aboutAccount_Form2;
     }
 }
