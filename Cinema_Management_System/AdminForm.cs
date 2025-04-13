@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinema_Management_System.Views.ShowTimeManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,13 +26,7 @@ namespace Cinema_Management_System
             subControls = new List<UserControl>
             {
                 aboutAccount_Form1,
-                //movieManageForm1,
-                //showtimeManageForm1,
-                //staffManageForm1,
-                //customerManageForm1,
-                //statisticalForm1,
-                //voucherForm1,
-                //productManageForm1
+                showTimeManagementyForm1
             };
         }
 
@@ -47,6 +42,7 @@ namespace Cinema_Management_System
         {
             HideAllsubControls();
             controlToShow.Show();
+            
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -73,7 +69,7 @@ namespace Cinema_Management_System
 
         private void showtimeManage_Btn_Click(object sender, EventArgs e)
         {
-            //ShowSubForm(showtimeManageForm1);
+            ShowSubForm(showTimeManagementyForm1);
         }
 
         private void staffManage_Btn_Click(object sender, EventArgs e)
@@ -99,6 +95,11 @@ namespace Cinema_Management_System
         private void thongKe_Btn_Click(object sender, EventArgs e)
         {
             //ShowSubForm(statisticalForm1);
+        }
+
+        private void showTimeManagementyForm1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

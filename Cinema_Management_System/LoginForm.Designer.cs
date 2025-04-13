@@ -82,7 +82,7 @@
             this.forgetpassword_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgetpassword_Txt.Location = new System.Drawing.Point(214, 257);
             this.forgetpassword_Txt.Name = "forgetpassword_Txt";
-            this.forgetpassword_Txt.Size = new System.Drawing.Size(111, 19);
+            this.forgetpassword_Txt.Size = new System.Drawing.Size(138, 23);
             this.forgetpassword_Txt.TabIndex = 4;
             this.forgetpassword_Txt.Text = "Quên mật khẩu?";
             this.forgetpassword_Txt.Click += new System.EventHandler(this.forgetpassword_Txt_Click);
@@ -94,7 +94,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(53, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 37);
+            this.label2.Size = new System.Drawing.Size(342, 46);
             this.label2.TabIndex = 5;
             this.label2.Text = "Đăng nhập tài khoản";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -158,7 +158,7 @@
             this.showMess_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.showMess_label.Location = new System.Drawing.Point(57, 294);
             this.showMess_label.Name = "showMess_label";
-            this.showMess_label.Size = new System.Drawing.Size(41, 17);
+            this.showMess_label.Size = new System.Drawing.Size(53, 23);
             this.showMess_label.TabIndex = 6;
             this.showMess_label.Text = "label1";
             // 
@@ -166,7 +166,7 @@
             // 
             this.username_Txt.BorderRadius = 8;
             this.username_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.username_Txt.DefaultText = "";
+            this.username_Txt.DefaultText = "hoangha";
             this.username_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.username_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.username_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -189,7 +189,7 @@
             // 
             this.password_Txt.BorderRadius = 8;
             this.password_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.password_Txt.DefaultText = "";
+            this.password_Txt.DefaultText = "abc123@";
             this.password_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.password_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.password_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -220,7 +220,7 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(926, 589);
