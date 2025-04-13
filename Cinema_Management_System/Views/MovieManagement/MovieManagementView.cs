@@ -76,5 +76,10 @@ namespace Cinema_Management_System.Views.MovieManagement
                 }
             }
         }
+
+        private void movie_data_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

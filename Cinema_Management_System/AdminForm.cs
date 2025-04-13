@@ -25,6 +25,7 @@ namespace Cinema_Management_System
             subControls = new List<UserControl>
             {
                 aboutAccount_Form1,
+                customerManagementView1,
                 //movieManageForm1,
                 //showtimeManageForm1,
                 //staffManageForm1,
@@ -83,7 +84,7 @@ namespace Cinema_Management_System
 
         private void customerManage_Btn_Click(object sender, EventArgs e)
         {
-            //ShowSubForm(customerManageForm1);
+            ShowSubForm(customerManagementView1);
         }
 
         private void productManage_Btn_Click(object sender, EventArgs e)
@@ -99,6 +100,21 @@ namespace Cinema_Management_System
         private void thongKe_Btn_Click(object sender, EventArgs e)
         {
             //ShowSubForm(statisticalForm1);
+        }
+
+        private void customerManagementView1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customerManagementView1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
