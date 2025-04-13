@@ -121,7 +121,7 @@
             this.forgetpassword_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.forgetpassword_Txt.Location = new System.Drawing.Point(214, 257);
             this.forgetpassword_Txt.Name = "forgetpassword_Txt";
-            this.forgetpassword_Txt.Size = new System.Drawing.Size(111, 19);
+            this.forgetpassword_Txt.Size = new System.Drawing.Size(138, 23);
             this.forgetpassword_Txt.TabIndex = 4;
             this.forgetpassword_Txt.Text = "Quên mật khẩu?";
             this.forgetpassword_Txt.Click += new System.EventHandler(this.forgetpassword_Txt_Click);
@@ -134,7 +134,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label2.Location = new System.Drawing.Point(56, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 37);
+            this.label2.Size = new System.Drawing.Size(342, 46);
             this.label2.TabIndex = 5;
             this.label2.Text = "Đăng nhập tài khoản";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -290,7 +290,7 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(926, 589);

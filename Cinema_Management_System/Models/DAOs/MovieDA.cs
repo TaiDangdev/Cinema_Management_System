@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using Cinema_Management_System.ViewModels;
@@ -127,7 +128,7 @@ namespace Cinema_Management_System.Models.DAOs
                 db.SubmitChanges();
             }
             catch (Exception ex)
-            {
+        {
                 throw new Exception("Lỗi khi xóa phim: " + ex.Message);
             }
         }
@@ -150,7 +151,7 @@ namespace Cinema_Management_System.Models.DAOs
                 }
             }
             catch (Exception ex)
-            {
+        {
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }

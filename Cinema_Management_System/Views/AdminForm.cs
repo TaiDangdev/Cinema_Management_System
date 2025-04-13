@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinema_Management_System.Views.ShowTimeManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,7 @@ namespace Cinema_Management_System
                 //statisticalForm1,
                 //voucherForm1,
                 //productManageForm1
+                showTimeManagementyForm1
             };
         }
 
@@ -48,6 +50,7 @@ namespace Cinema_Management_System
         {
             HideAllsubControls();
             controlToShow.Show();
+            
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -74,7 +77,7 @@ namespace Cinema_Management_System
 
         private void showtimeManage_Btn_Click(object sender, EventArgs e)
         {
-            //ShowSubForm(showtimeManageForm1);
+            ShowSubForm(showTimeManagementyForm1);
         }
 
         private void staffManage_Btn_Click(object sender, EventArgs e)
@@ -102,5 +105,9 @@ namespace Cinema_Management_System
             //ShowSubForm(statisticalForm1);
         }
 
+        private void showTimeManagementyForm1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -126,6 +126,13 @@
     <Compile Include="Views\Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAOs\AuditoriumDA.cs" />
+    <Compile Include="Models\DAOs\BillForShowTimeDA.cs" />
+    <Compile Include="Models\DAOs\MovieDA.cs" />
+    <Compile Include="Models\DAOs\SeatForShowTimeDA.cs" />
+    <Compile Include="Models\DAOs\ShowTimeDA.cs" />
+    <Compile Include="Models\DTOs\SeatForShowTimesDTO.cs" />
+    <Compile Include="Models\DTOs\ShowTimeDTO.cs" />
     <Compile Include="Models\DAOs\MovieDA.cs" />
     <Compile Include="Models\DAOs\UserDA.cs" />
     <Compile Include="Models\DTOs\MovieDTO.cs" />
@@ -191,6 +198,47 @@
       <DependentUpon>Trailer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\InformationManagement\AboutAccount_Form.resx">
+    <Compile Include="ViewModels\ShowTimeManagementVM\AddBillShowTimeViewModel.cs" />
+    <Compile Include="ViewModels\ShowTimeManagementVM\AddShowTimesViewModels.cs" />
+    <Compile Include="ViewModels\ShowTimeManagementVM\AuditoriumViewModels.cs" />
+    <Compile Include="ViewModels\ShowTimeManagementVM\BillShowTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewModels\ShowTimeManagementVM\BillShowTimeForm.Designer.cs">
+      <DependentUpon>BillShowTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ShowTimeManagementVM\ShowTimeViewModels.cs" />
+    <Compile Include="Views\ShowTimeManagement\AddShowTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\AddShowTimeForm.Designer.cs">
+      <DependentUpon>AddShowTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\SeatForShowTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\SeatForShowTimeForm.Designer.cs">
+      <DependentUpon>SeatForShowTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\SeatForShowTineUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\SeatForShowTineUC.Designer.cs">
+      <DependentUpon>SeatForShowTineUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\ShowTimeByMovieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\ShowTimeByMovieForm.Designer.cs">
+      <DependentUpon>ShowTimeByMovieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\ShowTimeManagementyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\ShowTimeManagementyForm.Designer.cs">
+      <DependentUpon>ShowTimeManagementyForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutAccount_Form.resx">
       <DependentUpon>AboutAccount_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminForm.resx">
@@ -227,6 +275,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MovieManagement\Trailer.resx">
       <DependentUpon>Trailer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewModels\ShowTimeManagementVM\BillShowTimeForm.resx">
+      <DependentUpon>BillShowTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShowTimeManagement\AddShowTimeForm.resx">
+      <DependentUpon>AddShowTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShowTimeManagement\SeatForShowTineUC.resx">
+      <DependentUpon>SeatForShowTineUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShowTimeManagement\ShowTimeByMovieForm.resx">
+      <DependentUpon>ShowTimeByMovieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShowTimeManagement\ShowTimeManagementyForm.resx">
+      <DependentUpon>ShowTimeManagementyForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connect.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -308,21 +371,14 @@
     <None Include="assets\adminForm\watching-a-movie.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\DAOs\Bills\" />
-    <Folder Include="Models\DTOs\Bills\" />
-    <Folder Include="Models\DTOs\ProductManagement\" />
-    <Folder Include="Models\DTOs\ShowTimeManagement\" />
-    <Folder Include="Models\DTOs\StaffManagement\" />
     <Folder Include="ViewModels\CustomerManagement\" />
     <Folder Include="ViewModels\ForgotPassword\" />
     <Folder Include="ViewModels\ProductManagement\" />
-    <Folder Include="ViewModels\ShowTimeManagementVM\" />
     <Folder Include="ViewModels\StaffManagementVM\" />
     <Folder Include="ViewModels\StatisticsVM\" />
     <Folder Include="ViewModels\VoucherManagement\" />
     <Folder Include="Views\CustomerManagement\" />
     <Folder Include="Views\ProductManagement\" />
-    <Folder Include="Views\ShowTimeManagement\" />
     <Folder Include="Views\StaffManagement\" />
     <Folder Include="Views\Statistics\" />
     <Folder Include="Views\VoucherManagement\" />
@@ -375,6 +431,15 @@
     <Content Include="assets\StoryboardMovie\7.jpg" />
     <Content Include="assets\StoryboardMovie\8.jpg" />
     <Content Include="assets\StoryboardMovie\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\icon\add.png" />
+    <Content Include="assets\icon\gamecontrollers_cushion_cushionGame_jueg_10815 %281%29 - Copy.png" />
+    <Content Include="assets\icon\gamecontrollers_cushion_cushionGame_jueg_10815 %281%29.png" />
+    <Content Include="assets\icon\Home_icon-icons.com_55890 %282%29.png" />
+    <Content Include="assets\icon\search_magnifier_icon_145939.png" />
+    <Content Include="assets\icon\video_game_mario_enemy_icon_187427 %281%29.png" />
+    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3124.44\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3124.44\build\Microsoft.Web.WebView2.targets')" />

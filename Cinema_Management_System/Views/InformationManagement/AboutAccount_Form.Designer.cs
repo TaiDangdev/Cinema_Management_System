@@ -115,7 +115,7 @@
             this.email_txt.ForeColor = System.Drawing.Color.Black;
             this.email_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.email_txt.Location = new System.Drawing.Point(692, 326);
-            this.email_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.email_txt.Margin = new System.Windows.Forms.Padding(4);
             this.email_txt.Name = "email_txt";
             this.email_txt.PlaceholderText = "";
             this.email_txt.SelectedText = "";
@@ -139,7 +139,7 @@
             this.salary_txt.ForeColor = System.Drawing.Color.Black;
             this.salary_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.salary_txt.Location = new System.Drawing.Point(692, 246);
-            this.salary_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.salary_txt.Margin = new System.Windows.Forms.Padding(4);
             this.salary_txt.Name = "salary_txt";
             this.salary_txt.PlaceholderText = "";
             this.salary_txt.SelectedText = "";
@@ -155,7 +155,7 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(692, 294);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 20);
+            this.label7.Size = new System.Drawing.Size(59, 25);
             this.label7.TabIndex = 18;
             this.label7.Text = "Email";
             // 
@@ -167,7 +167,7 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(692, 214);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 20);
+            this.label8.Size = new System.Drawing.Size(67, 25);
             this.label8.TabIndex = 16;
             this.label8.Text = "Lương";
             // 
@@ -187,7 +187,7 @@
             this.phone_txt.ForeColor = System.Drawing.Color.Black;
             this.phone_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phone_txt.Location = new System.Drawing.Point(692, 166);
-            this.phone_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.phone_txt.Margin = new System.Windows.Forms.Padding(4);
             this.phone_txt.Name = "phone_txt";
             this.phone_txt.PlaceholderText = "";
             this.phone_txt.SelectedText = "";
@@ -203,7 +203,7 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(692, 134);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 20);
+            this.label9.Size = new System.Drawing.Size(125, 25);
             this.label9.TabIndex = 14;
             this.label9.Text = "Số điện thoại";
             // 
@@ -223,7 +223,7 @@
             this.gender_txt.ForeColor = System.Drawing.Color.Black;
             this.gender_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.gender_txt.Location = new System.Drawing.Point(692, 86);
-            this.gender_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gender_txt.Margin = new System.Windows.Forms.Padding(4);
             this.gender_txt.Name = "gender_txt";
             this.gender_txt.PlaceholderText = "";
             this.gender_txt.SelectedText = "";
@@ -239,7 +239,7 @@
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(692, 54);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 20);
+            this.label10.Size = new System.Drawing.Size(86, 25);
             this.label10.TabIndex = 12;
             this.label10.Text = "Giới tính";
             // 
@@ -259,7 +259,7 @@
             this.role_txt.ForeColor = System.Drawing.Color.Black;
             this.role_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.role_txt.Location = new System.Drawing.Point(364, 326);
-            this.role_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.role_txt.Margin = new System.Windows.Forms.Padding(4);
             this.role_txt.Name = "role_txt";
             this.role_txt.PlaceholderText = "";
             this.role_txt.SelectedText = "";
@@ -283,7 +283,7 @@
             this.ngayvaolam_txt.ForeColor = System.Drawing.Color.Black;
             this.ngayvaolam_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ngayvaolam_txt.Location = new System.Drawing.Point(364, 246);
-            this.ngayvaolam_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ngayvaolam_txt.Margin = new System.Windows.Forms.Padding(4);
             this.ngayvaolam_txt.Name = "ngayvaolam_txt";
             this.ngayvaolam_txt.PlaceholderText = "";
             this.ngayvaolam_txt.SelectedText = "";
@@ -299,7 +299,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(364, 294);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 20);
+            this.label6.Size = new System.Drawing.Size(82, 25);
             this.label6.TabIndex = 10;
             this.label6.Text = "Chức vụ";
             // 
@@ -311,7 +311,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(364, 214);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 20);
+            this.label5.Size = new System.Drawing.Size(131, 25);
             this.label5.TabIndex = 8;
             this.label5.Text = "Ngày vào làm";
             // 
@@ -332,7 +332,7 @@
             this.birth_txt.ForeColor = System.Drawing.Color.Black;
             this.birth_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.birth_txt.Location = new System.Drawing.Point(364, 166);
-            this.birth_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.birth_txt.Margin = new System.Windows.Forms.Padding(4);
             this.birth_txt.Name = "birth_txt";
             this.birth_txt.PlaceholderText = "";
             this.birth_txt.SelectedText = "";
@@ -348,7 +348,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(364, 134);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.Size = new System.Drawing.Size(98, 25);
             this.label4.TabIndex = 6;
             this.label4.Text = "Ngày sinh";
             // 
@@ -371,7 +371,7 @@
             this.fullname_txt.ForeColor = System.Drawing.Color.Black;
             this.fullname_txt.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.fullname_txt.Location = new System.Drawing.Point(364, 86);
-            this.fullname_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fullname_txt.Margin = new System.Windows.Forms.Padding(4);
             this.fullname_txt.Name = "fullname_txt";
             this.fullname_txt.PlaceholderText = "";
             this.fullname_txt.SelectedText = "";
@@ -387,7 +387,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(364, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 20);
+            this.label3.Size = new System.Drawing.Size(70, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Họ tên";
             // 
@@ -398,7 +398,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(155, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.Size = new System.Drawing.Size(64, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "label2";
             // 
@@ -455,7 +455,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 30);
+            this.label1.Size = new System.Drawing.Size(239, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông tin cá nhân";
             // 
@@ -504,7 +504,7 @@
             this.label12.ForeColor = System.Drawing.Color.Gray;
             this.label12.Location = new System.Drawing.Point(44, 206);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(135, 20);
+            this.label12.Size = new System.Drawing.Size(170, 25);
             this.label12.TabIndex = 9;
             this.label12.Text = "Nhập lại mật khẩu";
             // 
@@ -537,7 +537,7 @@
             this.label11.ForeColor = System.Drawing.Color.Gray;
             this.label11.Location = new System.Drawing.Point(75, 143);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 20);
+            this.label11.Size = new System.Drawing.Size(133, 25);
             this.label11.TabIndex = 7;
             this.label11.Text = "Mật khẩu mới";
             // 
@@ -591,7 +591,7 @@
             this.label18.ForeColor = System.Drawing.Color.Gray;
             this.label18.Location = new System.Drawing.Point(85, 79);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(94, 20);
+            this.label18.Size = new System.Drawing.Size(119, 25);
             this.label18.TabIndex = 4;
             this.label18.Text = "Mật khẩu cũ";
             // 
@@ -614,7 +614,7 @@
             this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(12, 9);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(147, 30);
+            this.label20.Size = new System.Drawing.Size(181, 37);
             this.label20.TabIndex = 0;
             this.label20.Text = "Đổi mật khẩu";
             // 
@@ -624,7 +624,7 @@
             // 
             // AboutAccount_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
