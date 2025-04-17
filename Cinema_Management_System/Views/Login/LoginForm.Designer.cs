@@ -104,7 +104,6 @@
             // posterPic
             // 
             this.guna2Transition1.SetDecoration(this.posterPic, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.posterPic.Image = global::Cinema_Management_System.Properties.Resources.starcinema_bg;
             this.posterPic.ImageRotate = 0F;
             this.posterPic.Location = new System.Drawing.Point(-3, -10);
             this.posterPic.Name = "posterPic";
@@ -121,7 +120,7 @@
             this.forgetpassword_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.forgetpassword_Txt.Location = new System.Drawing.Point(214, 257);
             this.forgetpassword_Txt.Name = "forgetpassword_Txt";
-            this.forgetpassword_Txt.Size = new System.Drawing.Size(138, 23);
+            this.forgetpassword_Txt.Size = new System.Drawing.Size(111, 19);
             this.forgetpassword_Txt.TabIndex = 4;
             this.forgetpassword_Txt.Text = "Quên mật khẩu?";
             this.forgetpassword_Txt.Click += new System.EventHandler(this.forgetpassword_Txt_Click);
@@ -134,7 +133,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label2.Location = new System.Drawing.Point(56, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(342, 46);
+            this.label2.Size = new System.Drawing.Size(272, 37);
             this.label2.TabIndex = 5;
             this.label2.Text = "Đăng nhập tài khoản";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -203,7 +202,6 @@
             this.hide_Pic.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.hide_Pic, Guna.UI2.AnimatorNS.DecorationType.None);
             this.hide_Pic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.hide_Pic.Image = global::Cinema_Management_System.Properties.Resources.eye;
             this.hide_Pic.ImageRotate = 0F;
             this.hide_Pic.Location = new System.Drawing.Point(285, 203);
             this.hide_Pic.Name = "hide_Pic";
@@ -221,7 +219,7 @@
             this.username_Txt.BorderRadius = 8;
             this.username_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2Transition1.SetDecoration(this.username_Txt, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.username_Txt.DefaultText = "";
+            this.username_Txt.DefaultText = "admin";
             this.username_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.username_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.username_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -230,7 +228,6 @@
             this.username_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username_Txt.ForeColor = System.Drawing.Color.Black;
             this.username_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.username_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_person_321;
             this.username_Txt.Location = new System.Drawing.Point(60, 123);
             this.username_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.username_Txt.Name = "username_Txt";
@@ -247,7 +244,7 @@
             this.password_Txt.BorderRadius = 8;
             this.password_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2Transition1.SetDecoration(this.password_Txt, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.password_Txt.DefaultText = "";
+            this.password_Txt.DefaultText = "admin123";
             this.password_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.password_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.password_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -256,7 +253,6 @@
             this.password_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password_Txt.ForeColor = System.Drawing.Color.Black;
             this.password_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.password_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
             this.password_Txt.Location = new System.Drawing.Point(60, 190);
             this.password_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.password_Txt.Name = "password_Txt";
@@ -290,7 +286,7 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(926, 589);

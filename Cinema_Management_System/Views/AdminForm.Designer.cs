@@ -44,12 +44,9 @@
             this.staffManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.showtimeManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.filmManage_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.aboutAccount_Form1 = new Cinema_Management_System.AboutAccount_Form();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.movieManagementView1 = new Cinema_Management_System.Views.MovieManagement.MovieManagementView();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.showTimeManagementyForm1 = new Cinema_Management_System.Views.ShowTimeManagement.ShowTimeManagementyForm();
-            this.aboutAccount_Form2 = new Cinema_Management_System.AboutAccount_Form();
+            this.movieManagementView1 = new Cinema_Management_System.Views.MovieManagement.MovieManagementView();
             this.aboutAccount_Form1 = new Cinema_Management_System.AboutAccount_Form();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -145,7 +142,6 @@
             this.logout_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.logout_Btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout_Btn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.logout_Btn.Image = global::Cinema_Management_System.Properties.Resources.logout;
             this.logout_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.logout_Btn.Location = new System.Drawing.Point(12, 632);
             this.logout_Btn.Name = "logout_Btn";
@@ -171,7 +167,6 @@
             this.profile_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.profile_Btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profile_Btn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.profile_Btn.Image = global::Cinema_Management_System.Properties.Resources.profile;
             this.profile_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.profile_Btn.Location = new System.Drawing.Point(12, 581);
             this.profile_Btn.Name = "profile_Btn";
@@ -197,7 +192,6 @@
             this.thongKe_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.thongKe_Btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thongKe_Btn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.thongKe_Btn.Image = global::Cinema_Management_System.Properties.Resources.data;
             this.thongKe_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.thongKe_Btn.Location = new System.Drawing.Point(11, 452);
             this.thongKe_Btn.Name = "thongKe_Btn";
@@ -223,7 +217,6 @@
             this.voucher_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.voucher_Btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.voucher_Btn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.voucher_Btn.Image = global::Cinema_Management_System.Properties.Resources.promo_code;
             this.voucher_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.voucher_Btn.Location = new System.Drawing.Point(11, 401);
             this.voucher_Btn.Name = "voucher_Btn";
@@ -249,7 +242,6 @@
             this.productManage_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.productManage_Btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productManage_Btn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.productManage_Btn.Image = global::Cinema_Management_System.Properties.Resources.QLProduct;
             this.productManage_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.productManage_Btn.Location = new System.Drawing.Point(11, 350);
             this.productManage_Btn.Name = "productManage_Btn";
@@ -275,7 +267,6 @@
             this.customerManage_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.customerManage_Btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerManage_Btn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.customerManage_Btn.Image = global::Cinema_Management_System.Properties.Resources.audience;
             this.customerManage_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.customerManage_Btn.Location = new System.Drawing.Point(11, 299);
             this.customerManage_Btn.Name = "customerManage_Btn";
@@ -301,7 +292,6 @@
             this.staffManage_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.staffManage_Btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffManage_Btn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.staffManage_Btn.Image = global::Cinema_Management_System.Properties.Resources.icons8_person_32;
             this.staffManage_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.staffManage_Btn.Location = new System.Drawing.Point(11, 248);
             this.staffManage_Btn.Name = "staffManage_Btn";
@@ -327,7 +317,6 @@
             this.showtimeManage_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.showtimeManage_Btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showtimeManage_Btn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.showtimeManage_Btn.Image = global::Cinema_Management_System.Properties.Resources.watching_a_movie;
             this.showtimeManage_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.showtimeManage_Btn.Location = new System.Drawing.Point(11, 197);
             this.showtimeManage_Btn.Name = "showtimeManage_Btn";
@@ -364,28 +353,28 @@
             this.filmManage_Btn.UseTransparentBackground = true;
             this.filmManage_Btn.Click += new System.EventHandler(this.filmManage_Btn_Click);
             // 
-            // aboutAccount_Form1
-            // 
-            this.aboutAccount_Form1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutAccount_Form1.Location = new System.Drawing.Point(0, 0);
-            this.aboutAccount_Form1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.aboutAccount_Form1.Name = "aboutAccount_Form1";
-            this.aboutAccount_Form1.Size = new System.Drawing.Size(1022, 682);
-            this.aboutAccount_Form1.TabIndex = 0;
-            // 
             // guna2Panel3
             // 
-            this.guna2Panel3.Controls.Add(this.movieManagementView1);
             this.guna2Panel3.Controls.Add(this.showTimeManagementyForm1);
-            this.guna2Panel3.Controls.Add(this.aboutAccount_Form2);
+            this.guna2Panel3.Controls.Add(this.movieManagementView1);
+            this.guna2Panel3.Controls.Add(this.aboutAccount_Form1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.Location = new System.Drawing.Point(200, 45);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1022, 682);
             this.guna2Panel3.TabIndex = 2;
             // 
-            // movieManagementView1
             // showTimeManagementyForm1
+            // 
+            this.showTimeManagementyForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.showTimeManagementyForm1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.showTimeManagementyForm1.Location = new System.Drawing.Point(0, 0);
+            this.showTimeManagementyForm1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.showTimeManagementyForm1.Name = "showTimeManagementyForm1";
+            this.showTimeManagementyForm1.Size = new System.Drawing.Size(1022, 682);
+            this.showTimeManagementyForm1.TabIndex = 2;
+            // 
+            // movieManagementView1
             // 
             this.movieManagementView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.movieManagementView1.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -394,27 +383,10 @@
             this.movieManagementView1.Name = "movieManagementView1";
             this.movieManagementView1.Size = new System.Drawing.Size(1022, 682);
             this.movieManagementView1.TabIndex = 1;
-            //this.movieManagementView1.Load += new System.EventHandler(this.movieManagementView1_Load);
-            this.showTimeManagementyForm1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.showTimeManagementyForm1.Location = new System.Drawing.Point(0, 0);
-            this.showTimeManagementyForm1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.showTimeManagementyForm1.Name = "showTimeManagementyForm1";
-            this.showTimeManagementyForm1.Size = new System.Drawing.Size(1022, 682);
-            this.showTimeManagementyForm1.TabIndex = 1;
-            this.showTimeManagementyForm1.Load += new System.EventHandler(this.showTimeManagementyForm1_Load);
-            // 
-            // aboutAccount_Form2
-            // 
-            this.aboutAccount_Form2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.aboutAccount_Form2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutAccount_Form2.Location = new System.Drawing.Point(0, 0);
-            this.aboutAccount_Form2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.aboutAccount_Form2.Name = "aboutAccount_Form2";
-            this.aboutAccount_Form2.Size = new System.Drawing.Size(1022, 682);
-            this.aboutAccount_Form2.TabIndex = 0;
             // 
             // aboutAccount_Form1
             // 
+            this.aboutAccount_Form1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.aboutAccount_Form1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboutAccount_Form1.Location = new System.Drawing.Point(0, 0);
             this.aboutAccount_Form1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -463,11 +435,14 @@
         private Guna.UI2.WinForms.Guna2Button logout_Btn;
         private Guna.UI2.WinForms.Guna2Button profile_Btn;
         private Guna.UI2.WinForms.Guna2Button thongKe_Btn;
-        private AboutAccount_Form aboutAccount_Form1;
+        //private AboutAccount_Form aboutAccount_Form1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Views.MovieManagement.MovieManagementView movieManagementView1;
-        private AboutAccount_Form aboutAccount_Form2;
         private Views.ShowTimeManagement.ShowTimeManagementyForm showTimeManagementyForm1;
+        private Views.MovieManagement.MovieManagementView movieManagementView1;
+        private AboutAccount_Form aboutAccount_Form1;
+        //private Views.MovieManagement.MovieManagementView movieManagementView1;
+        //private AboutAccount_Form aboutAccount_Form2;
+        //private Views.ShowTimeManagement.ShowTimeManagementyForm showTimeManagementyForm1;
     }
 }
 

@@ -60,7 +60,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             MOVIE currentMovie=MovieDA.Instance.GetMovieById(idMovie);
             if (currentMovie == null)
             {
-                MessageBox.Show("Khong lay duoc phim");
+                System.Windows.Forms.MessageBox.Show("Khong lay duoc phim");
             }
             else
             {
@@ -106,7 +106,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                 }
                 else
                 {
-                    MessageBox.Show("nono");
+                    System.Windows.Forms.MessageBox.Show("nono");
                 }
             }
             this.FLP_ShowTimeFoerMovie.MouseDown += ShowContextMenuOnRightClick;
@@ -192,7 +192,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             if (showTimeContextMenu.Tag is Guna.UI2.WinForms.Guna2Button btn)
             {
                 ShowTimeDTO showTime = (ShowTimeDTO)btn.Tag;
-                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa suất chiếu này?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có chắc muốn xóa suất chiếu này?", "Xác nhận", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     btn.Parent.Controls.Remove(btn);

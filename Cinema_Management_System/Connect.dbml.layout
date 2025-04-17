@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.125" name="Connect">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.375" name="Connect">
   <DataContextMoniker Name="/ConnectDataContext" />
   <nestedChildShapes>
     <classShape Id="938aa598-64e5-4152-ba68-fde611e64e6a" absoluteBounds="0.5, 0.5, 2, 2.7324039713541666">
@@ -14,7 +14,7 @@
         <elementListCompartment Id="104ec92b-3a96-40b0-a7b4-6348ab14a111" absoluteBounds="3.2649999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 1.28929768880208); (3.25 : 1.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 1.28929768880208); (3.25 : 1.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConnectDataContext/STAFF/STAFF_ACCOUNT" />
       <nodes>
         <classShapeMoniker Id="938aa598-64e5-4152-ba68-fde611e64e6a" />
@@ -66,10 +66,10 @@
         <classShapeMoniker Id="dc0c5698-c391-43c5-a032-2a281f1c3b5c" />
       </nodes>
     </associationConnector>
-    <classShape Id="05f9c996-d951-4a02-a799-8ae0eaf29041" absoluteBounds="4, 9.375, 2, 3.5016097005208326">
+    <classShape Id="05f9c996-d951-4a02-a799-8ae0eaf29041" absoluteBounds="3.625, 9.375, 2, 3.6939111328125005">
       <DataClassMoniker Name="/ConnectDataContext/MOVIE" />
       <nestedChildShapes>
-        <elementListCompartment Id="e4df221d-b5d8-4d67-bca1-1468b3c32906" absoluteBounds="4.0150000000000006, 9.835, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e4df221d-b5d8-4d67-bca1-1468b3c32906" absoluteBounds="3.6400000000000006, 9.835, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="ad924fd7-272c-45de-bcda-4ede6c5e842c" absoluteBounds="4.125, 2.375, 2, 2.1554996744791666">
@@ -117,28 +117,28 @@
         <elementListCompartment Id="0a8363e4-d5c2-47a4-8860-31b3d68df332" absoluteBounds="4.7650000000000006, 6.7100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.75 : 6.92870198567708); (4.125 : 6.92870198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.75 : 6.92870198567708); (4.125 : 6.92870198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConnectDataContext/ShowTime/ShowTime_Bill" />
       <nodes>
         <classShapeMoniker Id="cedd1a5e-fa12-4167-a4c4-4d8d9a8e4bb6" />
         <classShapeMoniker Id="dc0c5698-c391-43c5-a032-2a281f1c3b5c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.75 : 8.2131982421875); (7.125 : 8.5881982421875); (7.125 : 10.7892976888021); (7.75 : 10.7892976888021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.75 : 8.2131982421875); (7.125 : 8.5881982421875); (7.125 : 10.7892976888021); (7.75 : 10.7892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConnectDataContext/ShowTime/ShowTime_SeatForShowtime" />
       <nodes>
         <classShapeMoniker Id="cedd1a5e-fa12-4167-a4c4-4d8d9a8e4bb6" />
         <classShapeMoniker Id="1ac6babf-8bd7-4823-9a4f-68c0180c376e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.375 : 6.81814697265625); (6.75 : 6.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.375 : 6.81814697265625); (6.75 : 6.81814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConnectDataContext/Auditorium/Auditorium_ShowTime" />
       <nodes>
         <classShapeMoniker Id="e5789aec-d7b3-4e78-b138-194552033ce3" />
         <classShapeMoniker Id="cedd1a5e-fa12-4167-a4c4-4d8d9a8e4bb6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.375 : 9.375); (5.375 : 8.2131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.1875 : 9.375); (5.1875 : 8.2131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ConnectDataContext/MOVIE/MOVIE_ShowTime" />
       <nodes>
         <classShapeMoniker Id="05f9c996-d951-4a02-a799-8ae0eaf29041" />

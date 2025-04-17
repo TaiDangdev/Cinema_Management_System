@@ -95,6 +95,11 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\DragHelper.cs" />
     <Compile Include="Views\InformationManagement\AboutAccount_Form.cs">
       <SubType>UserControl</SubType>
@@ -133,17 +138,11 @@
     <Compile Include="Models\DAOs\ShowTimeDA.cs" />
     <Compile Include="Models\DTOs\SeatForShowTimesDTO.cs" />
     <Compile Include="Models\DTOs\ShowTimeDTO.cs" />
-    <Compile Include="Models\DAOs\MovieDA.cs" />
     <Compile Include="Models\DAOs\UserDA.cs" />
     <Compile Include="Models\DTOs\MovieDTO.cs" />
     <Compile Include="Models\DTOs\UserDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ImageVsSQL.cs" />
     <Compile Include="ViewModels\InformationManagement\Feature\ChangePassword.cs" />
@@ -198,6 +197,7 @@
       <DependentUpon>Trailer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\InformationManagement\AboutAccount_Form.resx">
+    </EmbeddedResource>
     <Compile Include="ViewModels\ShowTimeManagementVM\AddBillShowTimeViewModel.cs" />
     <Compile Include="ViewModels\ShowTimeManagementVM\AddShowTimesViewModels.cs" />
     <Compile Include="ViewModels\ShowTimeManagementVM\AuditoriumViewModels.cs" />
@@ -238,9 +238,6 @@
     <Compile Include="Views\ShowTimeManagement\ShowTimeManagementyForm.Designer.cs">
       <DependentUpon>ShowTimeManagementyForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AboutAccount_Form.resx">
-      <DependentUpon>AboutAccount_Form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -157,7 +157,7 @@
             // posterPic
             // 
             this.guna2Transition1.SetDecoration(this.posterPic, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.posterPic.Image = global::Cinema_Management_System.Properties.Resources.starcinema_bg;
+            //this.posterPic.Image = global::Cinema_Management_System.Properties.Resources.starcinema_bg;
             this.posterPic.ImageRotate = 0F;
             this.posterPic.Location = new System.Drawing.Point(0, 0);
             this.posterPic.Name = "posterPic";
@@ -185,7 +185,7 @@
             this.hideConfirmPass_Btn.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.hideConfirmPass_Btn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.hideConfirmPass_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.hideConfirmPass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
+            //this.hideConfirmPass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
             this.hideConfirmPass_Btn.ImageRotate = 0F;
             this.hideConfirmPass_Btn.Location = new System.Drawing.Point(251, 149);
             this.hideConfirmPass_Btn.Name = "hideConfirmPass_Btn";
@@ -201,7 +201,7 @@
             this.hidePass_Btn.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.hidePass_Btn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.hidePass_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.hidePass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
+            //this.hidePass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
             this.hidePass_Btn.ImageRotate = 0F;
             this.hidePass_Btn.Location = new System.Drawing.Point(251, 89);
             this.hidePass_Btn.Name = "hidePass_Btn";
@@ -227,7 +227,7 @@
             this.confirmPass_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.confirmPass_Txt.ForeColor = System.Drawing.Color.Black;
             this.confirmPass_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.confirmPass_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
+            //this.confirmPass_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
             this.confirmPass_Txt.Location = new System.Drawing.Point(25, 136);
             this.confirmPass_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.confirmPass_Txt.Name = "confirmPass_Txt";
@@ -267,7 +267,7 @@
             this.user_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.user_Txt.ForeColor = System.Drawing.Color.Black;
             this.user_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.user_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_person_321;
+            //this.user_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_person_321;
             this.user_Txt.Location = new System.Drawing.Point(25, 24);
             this.user_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.user_Txt.Name = "user_Txt";
@@ -293,7 +293,7 @@
             this.newPassword_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.newPassword_Txt.ForeColor = System.Drawing.Color.Black;
             this.newPassword_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.newPassword_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
+            //this.newPassword_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
             this.newPassword_Txt.Location = new System.Drawing.Point(25, 80);
             this.newPassword_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.newPassword_Txt.Name = "newPassword_Txt";
@@ -492,7 +492,7 @@
             this.OTP_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.OTP_Txt.ForeColor = System.Drawing.Color.Black;
             this.OTP_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.OTP_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
+            //this.OTP_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
             this.OTP_Txt.Location = new System.Drawing.Point(25, 99);
             this.OTP_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.OTP_Txt.Name = "OTP_Txt";
@@ -543,7 +543,7 @@
             this.username_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username_Txt.ForeColor = System.Drawing.Color.Black;
             this.username_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.username_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_person_321;
+            //this.username_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_person_321;
             this.username_Txt.Location = new System.Drawing.Point(25, 10);
             this.username_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.username_Txt.Name = "username_Txt";

@@ -94,7 +94,7 @@
             this.btn_AddShowTimeMovie.FillColor = System.Drawing.Color.White;
             this.btn_AddShowTimeMovie.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_AddShowTimeMovie.ForeColor = System.Drawing.Color.Black;
-            this.btn_AddShowTimeMovie.Image = global::Cinema_Management_System.Properties.Resources.add;
+            //this.btn_AddShowTimeMovie.Image = global::Cinema_Management_System.Properties.Resources.add;
             this.btn_AddShowTimeMovie.Location = new System.Drawing.Point(0, 3);
             this.btn_AddShowTimeMovie.Name = "btn_AddShowTimeMovie";
             this.btn_AddShowTimeMovie.Size = new System.Drawing.Size(140, 42);

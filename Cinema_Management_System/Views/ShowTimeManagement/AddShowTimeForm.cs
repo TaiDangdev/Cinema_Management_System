@@ -98,7 +98,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             {
                 if (CB_NameShowTime.SelectedItem == null || CB_Auditorium.SelectedItem == null)
                 {
-                    MessageBox.Show("Vui lòng chọn đầy đủ thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    System.Windows.Forms.MessageBox.Show("Vui lòng chọn đầy đủ thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -110,7 +110,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
 
                 if (!int.TryParse(txt_PriceTicket.Text, out ticketPrice))
                 {
-                    MessageBox.Show("Giá vé không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    System.Windows.Forms.MessageBox.Show("Giá vé không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 // Neu la formn Add ShowTime
@@ -120,12 +120,12 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
 
                     if (success)
                     {
-                        MessageBox.Show("Thêm suất chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 // Neu la Form Update Showtime
@@ -136,19 +136,19 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
 
                     if (success)
                     {
-                        MessageBox.Show("Sửa xuất chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        System.Windows.Forms.MessageBox.Show("Sửa xuất chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
             }
             catch
             {
-                MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

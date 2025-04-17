@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_showTimes = new System.Windows.Forms.Panel();
             this.FLP_ShowTimeFoerMovie = new System.Windows.Forms.FlowLayoutPanel();
-            this.seatForShowTineUC1 = new Cinema_Management_System.Views.ShowTimeManagement.SeatForShowTineUC();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_DescribeMovie = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_Genre = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,8 +48,8 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btn_Exit = new Guna.UI2.WinForms.Guna2Button();
+            this.seatForShowTineUC1 = new Cinema_Management_System.Views.ShowTimeManagement.SeatForShowTineUC();
             this.panel1.SuspendLayout();
-            this.panel_showTimes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_imageMovie)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -58,8 +57,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel_showTimes);
             this.panel1.Controls.Add(this.seatForShowTineUC1);
+            this.panel1.Controls.Add(this.FLP_ShowTimeFoerMovie);
+            this.panel1.Controls.Add(this.panel_showTimes);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.txt_Genre);
             this.panel1.Controls.Add(this.txt_Country);
@@ -82,8 +82,7 @@
             // 
             // panel_showTimes
             // 
-            this.panel_showTimes.Controls.Add(this.FLP_ShowTimeFoerMovie);
-            this.panel_showTimes.Location = new System.Drawing.Point(4, 325);
+            this.panel_showTimes.Location = new System.Drawing.Point(5, 334);
             this.panel_showTimes.Name = "panel_showTimes";
             this.panel_showTimes.Size = new System.Drawing.Size(802, 498);
             this.panel_showTimes.TabIndex = 12;
@@ -93,21 +92,11 @@
             // 
             this.FLP_ShowTimeFoerMovie.AutoScroll = true;
             this.FLP_ShowTimeFoerMovie.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.FLP_ShowTimeFoerMovie.Location = new System.Drawing.Point(4, 1);
+            this.FLP_ShowTimeFoerMovie.Location = new System.Drawing.Point(8, 325);
             this.FLP_ShowTimeFoerMovie.Margin = new System.Windows.Forms.Padding(4);
             this.FLP_ShowTimeFoerMovie.Name = "FLP_ShowTimeFoerMovie";
             this.FLP_ShowTimeFoerMovie.Size = new System.Drawing.Size(794, 490);
             this.FLP_ShowTimeFoerMovie.TabIndex = 1;
-            // 
-            // seatForShowTineUC1
-            // 
-            this.seatForShowTineUC1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.seatForShowTineUC1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.seatForShowTineUC1.Location = new System.Drawing.Point(4, 324);
-            this.seatForShowTineUC1.Margin = new System.Windows.Forms.Padding(4);
-            this.seatForShowTineUC1.Name = "seatForShowTineUC1";
-            this.seatForShowTineUC1.Size = new System.Drawing.Size(802, 498);
-            this.seatForShowTineUC1.TabIndex = 12;
             // 
             // groupBox1
             // 
@@ -357,7 +346,6 @@
             this.guna2Button1.FillColor = System.Drawing.Color.White;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Image = global::Cinema_Management_System.Properties.Resources.logout;
             this.guna2Button1.Location = new System.Drawing.Point(628, 4);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
@@ -388,13 +376,22 @@
             this.btn_Exit.FillColor = System.Drawing.Color.White;
             this.btn_Exit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Exit.ForeColor = System.Drawing.Color.Black;
-            this.btn_Exit.Image = global::Cinema_Management_System.Properties.Resources.logout;
             this.btn_Exit.Location = new System.Drawing.Point(724, 3);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(60, 35);
             this.btn_Exit.TabIndex = 2;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // seatForShowTineUC1
+            // 
+            this.seatForShowTineUC1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.seatForShowTineUC1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.seatForShowTineUC1.Location = new System.Drawing.Point(5, 324);
+            this.seatForShowTineUC1.Margin = new System.Windows.Forms.Padding(4);
+            this.seatForShowTineUC1.Name = "seatForShowTineUC1";
+            this.seatForShowTineUC1.Size = new System.Drawing.Size(802, 498);
+            this.seatForShowTineUC1.TabIndex = 13;
             // 
             // ShowTimeByMovieForm
             // 
@@ -410,7 +407,6 @@
             this.Text = "ShowTimeByMovieForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel_showTimes.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PB_imageMovie)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
@@ -442,5 +438,8 @@
         private System.Windows.Forms.FlowLayoutPanel FLP_ShowTimeFoerMovie;
         private System.Windows.Forms.Panel panel_showTimes;
         private SeatForShowTineUC seatForShowTineUC1;
+        //private SeatForShowTineUC seatForShowTineUC1;
+        //private Cinema_Management_System.Views.ShowTimeManagement.SeatForShowTineUC seatForShowTineUC1;
+
     }
 }

@@ -158,6 +158,30 @@ namespace Cinema_Management_System.Models.DAOs
 
         // còn các hàm hỗ trợ cho việc thống kê
 
+        ConnectDataContext Connect = new ConnectDataContext();
 
+        private static MovieDA instance;
+
+        public static MovieDA Instance
+        {
+            get { if (MovieDA.instance == null) MovieDA.instance = new MovieDA(); return MovieDA.instance; }
+            set { MovieDA.instance = value; }
+        }
+
+        // tạm thời để public
+        //private MovieDA() { }
+        public MovieDA() { }
+
+        //lay danh sach phim
+        public List<MOVIE> GetMovieList()
+        {
+            List<MOVIE> MovieList = Connect.MOVIEs.ToList();
+            return MovieList;
+        }
+
+        public MOVIE GetMovieById(int id)
+        {
+            return Connect.MOVIEs.FirstOrDefault(m => m.id == id);
+        }
     }
 }

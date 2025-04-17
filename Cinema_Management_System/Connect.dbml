@@ -77,25 +77,6 @@
       <Association Name="CUSTOMER_Bill" Member="Bills" ThisKey="Id" OtherKey="Customer_Id" Type="Bill" />
     </Type>
   </Table>
-  <Table Name="dbo.MOVIE" Member="MOVIEs">
-    <Type Name="MOVIE">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="Genre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Director" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ReleaseYear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Language" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Country" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Length" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Trailer" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ImportPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ImageSource" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Association Name="MOVIE_ShowTime" Member="ShowTimes" ThisKey="id" OtherKey="Movie_Id" Type="ShowTime" />
-    </Type>
-  </Table>
   <Table Name="dbo.Product" Member="Products">
     <Type Name="Product">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

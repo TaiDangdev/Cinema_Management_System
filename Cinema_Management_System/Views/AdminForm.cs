@@ -104,10 +104,5 @@ namespace Cinema_Management_System
         {
             //ShowSubForm(statisticalForm1);
         }
-
-        private void showTimeManagementyForm1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

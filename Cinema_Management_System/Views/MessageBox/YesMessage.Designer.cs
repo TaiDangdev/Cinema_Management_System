@@ -80,7 +80,7 @@
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.icons8_cinema_ticket_32;
+            //this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.icons8_cinema_ticket_32;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(7, 10);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
@@ -206,7 +206,7 @@
             // 
             // icon_pic
             // 
-            this.icon_pic.Image = global::Cinema_Management_System.Properties.Resources.ErrorIcon;
+            //this.icon_pic.Image = global::Cinema_Management_System.Properties.Resources.ErrorIcon;
             this.icon_pic.Location = new System.Drawing.Point(17, 26);
             this.icon_pic.Name = "icon_pic";
             this.icon_pic.Size = new System.Drawing.Size(57, 53);
