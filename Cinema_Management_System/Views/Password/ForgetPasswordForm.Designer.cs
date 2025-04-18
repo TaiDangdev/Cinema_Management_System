@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation5 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation4 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgetPasswordForm));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
@@ -157,7 +157,6 @@
             // posterPic
             // 
             this.guna2Transition1.SetDecoration(this.posterPic, Guna.UI2.AnimatorNS.DecorationType.None);
-            //this.posterPic.Image = global::Cinema_Management_System.Properties.Resources.starcinema_bg;
             this.posterPic.ImageRotate = 0F;
             this.posterPic.Location = new System.Drawing.Point(0, 0);
             this.posterPic.Name = "posterPic";
@@ -185,7 +184,7 @@
             this.hideConfirmPass_Btn.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.hideConfirmPass_Btn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.hideConfirmPass_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            //this.hideConfirmPass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
+            this.hideConfirmPass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
             this.hideConfirmPass_Btn.ImageRotate = 0F;
             this.hideConfirmPass_Btn.Location = new System.Drawing.Point(251, 149);
             this.hideConfirmPass_Btn.Name = "hideConfirmPass_Btn";
@@ -201,7 +200,7 @@
             this.hidePass_Btn.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.hidePass_Btn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.hidePass_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            //this.hidePass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
+            this.hidePass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
             this.hidePass_Btn.ImageRotate = 0F;
             this.hidePass_Btn.Location = new System.Drawing.Point(251, 89);
             this.hidePass_Btn.Name = "hidePass_Btn";
@@ -227,7 +226,6 @@
             this.confirmPass_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.confirmPass_Txt.ForeColor = System.Drawing.Color.Black;
             this.confirmPass_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            //this.confirmPass_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
             this.confirmPass_Txt.Location = new System.Drawing.Point(25, 136);
             this.confirmPass_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.confirmPass_Txt.Name = "confirmPass_Txt";
@@ -267,7 +265,6 @@
             this.user_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.user_Txt.ForeColor = System.Drawing.Color.Black;
             this.user_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            //this.user_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_person_321;
             this.user_Txt.Location = new System.Drawing.Point(25, 24);
             this.user_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.user_Txt.Name = "user_Txt";
@@ -293,7 +290,6 @@
             this.newPassword_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.newPassword_Txt.ForeColor = System.Drawing.Color.Black;
             this.newPassword_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            //this.newPassword_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
             this.newPassword_Txt.Location = new System.Drawing.Point(25, 80);
             this.newPassword_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.newPassword_Txt.Name = "newPassword_Txt";
@@ -327,7 +323,7 @@
             // 
             // panelAll
             // 
-            this.panelAll.BackColor = System.Drawing.Color.White;
+            this.panelAll.BackColor = System.Drawing.Color.Transparent;
             this.panelAll.BorderColor = System.Drawing.Color.LightGray;
             this.panelAll.BorderRadius = 15;
             this.panelAll.BorderThickness = 1;
@@ -492,7 +488,6 @@
             this.OTP_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.OTP_Txt.ForeColor = System.Drawing.Color.Black;
             this.OTP_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            //this.OTP_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
             this.OTP_Txt.Location = new System.Drawing.Point(25, 99);
             this.OTP_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.OTP_Txt.Name = "OTP_Txt";
@@ -543,7 +538,6 @@
             this.username_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username_Txt.ForeColor = System.Drawing.Color.Black;
             this.username_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            //this.username_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_person_321;
             this.username_Txt.Location = new System.Drawing.Point(25, 10);
             this.username_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.username_Txt.Name = "username_Txt";
@@ -558,22 +552,22 @@
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
             this.guna2Transition1.Cursor = null;
-            animation5.AnimateOnlyDifferences = true;
-            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
-            animation5.LeafCoeff = 0F;
-            animation5.MaxTime = 1F;
-            animation5.MinTime = 0F;
-            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
-            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
-            animation5.MosaicSize = 0;
-            animation5.Padding = new System.Windows.Forms.Padding(0);
-            animation5.RotateCoeff = 0F;
-            animation5.RotateLimit = 0F;
-            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
-            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
-            animation5.TimeCoeff = 0F;
-            animation5.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation5;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation4;
             // 
             // ForgetPasswordForm
             // 

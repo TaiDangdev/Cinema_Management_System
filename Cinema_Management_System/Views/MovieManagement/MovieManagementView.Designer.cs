@@ -102,7 +102,7 @@
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            //this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.icons8_plus_32;
+            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.icons8_plus_32;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(573, 18);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
@@ -125,7 +125,6 @@
             this.searchMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchMovie_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.searchMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            //this.searchMovie_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_magnifying_glass_50;
             this.searchMovie_Txt.Location = new System.Drawing.Point(23, 12);
             this.searchMovie_Txt.Name = "searchMovie_Txt";
             this.searchMovie_Txt.PlaceholderForeColor = System.Drawing.Color.Silver;

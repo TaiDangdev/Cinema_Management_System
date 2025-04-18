@@ -202,6 +202,7 @@
             this.hide_Pic.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.hide_Pic, Guna.UI2.AnimatorNS.DecorationType.None);
             this.hide_Pic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.hide_Pic.Image = global::Cinema_Management_System.Properties.Resources.eye;
             this.hide_Pic.ImageRotate = 0F;
             this.hide_Pic.Location = new System.Drawing.Point(285, 203);
             this.hide_Pic.Name = "hide_Pic";
@@ -228,6 +229,7 @@
             this.username_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username_Txt.ForeColor = System.Drawing.Color.Black;
             this.username_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.username_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_person_322;
             this.username_Txt.Location = new System.Drawing.Point(60, 123);
             this.username_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.username_Txt.Name = "username_Txt";
@@ -253,6 +255,7 @@
             this.password_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password_Txt.ForeColor = System.Drawing.Color.Black;
             this.password_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.password_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
             this.password_Txt.Location = new System.Drawing.Point(60, 190);
             this.password_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.password_Txt.Name = "password_Txt";

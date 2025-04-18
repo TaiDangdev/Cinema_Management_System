@@ -89,6 +89,9 @@ namespace Cinema_Management_System
 
         private void ForgetPasswordForm_Load(object sender, EventArgs e)
         {
+            this.BeginInvoke(new Action(() => {
+                username_Txt.Focus();
+            }));
             showMess_label.Visible = false;
             panelCheck.Visible = true;
             panelOTP.Visible = false;
@@ -147,14 +150,34 @@ namespace Cinema_Management_System
             }
         }
 
-        private void back_Btn_Click(object sender, EventArgs e)
+        private async void back_Btn_Click(object sender, EventArgs e)
         {
-            guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide; // Choose animation type
-            guna2Transition1.HideSync(this);
+            await FadeOutFormAsync(this);
             _loginForm.SetPassword("");
             _loginForm.SetError("");
+            _loginForm.Opacity = 0;
             _loginForm.Show();
-            guna2Transition1.ShowSync(_loginForm);
+            await FadeInFormAsync(_loginForm);
+        }
+
+        private async Task FadeOutFormAsync(Form form)
+        {
+            for (double i = 1.0; i >= 0; i -= 0.1)
+            {
+                form.Opacity = i;
+                await Task.Delay(30);
+            }
+            form.Hide();
+            form.Opacity = 1.0;
+        }
+
+        private async Task FadeInFormAsync(Form form)
+        {
+            for (double i = 0; i <= 1.0; i += 0.1)
+            {
+                form.Opacity = i;
+                await Task.Delay(30);
+            }
         }
 
         private void SlideTimer_Tick(object sender, EventArgs e)
@@ -242,6 +265,9 @@ namespace Cinema_Management_System
             ShowPanel(panelChangePass);
             guna2Transition1.ShowSync(panelChangePass);
             panelChangePass.BringToFront();
+            this.BeginInvoke(new Action(() => {
+                user_Txt.Focus();
+            }));
         }
 
         private async void confirm_Btn_Click(object sender, EventArgs e)
@@ -272,6 +298,9 @@ namespace Cinema_Management_System
                 ShowPanel(panelOTP);
                 guna2Transition1.ShowSync(panelOTP);
                 panelOTP.BringToFront();
+                this.BeginInvoke(new Action(() => {
+                    OTP_Txt.Focus();
+                }));
 
                 maskedEmail_Txt.Text = $"Mã bảo mật gồm 6 chữ số đã được \ngửi tới Email:\n{MaskEmail(user.Email)}";
                 await SendOtpEmailAsync(user.Email, generatedOTP);

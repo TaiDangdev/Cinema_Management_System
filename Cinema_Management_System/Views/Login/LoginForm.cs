@@ -27,7 +27,11 @@ namespace Cinema_Management_System
         private void LoginForm_Load(object sender, EventArgs e)
         {
             InitializeForm();
+            this.BeginInvoke(new Action(() => {
+                username_Txt.Focus();
+            }));
             StartSlideShow();
+            
         }
 
         private void InitializeForm()
@@ -135,9 +139,9 @@ namespace Cinema_Management_System
             return true;
         }
 
-        // dùng dynamic vì LINQ không xác định được kiểu trả về
         private dynamic AuthenticateUser(string username, string password)
         {
+            // dùng dynamic vì LINQ không xác định được kiểu trả về
             // Lưu ý: chưa dùng DAOs ở đây
             using (var db = new ConnectDataContext())
             {
