@@ -95,6 +95,11 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connect.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Connect.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,11 +118,6 @@
     <Compile Include="Views\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connect.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Connect.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MessageBox\MessageBoxType.cs" />
     <Compile Include="Views\Password\ForgetPasswordForm.cs">
       <SubType>Form</SubType>
@@ -133,17 +133,20 @@
     </Compile>
     <Compile Include="Models\DAOs\AuditoriumDA.cs" />
     <Compile Include="Models\DAOs\BillForShowTimeDA.cs" />
+    <Compile Include="Models\DAOs\CustomerDA.cs" />
     <Compile Include="Models\DAOs\MovieDA.cs" />
     <Compile Include="Models\DAOs\SeatForShowTimeDA.cs" />
     <Compile Include="Models\DAOs\ShowTimeDA.cs" />
     <Compile Include="Models\DTOs\SeatForShowTimesDTO.cs" />
     <Compile Include="Models\DTOs\ShowTimeDTO.cs" />
     <Compile Include="Models\DAOs\UserDA.cs" />
+    <Compile Include="Models\DTOs\CustomerDTO.cs" />
     <Compile Include="Models\DTOs\MovieDTO.cs" />
     <Compile Include="Models\DTOs\UserDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CustomerManagement\CustomerManagementVm.cs" />
     <Compile Include="ViewModels\ImageVsSQL.cs" />
     <Compile Include="ViewModels\InformationManagement\Feature\ChangePassword.cs" />
     <Compile Include="ViewModels\InformationManagement\Feature\EditAvatar.cs" />
@@ -159,6 +162,24 @@
     </Compile>
     <Compile Include="Views\DashBoard\DashBoardView.Designer.cs">
       <DependentUpon>DashBoardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerManagement\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerManagement\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerManagement\CustomerManagementView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerManagement\CustomerManagementView.Designer.cs">
+      <DependentUpon>CustomerManagementView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerManagement\UpdateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerManagement\UpdateCustomer.Designer.cs">
+      <DependentUpon>UpdateCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MessageBox\YesMessage.cs">
       <SubType>Form</SubType>
@@ -254,6 +275,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DashBoard\DashBoardView.resx">
       <DependentUpon>DashBoardView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerManagement\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerManagement\CustomerManagementView.resx">
+      <DependentUpon>CustomerManagementView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerManagement\UpdateCustomer.resx">
+      <DependentUpon>UpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MessageBox\YesMessage.resx">
       <DependentUpon>YesMessage.cs</DependentUpon>
@@ -368,13 +398,16 @@
     <None Include="assets\adminForm\watching-a-movie.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\CustomerManagement\" />
+    <Folder Include="Models\DAOs\Bills\" />
+    <Folder Include="Models\DTOs\Bills\" />
+    <Folder Include="Models\DTOs\ProductManagement\" />
+    <Folder Include="Models\DTOs\ShowTimeManagement\" />
+    <Folder Include="Models\DTOs\StaffManagement\" />
     <Folder Include="ViewModels\ForgotPassword\" />
     <Folder Include="ViewModels\ProductManagement\" />
     <Folder Include="ViewModels\StaffManagementVM\" />
     <Folder Include="ViewModels\StatisticsVM\" />
     <Folder Include="ViewModels\VoucherManagement\" />
-    <Folder Include="Views\CustomerManagement\" />
     <Folder Include="Views\ProductManagement\" />
     <Folder Include="Views\StaffManagement\" />
     <Folder Include="Views\Statistics\" />

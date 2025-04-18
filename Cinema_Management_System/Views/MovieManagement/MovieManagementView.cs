@@ -345,5 +345,10 @@ namespace Cinema_Management_System.Views.MovieManagement
         {
             LoadMovies();
         }
+
+        private void movie_data_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

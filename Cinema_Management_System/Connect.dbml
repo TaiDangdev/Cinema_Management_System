@@ -1,21 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CinemaManagement" Class="ConnectDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=CinemaManagement;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="Cinema_Management_System.Properties.Settings" SettingsPropertyName="CinemaManagementConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.STAFF" Member="STAFFs">
-    <Type Name="STAFF">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FullName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Birth" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Gender" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Salary" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Role" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="NgayVaoLam" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ImageSource" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="STAFF_ACCOUNT" Member="ACCOUNTs" ThisKey="Id" OtherKey="Staff_Id" Type="ACCOUNT" />
-      <Association Name="STAFF_Bill" Member="Bills" ThisKey="Id" OtherKey="Staff_Id" Type="Bill" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=CinemaManagement;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Cinema_Management_System.Properties.Settings" SettingsPropertyName="CinemaManagementConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ACCOUNTS" Member="ACCOUNTs">
     <Type Name="ACCOUNT">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -47,9 +31,39 @@
       <Column Name="Note" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
       <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Bill_BillDetail" Member="BillDetails" ThisKey="Id" OtherKey="Bill_Id" Type="BillDetail" />
-      <Association Name="STAFF_Bill" Member="STAFF" ThisKey="Staff_Id" OtherKey="Id" Type="STAFF" IsForeignKey="true" />
-      <Association Name="CUSTOMER_Bill" Member="CUSTOMER" ThisKey="Customer_Id" OtherKey="Id" Type="CUSTOMER" IsForeignKey="true" />
       <Association Name="ShowTime_Bill" Member="ShowTime" ThisKey="ShowTime_Id" OtherKey="Id" Type="ShowTime" IsForeignKey="true" />
+      <Association Name="STAFF_Bill" Member="STAFF" ThisKey="Staff_Id" OtherKey="Id" Type="STAFF" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bill_AddMovie" Member="Bill_AddMovies">
+    <Type Name="Bill_AddMovie">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Movie_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MOVIE_Bill_AddMovie" Member="MOVIE" ThisKey="Movie_Id" OtherKey="id" Type="MOVIE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bill_AddProduct" Member="Bill_AddProducts">
+    <Type Name="Bill_AddProduct">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Product_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPurchasePrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Product_Bill_AddProduct" Member="Product" ThisKey="Product_Id" OtherKey="ID" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bill_ImportProduct" Member="Bill_ImportProducts">
+    <Type Name="Bill_ImportProduct">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Product_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPurchasePrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Product_Bill_ImportProduct" Member="Product" ThisKey="Product_Id" OtherKey="ID" Type="Product" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.BillDetail" Member="BillDetails">
@@ -67,6 +81,7 @@
   <Table Name="dbo.CUSTOMER" Member="CUSTOMERs">
     <Type Name="CUSTOMER">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdFormat" Type="System.String" DbType="VarChar(32)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="FullName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -74,7 +89,28 @@
       <Column Name="Birth" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
       <Column Name="RegDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
       <Column Name="Gender" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Association Name="CUSTOMER_Bill" Member="Bills" ThisKey="Id" OtherKey="Customer_Id" Type="Bill" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MOVIE" Member="MOVIEs">
+    <Type Name="MOVIE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MovieCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Genre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Director" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ReleaseYear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trailer" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ImportPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImageSource" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="MOVIE_Bill_AddMovie" Member="Bill_AddMovies" ThisKey="id" OtherKey="Movie_Id" Type="Bill_AddMovie" />
+      <Association Name="MOVIE_ShowTime" Member="ShowTimes" ThisKey="id" OtherKey="Movie_Id" Type="ShowTime" />
     </Type>
   </Table>
   <Table Name="dbo.Product" Member="Products">
@@ -86,6 +122,8 @@
       <Column Name="PurchasePrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Product_Bill_AddProduct" Member="Bill_AddProducts" ThisKey="ID" OtherKey="Product_Id" Type="Bill_AddProduct" />
+      <Association Name="Product_Bill_ImportProduct" Member="Bill_ImportProducts" ThisKey="ID" OtherKey="Product_Id" Type="Bill_ImportProduct" />
       <Association Name="Product_BillDetail" Member="BillDetails" ThisKey="ID" OtherKey="Product_Id" Type="BillDetail" />
     </Type>
   </Table>
@@ -122,23 +160,41 @@
       <Association Name="MOVIE_ShowTime" Member="MOVIE" ThisKey="Movie_Id" OtherKey="id" Type="MOVIE" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.MOVIE" Member="MOVIEs">
-    <Type Name="MOVIE">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MovieCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Genre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Director" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ReleaseYear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Language" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Country" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Length" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Trailer" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ImportPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ImageSource" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+  <Table Name="dbo.STAFF" Member="STAFFs">
+    <Type Name="STAFF">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Birth" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Salary" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayVaoLam" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ImageSource" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="STAFF_ACCOUNT" Member="ACCOUNTs" ThisKey="Id" OtherKey="Staff_Id" Type="ACCOUNT" />
+      <Association Name="STAFF_Bill" Member="Bills" ThisKey="Id" OtherKey="Staff_Id" Type="Bill" />
+      <Association Name="STAFF_Staff_Salary" Member="Staff_Salaries" ThisKey="Id" OtherKey="Staff_Id" Type="Staff_Salary" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Staff_Salary" Member="Staff_Salaries">
+    <Type Name="Staff_Salary">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="STAFF_Staff_Salary" Member="STAFF" ThisKey="Staff_Id" OtherKey="Id" Type="STAFF" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VOUCHER" Member="VOUCHERs">
+    <Type Name="VOUCHER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CODE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="VOUCHERDETAIL" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TYPE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FINDATE" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

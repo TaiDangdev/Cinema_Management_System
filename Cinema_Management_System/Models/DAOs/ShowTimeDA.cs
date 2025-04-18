@@ -313,7 +313,7 @@ namespace Cinema_Management_System.Models.DAOs
                 return true;
             }
             catch (Exception ex) {
-                MessageBox.Show("Loi them suat chieu"); 
+                MessageBox.Show("Loi them suat chieu" + ex); 
                 return false;
             }
         }

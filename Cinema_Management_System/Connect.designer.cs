@@ -30,9 +30,6 @@ namespace Cinema_Management_System
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertSTAFF(STAFF instance);
-    partial void UpdateSTAFF(STAFF instance);
-    partial void DeleteSTAFF(STAFF instance);
     partial void InsertACCOUNT(ACCOUNT instance);
     partial void UpdateACCOUNT(ACCOUNT instance);
     partial void DeleteACCOUNT(ACCOUNT instance);
@@ -42,12 +39,24 @@ namespace Cinema_Management_System
     partial void InsertBill(Bill instance);
     partial void UpdateBill(Bill instance);
     partial void DeleteBill(Bill instance);
+    partial void InsertBill_AddMovie(Bill_AddMovie instance);
+    partial void UpdateBill_AddMovie(Bill_AddMovie instance);
+    partial void DeleteBill_AddMovie(Bill_AddMovie instance);
+    partial void InsertBill_AddProduct(Bill_AddProduct instance);
+    partial void UpdateBill_AddProduct(Bill_AddProduct instance);
+    partial void DeleteBill_AddProduct(Bill_AddProduct instance);
+    partial void InsertBill_ImportProduct(Bill_ImportProduct instance);
+    partial void UpdateBill_ImportProduct(Bill_ImportProduct instance);
+    partial void DeleteBill_ImportProduct(Bill_ImportProduct instance);
     partial void InsertBillDetail(BillDetail instance);
     partial void UpdateBillDetail(BillDetail instance);
     partial void DeleteBillDetail(BillDetail instance);
     partial void InsertCUSTOMER(CUSTOMER instance);
     partial void UpdateCUSTOMER(CUSTOMER instance);
     partial void DeleteCUSTOMER(CUSTOMER instance);
+    partial void InsertMOVIE(MOVIE instance);
+    partial void UpdateMOVIE(MOVIE instance);
+    partial void DeleteMOVIE(MOVIE instance);
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
@@ -60,13 +69,19 @@ namespace Cinema_Management_System
     partial void InsertShowTime(ShowTime instance);
     partial void UpdateShowTime(ShowTime instance);
     partial void DeleteShowTime(ShowTime instance);
-    partial void InsertMOVIE(MOVIE instance);
-    partial void UpdateMOVIE(MOVIE instance);
-    partial void DeleteMOVIE(MOVIE instance);
+    partial void InsertSTAFF(STAFF instance);
+    partial void UpdateSTAFF(STAFF instance);
+    partial void DeleteSTAFF(STAFF instance);
+    partial void InsertStaff_Salary(Staff_Salary instance);
+    partial void UpdateStaff_Salary(Staff_Salary instance);
+    partial void DeleteStaff_Salary(Staff_Salary instance);
+    partial void InsertVOUCHER(VOUCHER instance);
+    partial void UpdateVOUCHER(VOUCHER instance);
+    partial void DeleteVOUCHER(VOUCHER instance);
     #endregion
 		
 		public ConnectDataContext() : 
-				base(global::Cinema_Management_System.Properties.Settings.Default.CinemaManagementConnectionString1, mappingSource)
+				base(global::Cinema_Management_System.Properties.Settings.Default.CinemaManagementConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -95,14 +110,6 @@ namespace Cinema_Management_System
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<STAFF> STAFFs
-		{
-			get
-			{
-				return this.GetTable<STAFF>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ACCOUNT> ACCOUNTs
 		{
 			get
@@ -127,6 +134,30 @@ namespace Cinema_Management_System
 			}
 		}
 		
+		public System.Data.Linq.Table<Bill_AddMovie> Bill_AddMovies
+		{
+			get
+			{
+				return this.GetTable<Bill_AddMovie>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Bill_AddProduct> Bill_AddProducts
+		{
+			get
+			{
+				return this.GetTable<Bill_AddProduct>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Bill_ImportProduct> Bill_ImportProducts
+		{
+			get
+			{
+				return this.GetTable<Bill_ImportProduct>();
+			}
+		}
+		
 		public System.Data.Linq.Table<BillDetail> BillDetails
 		{
 			get
@@ -140,6 +171,14 @@ namespace Cinema_Management_System
 			get
 			{
 				return this.GetTable<CUSTOMER>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MOVIE> MOVIEs
+		{
+			get
+			{
+				return this.GetTable<MOVIE>();
 			}
 		}
 		
@@ -175,346 +214,28 @@ namespace Cinema_Management_System
 			}
 		}
 		
-		public System.Data.Linq.Table<MOVIE> MOVIEs
+		public System.Data.Linq.Table<STAFF> STAFFs
 		{
 			get
 			{
-				return this.GetTable<MOVIE>();
+				return this.GetTable<STAFF>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.STAFF")]
-	public partial class STAFF : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _FullName;
-		
-		private System.DateTime _Birth;
-		
-		private string _Gender;
-		
-		private string _Email;
-		
-		private string _PhoneNumber;
-		
-		private int _Salary;
-		
-		private string _Role;
-		
-		private System.DateTime _NgayVaoLam;
-		
-		private System.Data.Linq.Binary _ImageSource;
-		
-		private EntitySet<ACCOUNT> _ACCOUNTs;
-		
-		private EntitySet<Bill> _Bills;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnFullNameChanging(string value);
-    partial void OnFullNameChanged();
-    partial void OnBirthChanging(System.DateTime value);
-    partial void OnBirthChanged();
-    partial void OnGenderChanging(string value);
-    partial void OnGenderChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPhoneNumberChanging(string value);
-    partial void OnPhoneNumberChanged();
-    partial void OnSalaryChanging(int value);
-    partial void OnSalaryChanged();
-    partial void OnRoleChanging(string value);
-    partial void OnRoleChanged();
-    partial void OnNgayVaoLamChanging(System.DateTime value);
-    partial void OnNgayVaoLamChanged();
-    partial void OnImageSourceChanging(System.Data.Linq.Binary value);
-    partial void OnImageSourceChanged();
-    #endregion
-		
-		public STAFF()
-		{
-			this._ACCOUNTs = new EntitySet<ACCOUNT>(new Action<ACCOUNT>(this.attach_ACCOUNTs), new Action<ACCOUNT>(this.detach_ACCOUNTs));
-			this._Bills = new EntitySet<Bill>(new Action<Bill>(this.attach_Bills), new Action<Bill>(this.detach_Bills));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
+		public System.Data.Linq.Table<Staff_Salary> Staff_Salaries
 		{
 			get
 			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
+				return this.GetTable<Staff_Salary>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string FullName
+		public System.Data.Linq.Table<VOUCHER> VOUCHERs
 		{
 			get
 			{
-				return this._FullName;
+				return this.GetTable<VOUCHER>();
 			}
-			set
-			{
-				if ((this._FullName != value))
-				{
-					this.OnFullNameChanging(value);
-					this.SendPropertyChanging();
-					this._FullName = value;
-					this.SendPropertyChanged("FullName");
-					this.OnFullNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Birth", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime Birth
-		{
-			get
-			{
-				return this._Birth;
-			}
-			set
-			{
-				if ((this._Birth != value))
-				{
-					this.OnBirthChanging(value);
-					this.SendPropertyChanging();
-					this._Birth = value;
-					this.SendPropertyChanged("Birth");
-					this.OnBirthChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Gender
-		{
-			get
-			{
-				return this._Gender;
-			}
-			set
-			{
-				if ((this._Gender != value))
-				{
-					this.OnGenderChanging(value);
-					this.SendPropertyChanging();
-					this._Gender = value;
-					this.SendPropertyChanged("Gender");
-					this.OnGenderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string PhoneNumber
-		{
-			get
-			{
-				return this._PhoneNumber;
-			}
-			set
-			{
-				if ((this._PhoneNumber != value))
-				{
-					this.OnPhoneNumberChanging(value);
-					this.SendPropertyChanging();
-					this._PhoneNumber = value;
-					this.SendPropertyChanged("PhoneNumber");
-					this.OnPhoneNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salary", DbType="Int NOT NULL")]
-		public int Salary
-		{
-			get
-			{
-				return this._Salary;
-			}
-			set
-			{
-				if ((this._Salary != value))
-				{
-					this.OnSalaryChanging(value);
-					this.SendPropertyChanging();
-					this._Salary = value;
-					this.SendPropertyChanged("Salary");
-					this.OnSalaryChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
-		public string Role
-		{
-			get
-			{
-				return this._Role;
-			}
-			set
-			{
-				if ((this._Role != value))
-				{
-					this.OnRoleChanging(value);
-					this.SendPropertyChanging();
-					this._Role = value;
-					this.SendPropertyChanged("Role");
-					this.OnRoleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayVaoLam", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime NgayVaoLam
-		{
-			get
-			{
-				return this._NgayVaoLam;
-			}
-			set
-			{
-				if ((this._NgayVaoLam != value))
-				{
-					this.OnNgayVaoLamChanging(value);
-					this.SendPropertyChanging();
-					this._NgayVaoLam = value;
-					this.SendPropertyChanged("NgayVaoLam");
-					this.OnNgayVaoLamChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageSource", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary ImageSource
-		{
-			get
-			{
-				return this._ImageSource;
-			}
-			set
-			{
-				if ((this._ImageSource != value))
-				{
-					this.OnImageSourceChanging(value);
-					this.SendPropertyChanging();
-					this._ImageSource = value;
-					this.SendPropertyChanged("ImageSource");
-					this.OnImageSourceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STAFF_ACCOUNT", Storage="_ACCOUNTs", ThisKey="Id", OtherKey="Staff_Id")]
-		public EntitySet<ACCOUNT> ACCOUNTs
-		{
-			get
-			{
-				return this._ACCOUNTs;
-			}
-			set
-			{
-				this._ACCOUNTs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STAFF_Bill", Storage="_Bills", ThisKey="Id", OtherKey="Staff_Id")]
-		public EntitySet<Bill> Bills
-		{
-			get
-			{
-				return this._Bills;
-			}
-			set
-			{
-				this._Bills.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_ACCOUNTs(ACCOUNT entity)
-		{
-			this.SendPropertyChanging();
-			entity.STAFF = this;
-		}
-		
-		private void detach_ACCOUNTs(ACCOUNT entity)
-		{
-			this.SendPropertyChanging();
-			entity.STAFF = null;
-		}
-		
-		private void attach_Bills(Bill entity)
-		{
-			this.SendPropertyChanging();
-			entity.STAFF = this;
-		}
-		
-		private void detach_Bills(Bill entity)
-		{
-			this.SendPropertyChanging();
-			entity.STAFF = null;
 		}
 	}
 	
@@ -887,11 +608,9 @@ namespace Cinema_Management_System
 		
 		private EntitySet<BillDetail> _BillDetails;
 		
-		private EntityRef<STAFF> _STAFF;
-		
-		private EntityRef<CUSTOMER> _CUSTOMER;
-		
 		private EntityRef<ShowTime> _ShowTime;
+		
+		private EntityRef<STAFF> _STAFF;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -922,9 +641,8 @@ namespace Cinema_Management_System
 		public Bill()
 		{
 			this._BillDetails = new EntitySet<BillDetail>(new Action<BillDetail>(this.attach_BillDetails), new Action<BillDetail>(this.detach_BillDetails));
-			this._STAFF = default(EntityRef<STAFF>);
-			this._CUSTOMER = default(EntityRef<CUSTOMER>);
 			this._ShowTime = default(EntityRef<ShowTime>);
+			this._STAFF = default(EntityRef<STAFF>);
 			OnCreated();
 		}
 		
@@ -983,10 +701,6 @@ namespace Cinema_Management_System
 			{
 				if ((this._Customer_Id != value))
 				{
-					if (this._CUSTOMER.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnCustomer_IdChanging(value);
 					this.SendPropertyChanging();
 					this._Customer_Id = value;
@@ -1153,74 +867,6 @@ namespace Cinema_Management_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STAFF_Bill", Storage="_STAFF", ThisKey="Staff_Id", OtherKey="Id", IsForeignKey=true)]
-		public STAFF STAFF
-		{
-			get
-			{
-				return this._STAFF.Entity;
-			}
-			set
-			{
-				STAFF previousValue = this._STAFF.Entity;
-				if (((previousValue != value) 
-							|| (this._STAFF.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._STAFF.Entity = null;
-						previousValue.Bills.Remove(this);
-					}
-					this._STAFF.Entity = value;
-					if ((value != null))
-					{
-						value.Bills.Add(this);
-						this._Staff_Id = value.Id;
-					}
-					else
-					{
-						this._Staff_Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("STAFF");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CUSTOMER_Bill", Storage="_CUSTOMER", ThisKey="Customer_Id", OtherKey="Id", IsForeignKey=true)]
-		public CUSTOMER CUSTOMER
-		{
-			get
-			{
-				return this._CUSTOMER.Entity;
-			}
-			set
-			{
-				CUSTOMER previousValue = this._CUSTOMER.Entity;
-				if (((previousValue != value) 
-							|| (this._CUSTOMER.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CUSTOMER.Entity = null;
-						previousValue.Bills.Remove(this);
-					}
-					this._CUSTOMER.Entity = value;
-					if ((value != null))
-					{
-						value.Bills.Add(this);
-						this._Customer_Id = value.Id;
-					}
-					else
-					{
-						this._Customer_Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("CUSTOMER");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ShowTime_Bill", Storage="_ShowTime", ThisKey="ShowTime_Id", OtherKey="Id", IsForeignKey=true)]
 		public ShowTime ShowTime
 		{
@@ -1255,6 +901,40 @@ namespace Cinema_Management_System
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STAFF_Bill", Storage="_STAFF", ThisKey="Staff_Id", OtherKey="Id", IsForeignKey=true)]
+		public STAFF STAFF
+		{
+			get
+			{
+				return this._STAFF.Entity;
+			}
+			set
+			{
+				STAFF previousValue = this._STAFF.Entity;
+				if (((previousValue != value) 
+							|| (this._STAFF.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._STAFF.Entity = null;
+						previousValue.Bills.Remove(this);
+					}
+					this._STAFF.Entity = value;
+					if ((value != null))
+					{
+						value.Bills.Add(this);
+						this._Staff_Id = value.Id;
+					}
+					else
+					{
+						this._Staff_Id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("STAFF");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1285,6 +965,627 @@ namespace Cinema_Management_System
 		{
 			this.SendPropertyChanging();
 			entity.Bill = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bill_AddMovie")]
+	public partial class Bill_AddMovie : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _Movie_Id;
+		
+		private System.DateTime _BillDate;
+		
+		private int _Total;
+		
+		private EntityRef<MOVIE> _MOVIE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnMovie_IdChanging(System.Nullable<int> value);
+    partial void OnMovie_IdChanged();
+    partial void OnBillDateChanging(System.DateTime value);
+    partial void OnBillDateChanged();
+    partial void OnTotalChanging(int value);
+    partial void OnTotalChanged();
+    #endregion
+		
+		public Bill_AddMovie()
+		{
+			this._MOVIE = default(EntityRef<MOVIE>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Movie_Id", DbType="Int")]
+		public System.Nullable<int> Movie_Id
+		{
+			get
+			{
+				return this._Movie_Id;
+			}
+			set
+			{
+				if ((this._Movie_Id != value))
+				{
+					if (this._MOVIE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMovie_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Movie_Id = value;
+					this.SendPropertyChanged("Movie_Id");
+					this.OnMovie_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillDate", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime BillDate
+		{
+			get
+			{
+				return this._BillDate;
+			}
+			set
+			{
+				if ((this._BillDate != value))
+				{
+					this.OnBillDateChanging(value);
+					this.SendPropertyChanging();
+					this._BillDate = value;
+					this.SendPropertyChanged("BillDate");
+					this.OnBillDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int NOT NULL")]
+		public int Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this.OnTotalChanging(value);
+					this.SendPropertyChanging();
+					this._Total = value;
+					this.SendPropertyChanged("Total");
+					this.OnTotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MOVIE_Bill_AddMovie", Storage="_MOVIE", ThisKey="Movie_Id", OtherKey="id", IsForeignKey=true)]
+		public MOVIE MOVIE
+		{
+			get
+			{
+				return this._MOVIE.Entity;
+			}
+			set
+			{
+				MOVIE previousValue = this._MOVIE.Entity;
+				if (((previousValue != value) 
+							|| (this._MOVIE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MOVIE.Entity = null;
+						previousValue.Bill_AddMovies.Remove(this);
+					}
+					this._MOVIE.Entity = value;
+					if ((value != null))
+					{
+						value.Bill_AddMovies.Add(this);
+						this._Movie_Id = value.id;
+					}
+					else
+					{
+						this._Movie_Id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("MOVIE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bill_AddProduct")]
+	public partial class Bill_AddProduct : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _Product_Id;
+		
+		private System.DateTime _BillDate;
+		
+		private int _Quantity;
+		
+		private int _UnitPurchasePrice;
+		
+		private System.Nullable<int> _Total;
+		
+		private EntityRef<Product> _Product;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnProduct_IdChanging(System.Nullable<int> value);
+    partial void OnProduct_IdChanged();
+    partial void OnBillDateChanging(System.DateTime value);
+    partial void OnBillDateChanged();
+    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanged();
+    partial void OnUnitPurchasePriceChanging(int value);
+    partial void OnUnitPurchasePriceChanged();
+    partial void OnTotalChanging(System.Nullable<int> value);
+    partial void OnTotalChanged();
+    #endregion
+		
+		public Bill_AddProduct()
+		{
+			this._Product = default(EntityRef<Product>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Id", DbType="Int")]
+		public System.Nullable<int> Product_Id
+		{
+			get
+			{
+				return this._Product_Id;
+			}
+			set
+			{
+				if ((this._Product_Id != value))
+				{
+					if (this._Product.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProduct_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Id = value;
+					this.SendPropertyChanged("Product_Id");
+					this.OnProduct_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillDate", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime BillDate
+		{
+			get
+			{
+				return this._BillDate;
+			}
+			set
+			{
+				if ((this._BillDate != value))
+				{
+					this.OnBillDateChanging(value);
+					this.SendPropertyChanging();
+					this._BillDate = value;
+					this.SendPropertyChanged("BillDate");
+					this.OnBillDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPurchasePrice", DbType="Int NOT NULL")]
+		public int UnitPurchasePrice
+		{
+			get
+			{
+				return this._UnitPurchasePrice;
+			}
+			set
+			{
+				if ((this._UnitPurchasePrice != value))
+				{
+					this.OnUnitPurchasePriceChanging(value);
+					this.SendPropertyChanging();
+					this._UnitPurchasePrice = value;
+					this.SendPropertyChanged("UnitPurchasePrice");
+					this.OnUnitPurchasePriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", AutoSync=AutoSync.Always, DbType="Int", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this.OnTotalChanging(value);
+					this.SendPropertyChanging();
+					this._Total = value;
+					this.SendPropertyChanged("Total");
+					this.OnTotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Bill_AddProduct", Storage="_Product", ThisKey="Product_Id", OtherKey="ID", IsForeignKey=true)]
+		public Product Product
+		{
+			get
+			{
+				return this._Product.Entity;
+			}
+			set
+			{
+				Product previousValue = this._Product.Entity;
+				if (((previousValue != value) 
+							|| (this._Product.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Product.Entity = null;
+						previousValue.Bill_AddProducts.Remove(this);
+					}
+					this._Product.Entity = value;
+					if ((value != null))
+					{
+						value.Bill_AddProducts.Add(this);
+						this._Product_Id = value.ID;
+					}
+					else
+					{
+						this._Product_Id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Product");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bill_ImportProduct")]
+	public partial class Bill_ImportProduct : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _Product_Id;
+		
+		private System.DateTime _BillDate;
+		
+		private int _Quantity;
+		
+		private int _UnitPurchasePrice;
+		
+		private System.Nullable<int> _Total;
+		
+		private EntityRef<Product> _Product;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnProduct_IdChanging(System.Nullable<int> value);
+    partial void OnProduct_IdChanged();
+    partial void OnBillDateChanging(System.DateTime value);
+    partial void OnBillDateChanged();
+    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanged();
+    partial void OnUnitPurchasePriceChanging(int value);
+    partial void OnUnitPurchasePriceChanged();
+    partial void OnTotalChanging(System.Nullable<int> value);
+    partial void OnTotalChanged();
+    #endregion
+		
+		public Bill_ImportProduct()
+		{
+			this._Product = default(EntityRef<Product>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Id", DbType="Int")]
+		public System.Nullable<int> Product_Id
+		{
+			get
+			{
+				return this._Product_Id;
+			}
+			set
+			{
+				if ((this._Product_Id != value))
+				{
+					if (this._Product.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProduct_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Id = value;
+					this.SendPropertyChanged("Product_Id");
+					this.OnProduct_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillDate", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime BillDate
+		{
+			get
+			{
+				return this._BillDate;
+			}
+			set
+			{
+				if ((this._BillDate != value))
+				{
+					this.OnBillDateChanging(value);
+					this.SendPropertyChanging();
+					this._BillDate = value;
+					this.SendPropertyChanged("BillDate");
+					this.OnBillDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPurchasePrice", DbType="Int NOT NULL")]
+		public int UnitPurchasePrice
+		{
+			get
+			{
+				return this._UnitPurchasePrice;
+			}
+			set
+			{
+				if ((this._UnitPurchasePrice != value))
+				{
+					this.OnUnitPurchasePriceChanging(value);
+					this.SendPropertyChanging();
+					this._UnitPurchasePrice = value;
+					this.SendPropertyChanged("UnitPurchasePrice");
+					this.OnUnitPurchasePriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", AutoSync=AutoSync.Always, DbType="Int", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this.OnTotalChanging(value);
+					this.SendPropertyChanging();
+					this._Total = value;
+					this.SendPropertyChanged("Total");
+					this.OnTotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Bill_ImportProduct", Storage="_Product", ThisKey="Product_Id", OtherKey="ID", IsForeignKey=true)]
+		public Product Product
+		{
+			get
+			{
+				return this._Product.Entity;
+			}
+			set
+			{
+				Product previousValue = this._Product.Entity;
+				if (((previousValue != value) 
+							|| (this._Product.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Product.Entity = null;
+						previousValue.Bill_ImportProducts.Remove(this);
+					}
+					this._Product.Entity = value;
+					if ((value != null))
+					{
+						value.Bill_ImportProducts.Add(this);
+						this._Product_Id = value.ID;
+					}
+					else
+					{
+						this._Product_Id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Product");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1560,6 +1861,8 @@ namespace Cinema_Management_System
 		
 		private int _Id;
 		
+		private string _IdFormat;
+		
 		private string _FullName;
 		
 		private string _PhoneNumber;
@@ -1574,7 +1877,7 @@ namespace Cinema_Management_System
 		
 		private string _Gender;
 		
-		private EntitySet<Bill> _Bills;
+		private System.Nullable<bool> _IsDeleted;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1582,6 +1885,8 @@ namespace Cinema_Management_System
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
+    partial void OnIdFormatChanging(string value);
+    partial void OnIdFormatChanged();
     partial void OnFullNameChanging(string value);
     partial void OnFullNameChanged();
     partial void OnPhoneNumberChanging(string value);
@@ -1596,11 +1901,12 @@ namespace Cinema_Management_System
     partial void OnRegDateChanged();
     partial void OnGenderChanging(string value);
     partial void OnGenderChanged();
+    partial void OnIsDeletedChanging(System.Nullable<bool> value);
+    partial void OnIsDeletedChanged();
     #endregion
 		
 		public CUSTOMER()
 		{
-			this._Bills = new EntitySet<Bill>(new Action<Bill>(this.attach_Bills), new Action<Bill>(this.detach_Bills));
 			OnCreated();
 		}
 		
@@ -1620,6 +1926,26 @@ namespace Cinema_Management_System
 					this._Id = value;
 					this.SendPropertyChanged("Id");
 					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdFormat", AutoSync=AutoSync.Always, DbType="VarChar(32)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string IdFormat
+		{
+			get
+			{
+				return this._IdFormat;
+			}
+			set
+			{
+				if ((this._IdFormat != value))
+				{
+					this.OnIdFormatChanging(value);
+					this.SendPropertyChanging();
+					this._IdFormat = value;
+					this.SendPropertyChanged("IdFormat");
+					this.OnIdFormatChanged();
 				}
 			}
 		}
@@ -1764,16 +2090,453 @@ namespace Cinema_Management_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CUSTOMER_Bill", Storage="_Bills", ThisKey="Id", OtherKey="Customer_Id")]
-		public EntitySet<Bill> Bills
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDeleted", DbType="Bit")]
+		public System.Nullable<bool> IsDeleted
 		{
 			get
 			{
-				return this._Bills;
+				return this._IsDeleted;
 			}
 			set
 			{
-				this._Bills.Assign(value);
+				if ((this._IsDeleted != value))
+				{
+					this.OnIsDeletedChanging(value);
+					this.SendPropertyChanging();
+					this._IsDeleted = value;
+					this.SendPropertyChanged("IsDeleted");
+					this.OnIsDeletedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MOVIE")]
+	public partial class MOVIE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _MovieCode;
+		
+		private string _Title;
+		
+		private string _Description;
+		
+		private string _Genre;
+		
+		private string _Director;
+		
+		private int _ReleaseYear;
+		
+		private string _Language;
+		
+		private string _Country;
+		
+		private int _Length;
+		
+		private string _Trailer;
+		
+		private System.DateTime _StartDate;
+		
+		private string _Status;
+		
+		private int _ImportPrice;
+		
+		private System.Data.Linq.Binary _ImageSource;
+		
+		private EntitySet<Bill_AddMovie> _Bill_AddMovies;
+		
+		private EntitySet<ShowTime> _ShowTimes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnMovieCodeChanging(string value);
+    partial void OnMovieCodeChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnGenreChanging(string value);
+    partial void OnGenreChanged();
+    partial void OnDirectorChanging(string value);
+    partial void OnDirectorChanged();
+    partial void OnReleaseYearChanging(int value);
+    partial void OnReleaseYearChanged();
+    partial void OnLanguageChanging(string value);
+    partial void OnLanguageChanged();
+    partial void OnCountryChanging(string value);
+    partial void OnCountryChanged();
+    partial void OnLengthChanging(int value);
+    partial void OnLengthChanged();
+    partial void OnTrailerChanging(string value);
+    partial void OnTrailerChanged();
+    partial void OnStartDateChanging(System.DateTime value);
+    partial void OnStartDateChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    partial void OnImportPriceChanging(int value);
+    partial void OnImportPriceChanged();
+    partial void OnImageSourceChanging(System.Data.Linq.Binary value);
+    partial void OnImageSourceChanged();
+    #endregion
+		
+		public MOVIE()
+		{
+			this._Bill_AddMovies = new EntitySet<Bill_AddMovie>(new Action<Bill_AddMovie>(this.attach_Bill_AddMovies), new Action<Bill_AddMovie>(this.detach_Bill_AddMovies));
+			this._ShowTimes = new EntitySet<ShowTime>(new Action<ShowTime>(this.attach_ShowTimes), new Action<ShowTime>(this.detach_ShowTimes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MovieCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MovieCode
+		{
+			get
+			{
+				return this._MovieCode;
+			}
+			set
+			{
+				if ((this._MovieCode != value))
+				{
+					this.OnMovieCodeChanging(value);
+					this.SendPropertyChanging();
+					this._MovieCode = value;
+					this.SendPropertyChanged("MovieCode");
+					this.OnMovieCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Genre", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Genre
+		{
+			get
+			{
+				return this._Genre;
+			}
+			set
+			{
+				if ((this._Genre != value))
+				{
+					this.OnGenreChanging(value);
+					this.SendPropertyChanging();
+					this._Genre = value;
+					this.SendPropertyChanged("Genre");
+					this.OnGenreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Director", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Director
+		{
+			get
+			{
+				return this._Director;
+			}
+			set
+			{
+				if ((this._Director != value))
+				{
+					this.OnDirectorChanging(value);
+					this.SendPropertyChanging();
+					this._Director = value;
+					this.SendPropertyChanged("Director");
+					this.OnDirectorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReleaseYear", DbType="Int NOT NULL")]
+		public int ReleaseYear
+		{
+			get
+			{
+				return this._ReleaseYear;
+			}
+			set
+			{
+				if ((this._ReleaseYear != value))
+				{
+					this.OnReleaseYearChanging(value);
+					this.SendPropertyChanging();
+					this._ReleaseYear = value;
+					this.SendPropertyChanged("ReleaseYear");
+					this.OnReleaseYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Language", DbType="NVarChar(100)")]
+		public string Language
+		{
+			get
+			{
+				return this._Language;
+			}
+			set
+			{
+				if ((this._Language != value))
+				{
+					this.OnLanguageChanging(value);
+					this.SendPropertyChanging();
+					this._Language = value;
+					this.SendPropertyChanged("Language");
+					this.OnLanguageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Country
+		{
+			get
+			{
+				return this._Country;
+			}
+			set
+			{
+				if ((this._Country != value))
+				{
+					this.OnCountryChanging(value);
+					this.SendPropertyChanging();
+					this._Country = value;
+					this.SendPropertyChanged("Country");
+					this.OnCountryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="Int NOT NULL")]
+		public int Length
+		{
+			get
+			{
+				return this._Length;
+			}
+			set
+			{
+				if ((this._Length != value))
+				{
+					this.OnLengthChanging(value);
+					this.SendPropertyChanging();
+					this._Length = value;
+					this.SendPropertyChanged("Length");
+					this.OnLengthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trailer", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string Trailer
+		{
+			get
+			{
+				return this._Trailer;
+			}
+			set
+			{
+				if ((this._Trailer != value))
+				{
+					this.OnTrailerChanging(value);
+					this.SendPropertyChanging();
+					this._Trailer = value;
+					this.SendPropertyChanged("Trailer");
+					this.OnTrailerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportPrice", DbType="Int NOT NULL")]
+		public int ImportPrice
+		{
+			get
+			{
+				return this._ImportPrice;
+			}
+			set
+			{
+				if ((this._ImportPrice != value))
+				{
+					this.OnImportPriceChanging(value);
+					this.SendPropertyChanging();
+					this._ImportPrice = value;
+					this.SendPropertyChanged("ImportPrice");
+					this.OnImportPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageSource", DbType="VarBinary(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary ImageSource
+		{
+			get
+			{
+				return this._ImageSource;
+			}
+			set
+			{
+				if ((this._ImageSource != value))
+				{
+					this.OnImageSourceChanging(value);
+					this.SendPropertyChanging();
+					this._ImageSource = value;
+					this.SendPropertyChanged("ImageSource");
+					this.OnImageSourceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MOVIE_Bill_AddMovie", Storage="_Bill_AddMovies", ThisKey="id", OtherKey="Movie_Id")]
+		public EntitySet<Bill_AddMovie> Bill_AddMovies
+		{
+			get
+			{
+				return this._Bill_AddMovies;
+			}
+			set
+			{
+				this._Bill_AddMovies.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MOVIE_ShowTime", Storage="_ShowTimes", ThisKey="id", OtherKey="Movie_Id")]
+		public EntitySet<ShowTime> ShowTimes
+		{
+			get
+			{
+				return this._ShowTimes;
+			}
+			set
+			{
+				this._ShowTimes.Assign(value);
 			}
 		}
 		
@@ -1797,16 +2560,28 @@ namespace Cinema_Management_System
 			}
 		}
 		
-		private void attach_Bills(Bill entity)
+		private void attach_Bill_AddMovies(Bill_AddMovie entity)
 		{
 			this.SendPropertyChanging();
-			entity.CUSTOMER = this;
+			entity.MOVIE = this;
 		}
 		
-		private void detach_Bills(Bill entity)
+		private void detach_Bill_AddMovies(Bill_AddMovie entity)
 		{
 			this.SendPropertyChanging();
-			entity.CUSTOMER = null;
+			entity.MOVIE = null;
+		}
+		
+		private void attach_ShowTimes(ShowTime entity)
+		{
+			this.SendPropertyChanging();
+			entity.MOVIE = this;
+		}
+		
+		private void detach_ShowTimes(ShowTime entity)
+		{
+			this.SendPropertyChanging();
+			entity.MOVIE = null;
 		}
 	}
 	
@@ -1829,6 +2604,10 @@ namespace Cinema_Management_System
 		private System.Nullable<int> _Price;
 		
 		private int _Type;
+		
+		private EntitySet<Bill_AddProduct> _Bill_AddProducts;
+		
+		private EntitySet<Bill_ImportProduct> _Bill_ImportProducts;
 		
 		private EntitySet<BillDetail> _BillDetails;
 		
@@ -1854,6 +2633,8 @@ namespace Cinema_Management_System
 		
 		public Product()
 		{
+			this._Bill_AddProducts = new EntitySet<Bill_AddProduct>(new Action<Bill_AddProduct>(this.attach_Bill_AddProducts), new Action<Bill_AddProduct>(this.detach_Bill_AddProducts));
+			this._Bill_ImportProducts = new EntitySet<Bill_ImportProduct>(new Action<Bill_ImportProduct>(this.attach_Bill_ImportProducts), new Action<Bill_ImportProduct>(this.detach_Bill_ImportProducts));
 			this._BillDetails = new EntitySet<BillDetail>(new Action<BillDetail>(this.attach_BillDetails), new Action<BillDetail>(this.detach_BillDetails));
 			OnCreated();
 		}
@@ -1998,6 +2779,32 @@ namespace Cinema_Management_System
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Bill_AddProduct", Storage="_Bill_AddProducts", ThisKey="ID", OtherKey="Product_Id")]
+		public EntitySet<Bill_AddProduct> Bill_AddProducts
+		{
+			get
+			{
+				return this._Bill_AddProducts;
+			}
+			set
+			{
+				this._Bill_AddProducts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Bill_ImportProduct", Storage="_Bill_ImportProducts", ThisKey="ID", OtherKey="Product_Id")]
+		public EntitySet<Bill_ImportProduct> Bill_ImportProducts
+		{
+			get
+			{
+				return this._Bill_ImportProducts;
+			}
+			set
+			{
+				this._Bill_ImportProducts.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_BillDetail", Storage="_BillDetails", ThisKey="ID", OtherKey="Product_Id")]
 		public EntitySet<BillDetail> BillDetails
 		{
@@ -2029,6 +2836,30 @@ namespace Cinema_Management_System
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Bill_AddProducts(Bill_AddProduct entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = this;
+		}
+		
+		private void detach_Bill_AddProducts(Bill_AddProduct entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = null;
+		}
+		
+		private void attach_Bill_ImportProducts(Bill_ImportProduct entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = this;
+		}
+		
+		private void detach_Bill_ImportProducts(Bill_ImportProduct entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = null;
 		}
 		
 		private void attach_BillDetails(BillDetail entity)
@@ -2689,10 +3520,26 @@ namespace Cinema_Management_System
 			}
 			set
 			{
-				if ((this._MOVIE.Entity != value))
+				MOVIE previousValue = this._MOVIE.Entity;
+				if (((previousValue != value) 
+							|| (this._MOVIE.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MOVIE.Entity = null;
+						previousValue.ShowTimes.Remove(this);
+					}
 					this._MOVIE.Entity = value;
+					if ((value != null))
+					{
+						value.ShowTimes.Add(this);
+						this._Movie_Id = value.id;
+					}
+					else
+					{
+						this._Movie_Id = default(int);
+					}
 					this.SendPropertyChanged("MOVIE");
 				}
 			}
@@ -2743,364 +3590,253 @@ namespace Cinema_Management_System
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MOVIE")]
-	public partial class MOVIE : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.STAFF")]
+	public partial class STAFF : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id;
+		private int _Id;
 		
-		private string _MovieCode;
+		private string _FullName;
 		
-		private string _Title;
+		private System.DateTime _Birth;
 		
-		private string _Description;
+		private string _Gender;
 		
-		private string _Genre;
+		private string _Email;
 		
-		private string _Director;
+		private string _PhoneNumber;
 		
-		private int _ReleaseYear;
+		private int _Salary;
 		
-		private string _Language;
+		private string _Role;
 		
-		private string _Country;
-		
-		private int _Length;
-		
-		private string _Trailer;
-		
-		private System.DateTime _StartDate;
-		
-		private string _Status;
-		
-		private int _ImportPrice;
+		private System.DateTime _NgayVaoLam;
 		
 		private System.Data.Linq.Binary _ImageSource;
+		
+		private EntitySet<ACCOUNT> _ACCOUNTs;
+		
+		private EntitySet<Bill> _Bills;
+		
+		private EntitySet<Staff_Salary> _Staff_Salaries;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnMovieCodeChanging(string value);
-    partial void OnMovieCodeChanged();
-    partial void OnTitleChanging(string value);
-    partial void OnTitleChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnGenreChanging(string value);
-    partial void OnGenreChanged();
-    partial void OnDirectorChanging(string value);
-    partial void OnDirectorChanged();
-    partial void OnReleaseYearChanging(int value);
-    partial void OnReleaseYearChanged();
-    partial void OnLanguageChanging(string value);
-    partial void OnLanguageChanged();
-    partial void OnCountryChanging(string value);
-    partial void OnCountryChanged();
-    partial void OnLengthChanging(int value);
-    partial void OnLengthChanged();
-    partial void OnTrailerChanging(string value);
-    partial void OnTrailerChanged();
-    partial void OnStartDateChanging(System.DateTime value);
-    partial void OnStartDateChanged();
-    partial void OnStatusChanging(string value);
-    partial void OnStatusChanged();
-    partial void OnImportPriceChanging(int value);
-    partial void OnImportPriceChanged();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnFullNameChanging(string value);
+    partial void OnFullNameChanged();
+    partial void OnBirthChanging(System.DateTime value);
+    partial void OnBirthChanged();
+    partial void OnGenderChanging(string value);
+    partial void OnGenderChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnPhoneNumberChanging(string value);
+    partial void OnPhoneNumberChanged();
+    partial void OnSalaryChanging(int value);
+    partial void OnSalaryChanged();
+    partial void OnRoleChanging(string value);
+    partial void OnRoleChanged();
+    partial void OnNgayVaoLamChanging(System.DateTime value);
+    partial void OnNgayVaoLamChanged();
     partial void OnImageSourceChanging(System.Data.Linq.Binary value);
     partial void OnImageSourceChanged();
     #endregion
 		
-		public MOVIE()
+		public STAFF()
 		{
+			this._ACCOUNTs = new EntitySet<ACCOUNT>(new Action<ACCOUNT>(this.attach_ACCOUNTs), new Action<ACCOUNT>(this.detach_ACCOUNTs));
+			this._Bills = new EntitySet<Bill>(new Action<Bill>(this.attach_Bills), new Action<Bill>(this.detach_Bills));
+			this._Staff_Salaries = new EntitySet<Staff_Salary>(new Action<Staff_Salary>(this.attach_Staff_Salaries), new Action<Staff_Salary>(this.detach_Staff_Salaries));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
 		{
 			get
 			{
-				return this._id;
+				return this._Id;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._Id != value))
 				{
-					this.OnidChanging(value);
+					this.OnIdChanging(value);
 					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MovieCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string MovieCode
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string FullName
 		{
 			get
 			{
-				return this._MovieCode;
+				return this._FullName;
 			}
 			set
 			{
-				if ((this._MovieCode != value))
+				if ((this._FullName != value))
 				{
-					this.OnMovieCodeChanging(value);
+					this.OnFullNameChanging(value);
 					this.SendPropertyChanging();
-					this._MovieCode = value;
-					this.SendPropertyChanged("MovieCode");
-					this.OnMovieCodeChanged();
+					this._FullName = value;
+					this.SendPropertyChanged("FullName");
+					this.OnFullNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Title
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Birth", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime Birth
 		{
 			get
 			{
-				return this._Title;
+				return this._Birth;
 			}
 			set
 			{
-				if ((this._Title != value))
+				if ((this._Birth != value))
 				{
-					this.OnTitleChanging(value);
+					this.OnBirthChanging(value);
 					this.SendPropertyChanging();
-					this._Title = value;
-					this.SendPropertyChanged("Title");
-					this.OnTitleChanged();
+					this._Birth = value;
+					this.SendPropertyChanged("Birth");
+					this.OnBirthChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Description
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Gender
 		{
 			get
 			{
-				return this._Description;
+				return this._Gender;
 			}
 			set
 			{
-				if ((this._Description != value))
+				if ((this._Gender != value))
 				{
-					this.OnDescriptionChanging(value);
+					this.OnGenderChanging(value);
 					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
+					this._Gender = value;
+					this.SendPropertyChanged("Gender");
+					this.OnGenderChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Genre", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Genre
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Email
 		{
 			get
 			{
-				return this._Genre;
+				return this._Email;
 			}
 			set
 			{
-				if ((this._Genre != value))
+				if ((this._Email != value))
 				{
-					this.OnGenreChanging(value);
+					this.OnEmailChanging(value);
 					this.SendPropertyChanging();
-					this._Genre = value;
-					this.SendPropertyChanged("Genre");
-					this.OnGenreChanged();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Director", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Director
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string PhoneNumber
 		{
 			get
 			{
-				return this._Director;
+				return this._PhoneNumber;
 			}
 			set
 			{
-				if ((this._Director != value))
+				if ((this._PhoneNumber != value))
 				{
-					this.OnDirectorChanging(value);
+					this.OnPhoneNumberChanging(value);
 					this.SendPropertyChanging();
-					this._Director = value;
-					this.SendPropertyChanged("Director");
-					this.OnDirectorChanged();
+					this._PhoneNumber = value;
+					this.SendPropertyChanged("PhoneNumber");
+					this.OnPhoneNumberChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReleaseYear", DbType="Int NOT NULL")]
-		public int ReleaseYear
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salary", DbType="Int NOT NULL")]
+		public int Salary
 		{
 			get
 			{
-				return this._ReleaseYear;
+				return this._Salary;
 			}
 			set
 			{
-				if ((this._ReleaseYear != value))
+				if ((this._Salary != value))
 				{
-					this.OnReleaseYearChanging(value);
+					this.OnSalaryChanging(value);
 					this.SendPropertyChanging();
-					this._ReleaseYear = value;
-					this.SendPropertyChanged("ReleaseYear");
-					this.OnReleaseYearChanged();
+					this._Salary = value;
+					this.SendPropertyChanged("Salary");
+					this.OnSalaryChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Language", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string Language
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string Role
 		{
 			get
 			{
-				return this._Language;
+				return this._Role;
 			}
 			set
 			{
-				if ((this._Language != value))
+				if ((this._Role != value))
 				{
-					this.OnLanguageChanging(value);
+					this.OnRoleChanging(value);
 					this.SendPropertyChanging();
-					this._Language = value;
-					this.SendPropertyChanged("Language");
-					this.OnLanguageChanged();
+					this._Role = value;
+					this.SendPropertyChanged("Role");
+					this.OnRoleChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string Country
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayVaoLam", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime NgayVaoLam
 		{
 			get
 			{
-				return this._Country;
+				return this._NgayVaoLam;
 			}
 			set
 			{
-				if ((this._Country != value))
+				if ((this._NgayVaoLam != value))
 				{
-					this.OnCountryChanging(value);
+					this.OnNgayVaoLamChanging(value);
 					this.SendPropertyChanging();
-					this._Country = value;
-					this.SendPropertyChanged("Country");
-					this.OnCountryChanged();
+					this._NgayVaoLam = value;
+					this.SendPropertyChanged("NgayVaoLam");
+					this.OnNgayVaoLamChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="Int NOT NULL")]
-		public int Length
-		{
-			get
-			{
-				return this._Length;
-			}
-			set
-			{
-				if ((this._Length != value))
-				{
-					this.OnLengthChanging(value);
-					this.SendPropertyChanging();
-					this._Length = value;
-					this.SendPropertyChanged("Length");
-					this.OnLengthChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trailer", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string Trailer
-		{
-			get
-			{
-				return this._Trailer;
-			}
-			set
-			{
-				if ((this._Trailer != value))
-				{
-					this.OnTrailerChanging(value);
-					this.SendPropertyChanging();
-					this._Trailer = value;
-					this.SendPropertyChanged("Trailer");
-					this.OnTrailerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime StartDate
-		{
-			get
-			{
-				return this._StartDate;
-			}
-			set
-			{
-				if ((this._StartDate != value))
-				{
-					this.OnStartDateChanging(value);
-					this.SendPropertyChanging();
-					this._StartDate = value;
-					this.SendPropertyChanged("StartDate");
-					this.OnStartDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportPrice", DbType="Int NOT NULL")]
-		public int ImportPrice
-		{
-			get
-			{
-				return this._ImportPrice;
-			}
-			set
-			{
-				if ((this._ImportPrice != value))
-				{
-					this.OnImportPriceChanging(value);
-					this.SendPropertyChanging();
-					this._ImportPrice = value;
-					this.SendPropertyChanged("ImportPrice");
-					this.OnImportPriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageSource", DbType="VarBinary(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageSource", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary ImageSource
 		{
 			get
@@ -3116,6 +3852,462 @@ namespace Cinema_Management_System
 					this._ImageSource = value;
 					this.SendPropertyChanged("ImageSource");
 					this.OnImageSourceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STAFF_ACCOUNT", Storage="_ACCOUNTs", ThisKey="Id", OtherKey="Staff_Id")]
+		public EntitySet<ACCOUNT> ACCOUNTs
+		{
+			get
+			{
+				return this._ACCOUNTs;
+			}
+			set
+			{
+				this._ACCOUNTs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STAFF_Bill", Storage="_Bills", ThisKey="Id", OtherKey="Staff_Id")]
+		public EntitySet<Bill> Bills
+		{
+			get
+			{
+				return this._Bills;
+			}
+			set
+			{
+				this._Bills.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STAFF_Staff_Salary", Storage="_Staff_Salaries", ThisKey="Id", OtherKey="Staff_Id")]
+		public EntitySet<Staff_Salary> Staff_Salaries
+		{
+			get
+			{
+				return this._Staff_Salaries;
+			}
+			set
+			{
+				this._Staff_Salaries.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ACCOUNTs(ACCOUNT entity)
+		{
+			this.SendPropertyChanging();
+			entity.STAFF = this;
+		}
+		
+		private void detach_ACCOUNTs(ACCOUNT entity)
+		{
+			this.SendPropertyChanging();
+			entity.STAFF = null;
+		}
+		
+		private void attach_Bills(Bill entity)
+		{
+			this.SendPropertyChanging();
+			entity.STAFF = this;
+		}
+		
+		private void detach_Bills(Bill entity)
+		{
+			this.SendPropertyChanging();
+			entity.STAFF = null;
+		}
+		
+		private void attach_Staff_Salaries(Staff_Salary entity)
+		{
+			this.SendPropertyChanging();
+			entity.STAFF = this;
+		}
+		
+		private void detach_Staff_Salaries(Staff_Salary entity)
+		{
+			this.SendPropertyChanging();
+			entity.STAFF = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Staff_Salary")]
+	public partial class Staff_Salary : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _Staff_Id;
+		
+		private System.Nullable<System.DateTime> _BillDate;
+		
+		private System.Nullable<int> _Total;
+		
+		private EntityRef<STAFF> _STAFF;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnStaff_IdChanging(System.Nullable<int> value);
+    partial void OnStaff_IdChanged();
+    partial void OnBillDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnBillDateChanged();
+    partial void OnTotalChanging(System.Nullable<int> value);
+    partial void OnTotalChanged();
+    #endregion
+		
+		public Staff_Salary()
+		{
+			this._STAFF = default(EntityRef<STAFF>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Staff_Id", DbType="Int")]
+		public System.Nullable<int> Staff_Id
+		{
+			get
+			{
+				return this._Staff_Id;
+			}
+			set
+			{
+				if ((this._Staff_Id != value))
+				{
+					if (this._STAFF.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStaff_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Staff_Id = value;
+					this.SendPropertyChanged("Staff_Id");
+					this.OnStaff_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> BillDate
+		{
+			get
+			{
+				return this._BillDate;
+			}
+			set
+			{
+				if ((this._BillDate != value))
+				{
+					this.OnBillDateChanging(value);
+					this.SendPropertyChanging();
+					this._BillDate = value;
+					this.SendPropertyChanged("BillDate");
+					this.OnBillDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this.OnTotalChanging(value);
+					this.SendPropertyChanging();
+					this._Total = value;
+					this.SendPropertyChanged("Total");
+					this.OnTotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STAFF_Staff_Salary", Storage="_STAFF", ThisKey="Staff_Id", OtherKey="Id", IsForeignKey=true)]
+		public STAFF STAFF
+		{
+			get
+			{
+				return this._STAFF.Entity;
+			}
+			set
+			{
+				STAFF previousValue = this._STAFF.Entity;
+				if (((previousValue != value) 
+							|| (this._STAFF.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._STAFF.Entity = null;
+						previousValue.Staff_Salaries.Remove(this);
+					}
+					this._STAFF.Entity = value;
+					if ((value != null))
+					{
+						value.Staff_Salaries.Add(this);
+						this._Staff_Id = value.Id;
+					}
+					else
+					{
+						this._Staff_Id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("STAFF");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VOUCHER")]
+	public partial class VOUCHER : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _NAME;
+		
+		private string _CODE;
+		
+		private string _VOUCHERDETAIL;
+		
+		private string _TYPE;
+		
+		private System.DateTime _STARTDATE;
+		
+		private System.DateTime _FINDATE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNAMEChanging(string value);
+    partial void OnNAMEChanged();
+    partial void OnCODEChanging(string value);
+    partial void OnCODEChanged();
+    partial void OnVOUCHERDETAILChanging(string value);
+    partial void OnVOUCHERDETAILChanged();
+    partial void OnTYPEChanging(string value);
+    partial void OnTYPEChanged();
+    partial void OnSTARTDATEChanging(System.DateTime value);
+    partial void OnSTARTDATEChanged();
+    partial void OnFINDATEChanging(System.DateTime value);
+    partial void OnFINDATEChanged();
+    #endregion
+		
+		public VOUCHER()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string NAME
+		{
+			get
+			{
+				return this._NAME;
+			}
+			set
+			{
+				if ((this._NAME != value))
+				{
+					this.OnNAMEChanging(value);
+					this.SendPropertyChanging();
+					this._NAME = value;
+					this.SendPropertyChanged("NAME");
+					this.OnNAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODE", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string CODE
+		{
+			get
+			{
+				return this._CODE;
+			}
+			set
+			{
+				if ((this._CODE != value))
+				{
+					this.OnCODEChanging(value);
+					this.SendPropertyChanging();
+					this._CODE = value;
+					this.SendPropertyChanged("CODE");
+					this.OnCODEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VOUCHERDETAIL", DbType="NText NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string VOUCHERDETAIL
+		{
+			get
+			{
+				return this._VOUCHERDETAIL;
+			}
+			set
+			{
+				if ((this._VOUCHERDETAIL != value))
+				{
+					this.OnVOUCHERDETAILChanging(value);
+					this.SendPropertyChanging();
+					this._VOUCHERDETAIL = value;
+					this.SendPropertyChanged("VOUCHERDETAIL");
+					this.OnVOUCHERDETAILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYPE", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string TYPE
+		{
+			get
+			{
+				return this._TYPE;
+			}
+			set
+			{
+				if ((this._TYPE != value))
+				{
+					this.OnTYPEChanging(value);
+					this.SendPropertyChanging();
+					this._TYPE = value;
+					this.SendPropertyChanged("TYPE");
+					this.OnTYPEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STARTDATE", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime STARTDATE
+		{
+			get
+			{
+				return this._STARTDATE;
+			}
+			set
+			{
+				if ((this._STARTDATE != value))
+				{
+					this.OnSTARTDATEChanging(value);
+					this.SendPropertyChanging();
+					this._STARTDATE = value;
+					this.SendPropertyChanged("STARTDATE");
+					this.OnSTARTDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FINDATE", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime FINDATE
+		{
+			get
+			{
+				return this._FINDATE;
+			}
+			set
+			{
+				if ((this._FINDATE != value))
+				{
+					this.OnFINDATEChanging(value);
+					this.SendPropertyChanging();
+					this._FINDATE = value;
+					this.SendPropertyChanged("FINDATE");
+					this.OnFINDATEChanged();
 				}
 			}
 		}

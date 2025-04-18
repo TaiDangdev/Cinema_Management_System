@@ -48,6 +48,7 @@
             this.showTimeManagementyForm1 = new Cinema_Management_System.Views.ShowTimeManagement.ShowTimeManagementyForm();
             this.movieManagementView1 = new Cinema_Management_System.Views.MovieManagement.MovieManagementView();
             this.aboutAccount_Form1 = new Cinema_Management_System.AboutAccount_Form();
+            this.customerManagementView1 = new Cinema_Management_System.Views.CustomerManagement.CustomerManagementView();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -63,8 +64,9 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1222, 45);
+            this.guna2Panel1.Size = new System.Drawing.Size(1222, 62);
             this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2ControlBox2
             // 
@@ -122,9 +124,9 @@
             this.guna2Panel2.Controls.Add(this.showtimeManage_Btn);
             this.guna2Panel2.Controls.Add(this.filmManage_Btn);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 45);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 62);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(200, 682);
+            this.guna2Panel2.Size = new System.Drawing.Size(186, 665);
             this.guna2Panel2.TabIndex = 1;
             // 
             // logout_Btn
@@ -355,13 +357,14 @@
             // 
             // guna2Panel3
             // 
+            this.guna2Panel3.Controls.Add(this.customerManagementView1);
             this.guna2Panel3.Controls.Add(this.showTimeManagementyForm1);
             this.guna2Panel3.Controls.Add(this.movieManagementView1);
             this.guna2Panel3.Controls.Add(this.aboutAccount_Form1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(200, 45);
+            this.guna2Panel3.Location = new System.Drawing.Point(186, 62);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1022, 682);
+            this.guna2Panel3.Size = new System.Drawing.Size(1036, 665);
             this.guna2Panel3.TabIndex = 2;
             // 
             // showTimeManagementyForm1
@@ -371,7 +374,7 @@
             this.showTimeManagementyForm1.Location = new System.Drawing.Point(0, 0);
             this.showTimeManagementyForm1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.showTimeManagementyForm1.Name = "showTimeManagementyForm1";
-            this.showTimeManagementyForm1.Size = new System.Drawing.Size(1022, 682);
+            this.showTimeManagementyForm1.Size = new System.Drawing.Size(1036, 665);
             this.showTimeManagementyForm1.TabIndex = 2;
             // 
             // movieManagementView1
@@ -381,7 +384,7 @@
             this.movieManagementView1.Location = new System.Drawing.Point(0, 0);
             this.movieManagementView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.movieManagementView1.Name = "movieManagementView1";
-            this.movieManagementView1.Size = new System.Drawing.Size(1022, 682);
+            this.movieManagementView1.Size = new System.Drawing.Size(1036, 665);
             this.movieManagementView1.TabIndex = 1;
             // 
             // aboutAccount_Form1
@@ -391,8 +394,18 @@
             this.aboutAccount_Form1.Location = new System.Drawing.Point(0, 0);
             this.aboutAccount_Form1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aboutAccount_Form1.Name = "aboutAccount_Form1";
-            this.aboutAccount_Form1.Size = new System.Drawing.Size(1022, 682);
+            this.aboutAccount_Form1.Size = new System.Drawing.Size(1036, 665);
             this.aboutAccount_Form1.TabIndex = 0;
+            // 
+            // customerManagementView1
+            // 
+            this.customerManagementView1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.customerManagementView1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.customerManagementView1.Location = new System.Drawing.Point(-1, 0);
+            this.customerManagementView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.customerManagementView1.Name = "customerManagementView1";
+            this.customerManagementView1.Size = new System.Drawing.Size(1022, 682);
+            this.customerManagementView1.TabIndex = 3;
             // 
             // AdminForm
             // 
@@ -440,6 +453,7 @@
         private Views.ShowTimeManagement.ShowTimeManagementyForm showTimeManagementyForm1;
         private Views.MovieManagement.MovieManagementView movieManagementView1;
         private AboutAccount_Form aboutAccount_Form1;
+        private Views.CustomerManagement.CustomerManagementView customerManagementView1;
         //private Views.MovieManagement.MovieManagementView movieManagementView1;
         //private AboutAccount_Form aboutAccount_Form2;
         //private Views.ShowTimeManagement.ShowTimeManagementyForm showTimeManagementyForm1;

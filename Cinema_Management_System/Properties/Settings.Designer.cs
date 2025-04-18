@@ -44,5 +44,16 @@ namespace Cinema_Management_System.Properties {
                 return ((string)(this["CinemaManagementConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=CinemaManagement;Integrated Security=True;Encrypt=T" +
+            "rue;TrustServerCertificate=True")]
+        public string CinemaManagementConnectionString2 {
+            get {
+                return ((string)(this["CinemaManagementConnectionString2"]));
+            }
+        }
     }
 }
