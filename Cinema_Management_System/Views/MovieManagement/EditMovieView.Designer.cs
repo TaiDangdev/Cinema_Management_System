@@ -32,8 +32,10 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.languagueMovie_Txt = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.control_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.countryMovie_Txt = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.trailer_btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.resetFilm_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.poster_Pic = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -56,7 +58,6 @@
             this.languageError_Txt = new System.Windows.Forms.Label();
             this.languageMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.countryError_Txt = new System.Windows.Forms.Label();
-            this.countryMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.priceError_Txt = new System.Windows.Forms.Label();
             this.priceMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -79,8 +80,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.titleMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.languagueMovie_Txt.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.control_Panel.SuspendLayout();
+            this.panel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poster_Pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -112,68 +113,127 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Sửa thông tin film";
             // 
-            // languagueMovie_Txt
+            // control_Panel
             // 
-            this.languagueMovie_Txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.languagueMovie_Txt.Controls.Add(this.guna2ControlBox1);
-            this.languagueMovie_Txt.Controls.Add(this.label1);
-            this.languagueMovie_Txt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.languagueMovie_Txt.Location = new System.Drawing.Point(0, 0);
-            this.languagueMovie_Txt.Name = "languagueMovie_Txt";
-            this.languagueMovie_Txt.Size = new System.Drawing.Size(883, 37);
-            this.languagueMovie_Txt.TabIndex = 60;
+            this.control_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            this.control_Panel.Controls.Add(this.guna2ControlBox1);
+            this.control_Panel.Controls.Add(this.label1);
+            this.control_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.control_Panel.Location = new System.Drawing.Point(0, 0);
+            this.control_Panel.Name = "control_Panel";
+            this.control_Panel.Size = new System.Drawing.Size(883, 37);
+            this.control_Panel.TabIndex = 60;
             // 
-            // guna2Panel1
+            // panel
             // 
-            this.guna2Panel1.Controls.Add(this.resetFilm_Btn);
-            this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Controls.Add(this.acceptMovie_Btn);
-            this.guna2Panel1.Controls.Add(this.descriptionError_Txt);
-            this.guna2Panel1.Controls.Add(this.genreError_Txt);
-            this.guna2Panel1.Controls.Add(this.genreMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.trailerError_Txt);
-            this.guna2Panel1.Controls.Add(this.trailerMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.releaseYearError_Txt);
-            this.guna2Panel1.Controls.Add(this.releaseYearMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.descriptionMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.startDateMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.statusMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.label12);
-            this.guna2Panel1.Controls.Add(this.label11);
-            this.guna2Panel1.Controls.Add(this.label10);
-            this.guna2Panel1.Controls.Add(this.label9);
-            this.guna2Panel1.Controls.Add(this.label8);
-            this.guna2Panel1.Controls.Add(this.languageError_Txt);
-            this.guna2Panel1.Controls.Add(this.languageMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.countryError_Txt);
-            this.guna2Panel1.Controls.Add(this.countryMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.priceError_Txt);
-            this.guna2Panel1.Controls.Add(this.priceMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.label15);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel1.Controls.Add(this.chooseImage_Btn);
-            this.guna2Panel1.Controls.Add(this.label13);
-            this.guna2Panel1.Controls.Add(this.label7);
-            this.guna2Panel1.Controls.Add(this.label6);
-            this.guna2Panel1.Controls.Add(this.label5);
-            this.guna2Panel1.Controls.Add(this.codeError_Txt);
-            this.guna2Panel1.Controls.Add(this.codeMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.label17);
-            this.guna2Panel1.Controls.Add(this.lengthError_Txt);
-            this.guna2Panel1.Controls.Add(this.lengthMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.directorError_Txt);
-            this.guna2Panel1.Controls.Add(this.directorMovie_Txt);
-            this.guna2Panel1.Controls.Add(this.label14);
-            this.guna2Panel1.Controls.Add(this.titleError_Txt);
-            this.guna2Panel1.Controls.Add(this.label4);
-            this.guna2Panel1.Controls.Add(this.label2);
-            this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.Controls.Add(this.titleMovie_Txt);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 37);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(883, 514);
-            this.guna2Panel1.TabIndex = 61;
+            this.panel.Controls.Add(this.countryMovie_Txt);
+            this.panel.Controls.Add(this.trailer_btn);
+            this.panel.Controls.Add(this.resetFilm_Btn);
+            this.panel.Controls.Add(this.guna2Panel2);
+            this.panel.Controls.Add(this.acceptMovie_Btn);
+            this.panel.Controls.Add(this.descriptionError_Txt);
+            this.panel.Controls.Add(this.genreError_Txt);
+            this.panel.Controls.Add(this.genreMovie_Txt);
+            this.panel.Controls.Add(this.trailerError_Txt);
+            this.panel.Controls.Add(this.trailerMovie_Txt);
+            this.panel.Controls.Add(this.releaseYearError_Txt);
+            this.panel.Controls.Add(this.releaseYearMovie_Txt);
+            this.panel.Controls.Add(this.descriptionMovie_Txt);
+            this.panel.Controls.Add(this.startDateMovie_Txt);
+            this.panel.Controls.Add(this.statusMovie_Txt);
+            this.panel.Controls.Add(this.label12);
+            this.panel.Controls.Add(this.label11);
+            this.panel.Controls.Add(this.label10);
+            this.panel.Controls.Add(this.label9);
+            this.panel.Controls.Add(this.label8);
+            this.panel.Controls.Add(this.languageError_Txt);
+            this.panel.Controls.Add(this.languageMovie_Txt);
+            this.panel.Controls.Add(this.countryError_Txt);
+            this.panel.Controls.Add(this.priceError_Txt);
+            this.panel.Controls.Add(this.priceMovie_Txt);
+            this.panel.Controls.Add(this.label15);
+            this.panel.Controls.Add(this.guna2PictureBox1);
+            this.panel.Controls.Add(this.chooseImage_Btn);
+            this.panel.Controls.Add(this.label13);
+            this.panel.Controls.Add(this.label7);
+            this.panel.Controls.Add(this.label6);
+            this.panel.Controls.Add(this.label5);
+            this.panel.Controls.Add(this.codeError_Txt);
+            this.panel.Controls.Add(this.codeMovie_Txt);
+            this.panel.Controls.Add(this.label17);
+            this.panel.Controls.Add(this.lengthError_Txt);
+            this.panel.Controls.Add(this.lengthMovie_Txt);
+            this.panel.Controls.Add(this.directorError_Txt);
+            this.panel.Controls.Add(this.directorMovie_Txt);
+            this.panel.Controls.Add(this.label14);
+            this.panel.Controls.Add(this.titleError_Txt);
+            this.panel.Controls.Add(this.label4);
+            this.panel.Controls.Add(this.label2);
+            this.panel.Controls.Add(this.label3);
+            this.panel.Controls.Add(this.titleMovie_Txt);
+            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel.Location = new System.Drawing.Point(0, 37);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(883, 514);
+            this.panel.TabIndex = 61;
+            // 
+            // countryMovie_Txt
+            // 
+            this.countryMovie_Txt.BackColor = System.Drawing.Color.Transparent;
+            this.countryMovie_Txt.BorderColor = System.Drawing.Color.Black;
+            this.countryMovie_Txt.BorderRadius = 4;
+            this.countryMovie_Txt.DisplayMember = "Value";
+            this.countryMovie_Txt.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.countryMovie_Txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.countryMovie_Txt.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.countryMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.countryMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.countryMovie_Txt.ForeColor = System.Drawing.Color.Black;
+            this.countryMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.countryMovie_Txt.ItemHeight = 30;
+            this.countryMovie_Txt.Items.AddRange(new object[] {
+            "Việt Nam",
+            "Hoa Kỳ",
+            "Hàn Quốc",
+            "Trung Quốc",
+            "Nhật Bản",
+            "Thái Lan",
+            "Pháp",
+            "Anh",
+            "Ấn Độ",
+            "Đài Loan",
+            "Tây Ban Nha",
+            "Canada",
+            "Úc",
+            "Đức",
+            "Malaysia"});
+            this.countryMovie_Txt.Location = new System.Drawing.Point(23, 117);
+            this.countryMovie_Txt.Name = "countryMovie_Txt";
+            this.countryMovie_Txt.Size = new System.Drawing.Size(162, 36);
+            this.countryMovie_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.countryMovie_Txt.TabIndex = 151;
+            this.countryMovie_Txt.ValueMember = "Value";
+            // 
+            // trailer_btn
+            // 
+            this.trailer_btn.Animated = true;
+            this.trailer_btn.BackColor = System.Drawing.Color.Transparent;
+            this.trailer_btn.BorderRadius = 5;
+            this.trailer_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.trailer_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.trailer_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.trailer_btn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.trailer_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.trailer_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.trailer_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
+            this.trailer_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.trailer_btn.ForeColor = System.Drawing.Color.White;
+            this.trailer_btn.Location = new System.Drawing.Point(241, 288);
+            this.trailer_btn.Name = "trailer_btn";
+            this.trailer_btn.Size = new System.Drawing.Size(109, 39);
+            this.trailer_btn.TabIndex = 150;
+            this.trailer_btn.Text = "Xem trailer";
+            this.trailer_btn.Click += new System.EventHandler(this.trailer_btn_Click);
             // 
             // resetFilm_Btn
             // 
@@ -191,7 +251,7 @@
             this.resetFilm_Btn.ForeColor = System.Drawing.Color.White;
             this.resetFilm_Btn.Location = new System.Drawing.Point(602, 450);
             this.resetFilm_Btn.Name = "resetFilm_Btn";
-            this.resetFilm_Btn.Size = new System.Drawing.Size(131, 39);
+            this.resetFilm_Btn.Size = new System.Drawing.Size(96, 39);
             this.resetFilm_Btn.TabIndex = 149;
             this.resetFilm_Btn.Text = "Đặt lại";
             this.resetFilm_Btn.Click += new System.EventHandler(this.resetFilm_Btn_Click);
@@ -229,7 +289,7 @@
             this.acceptMovie_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.acceptMovie_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.acceptMovie_Btn.ForeColor = System.Drawing.Color.White;
-            this.acceptMovie_Btn.Location = new System.Drawing.Point(772, 450);
+            this.acceptMovie_Btn.Location = new System.Drawing.Point(740, 450);
             this.acceptMovie_Btn.Name = "acceptMovie_Btn";
             this.acceptMovie_Btn.Size = new System.Drawing.Size(96, 39);
             this.acceptMovie_Btn.TabIndex = 147;
@@ -271,10 +331,10 @@
             this.genreMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.genreMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.genreMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.genreMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.genreMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.genreMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.genreMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.genreMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.genreMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.genreMovie_Txt.Location = new System.Drawing.Point(361, 293);
             this.genreMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.genreMovie_Txt.Name = "genreMovie_Txt";
@@ -308,16 +368,16 @@
             this.trailerMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.trailerMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.trailerMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.trailerMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.trailerMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.trailerMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.trailerMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.trailerMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.trailerMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.trailerMovie_Txt.Location = new System.Drawing.Point(20, 293);
             this.trailerMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.trailerMovie_Txt.Name = "trailerMovie_Txt";
             this.trailerMovie_Txt.PlaceholderText = "";
             this.trailerMovie_Txt.SelectedText = "";
-            this.trailerMovie_Txt.Size = new System.Drawing.Size(306, 34);
+            this.trailerMovie_Txt.Size = new System.Drawing.Size(213, 34);
             this.trailerMovie_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.trailerMovie_Txt.TabIndex = 142;
             // 
@@ -345,10 +405,10 @@
             this.releaseYearMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.releaseYearMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.releaseYearMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.releaseYearMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.releaseYearMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.releaseYearMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.releaseYearMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.releaseYearMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.releaseYearMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.releaseYearMovie_Txt.Location = new System.Drawing.Point(20, 207);
             this.releaseYearMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.releaseYearMovie_Txt.Name = "releaseYearMovie_Txt";
@@ -372,10 +432,10 @@
             this.descriptionMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.descriptionMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.descriptionMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.descriptionMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.descriptionMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.descriptionMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.descriptionMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.descriptionMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.descriptionMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.descriptionMovie_Txt.Location = new System.Drawing.Point(20, 359);
             this.descriptionMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.descriptionMovie_Txt.Multiline = true;
@@ -393,6 +453,7 @@
             this.startDateMovie_Txt.BorderThickness = 1;
             this.startDateMovie_Txt.Checked = true;
             this.startDateMovie_Txt.FillColor = System.Drawing.Color.White;
+            this.startDateMovie_Txt.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.startDateMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.startDateMovie_Txt.ForeColor = System.Drawing.Color.Black;
             this.startDateMovie_Txt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -411,14 +472,16 @@
             this.statusMovie_Txt.BorderRadius = 4;
             this.statusMovie_Txt.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.statusMovie_Txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.statusMovie_Txt.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.statusMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.statusMovie_Txt.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.statusMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.statusMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.statusMovie_Txt.ForeColor = System.Drawing.Color.Black;
+            this.statusMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.statusMovie_Txt.ItemHeight = 30;
             this.statusMovie_Txt.Items.AddRange(new object[] {
             "Đang phát hành",
-            "Ngưng phát hành"});
+            "Ngưng phát hành",
+            "Sắp phát hành"});
             this.statusMovie_Txt.Location = new System.Drawing.Point(174, 207);
             this.statusMovie_Txt.Name = "statusMovie_Txt";
             this.statusMovie_Txt.Size = new System.Drawing.Size(172, 36);
@@ -505,10 +568,10 @@
             this.languageMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.languageMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.languageMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.languageMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.languageMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.languageMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.languageMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.languageMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.languageMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.languageMovie_Txt.Location = new System.Drawing.Point(214, 119);
             this.languageMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.languageMovie_Txt.Name = "languageMovie_Txt";
@@ -523,37 +586,11 @@
             this.countryError_Txt.AutoSize = true;
             this.countryError_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.countryError_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.countryError_Txt.Location = new System.Drawing.Point(21, 162);
+            this.countryError_Txt.Location = new System.Drawing.Point(22, 158);
             this.countryError_Txt.Name = "countryError_Txt";
             this.countryError_Txt.Size = new System.Drawing.Size(41, 17);
             this.countryError_Txt.TabIndex = 129;
             this.countryError_Txt.Text = "label1";
-            // 
-            // countryMovie_Txt
-            // 
-            this.countryMovie_Txt.Animated = true;
-            this.countryMovie_Txt.BackColor = System.Drawing.SystemColors.Control;
-            this.countryMovie_Txt.BorderColor = System.Drawing.Color.Black;
-            this.countryMovie_Txt.BorderRadius = 4;
-            this.countryMovie_Txt.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.countryMovie_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.countryMovie_Txt.DefaultText = "";
-            this.countryMovie_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.countryMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.countryMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.countryMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.countryMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.countryMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.countryMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.countryMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.countryMovie_Txt.Location = new System.Drawing.Point(21, 119);
-            this.countryMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.countryMovie_Txt.Name = "countryMovie_Txt";
-            this.countryMovie_Txt.PlaceholderText = "";
-            this.countryMovie_Txt.SelectedText = "";
-            this.countryMovie_Txt.Size = new System.Drawing.Size(162, 34);
-            this.countryMovie_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.countryMovie_Txt.TabIndex = 128;
             // 
             // priceError_Txt
             // 
@@ -579,10 +616,10 @@
             this.priceMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.priceMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.priceMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.priceMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.priceMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.priceMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.priceMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.priceMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.priceMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.priceMovie_Txt.Location = new System.Drawing.Point(399, 119);
             this.priceMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.priceMovie_Txt.Name = "priceMovie_Txt";
@@ -606,7 +643,7 @@
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.photo;
+            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(705, 100);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
@@ -664,7 +701,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(21, 99);
+            this.label6.Location = new System.Drawing.Point(21, 92);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 20);
             this.label6.TabIndex = 120;
@@ -705,10 +742,10 @@
             this.codeMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.codeMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.codeMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.codeMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.codeMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.codeMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.codeMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.codeMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.codeMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.codeMovie_Txt.Location = new System.Drawing.Point(24, 32);
             this.codeMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.codeMovie_Txt.Name = "codeMovie_Txt";
@@ -753,10 +790,10 @@
             this.lengthMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lengthMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lengthMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lengthMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lengthMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.lengthMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.lengthMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.lengthMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lengthMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.lengthMovie_Txt.Location = new System.Drawing.Point(715, 32);
             this.lengthMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lengthMovie_Txt.Name = "lengthMovie_Txt";
@@ -790,10 +827,10 @@
             this.directorMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.directorMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.directorMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.directorMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.directorMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.directorMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.directorMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.directorMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.directorMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.directorMovie_Txt.Location = new System.Drawing.Point(465, 32);
             this.directorMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.directorMovie_Txt.Name = "directorMovie_Txt";
@@ -871,10 +908,10 @@
             this.titleMovie_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.titleMovie_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.titleMovie_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.titleMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.titleMovie_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.titleMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.titleMovie_Txt.ForeColor = System.Drawing.Color.Black;
-            this.titleMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.titleMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.titleMovie_Txt.Location = new System.Drawing.Point(215, 32);
             this.titleMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.titleMovie_Txt.Name = "titleMovie_Txt";
@@ -890,16 +927,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(883, 551);
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.languagueMovie_Txt);
+            this.Controls.Add(this.panel);
+            this.Controls.Add(this.control_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditMovieView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditMovieView";
-            this.languagueMovie_Txt.ResumeLayout(false);
-            this.languagueMovie_Txt.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.control_Panel.ResumeLayout(false);
+            this.control_Panel.PerformLayout();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.poster_Pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -909,10 +946,10 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2Panel languagueMovie_Txt;
+        private Guna.UI2.WinForms.Guna2Panel control_Panel;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel panel;
         private System.Windows.Forms.Label codeError_Txt;
         private Guna.UI2.WinForms.Guna2TextBox codeMovie_Txt;
         private System.Windows.Forms.Label label17;
@@ -929,7 +966,6 @@
         private System.Windows.Forms.Label languageError_Txt;
         private Guna.UI2.WinForms.Guna2TextBox languageMovie_Txt;
         private System.Windows.Forms.Label countryError_Txt;
-        private Guna.UI2.WinForms.Guna2TextBox countryMovie_Txt;
         private System.Windows.Forms.Label priceError_Txt;
         private Guna.UI2.WinForms.Guna2TextBox priceMovie_Txt;
         private System.Windows.Forms.Label label15;
@@ -958,5 +994,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton resetFilm_Btn;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2GradientButton acceptMovie_Btn;
+        private Guna.UI2.WinForms.Guna2GradientButton trailer_btn;
+        private Guna.UI2.WinForms.Guna2ComboBox countryMovie_Txt;
     }
 }

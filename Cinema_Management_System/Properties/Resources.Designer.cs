@@ -73,6 +73,16 @@ namespace Cinema_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_icon {
+            get {
+                object obj = ResourceManager.GetObject("add_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap audience {
             get {
                 object obj = ResourceManager.GetObject("audience", resourceCulture);
@@ -253,6 +263,16 @@ namespace Cinema_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_food_and_drink_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-food-and-drink-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_left_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-left-50", resourceCulture);
@@ -326,6 +346,16 @@ namespace Cinema_Management_System.Properties {
         internal static System.Drawing.Bitmap icons8_plus_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-plus-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_icon {
+            get {
+                object obj = ResourceManager.GetObject("image_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

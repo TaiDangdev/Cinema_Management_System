@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Guna.UI2.WinForms.Suite;
 using System;
 using System.Drawing;
 using System.Media;
@@ -8,11 +9,20 @@ namespace Cinema_Management_System.Views.MessageBox
 {
     public partial class YesMessage : Form
     {
+
+        private Guna2ShadowForm shadowForm;
+
         public YesMessage(string title, string message, MessageBoxType type)
         {
             InitializeComponent();
             InitMessageBox(title, message, type);
             DragHelper.EnableDrag(this, panel_Title);
+            shadowForm = new Guna2ShadowForm();
+            shadowForm.SetShadowForm(this);
+
+            shadowForm.ShadowColor = Color.Black;
+
+            shadowForm.BorderRadius = 12;
         }
 
         private void InitMessageBox(string title, string message, MessageBoxType type)

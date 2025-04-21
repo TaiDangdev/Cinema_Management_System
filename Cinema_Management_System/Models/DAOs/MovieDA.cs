@@ -133,6 +133,19 @@ namespace Cinema_Management_System.Models.DAOs
             }
         }
 
+        // kiểm tra xem movieCode tồn tại chưa
+        public bool IsMovieExist(MovieDTO movieDTO)
+        {
+            try
+            {
+                return db.MOVIEs.Any(m => m.MovieCode == movieDTO.MovieCode);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi kiểm tra phim tồn tại: " + ex.Message);
+            }
+        }
+
         // lấy danh sách tên phim đang phát hành
 
         // * Hiện tại chưa sài vì đang thiết kế theo View chứ chưa có ViewModel

@@ -11,12 +11,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Cinema_Management_System.Views.MessageBox;
+using Cinema_Management_System.Models.DAOs;
 
 namespace Cinema_Management_System.Views.MovieManagement
 {
     public partial class EditMovieView : Form
     {
-        private MovieManagementViewModel viewModel;
+        private Guna2ShadowForm shadowForm;
+        private Bitmap posterImage;
+        private Dictionary<Control, Label> errorMap;
 
         private MovieDTO movie;
 
@@ -24,72 +28,173 @@ namespace Cinema_Management_System.Views.MovieManagement
         {
             InitializeComponent();
             this.movie = movie;
-
-
-            viewModel = new MovieManagementViewModel(movie);
             loadMovieFilm(movie);
+            SetupUI();
+            InitValidation();
+        }
 
-
-            //acceptMovie_Btn.DataBindings.Add("Enabled", viewModel, "CanAccept", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            titleError_Txt.DataBindings.Add("Text", viewModel, "TitleError", true, DataSourceUpdateMode.OnPropertyChanged);
-            titleMovie_Txt.DataBindings.Add("Text", viewModel, "Title", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            directorError_Txt.DataBindings.Add("Text", viewModel, "DirectorError", true, DataSourceUpdateMode.OnPropertyChanged);
-            directorMovie_Txt.DataBindings.Add("Text", viewModel, "Director", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            lengthError_Txt.DataBindings.Add("Text", viewModel, "LengthError", true, DataSourceUpdateMode.OnPropertyChanged);
-            lengthMovie_Txt.DataBindings.Add("Text", viewModel, "Length", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            priceError_Txt.DataBindings.Add("Text", viewModel, "ImportPriceError", true, DataSourceUpdateMode.OnPropertyChanged);
-            priceMovie_Txt.DataBindings.Add("Text", viewModel, "ImportPrice", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            countryError_Txt.DataBindings.Add("Text", viewModel, "CountryError", true, DataSourceUpdateMode.OnPropertyChanged);
-            countryMovie_Txt.DataBindings.Add("Text", viewModel, "Country", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            languageError_Txt.DataBindings.Add("Text", viewModel, "LanguageError", true, DataSourceUpdateMode.OnPropertyChanged);
-            languageMovie_Txt.DataBindings.Add("Text", viewModel, "Language", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            trailerError_Txt.DataBindings.Add("Text", viewModel, "TrailerError", true, DataSourceUpdateMode.OnPropertyChanged);
-            trailerMovie_Txt.DataBindings.Add("Text", viewModel, "Trailer", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            genreError_Txt.DataBindings.Add("Text", viewModel, "GenreError", true, DataSourceUpdateMode.OnPropertyChanged);
-            genreMovie_Txt.DataBindings.Add("Text", viewModel, "Genre", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            descriptionError_Txt.DataBindings.Add("Text", viewModel, "DescriptionError", true, DataSourceUpdateMode.OnPropertyChanged);
-            descriptionMovie_Txt.DataBindings.Add("Text", viewModel, "Description", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            releaseYearError_Txt.DataBindings.Add("Text", viewModel, "ReleaseYearError", true, DataSourceUpdateMode.OnPropertyChanged);
-            releaseYearMovie_Txt.DataBindings.Add("Text", viewModel, "ReleaseYear", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            codeMovie_Txt.DataBindings.Add("Text", viewModel, "MovieCode", true, DataSourceUpdateMode.OnPropertyChanged);
-            codeError_Txt.DataBindings.Add("Text", viewModel, "MovieCodeError", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            startDateMovie_Txt.DataBindings.Add("Value", viewModel, nameof(viewModel.StartDate), true, DataSourceUpdateMode.OnPropertyChanged);
-
-            statusMovie_Txt.DataBindings.Add("SelectedItem", viewModel, "Status", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            var validationMap = new Dictionary<Guna2TextBox, string>
+        private void SetupUI()
+        {
+            startDateMovie_Txt.Value = DateTime.Today;
+            DragHelper.EnableDrag(this, control_Panel);
+            shadowForm = new Guna2ShadowForm
             {
-                { titleMovie_Txt, "Title" },
-                { descriptionMovie_Txt, "Description" },
-                { directorMovie_Txt, "Director" },
-                { lengthMovie_Txt, "Length" },
-                { releaseYearMovie_Txt, "ReleaseYear" },
-                { priceMovie_Txt, "ImportPrice" },
-                { countryMovie_Txt, "Country" },
-                { trailerMovie_Txt, "Trailer" },
-                { genreMovie_Txt, "Genre" },
-                { languageMovie_Txt, "Language" },
-                { codeMovie_Txt, "MovieCode" }
+                ShadowColor = Color.Black,
+                BorderRadius = 20
+            };
+            shadowForm.SetShadowForm(this);
+        }
+
+        private void InitValidation()
+        {
+            errorMap = new Dictionary<Control, Label>
+            {
+                { titleMovie_Txt, titleError_Txt },
+                { directorMovie_Txt, directorError_Txt },
+                { lengthMovie_Txt, lengthError_Txt },
+                { priceMovie_Txt, priceError_Txt },
+                { countryMovie_Txt, countryError_Txt },
+                { languageMovie_Txt, languageError_Txt },
+                { releaseYearMovie_Txt, releaseYearError_Txt },
+                { trailerMovie_Txt, trailerError_Txt },
+                { genreMovie_Txt, genreError_Txt },
+                { descriptionMovie_Txt, descriptionError_Txt },
+                { codeMovie_Txt, codeError_Txt }
             };
 
-            foreach (var entry in validationMap)
+            foreach (var entry in errorMap)
             {
-                entry.Key.Enter += (s, e) => { viewModel.SetIsFocused(entry.Value, true); };
-                entry.Key.Leave += (s, e) => { viewModel.SetIsFocused(entry.Value, false); };
+                var textBox = entry.Key;
+                textBox.TextChanged += (s, e) =>
+                {
+                    ValidateSingleField(textBox);
+                    CheckAllFieldsValid();
+                };
+
+                textBox.Leave += (s, e) =>
+                {
+                    ValidateSingleField(textBox);
+                    if (decimal.TryParse(priceMovie_Txt.Text, out var price) && price > 0)
+                    {
+                        priceMovie_Txt.Text = price.ToString("N0");
+                    }
+                };
             }
 
+            HideAllErrorLabels();
+        }
+
+        private void HideAllErrorLabels()
+        {
+            foreach (var entry in errorMap)
+            {
+                entry.Value.Visible = false;
+            }
+        }
+
+        private void ClearError(Control control)
+        {
+            if (errorMap.TryGetValue(control, out Label errorLabel))
+            {
+                errorLabel.Text = "";
+                errorLabel.Visible = false;
+            }
+        }
+
+        private void ValidateSingleField(Control control)
+        {
+            string error = GetErrorMessage(control);
+
+            if (errorMap.TryGetValue(control, out Label label))
+            {
+                if (string.IsNullOrWhiteSpace(control.Text))
+                {
+                    error = "*Không được để trống!";
+                }
+
+                if (string.IsNullOrEmpty(error))
+                {
+                    ClearError(control);
+                }
+                else
+                {
+                    label.Text = error;
+                    label.Visible = true;
+                }
+            }
+        }
+
+        private string GetErrorMessage(Control control)
+        {
+            string text = control.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return "*Không được để trống!";
+            }
+
+            if (control == lengthMovie_Txt)
+            {
+                if (!int.TryParse(text, out int length) || length <= 0)
+                {
+                    return "*Giá trị không hợp lệ!";
+                }
+                if (length > 300)
+                {
+                    return "*Thời lượng quá 300 phút!";
+                }
+            }
+
+            if (control == priceMovie_Txt && (!decimal.TryParse(text, out decimal price) || price <= 0))
+            {
+                return "*Giá trị không hợp lệ!";
+            }
+
+            if (control == releaseYearMovie_Txt)
+            {
+                if (!int.TryParse(text, out int year) || year < 1900 || year > DateTime.Now.Year)
+                    return "*Năm phát hành không hợp lệ!";
+            }
+
+            if (control == trailerMovie_Txt)
+            {
+                if (!Uri.TryCreate(text, UriKind.Absolute, out Uri uriResult) ||
+                    !(uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps))
+                    return "*Đường dẫn không hợp lệ!";
+            }
+
+            if (control == descriptionMovie_Txt && text.Length > 1000)
+            {
+                return "*Giới thiệu không quá 1000 ký tự!";
+            }
+
+            return string.Empty;
+        }
+
+        private bool ValidateMovieInput()
+        {
+            if (statusMovie_Txt.Text.Trim() != "Ngưng phát hành" && startDateMovie_Txt.Value.Date < DateTime.Now.Date)
+            {
+                MessageBoxHelper.ShowError("Lỗi", "Ngày khởi chiếu không được ở quá khứ!");
+                return false;
+            }
+
+            foreach (string genre in genreMovie_Txt.Text.Split(','))
+            {
+                if (string.IsNullOrWhiteSpace(genre))
+                {
+                    MessageBoxHelper.ShowError("Lỗi", "Không được để trống thể loại phim giữa các dấu phẩy.");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void CheckAllFieldsValid()
+        {
+            bool allValid = errorMap.All(entry => string.IsNullOrEmpty(GetErrorMessage(entry.Key)));
+            acceptMovie_Btn.Enabled = allValid;
         }
 
         private void loadMovieFilm(MovieDTO movie)
@@ -113,48 +218,88 @@ namespace Cinema_Management_System.Views.MovieManagement
             }
         }
 
-
-
         private void resetFilm_Btn_Click(object sender, EventArgs e)
         {
             loadMovieFilm(movie);
-            System.Windows.Forms.MessageBox.Show("Đã khôi phục lại thông tin phim", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBoxHelper.ShowInfo("Thông báo", "Đã khôi phục dữ liệu thành công");
+        }
+
+        private void UpdateMovieFromInput()
+        {
+            movie.Title = titleMovie_Txt.Text.Trim();
+            movie.MovieCode = codeMovie_Txt.Text.Trim();
+            movie.Length = int.TryParse(lengthMovie_Txt.Text.Trim(), out int length) ? length : 0;
+            movie.Genre = genreMovie_Txt.Text.Trim();
+            movie.Description = descriptionMovie_Txt.Text.Trim();
+            movie.Director = directorMovie_Txt.Text.Trim();
+            movie.ReleaseYear = releaseYearMovie_Txt.Text.Trim();
+            movie.Language = languageMovie_Txt.Text.Trim();
+            movie.Country = countryMovie_Txt.Text.Trim();
+            movie.StartDate = startDateMovie_Txt.Value.ToString("yyyy-MM-dd");
+            movie.Trailer = trailerMovie_Txt.Text.Trim();
+            movie.ImportPrice = int.TryParse(priceMovie_Txt.Text.Replace(",", ""), out int price) ? price : 0;
+
+            if (poster_Pic.Image != null)
+            {
+                movie.ImageSource = new Bitmap(poster_Pic.Image);
+            }
         }
 
         private void chooseImage_Btn_Click(object sender, EventArgs e)
         {
-            try
+            using (OpenFileDialog dialog = new OpenFileDialog { Filter = "Image Files (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg" })
             {
-                var image = viewModel.AddImage();
-                if (image != null)
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    poster_Pic.Image = image;
-                    viewModel.ImageSource = image;
+                    posterImage = new Bitmap(dialog.FileName);
+                    poster_Pic.Image = posterImage;
+                    CheckAllFieldsValid();
                 }
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show("Đã xảy ra lỗi khi chọn ảnh:\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void acceptMovie_Btn_Click(object sender, EventArgs e)
         {
+            if (!ValidateMovieInput()) return;
+
+            UpdateMovieFromInput();
+
+            MovieDA movieDA = new MovieDA();
+
+            if (!movieDA.IsMovieExist(movie))
+            {
+                MessageBoxHelper.ShowError("Lỗi", "Phim đã không tồn tại!");
+                return;
+            }
+
+            DialogResult result = MessageBoxHelper.ShowQuestion("Thông báo", "Bạn có chắc chắn muốn cập nhật phim này không?");
+
+            if (result != DialogResult.Yes) return;
+            movieDA.editMovie(movie);
+            MessageBoxHelper.ShowInfo("Thông báo", "Cập nhật phim thành công!");
+            this.Close();
+        }
+
+        private void trailer_btn_Click(object sender, EventArgs e)
+        {
+            string url = trailerMovie_Txt.Text.Trim();
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                MessageBoxHelper.ShowWarning("Cảnh báo", "Vui lòng nhập đường dẫn trailer!");
+                return;
+            }
+
             try
             {
-                viewModel.SaveMovie();
-
-                if (viewModel.IsEditing)
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
-                    System.Windows.Forms.MessageBox.Show("Cập nhật phim thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                    FileName = url,
+                    UseShellExecute = true
+                });
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Đã xảy ra lỗi khi lưu phim: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxHelper.ShowError("Lỗi", "Không thể mở trình duyệt: " + ex.Message);
             }
         }
     }

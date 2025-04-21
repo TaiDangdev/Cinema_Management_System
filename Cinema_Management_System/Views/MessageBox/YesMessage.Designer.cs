@@ -80,7 +80,6 @@
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            //this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.icons8_cinema_ticket_32;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(7, 10);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
@@ -96,7 +95,7 @@
             this.title_txt.BackColor = System.Drawing.Color.Transparent;
             this.title_txt.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title_txt.ForeColor = System.Drawing.Color.White;
-            this.title_txt.Location = new System.Drawing.Point(40, 10);
+            this.title_txt.Location = new System.Drawing.Point(8, 10);
             this.title_txt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.title_txt.Name = "title_txt";
             this.title_txt.Size = new System.Drawing.Size(103, 25);
@@ -206,7 +205,6 @@
             // 
             // icon_pic
             // 
-            //this.icon_pic.Image = global::Cinema_Management_System.Properties.Resources.ErrorIcon;
             this.icon_pic.Location = new System.Drawing.Point(17, 26);
             this.icon_pic.Name = "icon_pic";
             this.icon_pic.Size = new System.Drawing.Size(57, 53);

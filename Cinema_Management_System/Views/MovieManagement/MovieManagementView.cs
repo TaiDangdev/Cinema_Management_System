@@ -330,10 +330,40 @@ namespace Cinema_Management_System.Views.MovieManagement
 
         private void addMovie_Btn_Click(object sender, EventArgs e)
         {
-            AddMovieView addMovieView = new AddMovieView();
-            addMovieView.ShowDialog();
-            //loadData();
-            LoadMovies();
+            //AddMovieView addMovieView = new AddMovieView();
+            //addMovieView.ShowDialog();
+            ////loadData();
+            //LoadMovies();
+
+            if (Application.OpenForms["AddMovieView"] == null)
+            {
+                AddMovieView addMovieView = new AddMovieView();
+
+                addMovieView.Opacity = 0; // Bắt đầu từ mờ
+                addMovieView.Show();
+
+                Timer fadeTimer = new Timer { Interval = 10 };
+                fadeTimer.Tick += (s, args) =>
+                {
+                    if (addMovieView.Opacity < 1)
+                    {
+                        addMovieView.Opacity += 0.05;
+                    }
+                    else
+                    {
+                        fadeTimer.Stop();
+                    }
+                };
+                fadeTimer.Start();
+
+                // Nếu bạn vẫn muốn load lại danh sách sau khi form đóng:
+                addMovieView.FormClosed += (s, args) => LoadMovies();
+            }
+            else
+            {
+                // Nếu form đã mở, chỉ cần kích hoạt lại form
+                Application.OpenForms["AddMovieView"].Activate();
+            }
         }
 
         private void filterMovie_Cbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -346,9 +376,5 @@ namespace Cinema_Management_System.Views.MovieManagement
             LoadMovies();
         }
 
-        private void movie_data_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

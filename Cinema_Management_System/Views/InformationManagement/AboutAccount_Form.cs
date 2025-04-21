@@ -143,42 +143,6 @@ namespace Cinema_Management_System
 
         private void changePass_Btn_Click(object sender, EventArgs e)
         {
-            //string oldPassword = oldPass_Txt.Text;  // Giả sử có một TextBox cho mật khẩu cũ
-            //string newPassword = newPass_Txt.Text;  // Giả sử có một TextBox cho mật khẩu mới
-            //string confirmPassword = confirmPass_Txt.Text;  // Giả sử có một TextBox cho xác nhận mật khẩu mới
-
-            //// Kiểm tra nếu mật khẩu cũ trống
-            //if (string.IsNullOrEmpty(oldPassword))
-            //{
-            //    MessageBox.Show("Mật khẩu cũ không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-            //// Kiểm tra nếu mật khẩu mới trống
-            //if (string.IsNullOrEmpty(newPassword))
-            //{
-            //    MessageBox.Show("Mật khẩu mới không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-            //// Kiểm tra nếu mật khẩu xác nhận không trùng với mật khẩu mới
-            //if (newPassword != confirmPassword)
-            //{
-            //    MessageBox.Show("Mật khẩu xác nhận không trùng khớp với mật khẩu mới!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-            //// Gọi phương thức đổi mật khẩu trong UserDA
-            //bool result = UserDA.ChangePassword(CurrentUser.StaffId, oldPassword, newPassword);
-
-            //if (result)
-            //{
-            //    MessageBox.Show("Mật khẩu đã được thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Mật khẩu cũ không chính xác hoặc có lỗi xảy ra.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
             if (ValidatePasswordInput())
             {
                 string oldPassword = oldPass_Txt.Text;
