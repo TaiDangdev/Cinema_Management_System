@@ -100,6 +100,7 @@
             this.moviePanel.Name = "moviePanel";
             this.moviePanel.Size = new System.Drawing.Size(1278, 647);
             this.moviePanel.TabIndex = 5;
+            this.moviePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.moviePanel_Paint);
             // 
             // searchMovie_Txt
             // 
@@ -137,6 +138,7 @@
             this.guna2PictureBox1.TabIndex = 4;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // MovieManagementView
             // 
@@ -152,6 +154,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MovieManagementView";
             this.Size = new System.Drawing.Size(1329, 838);
+            this.Load += new System.EventHandler(this.MovieManagementView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

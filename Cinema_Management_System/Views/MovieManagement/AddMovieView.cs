@@ -422,5 +422,10 @@ namespace Cinema_Management_System.Views.MovieManagement
                 MessageBoxHelper.ShowError("Lỗi", "Không thể mở trình duyệt: " + ex.Message);
             }
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,7 +33,6 @@ namespace Cinema_Management_System.Views.MovieManagement
         /// </summary>
         private void LoadMovies()
         {
-
             moviePanel.Controls.Clear();
 
             string searchText = searchMovie_Txt.Text.Trim().ToLower();
@@ -59,7 +58,6 @@ namespace Cinema_Management_System.Views.MovieManagement
 
                 //movies = movies.Where(m => m.Title.ToLower().Contains(searchText)).ToList();
                 movies = movies.Where(m => m.Title.ToLower().StartsWith(searchText.ToLower())).ToList();
-
             }
 
             foreach (var movie in movies)
@@ -376,5 +374,19 @@ namespace Cinema_Management_System.Views.MovieManagement
             LoadMovies();
         }
 
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MovieManagementView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void moviePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

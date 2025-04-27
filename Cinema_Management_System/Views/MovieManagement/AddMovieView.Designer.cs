@@ -69,6 +69,7 @@
             this.trailerError_Txt = new System.Windows.Forms.Label();
             this.genreError_Txt = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.poster_Pic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.descriptionError_Txt = new System.Windows.Forms.Label();
             this.importFilm_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.codeError_Txt = new System.Windows.Forms.Label();
@@ -78,7 +79,6 @@
             this.trailer_btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.countryMovie_Txt = new Guna.UI2.WinForms.Guna2ComboBox();
             this.genreMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.poster_Pic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.control_Panel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -354,6 +354,7 @@
             this.label13.Size = new System.Drawing.Size(90, 20);
             this.label13.TabIndex = 33;
             this.label13.Text = "Poster phim";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // chooseImage_Btn
             // 
@@ -682,6 +683,17 @@
             this.guna2Panel2.Size = new System.Drawing.Size(234, 282);
             this.guna2Panel2.TabIndex = 58;
             // 
+            // poster_Pic
+            // 
+            this.poster_Pic.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.poster_Pic.ImageRotate = 0F;
+            this.poster_Pic.Location = new System.Drawing.Point(4, 2);
+            this.poster_Pic.Name = "poster_Pic";
+            this.poster_Pic.Size = new System.Drawing.Size(228, 277);
+            this.poster_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.poster_Pic.TabIndex = 0;
+            this.poster_Pic.TabStop = false;
+            // 
             // descriptionError_Txt
             // 
             this.descriptionError_Txt.AutoSize = true;
@@ -865,17 +877,6 @@
             this.genreMovie_Txt.Size = new System.Drawing.Size(172, 36);
             this.genreMovie_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.genreMovie_Txt.TabIndex = 11;
-            // 
-            // poster_Pic
-            // 
-            this.poster_Pic.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.poster_Pic.ImageRotate = 0F;
-            this.poster_Pic.Location = new System.Drawing.Point(4, 2);
-            this.poster_Pic.Name = "poster_Pic";
-            this.poster_Pic.Size = new System.Drawing.Size(228, 277);
-            this.poster_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.poster_Pic.TabIndex = 0;
-            this.poster_Pic.TabStop = false;
             // 
             // guna2PictureBox1
             // 
