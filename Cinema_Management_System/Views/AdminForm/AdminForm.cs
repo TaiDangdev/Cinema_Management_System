@@ -69,8 +69,11 @@ namespace Cinema_Management_System
         private void ShowSubForm(UserControl controlToShow)
         {
             HideAllsubControls();
+            if (controlToShow == movieManagementView1)
+            {
+                movieManagementView1.LoadMovies();
+            }
             controlToShow.Show();
-
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)

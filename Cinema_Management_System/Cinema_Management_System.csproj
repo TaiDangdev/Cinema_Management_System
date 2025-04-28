@@ -144,6 +144,7 @@
     <Compile Include="Models\DAOs\Bills\BillAddProductDA.cs" />
     <Compile Include="Models\DAOs\Bills\BillDetailDA.cs" />
     <Compile Include="Models\DAOs\Bills\BillImportProductDA.cs" />
+    <Compile Include="Models\DTOs\BillAddMovieDTO.cs" />
     <Compile Include="Models\DTOs\BillSeatsForShowTimesDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\BillAddProductDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\BillDetailDTO.cs" />

@@ -29,6 +29,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             this.LoadListMovie();
             this.LoadAuditorium();
             this.AddStatus = true;
+            DTP_DateShowTimeMovie.Value = DateTime.Now.Date;
         }
 
         public AddShowTimeForm(ShowTimeDTO showtimeUpdate)
@@ -42,6 +43,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             this.AddStatus = false;
             this.Label_Title.Text = "Sửa xuất chiếu";
             this.LoadinfoShowTime(showtimeUpdate);
+            DTP_DateShowTimeMovie.Value = DateTime.Now.Date;
         }
 
         // hien thi thong hien hien co

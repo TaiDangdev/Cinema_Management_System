@@ -26,7 +26,7 @@ namespace Cinema_Management_System.Views.MovieManagement
             LoadMovies();
         }
 
-        private void LoadMovies()
+        public void LoadMovies()
         {
             moviePanel.Controls.Clear();
 

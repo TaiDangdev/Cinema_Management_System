@@ -388,9 +388,10 @@ namespace Cinema_Management_System.Models.DAOs
         // kiểm tra 1 movie có đang chiếu hay không (phục vụ cho việc xóa 1 movie)
         public bool checkShowTimeByMovie(int movieID)
         {
+            DateTime currentTime = DateTime.Now;
             try
             {
-                return Connect.ShowTimes.Any(st => st.Movie_Id == movieID);
+                return Connect.ShowTimes.Any(st => st.Movie_Id == movieID && st.EndTime >= currentTime);
             }
             catch
             {

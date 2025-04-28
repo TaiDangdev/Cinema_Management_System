@@ -53,7 +53,7 @@ namespace Cinema_Management_System.Views.MovieManagement
             }
             if (DateTime.TryParse(movie.EndDate, out DateTime endDate))
             {
-                endDate_Txt.Text = parsedDate.ToString("dd/MM/yyyy");
+                endDate_Txt.Text = endDate.ToString("dd/MM/yyyy");
             }
             trailerMovie_Txt.Text = movie.Trailer;
             priceMovie_Txt.Text = movie.ImportPrice.ToString("N0");
