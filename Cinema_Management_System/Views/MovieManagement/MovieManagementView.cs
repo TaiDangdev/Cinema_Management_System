@@ -289,7 +289,7 @@ namespace Cinema_Management_System.Views.MovieManagement
                 return;
             }
 
-            BillAddMovieDA.Instance.updateMovie_IdNull(movie.Id);
+            //BillAddMovieDA.Instance.updateMovie_IdNull(movie.Id);
 
             DialogResult result = MessageBoxHelper.ShowQuestion("Xóa phim", "Bạn có chắc chắn muốn xóa phim này không?");
             if (result == DialogResult.Yes)
