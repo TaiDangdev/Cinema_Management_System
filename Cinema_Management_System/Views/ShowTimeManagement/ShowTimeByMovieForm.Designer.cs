@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_showTimes = new System.Windows.Forms.Panel();
+            this.seatForShowTineUC1 = new Cinema_Management_System.Views.ShowTimeManagement.SeatForShowTineUC();
             this.FLP_ShowTimeFoerMovie = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel_showTimes = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_DescribeMovie = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_Genre = new Guna.UI2.WinForms.Guna2TextBox();
@@ -45,10 +46,9 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PB_imageMovie = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Exit = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btn_Back = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btn_Exit = new Guna.UI2.WinForms.Guna2Button();
-            this.seatForShowTineUC1 = new Cinema_Management_System.Views.ShowTimeManagement.SeatForShowTineUC();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_imageMovie)).BeginInit();
@@ -80,13 +80,15 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panel_showTimes
+            // seatForShowTineUC1
             // 
-            this.panel_showTimes.Location = new System.Drawing.Point(5, 334);
-            this.panel_showTimes.Name = "panel_showTimes";
-            this.panel_showTimes.Size = new System.Drawing.Size(802, 498);
-            this.panel_showTimes.TabIndex = 12;
-            this.panel_showTimes.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_showTimes_Paint);
+            this.seatForShowTineUC1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.seatForShowTineUC1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.seatForShowTineUC1.Location = new System.Drawing.Point(5, 324);
+            this.seatForShowTineUC1.Margin = new System.Windows.Forms.Padding(4);
+            this.seatForShowTineUC1.Name = "seatForShowTineUC1";
+            this.seatForShowTineUC1.Size = new System.Drawing.Size(802, 498);
+            this.seatForShowTineUC1.TabIndex = 13;
             // 
             // FLP_ShowTimeFoerMovie
             // 
@@ -97,6 +99,13 @@
             this.FLP_ShowTimeFoerMovie.Name = "FLP_ShowTimeFoerMovie";
             this.FLP_ShowTimeFoerMovie.Size = new System.Drawing.Size(794, 490);
             this.FLP_ShowTimeFoerMovie.TabIndex = 1;
+            // 
+            // panel_showTimes
+            // 
+            this.panel_showTimes.Location = new System.Drawing.Point(5, 334);
+            this.panel_showTimes.Name = "panel_showTimes";
+            this.panel_showTimes.Size = new System.Drawing.Size(802, 498);
+            this.panel_showTimes.TabIndex = 12;
             // 
             // groupBox1
             // 
@@ -325,73 +334,60 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Firebrick;
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel6);
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
             this.guna2Panel1.Controls.Add(this.btn_Exit);
+            this.guna2Panel1.Controls.Add(this.btn_Back);
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel6);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(811, 43);
             this.guna2Panel1.TabIndex = 3;
             // 
-            // guna2Button1
+            // btn_Exit
             // 
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.BorderThickness = 2;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(628, 4);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(60, 35);
-            this.guna2Button1.TabIndex = 4;
-            this.guna2Button1.Text = "Back";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Exit.BorderRadius = 5;
+            this.btn_Exit.BorderThickness = 1;
+            this.btn_Exit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            this.btn_Exit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.btn_Exit.HoverState.IconColor = System.Drawing.Color.White;
+            this.btn_Exit.IconColor = System.Drawing.Color.DimGray;
+            this.btn_Exit.Location = new System.Drawing.Point(754, 3);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(45, 30);
+            this.btn_Exit.TabIndex = 6;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click_1);
+            // 
+            // btn_Back
+            // 
+            this.btn_Back.BorderRadius = 5;
+            this.btn_Back.BorderThickness = 1;
+            this.btn_Back.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Back.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Back.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Back.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Back.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            this.btn_Back.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_Back.ForeColor = System.Drawing.Color.Black;
+            this.btn_Back.Image = global::Cinema_Management_System.Properties.Resources.icons8_left_50;
+            this.btn_Back.Location = new System.Drawing.Point(700, 3);
+            this.btn_Back.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(47, 30);
+            this.btn_Back.TabIndex = 4;
+            this.btn_Back.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(20, 3);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(98, 30);
             this.guna2HtmlLabel6.TabIndex = 3;
             this.guna2HtmlLabel6.Text = "Suất chiếu";
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.BorderRadius = 5;
-            this.btn_Exit.BorderThickness = 2;
-            this.btn_Exit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Exit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Exit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Exit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Exit.FillColor = System.Drawing.Color.White;
-            this.btn_Exit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_Exit.ForeColor = System.Drawing.Color.Black;
-            this.btn_Exit.Location = new System.Drawing.Point(724, 3);
-            this.btn_Exit.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(60, 35);
-            this.btn_Exit.TabIndex = 2;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // seatForShowTineUC1
-            // 
-            this.seatForShowTineUC1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.seatForShowTineUC1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.seatForShowTineUC1.Location = new System.Drawing.Point(5, 324);
-            this.seatForShowTineUC1.Margin = new System.Windows.Forms.Padding(4);
-            this.seatForShowTineUC1.Name = "seatForShowTineUC1";
-            this.seatForShowTineUC1.Size = new System.Drawing.Size(802, 498);
-            this.seatForShowTineUC1.TabIndex = 13;
             // 
             // ShowTimeByMovieForm
             // 
@@ -418,7 +414,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button btn_Exit;
         private Guna.UI2.WinForms.Guna2PictureBox PB_imageMovie;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txt_MovieName;
@@ -434,10 +429,11 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_Back;
         private System.Windows.Forms.FlowLayoutPanel FLP_ShowTimeFoerMovie;
         private System.Windows.Forms.Panel panel_showTimes;
         private SeatForShowTineUC seatForShowTineUC1;
+        private Guna.UI2.WinForms.Guna2ControlBox btn_Exit;
         //private SeatForShowTineUC seatForShowTineUC1;
         //private Cinema_Management_System.Views.ShowTimeManagement.SeatForShowTineUC seatForShowTineUC1;
 

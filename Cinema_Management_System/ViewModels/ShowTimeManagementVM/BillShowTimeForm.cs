@@ -1,5 +1,7 @@
 ﻿using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
+using Cinema_Management_System.Views.MessageBox;
+using Cinema_Management_System.Views.ShowTimeManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +10,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Navigation;
 
 namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
 {
@@ -73,27 +77,140 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                 try
                 {
                     SeatForShowTimeDA.Instance.UpdateSeatCondition(seatsShowTime);
-                    MessageBox.Show("Hóa đơn đã được tạo thành công! Các ghế đã được đặt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxHelper.ShowSuccess("Thành công", "Chọn ghế thành công");
                     string note = this.txt_Note.Text;
-                    _addBillShowTimeViewModel.AddBillShowTime(showTimSelect, seatsShowTime.Count,note); 
+                    string discountText = this.txt_discount.Text.Trim();
+                    double discount = 0;
+                    int MaBill;
+                    if (string.IsNullOrEmpty(discountText))
+                    {
+                        discount = 0;
+                        MaBill = _addBillShowTimeViewModel.AddBillShowTime(showTimSelect, seatsShowTime.Count, note, (int)discount, 1);
+                    }
+                    else
+                    {
+                        if (double.TryParse(discountText, out discount))
+                        {
+                            // Chuyển đổi thành công, bạn có thể sử dụng discount ở đây
+                        }
+                        else
+                        {
+                            MessageBoxHelper.ShowWarning("Giảm giá không hợp lệ", "Cảnh báo");
+                        }
+                        MaBill = _addBillShowTimeViewModel.AddBillShowTime(showTimSelect, seatsShowTime.Count, note, (int)discount, 1,this.txt_member.Text.Trim());
+                    }
 
+                    if (MaBill != -1)
+                    {
+                        DataSet BillDataSet = this.InfoBill(MaBill);
+                        BillTicketForms billTicket = new BillTicketForms(BillDataSet);
+                        billTicket.ShowDialog();
+                    }
                     // (Tùy chọn) Làm mới giao diện ghế nếu cần
+                    try
+                    {
+                        if (!string.IsNullOrEmpty(this.txt_discount.Text))
+                        {
+                            CustomerDA customerDA = new CustomerDA();
+                            var member = customerDA.GetCustomerByPhoneNumber(this.txt_member.Text.Trim());
+                            if (member != null)
+                            {
+                                customerDA.UpdatePoint(this.txt_member.Text.Trim(), seatsShowTime.Count);  // Gọi UpdatePoint khi khách hàng hợp lệ
+                            }
+                            else
+                            {
+                                MessageBoxHelper.ShowWarning("Số điện thoại không hợp lệ hoặc không tồn tại!", "Cảnh báo");
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        MessageBoxHelper.ShowError("Lỗi", "Lỗi khi cập nhật điểm cho hội viên!");
+                    }
                     OnBillCreated?.Invoke(this, EventArgs.Empty); // gui du lieu ra ben ngoai
                     this.Refresh();
                     this.txt_TotalPrice.ResetText();
                     this.txt_Seats.ResetText();
                     this.seatsShowTime.Clear();
+                    this.txt_discount.Clear();
+                    this.txt_member.Clear();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi lưu trạng thái ghế: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxHelper.ShowError("Lỗi", "Lỗi khi lưu trạng thái ghế!");
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn ít nhất một ghế trước khi tạo hóa đơn!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBoxHelper.ShowWarning("Cảnh báo", "Vui lòng chọn ít nhất một ghế trước khi tạo hóa đơn!");
             }
         }
 
+        private void btn_SearchMember_Click(object sender, EventArgs e)
+        {
+            string idTheHoiVien = this.txt_member.Text.Trim();
+            if (!string.IsNullOrEmpty(idTheHoiVien))
+            {
+                // Kiểm tra thẻ hội viên
+                CustomerDA customerDA = new CustomerDA();
+                var member = customerDA.GetCustomerByPhoneNumber(idTheHoiVien);
+                if (member != null)
+                {
+                    long total = Convert.ToInt64(this.showTimSelect.SeatTicketPrice) * seatsShowTime.Count;
+                    int  discount = member.Point /20;
+                    double GiamGia= total * discount / 100;
+                    this.txt_discount.Text= GiamGia.ToString("F2");
+                    this.txt_TotalPrice.Text = (total - GiamGia).ToString("F2") + "VND";
+                }
+                else
+                {
+                    MessageBoxHelper.ShowWarning("Cảnh báo", "Thẻ hội viên không tồn tại!");
+                    this.txt_member.Clear();
+                    this.txt_discount.Clear();
+                }
+            }
+            else
+            {
+                MessageBoxHelper.ShowWarning("Cảnh báo", "Vui lòng nhập mã thẻ hội viên!");
+            }
+
+        }
+
+        private DataSet InfoBill(int idBill)
+        {
+            DataSet billDataSet = new DataSet();
+            DataTable billTable= new DataTable("BillReport");
+            // tao dataTable
+            billTable.Columns.Add("SoDon", typeof(string));
+            billTable.Columns.Add("TenPhim", typeof(string));
+            billTable.Columns.Add("Phong", typeof(string));
+            billTable.Columns.Add("Ghe", typeof(string));
+            billTable.Columns.Add("GiaVe", typeof(string));
+            billTable.Columns.Add("NgayGioChieu", typeof(string));
+            billTable.Columns.Add("NhanVien", typeof(string));
+            billTable.Columns.Add("TheHoiVien", typeof(string));
+            billTable.Columns.Add("GiamGia", typeof(string));
+            billTable.Columns.Add("TongTienVe", typeof(string));
+            billTable.Columns.Add("Tong", typeof(string));
+
+            //tao thong tin bill
+            DataRow dataRow = billTable.NewRow();
+            dataRow["SoDon"] = idBill.ToString();
+            dataRow["TenPhim"] = showTimSelect.MovieTitle.ToString();
+            dataRow["Phong"] = showTimSelect.AuditoriumName.ToString();
+            dataRow["Ghe"] = this.txt_Seats.Text;
+            dataRow["GiaVe"] = showTimSelect.SeatTicketPrice.ToString("F2")+"VND";
+            dataRow["NgayGioChieu"] = showTimSelect.StartTime.ToString("dd/MM/yyyy HH:mm:ss");
+            dataRow["NhanVien"] = "NV001"; // Thay thế bằng tên nhân viên thực tế
+            dataRow["TheHoiVien"] = this.txt_member.Text.Trim();
+            dataRow["GiamGia"] = this.txt_discount.Text.Trim();
+            long total = Convert.ToInt64(this.showTimSelect.SeatTicketPrice) * seatsShowTime.Count;
+            dataRow["TongTienVe"] = total.ToString("F2")+"VND";
+            dataRow["Tong"] = this.txt_TotalPrice.Text.Trim();
+            billTable.Rows.Add(dataRow);
+
+            billDataSet.Tables.Add(billTable);
+            return billDataSet;
+        }
     }
 }

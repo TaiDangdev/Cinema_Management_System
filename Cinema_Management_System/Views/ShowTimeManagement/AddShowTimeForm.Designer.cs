@@ -51,7 +51,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
             this.guna2Panel1.BorderRadius = 5;
             this.guna2Panel1.Controls.Add(this.Label_Title);
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
@@ -67,7 +67,7 @@
             // 
             this.Label_Title.BackColor = System.Drawing.Color.Transparent;
             this.Label_Title.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.Label_Title.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Label_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.Label_Title.Location = new System.Drawing.Point(3, 3);
             this.Label_Title.Name = "Label_Title";
             this.Label_Title.Size = new System.Drawing.Size(159, 32);
@@ -93,7 +93,7 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BorderColor = System.Drawing.Color.Red;
-            this.guna2Panel4.BorderThickness = 1;
+            this.guna2Panel4.BorderRadius = 10;
             this.guna2Panel4.Controls.Add(this.btn_AddShowTimeMovie);
             this.guna2Panel4.Controls.Add(this.btn_Cancel);
             this.guna2Panel4.Controls.Add(this.txt_TimeMovieStart);

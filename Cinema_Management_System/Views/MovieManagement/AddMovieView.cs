@@ -477,5 +477,6 @@ namespace Cinema_Management_System.Views.MovieManagement
                 MessageBoxHelper.ShowError("Lỗi", "Không thể mở trình duyệt");
             }
         }
+
     }
 }
