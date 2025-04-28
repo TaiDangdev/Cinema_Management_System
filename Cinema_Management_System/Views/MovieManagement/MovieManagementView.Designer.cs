@@ -30,10 +30,10 @@
         {
             this.filterMovie_Cbx = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.addMovie_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.moviePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.searchMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.addMovie_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,28 +71,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Bộ lọc";
             // 
-            // addMovie_Btn
-            // 
-            this.addMovie_Btn.Animated = true;
-            this.addMovie_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.addMovie_Btn.BorderRadius = 10;
-            this.addMovie_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.addMovie_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.addMovie_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.addMovie_Btn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.addMovie_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.addMovie_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.addMovie_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
-            this.addMovie_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.addMovie_Btn.ForeColor = System.Drawing.Color.White;
-            this.addMovie_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.addMovie_Btn.Location = new System.Drawing.Point(561, 12);
-            this.addMovie_Btn.Name = "addMovie_Btn";
-            this.addMovie_Btn.Size = new System.Drawing.Size(166, 39);
-            this.addMovie_Btn.TabIndex = 3;
-            this.addMovie_Btn.Text = "Thêm phim";
-            this.addMovie_Btn.Click += new System.EventHandler(this.addMovie_Btn_Click);
-            // 
             // moviePanel
             // 
             this.moviePanel.AutoScroll = true;
@@ -116,6 +94,7 @@
             this.searchMovie_Txt.ForeColor = System.Drawing.Color.Black;
             this.searchMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.searchMovie_Txt.Location = new System.Drawing.Point(23, 12);
+            this.searchMovie_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchMovie_Txt.Name = "searchMovie_Txt";
             this.searchMovie_Txt.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.searchMovie_Txt.PlaceholderText = "Tìm kiếm phim";
@@ -137,6 +116,28 @@
             this.guna2PictureBox1.TabIndex = 4;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
+            // addMovie_Btn
+            // 
+            this.addMovie_Btn.Animated = true;
+            this.addMovie_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.addMovie_Btn.BorderRadius = 10;
+            this.addMovie_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.addMovie_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.addMovie_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.addMovie_Btn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.addMovie_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addMovie_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.addMovie_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
+            this.addMovie_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.addMovie_Btn.ForeColor = System.Drawing.Color.White;
+            this.addMovie_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.addMovie_Btn.Location = new System.Drawing.Point(561, 12);
+            this.addMovie_Btn.Name = "addMovie_Btn";
+            this.addMovie_Btn.Size = new System.Drawing.Size(166, 39);
+            this.addMovie_Btn.TabIndex = 3;
+            this.addMovie_Btn.Text = "Thêm phim";
+            this.addMovie_Btn.Click += new System.EventHandler(this.addMovie_Btn_Click);
             // 
             // MovieManagementView
             // 
@@ -163,8 +164,8 @@
         private Guna.UI2.WinForms.Guna2TextBox searchMovie_Txt;
         private Guna.UI2.WinForms.Guna2ComboBox filterMovie_Cbx;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2GradientButton addMovie_Btn;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.FlowLayoutPanel moviePanel;
+        private Guna.UI2.WinForms.Guna2GradientButton addMovie_Btn;
     }
 }

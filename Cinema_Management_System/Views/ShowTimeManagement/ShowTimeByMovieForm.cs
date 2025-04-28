@@ -278,14 +278,13 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
 
 
 
-        private void panel_showTimes_Paint(object sender, PaintEventArgs e)
+        private void btn_Exit_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
+            if (this.billShowTimeForm != null)
+            {
+                this.billShowTimeForm.Close();
+            }
         }
     }
 }

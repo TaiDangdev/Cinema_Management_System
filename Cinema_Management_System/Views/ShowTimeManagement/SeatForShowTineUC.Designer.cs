@@ -31,6 +31,8 @@
             this.FLP_SeatForShowTime = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,6 +62,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.guna2Panel3);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.guna2Panel2);
             this.panel1.Controls.Add(this.guna2Panel1);
             this.panel1.Controls.Add(this.label2);
@@ -70,12 +74,31 @@
             this.panel1.Size = new System.Drawing.Size(802, 33);
             this.panel1.TabIndex = 1;
             // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.Gray;
+            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.guna2Panel3.BorderThickness = 1;
+            this.guna2Panel3.Location = new System.Drawing.Point(556, 3);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(40, 24);
+            this.guna2Panel3.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(486, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 23);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Có người";
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Red;
             this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Location = new System.Drawing.Point(482, 4);
+            this.guna2Panel2.Location = new System.Drawing.Point(389, 3);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(40, 24);
             this.guna2Panel2.TabIndex = 8;
@@ -85,7 +108,7 @@
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Location = new System.Drawing.Point(357, 4);
+            this.guna2Panel1.Location = new System.Drawing.Point(205, 3);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(40, 24);
             this.guna2Panel1.TabIndex = 7;
@@ -93,24 +116,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(421, 8);
+            this.label2.Location = new System.Drawing.Point(303, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 17);
+            this.label2.Size = new System.Drawing.Size(94, 23);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Đã mua";
+            this.label2.Text = "Đang chọn";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(281, 8);
+            this.label1.Location = new System.Drawing.Point(127, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(88, 23);
             this.label1.TabIndex = 5;
             this.label1.Text = "Ghế trống";
             // 
             // SeatForShowTineUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Controls.Add(this.panel1);
@@ -119,7 +142,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SeatForShowTineUC";
             this.Size = new System.Drawing.Size(802, 498);
-            this.Load += new System.EventHandler(this.SeatForShowTineUC_Load);
             this.FLP_SeatForShowTime.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -136,5 +158,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private System.Windows.Forms.Label label3;
     }
 }

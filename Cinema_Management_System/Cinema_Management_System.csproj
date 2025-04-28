@@ -41,6 +41,10 @@
     <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
       <HintPath>..\packages\ClosedXML.Parser.1.2.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CsvHelper, Version=33.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\packages\CsvHelper.33.0.1\lib\net47\CsvHelper.dll</HintPath>
     </Reference>
@@ -82,7 +86,9 @@
     <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
       <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -113,6 +119,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -137,7 +144,7 @@
     <Compile Include="Models\DAOs\Bills\BillAddProductDA.cs" />
     <Compile Include="Models\DAOs\Bills\BillDetailDA.cs" />
     <Compile Include="Models\DAOs\Bills\BillImportProductDA.cs" />
-    <Compile Include="Models\DTOs\Bills\BillAddMovieDTO.cs" />
+    <Compile Include="Models\DTOs\BillSeatsForShowTimesDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\BillAddProductDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\BillDetailDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\BillImportProductDTO.cs" />
@@ -279,6 +286,33 @@
     <Compile Include="Views\ShowTimeManagement\AddShowTimeForm.Designer.cs">
       <DependentUpon>AddShowTimeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ShowTimeManagement\BillSeatsForShowTimes.cs">
+      <DependentUpon>BillSeatsForShowTimes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\BillSeatsForShowTimes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillSeatsForShowTimes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\BillSeatsForShowTimesExchangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\BillSeatsForShowTimesExchangeForm.Designer.cs">
+      <DependentUpon>BillSeatsForShowTimesExchangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\BillSeatsForShowTimesRP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillSeatsForShowTimesRP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\BillTicketForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShowTimeManagement\BillTicketForms.Designer.cs">
+      <DependentUpon>BillTicketForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShowTimeManagement\SeatForShowTimeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +384,17 @@
     <EmbeddedResource Include="Views\ShowTimeManagement\AddShowTimeForm.resx">
       <DependentUpon>AddShowTimeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShowTimeManagement\BillSeatsForShowTimesExchangeForm.resx">
+      <DependentUpon>BillSeatsForShowTimesExchangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShowTimeManagement\BillSeatsForShowTimesRP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BillSeatsForShowTimesRP.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShowTimeManagement\BillTicketForms.resx">
+      <DependentUpon>BillTicketForms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ShowTimeManagement\SeatForShowTineUC.resx">
       <DependentUpon>SeatForShowTineUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,6 +428,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Views\ShowTimeManagement\BillSeatsForShowTimes.xsc">
+      <DependentUpon>BillSeatsForShowTimes.xsd</DependentUpon>
+    </None>
+    <None Include="Views\ShowTimeManagement\BillSeatsForShowTimes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BillSeatsForShowTimes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Views\ShowTimeManagement\BillSeatsForShowTimes.xss">
+      <DependentUpon>BillSeatsForShowTimes.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -407,6 +463,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\loginForm\icon_mail.png" />

@@ -123,6 +123,61 @@ namespace Cinema_Management_System.Models.DAOs
             throw new FormatException("IdFormat không hợp lệ: " + idFormat);
         }
 
+        public CustomerDTO GetCustomerByPhoneNumber(string phoneNumber)
+        {
+            try
+            {
+                using (var db = new ConnectDataContext())
+                {
+                    var customer = db.CUSTOMERs
+                                     .FirstOrDefault(c => c.PhoneNumber == phoneNumber && c.IsDeleted == false);
+
+                    if (customer != null)
+                    {
+                        return new CustomerDTO(
+                            customer.Id,
+                            customer.IdFormat,
+                            customer.FullName,
+                            customer.Gender,
+                            customer.PhoneNumber,
+                            customer.Email,
+                            customer.Birth,
+                            customer.RegDate,
+                            customer.Point
+                        );
+                    }
+
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public bool UpdatePoint(string PhoneNumberUpdate, int addPoint)
+        {
+            try
+            {
+                using (var db = new ConnectDataContext())
+                {
+                    var customer = db.CUSTOMERs.SingleOrDefault(c => c.PhoneNumber == PhoneNumberUpdate && c.IsDeleted==false);
+                    if (customer != null)
+                    {
+                        customer.Point += addPoint;
+                        db.SubmitChanges();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật điểm khách hàng: " + ex.Message);
+                return false;
+            }
+        }
 
     }
 }

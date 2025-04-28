@@ -11,6 +11,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 using System.Xml.Linq;
 
 namespace Cinema_Management_System.Views.ShowTimeManagement
@@ -72,41 +73,50 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             // Tạo các nút cho từng phòng và thêm vào FlowLayoutPane
             foreach (var showTime in _viewModelShowTime.FilterMovieByAuditorium(id))
             {
-                Guna.UI2.WinForms.Guna2Panel btn = CreateShowTimeButton(showTime, BtnShowTimeMovieVyAuditorium_Click);
-                btn.Tag = showTime.Movie_id;
-                this.FLP_ShowTimeMovie.Controls.Add(btn);
+                Panel panel = CreateShowTimeButton(showTime, BtnShowTimeMovieVyAuditorium_Click);
+                panel.Tag = showTime.Movie_id;
+                this.FLP_ShowTimeMovie.Controls.Add(panel);
             }
         }
 
         // tao cac button chua thoing tin cua bo phim
-        private Guna.UI2.WinForms.Guna2Panel CreateShowTimeButton(ShowTimeDTO showTime, EventHandler clickHandler)
+        private Panel CreateShowTimeButton(ShowTimeDTO showTime, EventHandler clickHandler)
         {
             // Tạo panel chứa tiêu đề và ảnh phim
-            var panel = new Guna.UI2.WinForms.Guna2Panel
+            var panel = new Panel
             {
-                Size = new Size(220, 300), // Tăng chiều cao để chứa tiêu đề
-                BorderRadius = 5,
-                BorderColor = Color.Black,
-                BorderThickness = 1,
-                Margin = new Padding(15, 15, 10, 15) // Khoảng cách giữa các button
+                Size = new Size(220, 360),
+                Margin = new Padding(5, 20, 5, 10),
+                BorderStyle = BorderStyle.None
             };
 
             // Tạo label tiêu đề phim
             var lblTitle = new Label
             {
-                Text = showTime.MovieTitle, // Tiêu đề phim
-                Font = new Font("Arial", 10, FontStyle.Bold),
-                ForeColor = Color.Black,
+                Text = showTime.MovieTitle,
                 AutoSize = false,
+                Width = 220,
+                Height = 40,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Dock = DockStyle.Top,
-                Height = 40
+                ForeColor = Color.Black,
+                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                Padding = new Padding(5),
+                AutoEllipsis = true,
             };
 
+            // tao button chua hinh anh phim
+            Button movieButton = new Button
+            {
+                Width = 220,
+                Height = 260,
+                BackColor = Color.Transparent,
+                FlatStyle = FlatStyle.Flat,
+                BackgroundImageLayout = ImageLayout.Zoom,
+                Cursor = System.Windows.Forms.Cursors.Hand
+            };
+            movieButton.FlatAppearance.BorderSize = 0;
 
-            Guna.UI2.WinForms.Guna2ImageButton btn = new Guna.UI2.WinForms.Guna2ImageButton();
-           
-            btn.Tag = -1;
+            movieButton.Tag = -1;
             // Xử lý ảnh phim
             if (showTime.MovieImage != null && showTime.MovieImage.Length > 0)
             {
@@ -114,31 +124,41 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                 {
                     using (var ms = new System.IO.MemoryStream(showTime.MovieImage))
                     {
-                        btn.Image = Image.FromStream(ms);
+                        movieButton.BackgroundImage = Image.FromStream(ms);
                         //btn.Tag=showTime.ShowTimeID.ToString();
                     }
                 }
                 catch
                 {
-                    btn.Image = Properties.Resources.add;
+                    movieButton.BackgroundImage = Properties.Resources.add;
                 }
             }
             else
             {
-                btn.Image = Properties.Resources.add;
+                movieButton.BackgroundImage = Properties.Resources.add;
             }
-            btn.Tag = showTime.Movie_id; 
-            btn.Size = new Size(220,260);
-            btn.ImageSize = new Size(210, 250);
+            movieButton.Tag = showTime.Movie_id; 
             if (clickHandler != null)
             {
-                btn.Click += clickHandler;
+                movieButton.Click += clickHandler;
             }
-            btn.Margin = new Padding(10, 15, 10, 15);
-            btn.HoverState.ImageSize = new Size(220, 260); // Giữ nguyên kích thước ảnh
-            btn.Dock = DockStyle.Fill;
+            SetupHoverEffect(movieButton, lblTitle);
+
+            var btnMoreOptions = new Panel
+            {
+                Size = new Size(20, 20),
+                Margin = new Padding(5, 20, 5, 10),
+                BorderStyle = BorderStyle.None
+            };
+
+            btnMoreOptions.Top = 0;
+            btnMoreOptions.Left = movieButton.Width - btnMoreOptions.Width - 10;
+            movieButton.Top = btnMoreOptions.Bottom + 10;
+            lblTitle.Top = movieButton.Bottom + 5;
+
+
             // **THÊM CẢ `btn` VÀ `lblTitle` VÀO `panel`**
-            panel.Controls.Add(btn);      // Thêm nút hình ảnh vào panel
+            panel.Controls.Add(movieButton);      // Thêm nút hình ảnh vào panel
             panel.Controls.Add(lblTitle); // Thêm tiêu đề vào panel
             return panel;
         }
@@ -146,7 +166,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
         // xu ly su kiện khi bấm vaò button chọn phim, => hiển thị ra xuất chiếu của bộ phim đó.
         private void BtnShowTimeMovieVyAuditorium_Click(object sender, EventArgs e)
         {
-            Guna.UI2.WinForms.Guna2ImageButton btn = sender as Guna.UI2.WinForms.Guna2ImageButton;
+            Button btn = sender as Button;
             ShowTimeByMovieForm frm = new ShowTimeByMovieForm((int)btn.Tag, idAutoriumSelect);
             frm.ShowDialog();
             this.load_ShowTimeMovie((int)btn.Tag);
@@ -158,7 +178,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
         // su kien khi chon loc bang ngay
         private void BtnShowTimeMovieByDate_Click(object sender, EventArgs e)
         {
-            Guna.UI2.WinForms.Guna2ImageButton btn = sender as Guna.UI2.WinForms.Guna2ImageButton;
+            Button btn = sender as Button;
             ShowTimeByMovieForm frm = new ShowTimeByMovieForm((int)btn.Tag, this.DTP_SearchTimeMovie.Value);
             frm.ShowDialog();
             this.DTP_SearchTimeMovie_ValueChanged(this, EventArgs.Empty);
@@ -196,13 +216,74 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             // Tạo các nút cho từng phòng và thêm vào FlowLayoutPane
             foreach (var showTime in ShowTimeList)
             {
-                Guna.UI2.WinForms.Guna2Panel btn = CreateShowTimeButton(showTime, BtnShowTimeMovieByDate_Click);
+                Panel btn = CreateShowTimeButton(showTime, BtnShowTimeMovieByDate_Click);
                 btn.Tag = showTime.Movie_id;
                 this.FLP_ShowTimeMovie.Controls.Add(btn);
             }
         }
 
-        private void btn_AddShowTimeMovie_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Thêm hiệu ứng phóng to ảnh khi hover
+        /// </summary>
+        private void SetupHoverEffect(Button movieButton, Label titleLabel)
+        {
+            Timer zoomTimer = new Timer { Interval = 10 };
+            Timer hideButtonTimer = new Timer { Interval = 2000 };
+            int targetSize = 240;
+            int originalSize = 220;
+            bool zoomingIn = false;
+
+            movieButton.MouseEnter += (s, e) =>
+            {
+                zoomingIn = true;
+                zoomTimer.Start();
+                titleLabel.ForeColor = Color.Red;
+                hideButtonTimer.Stop();
+
+            };
+
+            movieButton.MouseLeave += (s, e) =>
+            {
+                zoomingIn = false;
+                zoomTimer.Start();
+                titleLabel.ForeColor = Color.Black;
+                hideButtonTimer.Start();
+            };
+
+            hideButtonTimer.Tick += (s, e) =>
+            {
+                hideButtonTimer.Stop();
+            };
+
+            zoomTimer.Tick += (s, e) =>
+            {
+                if (zoomingIn)
+                {
+                    if (movieButton.Width < targetSize)
+                    {
+                        movieButton.Width += 2;
+                        movieButton.Height += 2;
+                        movieButton.Left -= 1;
+                        movieButton.Top -= 1;
+                    }
+                    else zoomTimer.Stop();
+                }
+                else
+                {
+                    if (movieButton.Width > originalSize)
+                    {
+                        movieButton.Width -= 2;
+                        movieButton.Height -= 2;
+                        movieButton.Left += 1;
+                        movieButton.Top += 1;
+                    }
+                    else zoomTimer.Stop();
+                }
+            };
+        }
+
+        private void btn_AddShowTimeMovie_Click_1(object sender, EventArgs e)
         {
             AddShowTimeForm frm = new AddShowTimeForm();
             frm.ShowDialog();
@@ -211,5 +292,10 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             idAutoriumSelect = -1;
         }
 
+        private void btn_ticketExchange_Click(object sender, EventArgs e)
+        {
+            BillSeatsForShowTimesExchangeForm billSeatsForShowTimesExchangeForm = new BillSeatsForShowTimesExchangeForm();
+            billSeatsForShowTimesExchangeForm.ShowDialog();
+        }
     }
 }
