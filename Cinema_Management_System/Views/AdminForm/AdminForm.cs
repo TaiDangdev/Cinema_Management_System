@@ -29,12 +29,12 @@ namespace Cinema_Management_System
         {
             if (currentSelectedButton != null)
             {
-                currentSelectedButton.FillColor = Color.White; // Reset màu cũ
-                currentSelectedButton.ForeColor = Color.Black; // Reset text nếu muốn
+                currentSelectedButton.FillColor = Color.White;
+                currentSelectedButton.ForeColor = Color.Black; 
             }
 
-            selectedButton.FillColor = Color.FromArgb(203, 45, 62); // Màu được chọn
-            selectedButton.ForeColor = Color.White; // Text trắng cho nổi bật (nếu thích)
+            selectedButton.FillColor = Color.FromArgb(203, 45, 62); 
+            selectedButton.ForeColor = Color.White; 
 
             currentSelectedButton = selectedButton;
         }
