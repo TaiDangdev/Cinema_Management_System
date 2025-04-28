@@ -1,5 +1,4 @@
 ﻿using Guna.UI2.WinForms;
-using Guna.UI2.WinForms.Suite;
 using System;
 using System.Drawing;
 using System.Media;

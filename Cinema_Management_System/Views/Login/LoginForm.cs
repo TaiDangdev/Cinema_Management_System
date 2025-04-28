@@ -31,7 +31,7 @@ namespace Cinema_Management_System
                 username_Txt.Focus();
             }));
             StartSlideShow();
-            
+            Task.Run(() => UpdateMovieStatusAsync());
         }
 
         private void InitializeForm()
@@ -53,6 +53,24 @@ namespace Cinema_Management_System
             slideTimer.Start();
 
             UpdatePosterImage();
+        }
+
+        private async Task UpdateMovieStatusAsync()
+        {
+            try
+            {
+                await Task.Run(() =>
+                {
+                    using (var db = new ConnectDataContext())
+                    {
+                        db.ExecuteCommand("EXEC [dbo].[sp_UpdateMovieStatus]");
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi cập nhật trạng thái phim: " + ex.Message);
+            }
         }
 
         private void OnEnterKeyPressed(object sender, KeyEventArgs e)
@@ -142,7 +160,6 @@ namespace Cinema_Management_System
         private dynamic AuthenticateUser(string username, string password)
         {
             // dùng dynamic vì LINQ không xác định được kiểu trả về
-            // Lưu ý: chưa dùng DAOs ở đây
             using (var db = new ConnectDataContext())
             {
                 return (from acc in db.ACCOUNTs

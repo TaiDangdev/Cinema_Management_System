@@ -1,79 +1,91 @@
 ﻿using Cinema_Management_System.Models.DTOs;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Security.RightsManagement;
-using System.Text;
-using System.Threading.Tasks;
 using Cinema_Management_System.ViewModels;
+using Cinema_Management_System.Views.MessageBox;
+using Cinema_Management_System.ViewModels.MovieManagementVM.Feature;
 
 namespace Cinema_Management_System.Models.DAOs
 {
     public class MovieDA
     {
-        private ConnectDataContext db = new ConnectDataContext();
+        ConnectDataContext connect = new ConnectDataContext();
 
-        // lấy danh sách tất cả các phim
-        public List<MovieDTO> GetAllMovies()
+        private static MovieDA instance;
+
+        public static MovieDA Instance
         {
-            try
-            {
-                return db.MOVIEs.Select(movie => new MovieDTO(
-                    movie.id,
-                    movie.MovieCode,
-                    movie.Title,
-                    movie.Description,
-                    movie.Director,
-                    movie.ReleaseYear.ToString(),
-                    movie.Language,
-                    movie.Country,
-                    movie.Length,
-                    movie.Trailer,
-                    movie.StartDate.ToString(),
-                    movie.Genre,
-                    movie.Status,
-                    ImageVsSQL.ByteArrayToBitmap(movie.ImageSource.ToArray()),
-                    movie.ImportPrice
-                )).ToList();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi: " + ex.Message);
-            }
+            get { if (MovieDA.instance == null) MovieDA.instance = new MovieDA(); return MovieDA.instance; }
+            set { MovieDA.instance = value; }
         }
 
-        // thêm một phim mới
-        public void addMovie(MovieDTO movieDTO)
-        {
-            try
-            {
-                MOVIE movie = new MOVIE
-                {
-                    MovieCode = movieDTO.MovieCode,
-                    Title = movieDTO.Title,
-                    Description = movieDTO.Description,
-                    Director = movieDTO.Director,
-                    ReleaseYear = string.IsNullOrWhiteSpace(movieDTO.ReleaseYear) ? 0 : int.Parse(movieDTO.ReleaseYear),
-                    Language = movieDTO.Language,
-                    Country = movieDTO.Country,
-                    Length = movieDTO.Length,
-                    Trailer = movieDTO.Trailer,
-                    StartDate = string.IsNullOrWhiteSpace(movieDTO.StartDate) ? DateTime.MinValue : DateTime.Parse(movieDTO.StartDate),
-                    Genre = movieDTO.Genre,
-                    Status = movieDTO.Status,
-                    ImageSource = movieDTO.ImageSource != null ? ImageVsSQL.BitmapToByteArray(movieDTO.ImageSource) : null,
-                    ImportPrice = movieDTO.ImportPrice
-                };
+        private MovieDA() { }
 
-                db.MOVIEs.InsertOnSubmit(movie);
-                db.SubmitChanges();
-            }
-            catch (Exception ex)
+        public List<MOVIE> GetMovieList()
+        {
+            List<MOVIE> MovieList = connect.MOVIEs.ToList();
+            return MovieList;
+        }
+
+        public MOVIE GetMovieById(int id)
+        {
+            return connect.MOVIEs.FirstOrDefault(m => m.id == id);
+        }
+
+        // lấy DS tất cả movie
+        public List<MovieDTO> GetAllMovies()
+        {
+            return connect.MOVIEs.Select(movie => new MovieDTO(
+                movie.id,
+                movie.MovieCode,
+                movie.Title,
+                movie.Description,
+                movie.Director,
+                movie.ReleaseYear.ToString(),
+                movie.Language,
+                movie.Country,
+                movie.Length,
+                movie.Trailer,
+                movie.StartDate.ToString(),
+                movie.EndDate.ToString(),
+                movie.TotalShowtimes,
+                movie.CurrentShowtimes,
+                movie.Genre,    
+                movie.Status,
+                ImageVsSQL.ByteArrayToBitmap(movie.ImageSource.ToArray()),
+                movie.ImportPrice
+            )).ToList();
+        }
+
+        // add 1 movie
+        public int addMovie(MovieDTO movieDTO)
+        {
+            MOVIE movie = new MOVIE
             {
-                throw new Exception("Lỗi: " + ex.Message);
-            }
+                MovieCode = movieDTO.MovieCode,
+                Title = movieDTO.Title,
+                Description = movieDTO.Description,
+                Director = movieDTO.Director,
+                ReleaseYear = string.IsNullOrWhiteSpace(movieDTO.ReleaseYear) ? 0 : int.Parse(movieDTO.ReleaseYear),
+                Language = movieDTO.Language,
+                Country = movieDTO.Country,
+                Length = movieDTO.Length,
+                Trailer = movieDTO.Trailer,
+                StartDate = string.IsNullOrWhiteSpace(movieDTO.StartDate) ? DateTime.MinValue : DateTime.Parse(movieDTO.StartDate),
+                EndDate = string.IsNullOrWhiteSpace(movieDTO.EndDate) ? DateTime.MinValue : DateTime.Parse(movieDTO.EndDate),
+                TotalShowtimes = movieDTO.TotalShowtimes,
+                CurrentShowtimes = 0,
+                Genre = movieDTO.Genre,
+                Status = movieDTO.Status,
+                ImageSource = movieDTO.ImageSource != null ? ImageVsSQL.BitmapToByteArray(movieDTO.ImageSource) : null,
+                ImportPrice = movieDTO.ImportPrice
+            };
+
+            connect.MOVIEs.InsertOnSubmit(movie);
+            connect.SubmitChanges();
+
+            return movie.id;
         }
 
         // update(edit) movie
@@ -81,7 +93,7 @@ namespace Cinema_Management_System.Models.DAOs
         {
             try
             {
-                var movie = db.MOVIEs.FirstOrDefault(m => m.MovieCode == movieDTO.MovieCode);
+                var movie = connect.MOVIEs.FirstOrDefault(m => m.MovieCode == movieDTO.MovieCode);
                 if (movie == null)
                 {
                     throw new Exception("Không tìm thấy phim để cập nhật.");
@@ -96,12 +108,14 @@ namespace Cinema_Management_System.Models.DAOs
                 movie.Length = movieDTO.Length;
                 movie.Trailer = movieDTO.Trailer;
                 movie.StartDate = string.IsNullOrWhiteSpace(movieDTO.StartDate) ? DateTime.MinValue : DateTime.Parse(movieDTO.StartDate);
+                //movie.EndDate = string.IsNullOrWhiteSpace(movieDTO.EndDate) ? DateTime.MinValue : DateTime.Parse(movieDTO.EndDate);
+                //movie.TotalShowtimes = movieDTO.TotalShowtimes;
                 movie.Genre = movieDTO.Genre;
                 movie.Status = movieDTO.Status;
                 movie.ImageSource = movieDTO.ImageSource != null ? ImageVsSQL.BitmapToByteArray(movieDTO.ImageSource) : movie.ImageSource;
                 movie.ImportPrice = movieDTO.ImportPrice;
 
-                db.SubmitChanges();
+                connect.SubmitChanges();
             }
             catch (Exception ex)
             {
@@ -109,92 +123,47 @@ namespace Cinema_Management_System.Models.DAOs
             }
         }
 
-       
-
-
-        
-        // xóa một phim theo MovieCode
+        // delete 1 movie theo movieCode
         public void DeleteMovie(string movieCode)
         {
-            try
+            var movie = connect.MOVIEs.FirstOrDefault(m => m.MovieCode == movieCode);
+            if (movie == null)
             {
-                var movie = db.MOVIEs.FirstOrDefault(m => m.MovieCode == movieCode);
-                if (movie == null)
-                {
-                    throw new Exception("Không tìm thấy phim để xóa.");
-                }
-
-                db.MOVIEs.DeleteOnSubmit(movie);
-                db.SubmitChanges();
+                MessageBoxHelper.ShowError("Lỗi","Không tìm thấy phim để xóa.");
             }
-            catch (Exception ex)
-        {
-                throw new Exception("Lỗi khi xóa phim: " + ex.Message);
-            }
+            connect.MOVIEs.DeleteOnSubmit(movie);
+            connect.SubmitChanges();
         }
 
-        // kiểm tra xem movieCode tồn tại chưa
+        // kiểm tra xem 1 movie có tồn tại hay chưa
         public bool IsMovieExist(MovieDTO movieDTO)
         {
-            try
-            {
-                return db.MOVIEs.Any(m => m.MovieCode == movieDTO.MovieCode);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi kiểm tra phim tồn tại: " + ex.Message);
-            }
+            return connect.MOVIEs.Any(m => m.MovieCode == movieDTO.MovieCode);
         }
 
-        // lấy danh sách tên phim đang phát hành
-
-        // * Hiện tại chưa sài vì đang thiết kế theo View chứ chưa có ViewModel
-        public List<Tuple<string, string>> GetDSTitleDPH()
+        // lọc phim theo trạng thái và từ người dùng tìm kiếm
+        public List<MovieDTO> GetMovies(string statusFilter, string searchKeyword)
         {
-            try
+            var movies = GetAllMovies();
+
+            if (!string.IsNullOrEmpty(statusFilter) && statusFilter != "Tất cả")
             {
-                using (var db = new ConnectDataContext())
+                movies = movies.Where(m => m.Status.Equals(statusFilter, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(searchKeyword))
+            {
+                searchKeyword = searchKeyword.RemoveVietnameseSigns();
+
+                movies = movies.Where(m =>
                 {
-                    var result = db.MOVIEs
-                        .Where(m => m.Status == "Đang phát hành")
-                        .Select(m => new Tuple<string, string>(m.MovieCode, m.Title))
-                        .ToList();
-
-                    return result;
-                }
+                    string normalizedTitle = m.Title.RemoveVietnameseSigns();
+                    return normalizedTitle.Contains(searchKeyword) ||
+                        SearchMovieHelper.LevenshteinDistance(normalizedTitle, searchKeyword) <= 3; // giới hạn khoảng cách tối đa là 3
+                }).ToList();
             }
-            catch (Exception ex)
-        {
-                throw new Exception("Lỗi: " + ex.Message);
-            }
-        }
 
-        // còn các hàm hỗ trợ cho việc thống kê
-
-        ConnectDataContext Connect = new ConnectDataContext();
-
-        private static MovieDA instance;
-
-        public static MovieDA Instance
-        {
-            get { if (MovieDA.instance == null) MovieDA.instance = new MovieDA(); return MovieDA.instance; }
-            set { MovieDA.instance = value; }
-        }
-
-        // tạm thời để public
-        //private MovieDA() { }
-        public MovieDA() { }
-
-        //lay danh sach phim
-        public List<MOVIE> GetMovieList()
-        {
-            List<MOVIE> MovieList = Connect.MOVIEs.ToList();
-            return MovieList;
-        }
-
-        public MOVIE GetMovieById(int id)
-        {
-            return Connect.MOVIEs.FirstOrDefault(m => m.id == id);
+            return movies;
         }
     }
 }

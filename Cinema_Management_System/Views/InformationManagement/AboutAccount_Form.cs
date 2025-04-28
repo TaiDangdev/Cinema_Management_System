@@ -39,6 +39,9 @@ namespace Cinema_Management_System
                     var staff = db.STAFFs.FirstOrDefault(s => s.Id == CurrentUser.StaffId);
                     if (staff != null)
                     {
+                        nameStaff_Txt.Text = staff.FullName;
+                        nameStaff_Txt.MaximumSize = new Size(avatar_Panel.Width - 20, 0); 
+                        nameStaff_Txt.TextAlign = ContentAlignment.MiddleCenter;
                         fullname_txt.Text = staff.FullName;
                         birth_txt.Text = staff.Birth.ToString("dd/MM/yyyy");
                         ngayvaolam_txt.Text = staff.NgayVaoLam.ToString("dd/MM/yyyy");

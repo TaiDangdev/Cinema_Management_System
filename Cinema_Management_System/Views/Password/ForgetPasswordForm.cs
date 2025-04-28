@@ -14,6 +14,7 @@ using System.Security.Cryptography;
 using System.IO;
 using Guna.UI2.WinForms;
 using Cinema_Management_System.Views.MessageBox;
+using Cinema_Management_System.ViewModels;
 
 namespace Cinema_Management_System
 {
@@ -44,10 +45,6 @@ namespace Cinema_Management_System
             panelCheck.Visible = true;
             panelChangePass.Visible = false;
             panelOTP.Visible = false;
-            //panelChangePass.Visible = true;
-            //panelOTP.Visible = true;
-            //panelOTP.SendToBack();
-            //panelChangePass.SendToBack();
         }
 
         private void forgetpassword_Txt_Click(object sender, EventArgs e)
@@ -104,13 +101,13 @@ namespace Cinema_Management_System
             UpdatePosterImage();
         }
 
-        private bool IsValidPassword(string password)
-        {
-            return password.Length >= 8 &&
-                   password.Any(char.IsUpper) &&
-                   password.Any(char.IsLower) &&
-                   password.Any(char.IsDigit);
-        }
+        //private bool IsValidPassword(string password)
+        //{
+        //    return password.Length >= 8 &&
+        //           password.Any(char.IsUpper) &&
+        //           password.Any(char.IsLower) &&
+        //           password.Any(char.IsDigit);
+        //}
 
         private void OnEnterKeyPressed(object sender, KeyEventArgs e)
         {
@@ -440,12 +437,12 @@ namespace Cinema_Management_System
             }
 
             // Kiểm tra chuẩn mật khẩu
-            if (!IsValidPassword(newPassword))
-            {
-                errorPass_Txt.Text = $"*Mật khẩu phải từ 8 ký tự, gồm chữ hoa,\nchữ thường và số!";
-                errorPass_Txt.Visible = true;
-                return;
-            }
+            //if (!PasswordHelper.IsValidPassword(newPassword))
+            //{
+            //    errorPass_Txt.Text = $"*Mật khẩu phải từ 8 ký tự, gồm chữ hoa,\nchữ thường và số!";
+            //    errorPass_Txt.Visible = true;
+            //    return;
+            //}
 
             // Kiểm tra xác nhận khớp
             if (newPassword != confirmPassword)

@@ -69,6 +69,7 @@
             this.trailerError_Txt = new System.Windows.Forms.Label();
             this.genreError_Txt = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.poster_Pic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.descriptionError_Txt = new System.Windows.Forms.Label();
             this.importFilm_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.codeError_Txt = new System.Windows.Forms.Label();
@@ -78,8 +79,12 @@
             this.trailer_btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.countryMovie_Txt = new Guna.UI2.WinForms.Guna2ComboBox();
             this.genreMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.poster_Pic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.endMovie_Txt = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.showTime_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.showTimeError_Txt = new System.Windows.Forms.Label();
             this.control_Panel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poster_Pic)).BeginInit();
@@ -99,7 +104,7 @@
             this.control_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.control_Panel.Location = new System.Drawing.Point(0, 0);
             this.control_Panel.Name = "control_Panel";
-            this.control_Panel.Size = new System.Drawing.Size(883, 37);
+            this.control_Panel.Size = new System.Drawing.Size(927, 37);
             this.control_Panel.TabIndex = 1;
             // 
             // guna2ControlBox1
@@ -109,7 +114,7 @@
             this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(823, 4);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(867, 4);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 4;
@@ -121,9 +126,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label1.Location = new System.Drawing.Point(20, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 25);
+            this.label1.Size = new System.Drawing.Size(109, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Thêm film";
+            this.label1.Text = "Thêm phim";
             // 
             // titleMovie_Txt
             // 
@@ -189,7 +194,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(395, 126);
+            this.label5.Location = new System.Drawing.Point(458, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 15;
@@ -211,7 +216,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(214, 127);
+            this.label7.Location = new System.Drawing.Point(213, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 20);
             this.label7.TabIndex = 19;
@@ -233,7 +238,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(175, 217);
+            this.label9.Location = new System.Drawing.Point(168, 218);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 20);
             this.label9.TabIndex = 23;
@@ -244,7 +249,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(396, 217);
+            this.label10.Location = new System.Drawing.Point(356, 217);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(121, 20);
             this.label10.TabIndex = 25;
@@ -266,7 +271,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(362, 302);
+            this.label12.Location = new System.Drawing.Point(320, 302);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 20);
             this.label12.TabIndex = 29;
@@ -289,7 +294,7 @@
             "Đang phát hành",
             "Ngưng phát hành",
             "Sắp phát hành"});
-            this.statusMovie_Txt.Location = new System.Drawing.Point(175, 240);
+            this.statusMovie_Txt.Location = new System.Drawing.Point(172, 238);
             this.statusMovie_Txt.Name = "statusMovie_Txt";
             this.statusMovie_Txt.Size = new System.Drawing.Size(172, 36);
             this.statusMovie_Txt.StartIndex = 0;
@@ -309,7 +314,7 @@
             this.startDateMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.startDateMovie_Txt.ForeColor = System.Drawing.Color.Black;
             this.startDateMovie_Txt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.startDateMovie_Txt.Location = new System.Drawing.Point(400, 240);
+            this.startDateMovie_Txt.Location = new System.Drawing.Point(360, 240);
             this.startDateMovie_Txt.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.startDateMovie_Txt.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.startDateMovie_Txt.Name = "startDateMovie_Txt";
@@ -341,7 +346,7 @@
             this.descriptionMovie_Txt.Name = "descriptionMovie_Txt";
             this.descriptionMovie_Txt.PlaceholderText = "Giới thiệu phim";
             this.descriptionMovie_Txt.SelectedText = "";
-            this.descriptionMovie_Txt.Size = new System.Drawing.Size(513, 130);
+            this.descriptionMovie_Txt.Size = new System.Drawing.Size(559, 130);
             this.descriptionMovie_Txt.TabIndex = 12;
             // 
             // label13
@@ -349,7 +354,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(598, 139);
+            this.label13.Location = new System.Drawing.Point(651, 144);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 20);
             this.label13.TabIndex = 33;
@@ -369,7 +374,7 @@
             this.chooseImage_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.chooseImage_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.chooseImage_Btn.ForeColor = System.Drawing.Color.White;
-            this.chooseImage_Btn.Location = new System.Drawing.Point(694, 129);
+            this.chooseImage_Btn.Location = new System.Drawing.Point(747, 134);
             this.chooseImage_Btn.Name = "chooseImage_Btn";
             this.chooseImage_Btn.Size = new System.Drawing.Size(156, 39);
             this.chooseImage_Btn.TabIndex = 34;
@@ -390,7 +395,7 @@
             this.acceptMovie_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.acceptMovie_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.acceptMovie_Btn.ForeColor = System.Drawing.Color.White;
-            this.acceptMovie_Btn.Location = new System.Drawing.Point(772, 483);
+            this.acceptMovie_Btn.Location = new System.Drawing.Point(817, 483);
             this.acceptMovie_Btn.Name = "acceptMovie_Btn";
             this.acceptMovie_Btn.Size = new System.Drawing.Size(96, 39);
             this.acceptMovie_Btn.TabIndex = 37;
@@ -424,7 +429,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(459, 129);
+            this.label15.Location = new System.Drawing.Point(524, 128);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 15);
             this.label15.TabIndex = 40;
@@ -510,12 +515,12 @@
             this.priceMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.priceMovie_Txt.ForeColor = System.Drawing.Color.Black;
             this.priceMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.priceMovie_Txt.Location = new System.Drawing.Point(399, 151);
+            this.priceMovie_Txt.Location = new System.Drawing.Point(462, 151);
             this.priceMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.priceMovie_Txt.Name = "priceMovie_Txt";
             this.priceMovie_Txt.PlaceholderText = "";
             this.priceMovie_Txt.SelectedText = "";
-            this.priceMovie_Txt.Size = new System.Drawing.Size(135, 34);
+            this.priceMovie_Txt.Size = new System.Drawing.Size(169, 34);
             this.priceMovie_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.priceMovie_Txt.TabIndex = 7;
             // 
@@ -535,7 +540,7 @@
             this.priceError_Txt.AutoSize = true;
             this.priceError_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceError_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.priceError_Txt.Location = new System.Drawing.Point(396, 189);
+            this.priceError_Txt.Location = new System.Drawing.Point(459, 189);
             this.priceError_Txt.Name = "priceError_Txt";
             this.priceError_Txt.Size = new System.Drawing.Size(41, 17);
             this.priceError_Txt.TabIndex = 47;
@@ -557,7 +562,7 @@
             this.languageError_Txt.AutoSize = true;
             this.languageError_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.languageError_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.languageError_Txt.Location = new System.Drawing.Point(214, 189);
+            this.languageError_Txt.Location = new System.Drawing.Point(213, 189);
             this.languageError_Txt.Name = "languageError_Txt";
             this.languageError_Txt.Size = new System.Drawing.Size(41, 17);
             this.languageError_Txt.TabIndex = 51;
@@ -580,12 +585,12 @@
             this.languageMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.languageMovie_Txt.ForeColor = System.Drawing.Color.Black;
             this.languageMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.languageMovie_Txt.Location = new System.Drawing.Point(214, 151);
+            this.languageMovie_Txt.Location = new System.Drawing.Point(213, 151);
             this.languageMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.languageMovie_Txt.Name = "languageMovie_Txt";
             this.languageMovie_Txt.PlaceholderText = "";
             this.languageMovie_Txt.SelectedText = "";
-            this.languageMovie_Txt.Size = new System.Drawing.Size(162, 34);
+            this.languageMovie_Txt.Size = new System.Drawing.Size(220, 34);
             this.languageMovie_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.languageMovie_Txt.TabIndex = 6;
             // 
@@ -648,7 +653,7 @@
             this.trailerMovie_Txt.Name = "trailerMovie_Txt";
             this.trailerMovie_Txt.PlaceholderText = "";
             this.trailerMovie_Txt.SelectedText = "";
-            this.trailerMovie_Txt.Size = new System.Drawing.Size(213, 34);
+            this.trailerMovie_Txt.Size = new System.Drawing.Size(162, 34);
             this.trailerMovie_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.trailerMovie_Txt.TabIndex = 10;
             // 
@@ -668,7 +673,7 @@
             this.genreError_Txt.AutoSize = true;
             this.genreError_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genreError_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.genreError_Txt.Location = new System.Drawing.Point(362, 367);
+            this.genreError_Txt.Location = new System.Drawing.Point(320, 367);
             this.genreError_Txt.Name = "genreError_Txt";
             this.genreError_Txt.Size = new System.Drawing.Size(41, 17);
             this.genreError_Txt.TabIndex = 57;
@@ -677,10 +682,21 @@
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.poster_Pic);
-            this.guna2Panel2.Location = new System.Drawing.Point(602, 183);
+            this.guna2Panel2.Location = new System.Drawing.Point(662, 188);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(234, 282);
             this.guna2Panel2.TabIndex = 58;
+            // 
+            // poster_Pic
+            // 
+            this.poster_Pic.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.poster_Pic.ImageRotate = 0F;
+            this.poster_Pic.Location = new System.Drawing.Point(4, 2);
+            this.poster_Pic.Name = "poster_Pic";
+            this.poster_Pic.Size = new System.Drawing.Size(228, 277);
+            this.poster_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.poster_Pic.TabIndex = 0;
+            this.poster_Pic.TabStop = false;
             // 
             // descriptionError_Txt
             // 
@@ -707,7 +723,7 @@
             this.importFilm_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.importFilm_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.importFilm_Btn.ForeColor = System.Drawing.Color.White;
-            this.importFilm_Btn.Location = new System.Drawing.Point(657, 483);
+            this.importFilm_Btn.Location = new System.Drawing.Point(702, 483);
             this.importFilm_Btn.Name = "importFilm_Btn";
             this.importFilm_Btn.Size = new System.Drawing.Size(109, 39);
             this.importFilm_Btn.TabIndex = 102;
@@ -758,9 +774,9 @@
             this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(21, 47);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(61, 20);
+            this.label17.Size = new System.Drawing.Size(70, 20);
             this.label17.TabIndex = 103;
-            this.label17.Text = "Mã film";
+            this.label17.Text = "Mã phim";
             // 
             // reset_button
             // 
@@ -776,7 +792,7 @@
             this.reset_button.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.reset_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.reset_button.ForeColor = System.Drawing.Color.White;
-            this.reset_button.Location = new System.Drawing.Point(542, 483);
+            this.reset_button.Location = new System.Drawing.Point(587, 483);
             this.reset_button.Name = "reset_button";
             this.reset_button.Size = new System.Drawing.Size(109, 39);
             this.reset_button.TabIndex = 106;
@@ -797,7 +813,7 @@
             this.trailer_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.trailer_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.trailer_btn.ForeColor = System.Drawing.Color.White;
-            this.trailer_btn.Location = new System.Drawing.Point(241, 321);
+            this.trailer_btn.Location = new System.Drawing.Point(195, 321);
             this.trailer_btn.Name = "trailer_btn";
             this.trailer_btn.Size = new System.Drawing.Size(109, 39);
             this.trailer_btn.TabIndex = 107;
@@ -857,32 +873,21 @@
             this.genreMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.genreMovie_Txt.ForeColor = System.Drawing.Color.Black;
             this.genreMovie_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.genreMovie_Txt.Location = new System.Drawing.Point(362, 326);
+            this.genreMovie_Txt.Location = new System.Drawing.Point(320, 326);
             this.genreMovie_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.genreMovie_Txt.Name = "genreMovie_Txt";
             this.genreMovie_Txt.PlaceholderText = "";
             this.genreMovie_Txt.SelectedText = "";
-            this.genreMovie_Txt.Size = new System.Drawing.Size(172, 36);
+            this.genreMovie_Txt.Size = new System.Drawing.Size(145, 36);
             this.genreMovie_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.genreMovie_Txt.TabIndex = 11;
-            // 
-            // poster_Pic
-            // 
-            this.poster_Pic.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.poster_Pic.ImageRotate = 0F;
-            this.poster_Pic.Location = new System.Drawing.Point(4, 2);
-            this.poster_Pic.Name = "poster_Pic";
-            this.poster_Pic.Size = new System.Drawing.Size(228, 277);
-            this.poster_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.poster_Pic.TabIndex = 0;
-            this.poster_Pic.TabStop = false;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(703, 134);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(756, 139);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(28, 28);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -890,12 +895,96 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
+            // endMovie_Txt
+            // 
+            this.endMovie_Txt.Animated = true;
+            this.endMovie_Txt.BackColor = System.Drawing.Color.White;
+            this.endMovie_Txt.BorderRadius = 4;
+            this.endMovie_Txt.BorderThickness = 1;
+            this.endMovie_Txt.Checked = true;
+            this.endMovie_Txt.FillColor = System.Drawing.Color.White;
+            this.endMovie_Txt.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.endMovie_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.endMovie_Txt.ForeColor = System.Drawing.Color.Black;
+            this.endMovie_Txt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.endMovie_Txt.Location = new System.Drawing.Point(510, 241);
+            this.endMovie_Txt.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.endMovie_Txt.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.endMovie_Txt.Name = "endMovie_Txt";
+            this.endMovie_Txt.Size = new System.Drawing.Size(134, 34);
+            this.endMovie_Txt.TabIndex = 109;
+            this.endMovie_Txt.Value = new System.DateTime(2025, 4, 1, 0, 0, 0, 0);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(506, 217);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(105, 20);
+            this.label16.TabIndex = 108;
+            this.label16.Text = "Ngày kết thúc";
+            // 
+            // showTime_Txt
+            // 
+            this.showTime_Txt.Animated = true;
+            this.showTime_Txt.BackColor = System.Drawing.SystemColors.Control;
+            this.showTime_Txt.BorderColor = System.Drawing.Color.Black;
+            this.showTime_Txt.BorderRadius = 4;
+            this.showTime_Txt.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.showTime_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.showTime_Txt.DefaultText = "";
+            this.showTime_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.showTime_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.showTime_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.showTime_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.showTime_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.showTime_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.showTime_Txt.ForeColor = System.Drawing.Color.Black;
+            this.showTime_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.showTime_Txt.Location = new System.Drawing.Point(500, 326);
+            this.showTime_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.showTime_Txt.Name = "showTime_Txt";
+            this.showTime_Txt.PlaceholderText = "";
+            this.showTime_Txt.SelectedText = "";
+            this.showTime_Txt.Size = new System.Drawing.Size(144, 36);
+            this.showTime_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.showTime_Txt.TabIndex = 110;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(496, 302);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(99, 20);
+            this.label18.TabIndex = 111;
+            this.label18.Text = "Số suất chiếu";
+            // 
+            // showTimeError_Txt
+            // 
+            this.showTimeError_Txt.AutoSize = true;
+            this.showTimeError_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showTimeError_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.showTimeError_Txt.Location = new System.Drawing.Point(497, 368);
+            this.showTimeError_Txt.Name = "showTimeError_Txt";
+            this.showTimeError_Txt.Size = new System.Drawing.Size(41, 17);
+            this.showTimeError_Txt.TabIndex = 112;
+            this.showTimeError_Txt.Text = "label1";
+            // 
             // AddMovieView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(883, 551);
+            this.ClientSize = new System.Drawing.Size(927, 551);
+            this.Controls.Add(this.showTimeError_Txt);
+            this.Controls.Add(this.showTime_Txt);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.endMovie_Txt);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.genreMovie_Txt);
             this.Controls.Add(this.countryMovie_Txt);
             this.Controls.Add(this.trailer_btn);
@@ -1011,5 +1100,10 @@
         private Guna.UI2.WinForms.Guna2GradientButton trailer_btn;
         private Guna.UI2.WinForms.Guna2ComboBox countryMovie_Txt;
         private Guna.UI2.WinForms.Guna2TextBox genreMovie_Txt;
+        private Guna.UI2.WinForms.Guna2DateTimePicker endMovie_Txt;
+        private System.Windows.Forms.Label label16;
+        private Guna.UI2.WinForms.Guna2TextBox showTime_Txt;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label showTimeError_Txt;
     }
 }

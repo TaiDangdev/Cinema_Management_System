@@ -14,53 +14,26 @@ using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.Views.MessageBox;
 using Cinema_Management_System.ViewModels.MovieManagementVM.Feature;
 using Cinema_Management_System.ViewModels;
+using Cinema_Management_System.Models.DAOs.Bills;
 
 namespace Cinema_Management_System.Views.MovieManagement
 {
     public partial class MovieManagementView : UserControl
     {
-        private MovieDA _movieDA;
-
         public MovieManagementView()
         {
             InitializeComponent();
-            _movieDA = new MovieDA();
             LoadMovies();
         }
 
-        /// <summary>
-        /// Load dữ liệu film
-        /// </summary>
         private void LoadMovies()
         {
-
             moviePanel.Controls.Clear();
 
             string searchText = searchMovie_Txt.Text.Trim().ToLower();
-
             string selectedFilter = filterMovie_Cbx.SelectedItem.ToString();
 
-            List<MovieDTO> movies = _movieDA.GetAllMovies();
-
-            // Áp dụng bộ lọc theo trạng thái (Đang phát hành / Ngưng phát hành)
-            if (selectedFilter == "Ngưng phát hành")
-            {
-                movies = movies.Where(m => m.Status == "Ngưng phát hành").ToList();
-            }
-            else if (selectedFilter == "Đang phát hành")
-            {
-                movies = movies.Where(m => m.Status == "Đang phát hành").ToList();
-            }
-
-            if (!string.IsNullOrEmpty(searchText))
-            {
-                //var fuzzySearch = new FuzzyStringComparer();
-                //movies = movies.Where(m => fuzzySearch.Equals(m.Title, searchText, StringComparison.OrdinalIgnoreCase)).ToList();
-
-                //movies = movies.Where(m => m.Title.ToLower().Contains(searchText)).ToList();
-                movies = movies.Where(m => m.Title.ToLower().StartsWith(searchText.ToLower())).ToList();
-
-            }
+            List<MovieDTO> movies = MovieDA.Instance.GetMovies(selectedFilter, searchText);
 
             foreach (var movie in movies)
             {
@@ -86,9 +59,6 @@ namespace Cinema_Management_System.Views.MovieManagement
             }
         }
 
-        /// <summary>
-        /// Tạo Panel chứa phim
-        /// </summary>
         private Panel CreateMoviePanel(MovieDTO movie)
         {
             return new Panel
@@ -101,16 +71,13 @@ namespace Cinema_Management_System.Views.MovieManagement
 
         }
 
-        /// <summary>
-        /// Tạo nút More Options với menu chuột phải
-        /// </summary>
         private Button CreateMoreOptionsButton(MovieDTO movie, Panel parentPanel)
         {
             Button btnMoreOptions = new Button
             {
                 Width = 20,
                 Height = 20,
-                BackgroundImage = Properties.Resources.icons8_more_24, // Icon dấu ba chấm
+                BackgroundImage = Properties.Resources.icons8_more_24,
                 BackgroundImageLayout = ImageLayout.Zoom,
                 FlatStyle = FlatStyle.Flat,
                 Cursor = Cursors.Hand
@@ -119,30 +86,15 @@ namespace Cinema_Management_System.Views.MovieManagement
 
             ContextMenuStrip menu = new ContextMenuStrip
             {
-                Renderer = new CustomMenuRenderer(), // Áp dụng Renderer để thay đổi UI
-                ShowImageMargin = false, // Ẩn lề hình ảnh mặc định
-                BackColor = Color.White, // Màu nền
+                Renderer = new CustomMenuRenderer(),
+                ShowImageMargin = false, 
+                BackColor = Color.White, 
             };
 
             menu.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-
             menu.Items.Add("✏ Chỉnh sửa", null, (s, e) => EditMovie(movie));
             menu.Items.Add("🗑 Xóa", null, (s, e) => DeleteMovie(movie));
-
-            //ToolStripMenuItem editItem = new ToolStripMenuItem("✏ Chỉnh sửa", Properties.Resources.icons8_edit_24, (s, e) => EditMovie(movie));
-            //ToolStripMenuItem deleteItem = new ToolStripMenuItem("🗑 Xóa", Properties.Resources.icons8_delete_24, (s, e) => DeleteMovie(movie));
-
-            //menu.Items.Add(editItem);
-            //menu.Items.Add(deleteItem);
-
             btnMoreOptions.Click += (s, e) => menu.Show(Cursor.Position);
-
-
-            //ContextMenuStrip menu = new ContextMenuStrip();
-            //menu.Items.Add("✏ Chỉnh sửa", null, (s, e) => EditMovie(movie));
-            //menu.Items.Add("🗑 Xóa", null, (s, e) => DeleteMovie(movie));
-
-            //btnMoreOptions.Click += (s, e) => menu.Show(Cursor.Position);
 
             return btnMoreOptions;
         }
@@ -155,11 +107,11 @@ namespace Cinema_Management_System.Views.MovieManagement
             {
                 if (e.Item.Selected)
                 {
-                    e.TextColor = Color.White; // Màu chữ khi hover
+                    e.TextColor = Color.White; 
                 }
                 else
                 {
-                    e.TextColor = Color.Black; // Màu chữ mặc định
+                    e.TextColor = Color.Black;
                 }
                 base.OnRenderItemText(e);
             }
@@ -173,9 +125,6 @@ namespace Cinema_Management_System.Views.MovieManagement
             public override Color MenuBorder => Color.LightGray; // Viền ngoài của menu
         }
 
-        /// <summary>
-        /// Tạo Label tiêu đề phim
-        /// </summary>
         private Label CreateMovieTitleLabel(string titleText)
         {
             return new Label
@@ -188,13 +137,10 @@ namespace Cinema_Management_System.Views.MovieManagement
                 ForeColor = Color.Black,
                 Font = new Font("Segoe UI", 10, FontStyle.Bold),
                 Padding = new Padding(5),
-                AutoEllipsis = true // Tự động thu gọn khi quá dài
+                AutoEllipsis = true
             };
         }
 
-        /// <summary>
-        /// Tạo Button chứa ảnh poster
-        /// </summary>
         private Button CreateMovieButton(MovieDTO movie)
         {
             Button movieButton = new Button
@@ -214,9 +160,6 @@ namespace Cinema_Management_System.Views.MovieManagement
             return movieButton;
         }
 
-        /// <summary>
-        /// Thêm hiệu ứng phóng to ảnh khi hover
-        /// </summary>
         private void SetupHoverEffect(Button movieButton, Label titleLabel, Button btnMoreOptions)
         {
             Timer zoomTimer = new Timer { Interval = 10 };
@@ -276,70 +219,98 @@ namespace Cinema_Management_System.Views.MovieManagement
             };
         }
 
-        /// <summary>
-        /// Mở giao diện hiển thị thông tin chi tiết
-        /// </summary>
         private void OpenMovieDetail(MovieDTO movie)
         {
-            MovieDetailView movieDetailView = new MovieDetailView(movie);
-            movieDetailView.ShowDialog();
+            if (Application.OpenForms["MovieDetailView"] == null)
+            {
+                MovieDetailView movieDetailView = new MovieDetailView(movie)
+                {
+                    Opacity = 0
+                };
+                movieDetailView.Show();
+
+                Timer fadeTimer = new Timer { Interval = 10 };
+                fadeTimer.Tick += (s, args) =>
+                {
+                    if (movieDetailView.Opacity < 1)
+                    {
+                        movieDetailView.Opacity += 0.05;
+                    }
+                    else
+                    {
+                        fadeTimer.Stop();
+                    }
+                };
+                fadeTimer.Start();
+            }
+            else
+            {
+                Application.OpenForms["MovieDetailView"].Activate();
+            }
         }
 
-   
-
-        /// <summary>
-        /// Mở giao diện chỉnh sửa phim
-        /// </summary>
         private void EditMovie(MovieDTO movie)
         {
-            EditMovieView editMovieView = new EditMovieView(movie);
-            editMovieView.ShowDialog();
-            LoadMovies();
+            if (Application.OpenForms["EditMovieView"] == null)
+            {
+                EditMovieView editMovieView = new EditMovieView(movie)
+                {
+                    Opacity = 0
+                };
+                editMovieView.Show();
+
+                Timer fadeTimer = new Timer { Interval = 10 };
+                fadeTimer.Tick += (s, args) =>
+                {
+                    if (editMovieView.Opacity < 1)
+                    {
+                        editMovieView.Opacity += 0.05;
+                    }
+                    else
+                    {
+                        fadeTimer.Stop();
+                    }
+                };
+                fadeTimer.Start();
+                editMovieView.FormClosed += (s, args) => LoadMovies();
+            }
+            else
+            {
+                Application.OpenForms["EditMovieView"].Activate();
+            }
         }
 
-        /// <summary>
-        /// Xóa phim khỏi danh sách
-        /// </summary>
+        // còn thiếu việc kiểm tra xem phim suất chiếu đã qua time chiếu chưa
         private void DeleteMovie(MovieDTO movie)
         {
-            // Hiển thị hộp thoại xác nhận xóa phim
-            DialogResult result = System.Windows.Forms.MessageBox.Show($"Bạn có chắc chắn muốn xóa phim '{movie.Title}' không?",
-                                                  "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(ShowTimeDA.Instance.checkShowTimeByMovie(movie.Id))
+            {
+                MessageBoxHelper.ShowError("Lỗi", "Phim đang có trong ít nhất 1 suất chiếu,bạn không được phép xóa!");
+                return;
+            }
 
+            BillAddMovieDA.Instance.updateMovie_IdNull(movie.Id);
+
+            DialogResult result = MessageBoxHelper.ShowQuestion("Xóa phim", "Bạn có chắc chắn muốn xóa phim này không?");
             if (result == DialogResult.Yes)
             {
-                try
-                {
-                    // Gọi phương thức xóa phim từ MovieDA
-                    _movieDA.DeleteMovie(movie.MovieCode);
-
-                    // Hiển thị thông báo thành công
-                    //YesMessage msgBox = new YesMessage("Thông báo", "Xóa phim thành công!");
-                    //msgBox.ShowDialog();
-
-                    // Tải lại danh sách phim sau khi xóa
-                    LoadMovies();
-                }
-                catch (Exception ex)
-                {
-                    // Hiển thị thông báo lỗi nếu có lỗi xảy ra
-                    System.Windows.Forms.MessageBox.Show("Lỗi khi xóa phim: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MovieDA.Instance.DeleteMovie(movie.MovieCode);
+                MessageBoxHelper.ShowSuccess("Thành công", "Xóa phim thành công!");
+                LoadMovies();
+            }
+            else
+            {
+                return;
             }
         }
 
         private void addMovie_Btn_Click(object sender, EventArgs e)
         {
-            //AddMovieView addMovieView = new AddMovieView();
-            //addMovieView.ShowDialog();
-            ////loadData();
-            //LoadMovies();
-
             if (Application.OpenForms["AddMovieView"] == null)
             {
                 AddMovieView addMovieView = new AddMovieView();
 
-                addMovieView.Opacity = 0; // Bắt đầu từ mờ
+                addMovieView.Opacity = 0;
                 addMovieView.Show();
 
                 Timer fadeTimer = new Timer { Interval = 10 };
@@ -355,13 +326,10 @@ namespace Cinema_Management_System.Views.MovieManagement
                     }
                 };
                 fadeTimer.Start();
-
-                // Nếu bạn vẫn muốn load lại danh sách sau khi form đóng:
                 addMovieView.FormClosed += (s, args) => LoadMovies();
             }
             else
             {
-                // Nếu form đã mở, chỉ cần kích hoạt lại form
                 Application.OpenForms["AddMovieView"].Activate();
             }
         }

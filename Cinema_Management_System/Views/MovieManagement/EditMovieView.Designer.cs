@@ -109,9 +109,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label1.Location = new System.Drawing.Point(20, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 25);
+            this.label1.Size = new System.Drawing.Size(177, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Sửa thông tin film";
+            this.label1.Text = "Sửa thông tin phim";
             // 
             // control_Panel
             // 
@@ -762,9 +762,9 @@
             this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(24, 8);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(61, 20);
+            this.label17.Size = new System.Drawing.Size(70, 20);
             this.label17.TabIndex = 116;
-            this.label17.Text = "Mã film";
+            this.label17.Text = "Mã phim";
             // 
             // lengthError_Txt
             // 

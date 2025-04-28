@@ -31,17 +31,8 @@
       <Column Name="Note" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
       <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Bill_BillDetail" Member="BillDetails" ThisKey="Id" OtherKey="Bill_Id" Type="BillDetail" />
-      <Association Name="ShowTime_Bill" Member="ShowTime" ThisKey="ShowTime_Id" OtherKey="Id" Type="ShowTime" IsForeignKey="true" />
       <Association Name="STAFF_Bill" Member="STAFF" ThisKey="Staff_Id" OtherKey="Id" Type="STAFF" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Bill_AddMovie" Member="Bill_AddMovies">
-    <Type Name="Bill_AddMovie">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Movie_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="BillDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="MOVIE_Bill_AddMovie" Member="MOVIE" ThisKey="Movie_Id" OtherKey="id" Type="MOVIE" IsForeignKey="true" />
+      <Association Name="ShowTime_Bill" Member="ShowTime" ThisKey="ShowTime_Id" OtherKey="Id" Type="ShowTime" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Bill_AddProduct" Member="Bill_AddProducts">
@@ -92,27 +83,6 @@
       <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.MOVIE" Member="MOVIEs">
-    <Type Name="MOVIE">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MovieCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Genre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Director" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ReleaseYear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Language" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Country" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Length" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Trailer" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ImportPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ImageSource" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Association Name="MOVIE_Bill_AddMovie" Member="Bill_AddMovies" ThisKey="id" OtherKey="Movie_Id" Type="Bill_AddMovie" />
-      <Association Name="MOVIE_ShowTime" Member="ShowTimes" ThisKey="id" OtherKey="Movie_Id" Type="ShowTime" />
-    </Type>
-  </Table>
   <Table Name="dbo.Product" Member="Products">
     <Type Name="Product">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -144,20 +114,6 @@
       <Column Name="Condition" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Seat_SeatForShowtime" Member="Seat" ThisKey="Seat_Id" OtherKey="Id" Type="Seat" IsForeignKey="true" />
       <Association Name="ShowTime_SeatForShowtime" Member="ShowTime" ThisKey="ShowTime_Id" OtherKey="Id" Type="ShowTime" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ShowTime" Member="ShowTimes">
-    <Type Name="ShowTime">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="StartTime" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="EndTime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="PerSeatTicketPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Movie_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Auditorium_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ShowTime_Bill" Member="Bills" ThisKey="Id" OtherKey="ShowTime_Id" Type="Bill" />
-      <Association Name="ShowTime_SeatForShowtime" Member="SeatForShowtimes" ThisKey="Id" OtherKey="ShowTime_Id" Type="SeatForShowtime" />
-      <Association Name="Auditorium_ShowTime" Member="Auditorium" ThisKey="Auditorium_Id" OtherKey="Id" Type="Auditorium" IsForeignKey="true" />
-      <Association Name="MOVIE_ShowTime" Member="MOVIE" ThisKey="Movie_Id" OtherKey="id" Type="MOVIE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.STAFF" Member="STAFFs">
@@ -195,6 +151,53 @@
       <Column Name="TYPE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="STARTDATE" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
       <Column Name="FINDATE" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MOVIE" Member="MOVIEs">
+    <Type Name="MOVIE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MovieCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Genre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Director" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ReleaseYear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trailer" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ImportPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImageSource" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TotalShowtimes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentShowtimes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MOVIE_Bill_AddMovie" Member="Bill_AddMovies" ThisKey="id" OtherKey="Movie_Id" Type="Bill_AddMovie" />
+      <Association Name="MOVIE_ShowTime" Member="ShowTimes" ThisKey="id" OtherKey="Movie_Id" Type="ShowTime" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bill_AddMovie" Member="Bill_AddMovies">
+    <Type Name="Bill_AddMovie">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Movie_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MOVIE_Bill_AddMovie" Member="MOVIE" ThisKey="Movie_Id" OtherKey="id" Type="MOVIE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShowTime" Member="ShowTimes">
+    <Type Name="ShowTime">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PerSeatTicketPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Movie_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Auditorium_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ShowTime_SeatForShowtime" Member="SeatForShowtimes" ThisKey="Id" OtherKey="ShowTime_Id" Type="SeatForShowtime" />
+      <Association Name="ShowTime_Bill" Member="Bills" ThisKey="Id" OtherKey="ShowTime_Id" Type="Bill" />
+      <Association Name="Auditorium_ShowTime" Member="Auditorium" ThisKey="Auditorium_Id" OtherKey="Id" Type="Auditorium" IsForeignKey="true" />
+      <Association Name="MOVIE_ShowTime" Member="MOVIE" ThisKey="Movie_Id" OtherKey="id" Type="MOVIE" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

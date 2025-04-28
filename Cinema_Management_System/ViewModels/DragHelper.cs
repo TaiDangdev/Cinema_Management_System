@@ -3,9 +3,6 @@ using System.Windows.Forms;
 
 namespace Cinema_Management_System.Views
 {
-    /// <summary>
-    /// Hàm giúp kéo form di chuyển theo chuột
-    /// </summary>
     public static class DragHelper
     {
         private static bool dragging = false;

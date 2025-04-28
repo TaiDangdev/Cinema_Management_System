@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 
 namespace Cinema_Management_System.Models.DAOs
 {
@@ -139,7 +140,7 @@ namespace Cinema_Management_System.Models.DAOs
             List<ShowTimeDTO> showTimelist=new List<ShowTimeDTO>();
             if (dateFilter == null)
             {
-                MessageBox.Show("ngay bi sai roi");
+                System.Windows.Forms.MessageBox.Show("ngay bi sai roi");
                 showTimelist = (from st in Connect.ShowTimes
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
@@ -287,7 +288,7 @@ namespace Cinema_Management_System.Models.DAOs
                 );
                 if (isOverLap)
                 {
-                    MessageBox.Show("Lịch chiếu bị trùng thời gian hoặc phòng chiếu. Vui lòng chọn thời gian khác.");
+                    System.Windows.Forms.MessageBox.Show("Lịch chiếu bị trùng thời gian hoặc phòng chiếu. Vui lòng chọn thời gian khác.");
                     return false;
                 }
                 Connect.ShowTimes.InsertOnSubmit(newshowtime);
@@ -312,8 +313,9 @@ namespace Cinema_Management_System.Models.DAOs
 
                 return true;
             }
-            catch (Exception ex) {
-                MessageBox.Show("Loi them suat chieu" + ex); 
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Loi them suat chieu" + ex);
                 return false;
             }
         }
@@ -327,7 +329,7 @@ namespace Cinema_Management_System.Models.DAOs
                 var existingShowTime = Connect.ShowTimes.FirstOrDefault(s => s.Id == showTimeUpdate.Id);
                 if (existingShowTime == null)
                 {
-                    MessageBox.Show("Không tìm thấy suất chiếu cần cập nhật.");
+                    System.Windows.Forms.MessageBox.Show("Không tìm thấy suất chiếu cần cập nhật.");
                     return false;
                 }
                 else
@@ -343,7 +345,7 @@ namespace Cinema_Management_System.Models.DAOs
 
                     if (isOverLap)
                     {
-                        MessageBox.Show("Lịch chiếu bị trùng thời gian hoặc phòng chiếu. Vui lòng chọn thời gian khác.");
+                        System.Windows.Forms.MessageBox.Show("Lịch chiếu bị trùng thời gian hoặc phòng chiếu. Vui lòng chọn thời gian khác.");
                         return false;
                     }
                     // Cập nhật thông tin suất chiếu
@@ -376,6 +378,19 @@ namespace Cinema_Management_System.Models.DAOs
                     return true;
                 }
                 return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // kiểm tra 1 movie có đang chiếu hay không (phục vụ cho việc xóa 1 movie)
+        public bool checkShowTimeByMovie(int movieID)
+        {
+            try
+            {
+                return Connect.ShowTimes.Any(st => st.Movie_Id == movieID);
             }
             catch
             {

@@ -264,9 +264,8 @@ namespace Cinema_Management_System.Views.MovieManagement
 
             UpdateMovieFromInput();
 
-            MovieDA movieDA = new MovieDA();
 
-            if (!movieDA.IsMovieExist(movie))
+            if (!MovieDA.Instance.IsMovieExist(movie))
             {
                 MessageBoxHelper.ShowError("Lỗi", "Phim đã không tồn tại!");
                 return;
@@ -275,7 +274,7 @@ namespace Cinema_Management_System.Views.MovieManagement
             DialogResult result = MessageBoxHelper.ShowQuestion("Thông báo", "Bạn có chắc chắn muốn cập nhật phim này không?");
 
             if (result != DialogResult.Yes) return;
-            movieDA.editMovie(movie);
+            MovieDA.Instance.editMovie(movie);
             MessageBoxHelper.ShowInfo("Thông báo", "Cập nhật phim thành công!");
             this.Close();
         }
