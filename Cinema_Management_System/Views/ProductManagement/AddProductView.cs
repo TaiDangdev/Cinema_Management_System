@@ -254,10 +254,10 @@ namespace Cinema_Management_System.Views.ProductManagement
             int productType = 1; // Giá trị mặc định nếu không xác định được
             if (typeProduct_cbb.SelectedItem != null)
             {
-                string selectedType = typeProduct_cbb.SelectedItem.ToString();
-                if (selectedType.Contains("Type 1"))
+                string selectedType = typeProduct_cbb.SelectedItem.ToString().Trim();
+                if (selectedType.Contains("Đồ ăn"))
                     productType = 1; // Đồ ăn
-                else if (selectedType.Contains("Type 2"))
+                else if (selectedType.Contains("Nước uống"))
                     productType = 2; // Thức uống
             }
 
