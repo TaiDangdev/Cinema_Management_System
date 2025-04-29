@@ -32,10 +32,9 @@ namespace Cinema_Management_System.Views.CustomerManagement
             ngaysinh_date.Value = currentCustomer.Birth;
             if (currentCustomer.Gender.ToLower() == "nam")
                 radnam.Checked = true;
-            else if (currentCustomer.Gender.ToLower() == "nữ")
-                radnu.Checked = true;
             else
-                radkhac.Checked = true;
+                radnu.Checked = true;
+
             tenKH_error.Visible = false;
             sdt_error.Visible = false;
             email_error.Visible = false;
@@ -88,7 +87,7 @@ namespace Cinema_Management_System.Views.CustomerManagement
 
         private void email_txt_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(email_error.Text) || !System.Text.RegularExpressions.Regex.IsMatch(email_txt.Text, @"^[\w\.-]+@[\w\.-]+\.\w{1,8}$"))
+            if (string.IsNullOrEmpty(email_error.Text) || !System.Text.RegularExpressions.Regex.IsMatch(email_txt.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|vn)$"))
             {
                 email_error.Text = "Email không hợp lệ!";
                 email_error.Visible = true;
@@ -120,14 +119,14 @@ namespace Cinema_Management_System.Views.CustomerManagement
 
             // Kiểm tra email
             if (string.IsNullOrWhiteSpace(email_txt.Text) ||
-                !System.Text.RegularExpressions.Regex.IsMatch(email_txt.Text, @"^[\w\.-]+@[\w\.-]+\.\w{2,4}$"))
+                !System.Text.RegularExpressions.Regex.IsMatch(email_txt.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|vn)$"))
             {
                 email_error.Text = "Email không hợp lệ!";
                 email_error.Visible = true;
                 isValid = false;
             }
-             // kiểm tra giới tính
-            if (!radnam.Checked && !radnu.Checked && !radkhac.Checked)
+            // kiểm tra giới tính
+            if (!radnam.Checked && !radnu.Checked)
             {
 
                 gioitinh_error.Text = "Vui lòng chọn giới tính!";
@@ -142,7 +141,7 @@ namespace Cinema_Management_System.Views.CustomerManagement
             {
                 Id = currentCustomer.Id,
                 FullName = TenKH_txt.Text.Trim(),
-                Gender = radnam.Checked ? "Nam" : radnu.Checked ? "Nữ" : "Khác",
+                Gender = radnam.Checked ? "Nam" : "Nữ",
                 PhoneNumber = SDT_txt.Text.Trim(),
                 Email = email_txt.Text.Trim(),
                 Birth = ngaysinh_date.Value
@@ -165,7 +164,7 @@ namespace Cinema_Management_System.Views.CustomerManagement
         }
         private void Gender_CheckedChanged(object sender, EventArgs e)
         {
-            if (radnam.Checked || radnu.Checked || radkhac.Checked)
+            if (radnam.Checked || radnu.Checked)
             {
                 gioitinh_error.Visible = false;
             }

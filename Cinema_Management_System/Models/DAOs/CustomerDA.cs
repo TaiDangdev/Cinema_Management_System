@@ -11,7 +11,7 @@ namespace Cinema_Management_System.Models.DAOs
 {
     public class CustomerDA
     {
-        // lấy dữ liệu các khách hàng chưa bị xóa (Isdelete = False)
+        // lấy dữ liệu 10 khách hàng chưa bị xóa (Isdelete = False), 
         public List<CustomerDTO> GetAllCustomer()
         {
             try
@@ -20,6 +20,7 @@ namespace Cinema_Management_System.Models.DAOs
                 {
                     return db.CUSTOMERs
                         .Where(c => c.IsDeleted == false)
+                        .Take(15)
                         .Select(customer => new CustomerDTO(
                         customer.Id,
                         customer.IdFormat,
@@ -68,7 +69,7 @@ namespace Cinema_Management_System.Models.DAOs
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống!" + ex,
+                MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống!",
                                 "Thông báo",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
@@ -104,8 +105,7 @@ namespace Cinema_Management_System.Models.DAOs
                 }
             }
             catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi cập nhật khách hàng: " + ex.Message);
+            { 
                 return false;
             }
 
@@ -121,6 +121,46 @@ namespace Cinema_Management_System.Models.DAOs
                 }
             }
             throw new FormatException("IdFormat không hợp lệ: " + idFormat);
+        }
+
+        public void UpdateDiem(CustomerDTO kh)
+        {
+            using (var db = new ConnectDataContext())
+            {
+                var result = db.CUSTOMERs.SingleOrDefault(c => c.Id == kh.Id);
+                if (result != null)
+                {
+                    result.Point = kh.Point;
+                    db.SubmitChanges();
+                }
+            }
+        }
+
+        //Xoá mềm khách hàng
+        public bool DeleteCustomer(int id)
+        {
+            try
+            {
+                using (var db = new ConnectDataContext())
+                {
+                    var customer = db.CUSTOMERs.SingleOrDefault(c => c.Id == id);
+                    if (customer != null)
+                    {
+                        customer.IsDeleted = true;
+                        db.SubmitChanges();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa khách hàng: " + ex.Message,
+                                "Lỗi",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return false;
+            }
         }
 
         public CustomerDTO GetCustomerByPhoneNumber(string phoneNumber)
@@ -179,5 +219,49 @@ namespace Cinema_Management_System.Models.DAOs
             }
         }
 
+        // tìm kiếm
+        // Hàm tìm kiếm khách hàng theo tên hoặc số điện thoại, giới hạn số lượng kết quả
+        public List<CustomerDTO> SearchCustomers(string keyword, string searchType, int limit = 15)
+        {
+            using (var context = new ConnectDataContext())
+            {
+                keyword = keyword.ToLower();
+                if (searchType == "FullName")
+                {
+                    return context.CUSTOMERs
+                        .Where(c => c.FullName.ToLower().Contains(keyword))
+                        .OrderBy(c => c.FullName)
+                        .Take(limit)
+                        .Select(c => new CustomerDTO
+                        {
+                            IdFormat = c.IdFormat,
+                            FullName = c.FullName,
+                            PhoneNumber = c.PhoneNumber,
+                            Email = c.Email,
+                            Birth = c.Birth,
+                            Gender = c.Gender
+                        })
+                        .ToList();
+                }
+                else if (searchType == "PhoneNumber")
+                {
+                    return context.CUSTOMERs
+                        .Where(c => c.PhoneNumber.Contains(keyword))
+                        .OrderBy(c => c.PhoneNumber)
+                        .Take(limit)
+                        .Select(c => new CustomerDTO
+                        {
+                            IdFormat = c.IdFormat,
+                            FullName = c.FullName,
+                            PhoneNumber = c.PhoneNumber,
+                            Email = c.Email,
+                            Birth = c.Birth,
+                            Gender = c.Gender
+                        })
+                        .ToList();
+                }
+                return new List<CustomerDTO>();
+            }
+        }
     }
 }

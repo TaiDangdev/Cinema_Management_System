@@ -102,7 +102,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(58, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 15);
+            this.label2.Size = new System.Drawing.Size(155, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Dành cho quản trị viên";
             // 
@@ -113,7 +113,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label1.Location = new System.Drawing.Point(46, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.Size = new System.Drawing.Size(110, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "StarCinema\r\n";
             // 
@@ -158,7 +158,7 @@
             this.name_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.name_Txt.Location = new System.Drawing.Point(70, 141);
             this.name_Txt.Name = "name_Txt";
-            this.name_Txt.Size = new System.Drawing.Size(70, 21);
+            this.name_Txt.Size = new System.Drawing.Size(89, 28);
             this.name_Txt.TabIndex = 14;
             this.name_Txt.Text = "Tên user";
             // 
@@ -451,7 +451,7 @@
             // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1540, 845);
