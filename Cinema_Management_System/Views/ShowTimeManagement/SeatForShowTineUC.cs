@@ -43,7 +43,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                 seatButton.FlatStyle = FlatStyle.Flat;
                 seatButton.FlatAppearance.BorderSize = 1;
                 seatButton.FlatAppearance.BorderColor = Color.Green; // ✅ Viền màu xanh
-                seatButton.BackColor = seat.condition.GetValueOrDefault(false) ? Color.Gray : Color.White;
+                seatButton.BackColor = seat.condition.HasValue ? Color.Gray : Color.White;
                 //seatButton.Enabled = !seat.condition.GetValueOrDefault(false);
                 seatButton.Click += SeatButton_Click;
                 seatButton.MouseDown += SeatButton_RightClick; // Đăng ký sự kiện chuột phải

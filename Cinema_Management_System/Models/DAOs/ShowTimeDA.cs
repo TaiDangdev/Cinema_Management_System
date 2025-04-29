@@ -1,4 +1,5 @@
 ﻿using Cinema_Management_System.Models.DTOs;
+using Cinema_Management_System.Views.MessageBox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,8 @@ namespace Cinema_Management_System.Models.DAOs
             ShowTimeList = (from st in Connect.ShowTimes
                          join m in Connect.MOVIEs on st.Movie_Id equals m.id
                          join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
-                         select new ShowTimeDTO
+                            where st.StartTime.Date >= DateTime.Now.Date 
+                            select new ShowTimeDTO
                          {
                              Movie_id = st.Movie_Id,
                              ShowTimeID = st.Id,
@@ -54,6 +56,7 @@ namespace Cinema_Management_System.Models.DAOs
                 showTimelist = (from st in Connect.ShowTimes
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
+                                where st.StartTime.Date >= DateTime.Now.Date
                                 select new ShowTimeDTO
                                 {
                                     Movie_id = st.Movie_Id,
@@ -72,7 +75,7 @@ namespace Cinema_Management_System.Models.DAOs
                 showTimelist = (from st in Connect.ShowTimes
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
-                                where st.Auditorium_Id == id
+                                where st.Auditorium_Id == id && st.StartTime.Date >= DateTime.Now.Date
                                 select new ShowTimeDTO
                                 {
                                     Movie_id = st.Movie_Id,
@@ -97,6 +100,7 @@ namespace Cinema_Management_System.Models.DAOs
                 showTimelist = (from st in Connect.ShowTimes
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
+                                where st.StartTime.Date >= DateTime.Now.Date
                                 select new ShowTimeDTO
                                 {
                                     Movie_id = st.Movie_Id,
@@ -116,6 +120,7 @@ namespace Cinema_Management_System.Models.DAOs
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
                                 where st.StartTime.Date==dateFilter.Date
+                                && st.StartTime.Date >= DateTime.Now.Date
                                 select new ShowTimeDTO
                                 {
                                     Movie_id = st.Movie_Id,
@@ -140,11 +145,10 @@ namespace Cinema_Management_System.Models.DAOs
             List<ShowTimeDTO> showTimelist=new List<ShowTimeDTO>();
             if (dateFilter == null)
             {
-                System.Windows.Forms.MessageBox.Show("ngay bi sai roi");
                 showTimelist = (from st in Connect.ShowTimes
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
-                                where st.Movie_Id == idMovie
+                                where st.Movie_Id == idMovie && st.StartTime.Date >= DateTime.Now.Date
                                 select new ShowTimeDTO
                                 {
                                     Movie_id = st.Movie_Id,
@@ -165,6 +169,7 @@ namespace Cinema_Management_System.Models.DAOs
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
                                 where st.Movie_Id == idMovie && st.StartTime.Date == dateFilter.Date
+                                && st.StartTime.Date >= DateTime.Now.Date
                                 select new ShowTimeDTO
                                 {
                                     Movie_id = st.Movie_Id,
@@ -190,7 +195,7 @@ namespace Cinema_Management_System.Models.DAOs
                 showTimelist = (from st in Connect.ShowTimes
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
-                                where st.Movie_Id == idMovie
+                                where st.Movie_Id == idMovie && st.StartTime.Date >= DateTime.Now.Date
                                 select new ShowTimeDTO
                                 {
                                     Movie_id = st.Movie_Id,
@@ -210,6 +215,7 @@ namespace Cinema_Management_System.Models.DAOs
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
                                 where st.Movie_Id == idMovie && st.Auditorium_Id == idAuditorium
+                                && st.StartTime.Date >= DateTime.Now.Date
                                 select new ShowTimeDTO
                                 {
                                     Movie_id = st.Movie_Id,
@@ -235,6 +241,7 @@ namespace Cinema_Management_System.Models.DAOs
                 showTimelist = (from st in Connect.ShowTimes
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
+                                where st.StartTime.Date >= DateTime.Now.Date
                                 select new ShowTimeDTO
                                 {
                                     Movie_id = st.Movie_Id,
@@ -255,7 +262,7 @@ namespace Cinema_Management_System.Models.DAOs
                 showTimelist = (from st in Connect.ShowTimes
                                 join m in Connect.MOVIEs on st.Movie_Id equals m.id
                                 join a in Connect.Auditoriums on st.Auditorium_Id equals a.Id
-                                where st.Auditorium_Id == auditoriumId
+                                where st.Auditorium_Id == auditoriumId && st.StartTime.Date >= DateTime.Now.Date
                                 select new ShowTimeDTO
                                 {
                                     Movie_id = st.Movie_Id,
@@ -279,6 +286,11 @@ namespace Cinema_Management_System.Models.DAOs
         {
             try
             {
+                if (newshowtime.StartTime < DateTime.Now)
+                {
+                    System.Windows.Forms.MessageBox.Show("Thời gian bắt đầu không hợp lệ. Vui lòng chọn thời gian trong tương lai.");
+                    return false;
+                }
                 // kiem tra xem phim moiw o phong nao va co bi trung thoi gian voi suat khasc khong
                 bool isOverLap = Connect.ShowTimes.Any(s=>
                 s.Auditorium_Id==newshowtime.Auditorium_Id &&
@@ -293,6 +305,7 @@ namespace Cinema_Management_System.Models.DAOs
                 }
                 Connect.ShowTimes.InsertOnSubmit(newshowtime);
                 Connect.SubmitChanges();
+                Connect.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, Connect.ShowTimes);
 
                 //// lay du lieu ghe chieu cua suat phim
                 //var seats=from seat in Connect.Seats
@@ -325,6 +338,11 @@ namespace Cinema_Management_System.Models.DAOs
         {
             try
             {
+                if(showTimeUpdate.StartTime < DateTime.Now)
+                {
+                    System.Windows.Forms.MessageBox.Show("Thời gian bắt đầu không hợp lệ. Vui lòng chọn thời gian trong tương lai.");
+                    return false;
+                }
                 // tim xem co suat chieu cap nhat trong du lieu khong
                 var existingShowTime = Connect.ShowTimes.FirstOrDefault(s => s.Id == showTimeUpdate.Id);
                 if (existingShowTime == null)
@@ -357,6 +375,7 @@ namespace Cinema_Management_System.Models.DAOs
 
                     // Lưu thay đổi vào CSDL
                     Connect.SubmitChanges();
+                    Connect.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, Connect.ShowTimes);
                     return true;
                 }
             }
@@ -375,12 +394,14 @@ namespace Cinema_Management_System.Models.DAOs
                 {
                     Connect.ShowTimes.DeleteOnSubmit(showTime);
                     Connect.SubmitChanges();
+                    Connect.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, Connect.ShowTimes);
                     return true;
                 }
                 return false;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBoxHelper.ShowInfo("thong bao", "xoa khong thanh cong DA" + ex.Message); 
                 return false;
             }
         }

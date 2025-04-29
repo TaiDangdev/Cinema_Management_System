@@ -24,9 +24,11 @@ namespace Cinema_Management_System.Models.DAOs
 
         public List<MOVIE> GetMovieList()
         {
-            List<MOVIE> MovieList = connect.MOVIEs.ToList();
+            List<MOVIE> MovieList = (from movie in connect.MOVIEs where movie.Status == "Đang phát hành"
+                                     select movie).ToList();
             return MovieList;
         }
+
 
         public MOVIE GetMovieById(int id)
         {

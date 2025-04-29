@@ -31,6 +31,7 @@
       <Column Name="Note" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
       <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Bill_BillDetail" Member="BillDetails" ThisKey="Id" OtherKey="Bill_Id" Type="BillDetail" />
+      <Association Name="Bill_SeatForShowtime" Member="SeatForShowtimes" ThisKey="Id" OtherKey="Condition" Type="SeatForShowtime" />
       <Association Name="STAFF_Bill" Member="STAFF" ThisKey="Staff_Id" OtherKey="Id" Type="STAFF" IsForeignKey="true" />
       <Association Name="ShowTime_Bill" Member="ShowTime" ThisKey="ShowTime_Id" OtherKey="Id" Type="ShowTime" IsForeignKey="true" />
     </Type>
@@ -104,16 +105,6 @@
       <Column Name="Auditorium_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Seat_SeatForShowtime" Member="SeatForShowtimes" ThisKey="Id" OtherKey="Seat_Id" Type="SeatForShowtime" />
       <Association Name="Auditorium_Seat" Member="Auditorium" ThisKey="Auditorium_Id" OtherKey="Id" Type="Auditorium" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SeatForShowtime" Member="SeatForShowtimes">
-    <Type Name="SeatForShowtime">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Seat_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ShowTime_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Condition" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Seat_SeatForShowtime" Member="Seat" ThisKey="Seat_Id" OtherKey="Id" Type="Seat" IsForeignKey="true" />
-      <Association Name="ShowTime_SeatForShowtime" Member="ShowTime" ThisKey="ShowTime_Id" OtherKey="Id" Type="ShowTime" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.STAFF" Member="STAFFs">
@@ -194,10 +185,19 @@
       <Column Name="PerSeatTicketPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Movie_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Auditorium_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ShowTime_SeatForShowtime" Member="SeatForShowtimes" ThisKey="Id" OtherKey="ShowTime_Id" Type="SeatForShowtime" />
       <Association Name="ShowTime_Bill" Member="Bills" ThisKey="Id" OtherKey="ShowTime_Id" Type="Bill" />
       <Association Name="Auditorium_ShowTime" Member="Auditorium" ThisKey="Auditorium_Id" OtherKey="Id" Type="Auditorium" IsForeignKey="true" />
       <Association Name="MOVIE_ShowTime" Member="MOVIE" ThisKey="Movie_Id" OtherKey="id" Type="MOVIE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SeatForShowtime" Member="SeatForShowtimes">
+    <Type Name="SeatForShowtime">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Seat_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShowTime_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Condition" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Bill_SeatForShowtime" Member="Bill" ThisKey="Condition" OtherKey="Id" Type="Bill" IsForeignKey="true" />
+      <Association Name="Seat_SeatForShowtime" Member="Seat" ThisKey="Seat_Id" OtherKey="Id" Type="Seat" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

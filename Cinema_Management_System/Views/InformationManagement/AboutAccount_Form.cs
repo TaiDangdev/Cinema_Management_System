@@ -15,19 +15,45 @@ namespace Cinema_Management_System
 {
     public partial class AboutAccount_Form : UserControl
     {
+        public static string currentRole;
+
         public AboutAccount_Form()
         {
             InitializeComponent();
+            this.loadUserData();
         }
+
 
         public static class CurrentUser
         {
             public static int StaffId {  get; set; }
+            public static string Role { get; set; }
         }
 
         private void AboutAccount_Form_Load(object sender, EventArgs e)
         {
             loadUserData();
+        }
+
+        public static void getRole()
+        {
+            try
+            {
+                using (var db = new ConnectDataContext())
+                {
+                    var staff = db.STAFFs.FirstOrDefault(s => s.Id == CurrentUser.StaffId);
+                    if (staff != null)
+                    {
+                        CurrentUser.Role = staff.Role;
+                        currentRole = staff.Role;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void loadUserData()
@@ -62,6 +88,8 @@ namespace Cinema_Management_System
                             avatar_pic.Image = Properties.Resources.icons8_person_32;
                         }
                     }
+                    CurrentUser.Role = staff.Role;
+                    currentRole=staff.Role;
                 }
             }
             catch (Exception ex)

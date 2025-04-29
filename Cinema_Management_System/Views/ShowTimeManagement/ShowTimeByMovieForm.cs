@@ -1,6 +1,8 @@
 ﻿using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.ViewModels.ShowTimeManagementVM;
+using Cinema_Management_System.Views.MessageBox;
+using DocumentFormat.OpenXml.Drawing.Charts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,7 +111,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                     System.Windows.Forms.MessageBox.Show("nono");
                 }
             }
-            this.FLP_ShowTimeFoerMovie.MouseDown += ShowContextMenuOnRightClick;
+            //this.FLP_ShowTimeFoerMovie.MouseDown += ShowContextMenuOnRightClick;
         }
 
         // loc cac suat chieu cua phim theo phong
@@ -131,7 +133,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
 
                 this.FLP_ShowTimeFoerMovie.Controls.Add(btn);
             }
-            this.FLP_ShowTimeFoerMovie.MouseDown += ShowContextMenuOnRightClick;
+            //this.FLP_ShowTimeFoerMovie.MouseDown += ShowContextMenuOnRightClick;
         }
 
 
@@ -140,7 +142,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
         {
             Guna.UI2.WinForms.Guna2Button btn = new Guna.UI2.WinForms.Guna2Button();
             btn.Text = text;
-            btn.Size = new Size(150, 60);
+            btn.Size = new System.Drawing.Size(150, 60);
             btn.Font = new Font("Arial", 12);
             btn.Margin = new Padding(5);
             btn.BackColor = Color.White;
@@ -150,9 +152,10 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             btn.BorderColor = Color.Black;
             btn.BorderThickness = 2;
             btn.Click += BtnShowTimeMovie_Click; // them su kien khi bam chuojt trai
-            btn.MouseDown += ShowContextMenuOnRightClick;
-
-
+            if (AboutAccount_Form.currentRole != "Nhân Viên")
+            {
+                btn.MouseDown += ShowContextMenuOnRightClick;
+            }
             return btn;
         }
 
@@ -192,6 +195,10 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             if (showTimeContextMenu.Tag is Guna.UI2.WinForms.Guna2Button btn)
             {
                 ShowTimeDTO showTime = (ShowTimeDTO)btn.Tag;
+                if (showTime.StartTime<=DateTime.Now && showTime.EndTime >= DateTime.Now)
+                {
+                    MessageBoxHelper.ShowError("Lỗi", "Không thể xóa suất chiếu đang diễn ra");
+                }
                 DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có chắc muốn xóa suất chiếu này?", "Xác nhận", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {

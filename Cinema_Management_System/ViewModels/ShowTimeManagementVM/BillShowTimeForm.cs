@@ -36,7 +36,7 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                 this.txt_Movie.Text = showTimSelect.MovieTitle.ToString();
                 this.txt_NameAuditorium.Text = showTimSelect.AuditoriumName.ToString();
                 this.txt_NameCinema.Text = "Cinema";
-                this.txt_TimeStartMovie.Text = showTimSelect.StartTime.ToString();
+                this.txt_TimeStartMovie.Text = showTimSelect.StartTime.ToString("dd/MM/yyyy HH:mm");
                 this.txt_priceOfTicket.Text = showTimSelect.SeatTicketPrice.ToString("F2") + "VND";
             }
         }
@@ -70,14 +70,11 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                 // Đặt condition = true cho tất cả ghế trong danh sách
                 foreach (var seat in seatsShowTime)
                 {
-                    seat.condition = true;
+                    seat.condition = 0;
                 }
-
-                // Cập nhật trạng thái ghế trong cơ sở dữ liệu
                 try
                 {
-                    SeatForShowTimeDA.Instance.UpdateSeatCondition(seatsShowTime);
-                    MessageBoxHelper.ShowSuccess("Thành công", "Chọn ghế thành công");
+                    
                     string note = this.txt_Note.Text;
                     string discountText = this.txt_discount.Text.Trim();
                     double discount = 0;
@@ -104,6 +101,14 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                     {
                         DataSet BillDataSet = this.InfoBill(MaBill);
                         BillTicketForms billTicket = new BillTicketForms(BillDataSet);
+                        foreach (var seat in seatsShowTime)
+                        {
+                            seat.condition = MaBill;
+                        }
+                        SeatForShowTimeDA.Instance.UpdateSeatCondition(seatsShowTime);
+                        // Đặt condition = maBill cho tất cả ghế trong danh sách
+
+                        MessageBoxHelper.ShowSuccess("Thành công", "Chọn ghế thành công");
                         billTicket.ShowDialog();
                     }
                     // (Tùy chọn) Làm mới giao diện ghế nếu cần

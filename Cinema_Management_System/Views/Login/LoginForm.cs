@@ -173,14 +173,15 @@ namespace Cinema_Management_System
         {
             CurrentUser.StaffId = staffId;
             this.Hide();
-            if (role == "Admin")
-            {
-                new AdminForm().Show();
-            }
-            else if (role == "Staff")
-            {
-                ShowError("Chưa làm form Staff");
-            }
+            //if (role == "Admin")
+            //{
+            //    new AdminForm().Show();
+            //}
+            //else if (role == "Staff")
+            //{
+            //    ShowError("Chưa làm form Staff");
+            //}
+            new AdminForm().Show();
         }
 
         private void ShowError(string message)

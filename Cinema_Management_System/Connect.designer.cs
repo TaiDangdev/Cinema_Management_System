@@ -57,9 +57,6 @@ namespace Cinema_Management_System
     partial void InsertSeat(Seat instance);
     partial void UpdateSeat(Seat instance);
     partial void DeleteSeat(Seat instance);
-    partial void InsertSeatForShowtime(SeatForShowtime instance);
-    partial void UpdateSeatForShowtime(SeatForShowtime instance);
-    partial void DeleteSeatForShowtime(SeatForShowtime instance);
     partial void InsertSTAFF(STAFF instance);
     partial void UpdateSTAFF(STAFF instance);
     partial void DeleteSTAFF(STAFF instance);
@@ -78,6 +75,9 @@ namespace Cinema_Management_System
     partial void InsertShowTime(ShowTime instance);
     partial void UpdateShowTime(ShowTime instance);
     partial void DeleteShowTime(ShowTime instance);
+    partial void InsertSeatForShowtime(SeatForShowtime instance);
+    partial void UpdateSeatForShowtime(SeatForShowtime instance);
+    partial void DeleteSeatForShowtime(SeatForShowtime instance);
     #endregion
 		
 		public ConnectDataContext() : 
@@ -182,14 +182,6 @@ namespace Cinema_Management_System
 			}
 		}
 		
-		public System.Data.Linq.Table<SeatForShowtime> SeatForShowtimes
-		{
-			get
-			{
-				return this.GetTable<SeatForShowtime>();
-			}
-		}
-		
 		public System.Data.Linq.Table<STAFF> STAFFs
 		{
 			get
@@ -235,6 +227,14 @@ namespace Cinema_Management_System
 			get
 			{
 				return this.GetTable<ShowTime>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SeatForShowtime> SeatForShowtimes
+		{
+			get
+			{
+				return this.GetTable<SeatForShowtime>();
 			}
 		}
 	}
@@ -608,6 +608,8 @@ namespace Cinema_Management_System
 		
 		private EntitySet<BillDetail> _BillDetails;
 		
+		private EntitySet<SeatForShowtime> _SeatForShowtimes;
+		
 		private EntityRef<STAFF> _STAFF;
 		
 		private EntityRef<ShowTime> _ShowTime;
@@ -641,6 +643,7 @@ namespace Cinema_Management_System
 		public Bill()
 		{
 			this._BillDetails = new EntitySet<BillDetail>(new Action<BillDetail>(this.attach_BillDetails), new Action<BillDetail>(this.detach_BillDetails));
+			this._SeatForShowtimes = new EntitySet<SeatForShowtime>(new Action<SeatForShowtime>(this.attach_SeatForShowtimes), new Action<SeatForShowtime>(this.detach_SeatForShowtimes));
 			this._STAFF = default(EntityRef<STAFF>);
 			this._ShowTime = default(EntityRef<ShowTime>);
 			OnCreated();
@@ -867,6 +870,19 @@ namespace Cinema_Management_System
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bill_SeatForShowtime", Storage="_SeatForShowtimes", ThisKey="Id", OtherKey="Condition")]
+		public EntitySet<SeatForShowtime> SeatForShowtimes
+		{
+			get
+			{
+				return this._SeatForShowtimes;
+			}
+			set
+			{
+				this._SeatForShowtimes.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STAFF_Bill", Storage="_STAFF", ThisKey="Staff_Id", OtherKey="Id", IsForeignKey=true)]
 		public STAFF STAFF
 		{
@@ -962,6 +978,18 @@ namespace Cinema_Management_System
 		}
 		
 		private void detach_BillDetails(BillDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Bill = null;
+		}
+		
+		private void attach_SeatForShowtimes(SeatForShowtime entity)
+		{
+			this.SendPropertyChanging();
+			entity.Bill = this;
+		}
+		
+		private void detach_SeatForShowtimes(SeatForShowtime entity)
 		{
 			this.SendPropertyChanging();
 			entity.Bill = null;
@@ -2422,222 +2450,6 @@ namespace Cinema_Management_System
 		{
 			this.SendPropertyChanging();
 			entity.Seat = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SeatForShowtime")]
-	public partial class SeatForShowtime : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private int _Seat_Id;
-		
-		private int _ShowTime_Id;
-		
-		private System.Nullable<bool> _Condition;
-		
-		private EntityRef<Seat> _Seat;
-		
-		private EntityRef<ShowTime> _ShowTime;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnSeat_IdChanging(int value);
-    partial void OnSeat_IdChanged();
-    partial void OnShowTime_IdChanging(int value);
-    partial void OnShowTime_IdChanged();
-    partial void OnConditionChanging(System.Nullable<bool> value);
-    partial void OnConditionChanged();
-    #endregion
-		
-		public SeatForShowtime()
-		{
-			this._Seat = default(EntityRef<Seat>);
-			this._ShowTime = default(EntityRef<ShowTime>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Seat_Id", DbType="Int NOT NULL")]
-		public int Seat_Id
-		{
-			get
-			{
-				return this._Seat_Id;
-			}
-			set
-			{
-				if ((this._Seat_Id != value))
-				{
-					if (this._Seat.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSeat_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Seat_Id = value;
-					this.SendPropertyChanged("Seat_Id");
-					this.OnSeat_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShowTime_Id", DbType="Int NOT NULL")]
-		public int ShowTime_Id
-		{
-			get
-			{
-				return this._ShowTime_Id;
-			}
-			set
-			{
-				if ((this._ShowTime_Id != value))
-				{
-					if (this._ShowTime.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnShowTime_IdChanging(value);
-					this.SendPropertyChanging();
-					this._ShowTime_Id = value;
-					this.SendPropertyChanged("ShowTime_Id");
-					this.OnShowTime_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Condition", DbType="Bit")]
-		public System.Nullable<bool> Condition
-		{
-			get
-			{
-				return this._Condition;
-			}
-			set
-			{
-				if ((this._Condition != value))
-				{
-					this.OnConditionChanging(value);
-					this.SendPropertyChanging();
-					this._Condition = value;
-					this.SendPropertyChanged("Condition");
-					this.OnConditionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Seat_SeatForShowtime", Storage="_Seat", ThisKey="Seat_Id", OtherKey="Id", IsForeignKey=true)]
-		public Seat Seat
-		{
-			get
-			{
-				return this._Seat.Entity;
-			}
-			set
-			{
-				Seat previousValue = this._Seat.Entity;
-				if (((previousValue != value) 
-							|| (this._Seat.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Seat.Entity = null;
-						previousValue.SeatForShowtimes.Remove(this);
-					}
-					this._Seat.Entity = value;
-					if ((value != null))
-					{
-						value.SeatForShowtimes.Add(this);
-						this._Seat_Id = value.Id;
-					}
-					else
-					{
-						this._Seat_Id = default(int);
-					}
-					this.SendPropertyChanged("Seat");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ShowTime_SeatForShowtime", Storage="_ShowTime", ThisKey="ShowTime_Id", OtherKey="Id", IsForeignKey=true)]
-		public ShowTime ShowTime
-		{
-			get
-			{
-				return this._ShowTime.Entity;
-			}
-			set
-			{
-				ShowTime previousValue = this._ShowTime.Entity;
-				if (((previousValue != value) 
-							|| (this._ShowTime.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ShowTime.Entity = null;
-						previousValue.SeatForShowtimes.Remove(this);
-					}
-					this._ShowTime.Entity = value;
-					if ((value != null))
-					{
-						value.SeatForShowtimes.Add(this);
-						this._ShowTime_Id = value.Id;
-					}
-					else
-					{
-						this._ShowTime_Id = default(int);
-					}
-					this.SendPropertyChanged("ShowTime");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -4103,8 +3915,6 @@ namespace Cinema_Management_System
 		
 		private int _Auditorium_Id;
 		
-		private EntitySet<SeatForShowtime> _SeatForShowtimes;
-		
 		private EntitySet<Bill> _Bills;
 		
 		private EntityRef<Auditorium> _Auditorium;
@@ -4131,7 +3941,6 @@ namespace Cinema_Management_System
 		
 		public ShowTime()
 		{
-			this._SeatForShowtimes = new EntitySet<SeatForShowtime>(new Action<SeatForShowtime>(this.attach_SeatForShowtimes), new Action<SeatForShowtime>(this.detach_SeatForShowtimes));
 			this._Bills = new EntitySet<Bill>(new Action<Bill>(this.attach_Bills), new Action<Bill>(this.detach_Bills));
 			this._Auditorium = default(EntityRef<Auditorium>);
 			this._MOVIE = default(EntityRef<MOVIE>);
@@ -4266,19 +4075,6 @@ namespace Cinema_Management_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ShowTime_SeatForShowtime", Storage="_SeatForShowtimes", ThisKey="Id", OtherKey="ShowTime_Id")]
-		public EntitySet<SeatForShowtime> SeatForShowtimes
-		{
-			get
-			{
-				return this._SeatForShowtimes;
-			}
-			set
-			{
-				this._SeatForShowtimes.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ShowTime_Bill", Storage="_Bills", ThisKey="Id", OtherKey="ShowTime_Id")]
 		public EntitySet<Bill> Bills
 		{
@@ -4380,18 +4176,6 @@ namespace Cinema_Management_System
 			}
 		}
 		
-		private void attach_SeatForShowtimes(SeatForShowtime entity)
-		{
-			this.SendPropertyChanging();
-			entity.ShowTime = this;
-		}
-		
-		private void detach_SeatForShowtimes(SeatForShowtime entity)
-		{
-			this.SendPropertyChanging();
-			entity.ShowTime = null;
-		}
-		
 		private void attach_Bills(Bill entity)
 		{
 			this.SendPropertyChanging();
@@ -4402,6 +4186,222 @@ namespace Cinema_Management_System
 		{
 			this.SendPropertyChanging();
 			entity.ShowTime = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SeatForShowtime")]
+	public partial class SeatForShowtime : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _Seat_Id;
+		
+		private int _ShowTime_Id;
+		
+		private System.Nullable<int> _Condition;
+		
+		private EntityRef<Bill> _Bill;
+		
+		private EntityRef<Seat> _Seat;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnSeat_IdChanging(int value);
+    partial void OnSeat_IdChanged();
+    partial void OnShowTime_IdChanging(int value);
+    partial void OnShowTime_IdChanged();
+    partial void OnConditionChanging(System.Nullable<int> value);
+    partial void OnConditionChanged();
+    #endregion
+		
+		public SeatForShowtime()
+		{
+			this._Bill = default(EntityRef<Bill>);
+			this._Seat = default(EntityRef<Seat>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Seat_Id", DbType="Int NOT NULL")]
+		public int Seat_Id
+		{
+			get
+			{
+				return this._Seat_Id;
+			}
+			set
+			{
+				if ((this._Seat_Id != value))
+				{
+					if (this._Seat.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSeat_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Seat_Id = value;
+					this.SendPropertyChanged("Seat_Id");
+					this.OnSeat_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShowTime_Id", DbType="Int NOT NULL")]
+		public int ShowTime_Id
+		{
+			get
+			{
+				return this._ShowTime_Id;
+			}
+			set
+			{
+				if ((this._ShowTime_Id != value))
+				{
+					this.OnShowTime_IdChanging(value);
+					this.SendPropertyChanging();
+					this._ShowTime_Id = value;
+					this.SendPropertyChanged("ShowTime_Id");
+					this.OnShowTime_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Condition", DbType="Int")]
+		public System.Nullable<int> Condition
+		{
+			get
+			{
+				return this._Condition;
+			}
+			set
+			{
+				if ((this._Condition != value))
+				{
+					if (this._Bill.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnConditionChanging(value);
+					this.SendPropertyChanging();
+					this._Condition = value;
+					this.SendPropertyChanged("Condition");
+					this.OnConditionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bill_SeatForShowtime", Storage="_Bill", ThisKey="Condition", OtherKey="Id", IsForeignKey=true)]
+		public Bill Bill
+		{
+			get
+			{
+				return this._Bill.Entity;
+			}
+			set
+			{
+				Bill previousValue = this._Bill.Entity;
+				if (((previousValue != value) 
+							|| (this._Bill.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Bill.Entity = null;
+						previousValue.SeatForShowtimes.Remove(this);
+					}
+					this._Bill.Entity = value;
+					if ((value != null))
+					{
+						value.SeatForShowtimes.Add(this);
+						this._Condition = value.Id;
+					}
+					else
+					{
+						this._Condition = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Bill");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Seat_SeatForShowtime", Storage="_Seat", ThisKey="Seat_Id", OtherKey="Id", IsForeignKey=true)]
+		public Seat Seat
+		{
+			get
+			{
+				return this._Seat.Entity;
+			}
+			set
+			{
+				Seat previousValue = this._Seat.Entity;
+				if (((previousValue != value) 
+							|| (this._Seat.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Seat.Entity = null;
+						previousValue.SeatForShowtimes.Remove(this);
+					}
+					this._Seat.Entity = value;
+					if ((value != null))
+					{
+						value.SeatForShowtimes.Add(this);
+						this._Seat_Id = value.Id;
+					}
+					else
+					{
+						this._Seat_Id = default(int);
+					}
+					this.SendPropertyChanged("Seat");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }
