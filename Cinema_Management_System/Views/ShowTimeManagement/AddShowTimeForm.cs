@@ -143,7 +143,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        System.Windows.Forms.MessageBox.Show("Sửa xuất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 

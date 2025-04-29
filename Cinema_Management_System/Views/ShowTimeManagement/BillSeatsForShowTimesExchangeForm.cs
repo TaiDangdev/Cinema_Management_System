@@ -81,25 +81,29 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             // Kiểm tra nếu người dùng bấm vào cột Button (cột có kiểu DataGridViewButtonColumn)
             if (e.ColumnIndex == this.dgv_DataBill.Columns["btn_Del"].Index)  // "btnAction" là tên của cột Button
             {
-               
-                if (DialogResult.No == MessageBoxHelper.ShowQuestion("Xóa", "Bạn có chắc chắn muốn xóa hóa đơn này không?"))
+                DialogResult result = MessageBoxHelper.ShowQuestion("Xóa", "Bạn có chắc chắn muốn xóa hóa đơn này không?");
+                if (DialogResult.No == result)
                 {
                     return;
                 }
                 else
                 {
-                    // Lấy ID của hóa đơn từ dòng hiện tại
-                    int billId = Convert.ToInt32(this.dgv_DataBill.Rows[e.RowIndex].Cells["MaDon"].Value);
-                    // Gọi phương thức xóa hóa đơn
-                    if (BillForShowTimeDA.Instance.DeleleteBill(billId))
+                    if (result== DialogResult.Yes)
                     {
-                        MessageBoxHelper.ShowInfo("Xóa thành công", "Hóa đơn đã được xóa thành công.");
-                        LoadBillData();
+                        // Lấy ID của hóa đơn từ dòng hiện tại
+                        int billId = Convert.ToInt32(this.dgv_DataBill.Rows[e.RowIndex].Cells["MaDon"].Value);
+                        // Gọi phương thức xóa hóa đơn
+                        if (BillForShowTimeDA.Instance.DeleleteBill(billId))
+                        {
+                            MessageBoxHelper.ShowInfo("Xóa thành công", "Hóa đơn đã được xóa thành công.");
+                            LoadBillData();
+                        }
+                        else
+                        {
+                            MessageBoxHelper.ShowError("Lỗi", "Không thể xóa hóa đơn.");
+                        }
                     }
-                    else
-                    {
-                        MessageBoxHelper.ShowError("Lỗi", "Không thể xóa hóa đơn.");
-                    }
+
                 }
         }
     }}

@@ -69,7 +69,7 @@ namespace Cinema_Management_System.Models.DAOs
             var seatInDb = Connect.SeatForShowtimes.FirstOrDefault(sfs => sfs.Id == idSeat);
             if (seatInDb != null)
             {
-                seatInDb.Condition = false;
+                seatInDb.Condition = null;
                 Connect.SubmitChanges();
             }
         }

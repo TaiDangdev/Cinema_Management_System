@@ -1,7 +1,7 @@
 ﻿using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DAOs.Bills;
 using Cinema_Management_System.Models.DTOs;
-using Cinema_Management_System.Models.DTOs.Bills;
+//using Cinema_Management_System.Models.DTOs.Bills;
 using Cinema_Management_System.Views.MessageBox;
 using ClosedXML.Excel;
 using CsvHelper;
@@ -252,12 +252,12 @@ namespace Cinema_Management_System.Views.MovieManagement
             }
 
             int newMovieId = MovieDA.Instance.addMovie(movieDTO);
-            BillAddMovieDA.Instance.addBill(new BillAddMovieDTO
-            (
-                newMovieId,
-                DateTime.Now.ToString("yyyy-MM-dd"),
-                movieDTO.ImportPrice
-            ));
+            //BillAddMovieDA.Instance.addBill(new BillAddMovieDTO
+            //(
+            //    newMovieId,
+            //    DateTime.Now.ToString("yyyy-MM-dd"),
+            //    movieDTO.ImportPrice
+            //));
 
             MessageBoxHelper.ShowSuccess("Thông báo", "Thêm phim thành công!");
             this.Close();

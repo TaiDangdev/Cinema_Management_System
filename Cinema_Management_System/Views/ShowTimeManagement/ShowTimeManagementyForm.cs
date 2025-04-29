@@ -1,6 +1,7 @@
 ﻿using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.ViewModels.ShowTimeManagementVM;
+using Cinema_Management_System.Views.MessageBox;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Xml.Linq;
+using static Cinema_Management_System.AboutAccount_Form;
 
 namespace Cinema_Management_System.Views.ShowTimeManagement
 {
@@ -30,6 +32,11 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             _viewModelShowTime=new ShowTimeViewModels();
             this.LoadRoom();
             this.load_ShowTimeMovie(-1);
+            AboutAccount_Form.getRole();
+            if(AboutAccount_Form.currentRole=="Nhân Viên")
+            {
+                this.btn_AddShowTimeMovie.Hide();
+            }
         }
 
         private void LoadRoom()
