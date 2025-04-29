@@ -167,5 +167,64 @@ namespace Cinema_Management_System.Models.DAOs
 
             return movies;
         }
+
+
+        // lấy danh sách để phục vụ cho việc hiển thị thông báo
+        public List<MovieNotificationDTO> GetNotificationMovies()
+        {
+            try
+            {
+                DateTime currentTime = DateTime.Now;
+                DateTime sevenDaysFromNow = currentTime.AddDays(7);
+
+                var movies = connect.MOVIEs
+                    .Where(m =>
+                        (m.Status == "Sắp phát hành" && m.StartDate >= currentTime && m.StartDate <= sevenDaysFromNow) ||
+                        (m.Status == "Đang phát hành" &&
+                            ((m.EndDate >= currentTime && m.EndDate <= sevenDaysFromNow) ||
+                             ((m.TotalShowtimes - m.CurrentShowtimes) <= 10 && (m.TotalShowtimes - m.CurrentShowtimes) > 0))
+                        ))
+                    .Select(m => new MovieNotificationDTO
+                    {
+                        Title = m.Title,
+                        Status = m.Status,
+                        StartDate = m.StartDate,
+                        EndDate = m.EndDate,
+                        RemainingShowtimes = m.TotalShowtimes - m.CurrentShowtimes,
+                        WarningMessage = ""
+                    })
+                    .ToList();
+
+                foreach (var movie in movies)
+                {
+                    if (movie.Status == "Sắp phát hành")
+                    {
+                        int daysUntilStart = (movie.StartDate.Value - currentTime).Days;
+                        if ((movie.StartDate.Value - currentTime).Hours > 0) daysUntilStart++;
+                        movie.WarningMessage = $"Còn {daysUntilStart} ngày nữa sẽ phát hành";
+                    }
+                    else if (movie.Status == "Đang phát hành")
+                    {
+                        if (movie.RemainingShowtimes <= 10 && movie.RemainingShowtimes > 0)
+                        {
+                            movie.WarningMessage = $"Còn {movie.RemainingShowtimes} suất chiếu nữa sẽ ngưng chiếu";
+                        }
+                        else
+                        {
+                            int daysUntilEnd = (movie.EndDate.Value - currentTime).Days;
+                            if ((movie.EndDate.Value - currentTime).Hours > 0) daysUntilEnd++;
+                            movie.WarningMessage = $"Còn {daysUntilEnd} ngày nữa sẽ ngưng phát hành";
+                        }
+                    }
+                }
+                return movies;
+            }
+            catch
+            {
+                MessageBoxHelper.ShowError("Lỗi", "Lỗi khi lấy danh sách thông báo");
+                return new List<MovieNotificationDTO>();
+            }
+        }
+
     }
 }

@@ -146,6 +146,7 @@
     <Compile Include="Models\DAOs\Bills\BillImportProductDA.cs" />
     <Compile Include="Models\DTOs\BillAddMovieDTO.cs" />
     <Compile Include="Models\DTOs\BillSeatsForShowTimesDTO.cs" />
+    <Compile Include="Models\DTOs\MovieNotificationDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\BillAddProductDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\BillDetailDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\BillImportProductDTO.cs" />
@@ -170,6 +171,13 @@
     </Compile>
     <Compile Include="Views\MessageBox\MessageBoxHelper.cs" />
     <Compile Include="Views\MessageBox\MessageBoxType.cs" />
+    <Compile Include="Views\Notification\NotificationHelper.cs" />
+    <Compile Include="Views\Notification\NotificationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Notification\NotificationView.Designer.cs">
+      <DependentUpon>NotificationView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Password\ForgetPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +348,9 @@
     </Compile>
     <EmbeddedResource Include="Views\AdminForm\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Notification\NotificationView.resx">
+      <DependentUpon>NotificationView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Password\ForgetPasswordForm.resx">
       <DependentUpon>ForgetPasswordForm.cs</DependentUpon>
@@ -556,6 +567,7 @@
     <None Include="assets\adminForm\icons8-food-and-drink-32.png" />
     <None Include="assets\movieManagementForm\image_icon.png" />
     <None Include="assets\movieManagementForm\add_icon.png" />
+    <None Include="assets\icons8-notification-bell-48.png" />
     <Content Include="assets\StoryboardMovie\1.jpg" />
     <Content Include="assets\StoryboardMovie\2.jpg" />
     <Content Include="assets\StoryboardMovie\3.jpg" />

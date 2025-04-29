@@ -149,6 +149,7 @@
             this.avatar_pic.TabIndex = 13;
             this.avatar_pic.TabStop = false;
             this.avatar_pic.UseTransparentBackground = true;
+            this.avatar_pic.Click += new System.EventHandler(this.avatar_pic_Click);
             // 
             // name_Txt
             // 

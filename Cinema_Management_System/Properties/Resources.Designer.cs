@@ -313,6 +313,16 @@ namespace Cinema_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_notification_bell_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-notification-bell-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_person_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-person-32", resourceCulture);

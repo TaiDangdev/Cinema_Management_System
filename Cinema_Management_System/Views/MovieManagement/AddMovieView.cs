@@ -43,6 +43,9 @@ namespace Cinema_Management_System.Views.MovieManagement
                 BorderRadius = 20
             };
             shadowForm.SetShadowForm(this);
+
+            startDateMovie_Txt.ValueChanged += (s, e) => UpdateMovieStatus();
+            UpdateMovieStatus();
         }
 
         private void InitValidation()
@@ -203,6 +206,19 @@ namespace Cinema_Management_System.Views.MovieManagement
             return true;
         }
 
+        private void UpdateMovieStatus()
+        {
+            DateTime startDate = startDateMovie_Txt.Value.Date;
+            DateTime today = DateTime.Today;
+
+            if (startDate < today)
+                statusMovie_Txt.Text = "Ngưng phát hành";
+            else if (startDate == today)
+                statusMovie_Txt.Text = "Đang phát hành";
+            else
+                statusMovie_Txt.Text = "Sắp phát hành";
+        }
+
         private void CheckAllFieldsValid()
         {
             bool allValid = errorMap.All(entry => string.IsNullOrEmpty(GetErrorMessage(entry.Key))) && isImageSelected;
@@ -318,19 +334,14 @@ namespace Cinema_Management_System.Views.MovieManagement
             if (DateTime.TryParseExact(movie.ReleaseDate, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out var startDate))
             {
                 startDateMovie_Txt.Value = startDate;
-
-                if (startDate.Date < DateTime.Today)
-                    statusMovie_Txt.Text = "Ngưng phát hành";
-                else if (startDate.Date == DateTime.Today)
-                    statusMovie_Txt.Text = "Đang chiếu";
-                else
-                    statusMovie_Txt.Text = "Sắp chiếu";
             }
 
             if (DateTime.TryParseExact(movie.EndDate, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out var endDate))
             {
                 endMovie_Txt.Value = endDate;
             }
+
+            UpdateMovieStatus();
         }
 
         private void ReadExcel(string filePath)

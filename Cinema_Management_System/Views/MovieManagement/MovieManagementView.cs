@@ -1,34 +1,33 @@
-﻿using Cinema_Management_System.ViewModels.MovieManagementVM;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Linq;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.Views.MessageBox;
-using Cinema_Management_System.ViewModels.MovieManagementVM.Feature;
-using Cinema_Management_System.ViewModels;
 using Cinema_Management_System.Models.DAOs.Bills;
+using Guna.UI2.WinForms;
 
 namespace Cinema_Management_System.Views.MovieManagement
 {
     public partial class MovieManagementView : UserControl
     {
+        private List<MovieNotificationDTO> notifications;
+        private bool isNotificationVisible = false;
         public MovieManagementView()
         {
             InitializeComponent();
             LoadMovies();
+            notification_Panel.Visible = false;
         }
 
         public void LoadMovies()
         {
             moviePanel.Controls.Clear();
+            notifications = MovieDA.Instance.GetNotificationMovies();
+
+            notificationPainter.Text = notifications.Count.ToString();
+            notificationPainter.Visible = notifications.Count > 0;
 
             string searchText = searchMovie_Txt.Text.Trim().ToLower();
             string selectedFilter = filterMovie_Cbx.SelectedItem.ToString();
@@ -344,5 +343,114 @@ namespace Cinema_Management_System.Views.MovieManagement
             LoadMovies();
         }
 
+        private void notification_Btn_Click(object sender, EventArgs e)
+        {
+            if (notifications == null || notifications.Count == 0)
+            {
+                MessageBoxHelper.ShowInfo("Thông báo", "Không có phim nào cần cảnh báo!");
+                if (isNotificationVisible)
+                {
+                    isNotificationVisible = false;
+                }
+                return;
+            }
+
+            isNotificationVisible = !isNotificationVisible;
+            notification_Panel.Visible = isNotificationVisible;
+
+            if (isNotificationVisible)
+            {
+                notification_Panel.Controls.Clear();
+
+                foreach (var notification in notifications)
+                {
+                    Guna2Panel notificationItem = CreateNotificationPanel(notification);
+                    notification_Panel.Controls.Add(notificationItem);
+                }
+
+                int notificationHeight = notifications.Count * 70;
+                int maxHeight = 263; 
+                int newHeight = Math.Min(notificationHeight, maxHeight);
+
+                notification_Panel.Height = newHeight;
+            }
+        }
+
+        private Guna2Panel CreateNotificationPanel(MovieNotificationDTO notification)
+        {
+            Guna2Panel notificationItem = new Guna2Panel
+            {
+                Width = 243,
+                Height = 60,
+                Margin = new Padding(5),
+                BorderRadius = 8,
+                FillColor = Color.FromArgb(255, 255, 240),
+                BorderColor = Color.FromArgb(200, 200, 200),
+                BorderThickness = 1,
+                ShadowDecoration = { Enabled = true, Depth = 5 }
+            };
+
+            Image iconImage;
+            Color hoverColor;
+            if (notification.Status == "Sắp phát hành")
+            {
+                iconImage = Properties.Resources.icon_Info;
+                hoverColor = Color.FromArgb(200, 230, 255); 
+            }
+            else
+            {
+                iconImage = Properties.Resources.icon_Warning;
+                hoverColor = Color.FromArgb(255, 220, 200); 
+            }
+
+            Guna2PictureBox icon = new Guna2PictureBox
+            {
+                Size = new Size(20, 20),
+                Location = new Point(10, 10),
+                Image = iconImage,
+                SizeMode = PictureBoxSizeMode.Zoom
+            };
+
+            Label titleLabel = new Label
+            {
+                Text = notification.Title,
+                AutoSize = false,
+                Width = 150,
+                Height = 20,
+                Location = new Point(35, 10),
+                TextAlign = ContentAlignment.MiddleLeft,
+                ForeColor = Color.FromArgb(50, 50, 50),
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                AutoEllipsis = true
+            };
+
+            Label messageLabel = new Label
+            {
+                Text = notification.WarningMessage,
+                AutoSize = false,
+                Width = 205,
+                Height = 20,
+                Location = new Point(35, 30),
+                TextAlign = ContentAlignment.MiddleLeft,
+                ForeColor = Color.FromArgb(80, 80, 80),
+                Font = new Font("Segoe UI", 8, FontStyle.Regular),
+                AutoEllipsis = true
+            };
+
+            notificationItem.MouseEnter += (s, e) =>
+            {
+                notificationItem.FillColor = hoverColor;
+            };
+            notificationItem.MouseLeave += (s, e) =>
+            {
+                notificationItem.FillColor = Color.FromArgb(255, 255, 240);
+            };
+
+            notificationItem.Controls.Add(icon);
+            notificationItem.Controls.Add(titleLabel);
+            notificationItem.Controls.Add(messageLabel);
+
+            return notificationItem;
+        }
     }
 }

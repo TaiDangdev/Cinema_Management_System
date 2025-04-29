@@ -8,6 +8,8 @@ using System.IO;
 using static Cinema_Management_System.AboutAccount_Form;
 using Cinema_Management_System.Views;
 using System.Threading.Tasks;
+using Cinema_Management_System.Views.MessageBox;
+using Cinema_Management_System.Views.Notification;
 
 namespace Cinema_Management_System
 {
@@ -67,9 +69,9 @@ namespace Cinema_Management_System
                     }
                 });
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Lỗi cập nhật trạng thái phim: " + ex.Message);
+                MessageBoxHelper.ShowError("Lỗi","Lỗi cập nhật trạng thái phim");
             }
         }
 
@@ -83,7 +85,7 @@ namespace Cinema_Management_System
         }
 
         private async void forgetpassword_Txt_Click(object sender, EventArgs e)
-        {
+        { 
             await FadeOutFormAsync(this);
             ForgetPasswordForm forgetPasswordForm = new ForgetPasswordForm(this);
             forgetPasswordForm.Opacity = 0;

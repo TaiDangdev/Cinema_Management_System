@@ -1,4 +1,5 @@
-﻿using Cinema_Management_System.Views.ShowTimeManagement;
+﻿using Cinema_Management_System.Views.Notification;
+using Cinema_Management_System.Views.ShowTimeManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -192,5 +193,9 @@ namespace Cinema_Management_System
             }
         }
 
+        private void avatar_pic_Click(object sender, EventArgs e)
+        {
+            NotificationHelper.showWarning("Cảnh báo", "Tôi là Trương Nhất Nguyên");
+        }
     }
 }

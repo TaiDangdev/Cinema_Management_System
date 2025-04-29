@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.filterMovie_Cbx = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.moviePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.searchMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.addMovie_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.notification_Btn = new System.Windows.Forms.PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.notification_Panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.notificationPainter = new Guna.UI2.WinForms.Guna2NotificationPaint(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.notification_Btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,20 +108,6 @@
             this.searchMovie_Txt.TabIndex = 0;
             this.searchMovie_Txt.TextChanged += new System.EventHandler(this.searchMovie_Txt_TextChanged);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Red;
-            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.add_icon;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(572, 18);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(28, 28);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 4;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            // 
             // addMovie_Btn
             // 
             this.addMovie_Btn.Animated = true;
@@ -139,10 +130,56 @@
             this.addMovie_Btn.Text = "Thêm phim";
             this.addMovie_Btn.Click += new System.EventHandler(this.addMovie_Btn_Click);
             // 
+            // notification_Btn
+            // 
+            this.notification_Btn.Image = global::Cinema_Management_System.Properties.Resources.icons8_notification_bell_48;
+            this.notification_Btn.Location = new System.Drawing.Point(1240, 17);
+            this.notification_Btn.Name = "notification_Btn";
+            this.notification_Btn.Size = new System.Drawing.Size(40, 40);
+            this.notification_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.notification_Btn.TabIndex = 6;
+            this.notification_Btn.TabStop = false;
+            this.notification_Btn.Click += new System.EventHandler(this.notification_Btn_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Red;
+            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.add_icon;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(572, 18);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(28, 28);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 4;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
+            // notification_Panel
+            // 
+            this.notification_Panel.AutoScroll = true;
+            this.notification_Panel.Location = new System.Drawing.Point(1061, 63);
+            this.notification_Panel.Name = "notification_Panel";
+            this.notification_Panel.Size = new System.Drawing.Size(265, 263);
+            this.notification_Panel.TabIndex = 8;
+            // 
+            // notificationPainter
+            // 
+            this.notificationPainter.BorderColor = System.Drawing.Color.Transparent;
+            this.notificationPainter.FillColor = System.Drawing.Color.Transparent;
+            this.notificationPainter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notificationPainter.ForeColor = System.Drawing.Color.Red;
+            this.notificationPainter.Location = new System.Drawing.Point(27, -5);
+            this.notificationPainter.Size = new System.Drawing.Size(20, 20);
+            this.notificationPainter.TargetControl = this.notification_Btn;
+            this.notificationPainter.Visible = false;
+            // 
             // MovieManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.notification_Panel);
+            this.Controls.Add(this.notification_Btn);
             this.Controls.Add(this.moviePanel);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.addMovie_Btn);
@@ -153,6 +190,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MovieManagementView";
             this.Size = new System.Drawing.Size(1329, 838);
+            ((System.ComponentModel.ISupportInitialize)(this.notification_Btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,5 +205,8 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.FlowLayoutPanel moviePanel;
         private Guna.UI2.WinForms.Guna2GradientButton addMovie_Btn;
+        private System.Windows.Forms.PictureBox notification_Btn;
+        private System.Windows.Forms.FlowLayoutPanel notification_Panel;
+        private Guna.UI2.WinForms.Guna2NotificationPaint notificationPainter;
     }
 }
