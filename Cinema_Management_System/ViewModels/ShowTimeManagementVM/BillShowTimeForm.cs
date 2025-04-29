@@ -70,7 +70,7 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                 // Đặt condition = true cho tất cả ghế trong danh sách
                 foreach (var seat in seatsShowTime)
                 {
-                    seat.condition = true;
+                    seat.condition = 0;
                 }
 
                 // Cập nhật trạng thái ghế trong cơ sở dữ liệu

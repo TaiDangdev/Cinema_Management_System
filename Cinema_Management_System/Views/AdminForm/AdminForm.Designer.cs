@@ -40,7 +40,6 @@
             this.logout_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.profile_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.thongKe_Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.voucher_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.productManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.customerManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.staffManage_Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -102,7 +101,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(58, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 20);
+            this.label2.Size = new System.Drawing.Size(128, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Dành cho quản trị viên";
             // 
@@ -113,7 +112,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label1.Location = new System.Drawing.Point(46, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 25);
+            this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "StarCinema\r\n";
             // 
@@ -125,7 +124,6 @@
             this.slidebar_Panel.Controls.Add(this.logout_Btn);
             this.slidebar_Panel.Controls.Add(this.profile_Btn);
             this.slidebar_Panel.Controls.Add(this.thongKe_Btn);
-            this.slidebar_Panel.Controls.Add(this.voucher_Btn);
             this.slidebar_Panel.Controls.Add(this.productManage_Btn);
             this.slidebar_Panel.Controls.Add(this.customerManage_Btn);
             this.slidebar_Panel.Controls.Add(this.staffManage_Btn);
@@ -158,7 +156,7 @@
             this.name_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.name_Txt.Location = new System.Drawing.Point(70, 141);
             this.name_Txt.Name = "name_Txt";
-            this.name_Txt.Size = new System.Drawing.Size(89, 28);
+            this.name_Txt.Size = new System.Drawing.Size(70, 21);
             this.name_Txt.TabIndex = 14;
             this.name_Txt.Text = "Tên user";
             // 
@@ -179,7 +177,7 @@
             this.logout_Btn.HoverState.ForeColor = System.Drawing.Color.White;
             this.logout_Btn.Image = global::Cinema_Management_System.Properties.Resources.logout;
             this.logout_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.logout_Btn.Location = new System.Drawing.Point(12, 774);
+            this.logout_Btn.Location = new System.Drawing.Point(12, 764);
             this.logout_Btn.Name = "logout_Btn";
             this.logout_Btn.Size = new System.Drawing.Size(174, 45);
             this.logout_Btn.TabIndex = 12;
@@ -205,7 +203,7 @@
             this.profile_Btn.HoverState.ForeColor = System.Drawing.Color.White;
             this.profile_Btn.Image = global::Cinema_Management_System.Properties.Resources.profile;
             this.profile_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.profile_Btn.Location = new System.Drawing.Point(12, 723);
+            this.profile_Btn.Location = new System.Drawing.Point(12, 713);
             this.profile_Btn.Name = "profile_Btn";
             this.profile_Btn.Size = new System.Drawing.Size(174, 45);
             this.profile_Btn.TabIndex = 11;
@@ -231,7 +229,7 @@
             this.thongKe_Btn.HoverState.ForeColor = System.Drawing.Color.White;
             this.thongKe_Btn.Image = global::Cinema_Management_System.Properties.Resources.data;
             this.thongKe_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.thongKe_Btn.Location = new System.Drawing.Point(11, 529);
+            this.thongKe_Btn.Location = new System.Drawing.Point(11, 478);
             this.thongKe_Btn.Name = "thongKe_Btn";
             this.thongKe_Btn.Size = new System.Drawing.Size(174, 45);
             this.thongKe_Btn.TabIndex = 10;
@@ -239,32 +237,6 @@
             this.thongKe_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.thongKe_Btn.UseTransparentBackground = true;
             this.thongKe_Btn.Click += new System.EventHandler(this.thongKe_Btn_Click);
-            // 
-            // voucher_Btn
-            // 
-            this.voucher_Btn.Animated = true;
-            this.voucher_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.voucher_Btn.BorderRadius = 10;
-            this.voucher_Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.voucher_Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.voucher_Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.voucher_Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.voucher_Btn.FillColor = System.Drawing.Color.Transparent;
-            this.voucher_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.voucher_Btn.ForeColor = System.Drawing.Color.Black;
-            this.voucher_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.voucher_Btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.voucher_Btn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.voucher_Btn.Image = global::Cinema_Management_System.Properties.Resources.promo_code;
-            this.voucher_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.voucher_Btn.Location = new System.Drawing.Point(11, 478);
-            this.voucher_Btn.Name = "voucher_Btn";
-            this.voucher_Btn.Size = new System.Drawing.Size(174, 45);
-            this.voucher_Btn.TabIndex = 5;
-            this.voucher_Btn.Text = "Voucher";
-            this.voucher_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.voucher_Btn.UseTransparentBackground = true;
-            this.voucher_Btn.Click += new System.EventHandler(this.voucher_Btn_Click);
             // 
             // productManage_Btn
             // 
@@ -451,7 +423,7 @@
             // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1540, 845);
@@ -487,7 +459,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2Button filmManage_Btn;
-        private Guna.UI2.WinForms.Guna2Button voucher_Btn;
         private Guna.UI2.WinForms.Guna2Button productManage_Btn;
         private Guna.UI2.WinForms.Guna2Button customerManage_Btn;
         private Guna.UI2.WinForms.Guna2Button staffManage_Btn;

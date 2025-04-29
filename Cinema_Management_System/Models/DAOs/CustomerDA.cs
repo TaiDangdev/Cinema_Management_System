@@ -67,7 +67,7 @@ namespace Cinema_Management_System.Models.DAOs
                     return true;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống!",
                                 "Thông báo",
@@ -104,7 +104,7 @@ namespace Cinema_Management_System.Models.DAOs
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch
             { 
                 return false;
             }

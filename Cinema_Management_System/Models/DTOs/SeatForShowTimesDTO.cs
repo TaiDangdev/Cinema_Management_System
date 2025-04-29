@@ -13,7 +13,7 @@ namespace Cinema_Management_System.Models.DTOs
         public int Seat_Id { get; set; }
 
         public int showTimeId { get; set; }
-        public bool? condition { get; set; }
+        public int? condition { get; set; }
         public string location { get; set; }
         public int Auditorium_Id { get; set; }
     }

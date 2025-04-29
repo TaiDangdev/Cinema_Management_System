@@ -30,9 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.xuatEXEL_bnt = new Guna.UI2.WinForms.Guna2GradientButton();
             this.luachontim_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -72,7 +72,7 @@
             this.xuatEXEL_bnt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.xuatEXEL_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.xuatEXEL_bnt.ForeColor = System.Drawing.Color.White;
-            this.xuatEXEL_bnt.Location = new System.Drawing.Point(1117, 27);
+            this.xuatEXEL_bnt.Location = new System.Drawing.Point(1122, 24);
             this.xuatEXEL_bnt.Name = "xuatEXEL_bnt";
             this.xuatEXEL_bnt.Size = new System.Drawing.Size(186, 39);
             this.xuatEXEL_bnt.TabIndex = 9;
@@ -96,7 +96,7 @@
             "Kiểu tìm kiếm",
             "Tên khách hàng",
             "Số điện thoại"});
-            this.luachontim_cbb.Location = new System.Drawing.Point(571, 30);
+            this.luachontim_cbb.Location = new System.Drawing.Point(555, 27);
             this.luachontim_cbb.Name = "luachontim_cbb";
             this.luachontim_cbb.Size = new System.Drawing.Size(224, 36);
             this.luachontim_cbb.StartIndex = 0;
@@ -114,6 +114,7 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(1323, 693);
             this.guna2GroupBox1.TabIndex = 10;
             this.guna2GroupBox1.Text = "THÔNG TIN KHÁCH HÀNG";
+            //this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
             // 
             // dgv_customer
             // 
@@ -141,14 +142,14 @@
             this.diem_col,
             this.Action});
             this.dgv_customer.ContextMenuStrip = this.chucnang_menu;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_customer.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_customer.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_customer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_customer.Location = new System.Drawing.Point(6, 42);
             this.dgv_customer.Name = "dgv_customer";
@@ -224,8 +225,8 @@
             // ngaysinh_col
             // 
             this.ngaysinh_col.DataPropertyName = "Birth";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            this.ngaysinh_col.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            this.ngaysinh_col.DefaultCellStyle = dataGridViewCellStyle5;
             this.ngaysinh_col.HeaderText = "Ngày sinh";
             this.ngaysinh_col.MinimumWidth = 6;
             this.ngaysinh_col.Name = "ngaysinh_col";
@@ -234,8 +235,8 @@
             // ngayDK_col
             // 
             this.ngayDK_col.DataPropertyName = "RegDate";
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            this.ngayDK_col.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Format = "dd/MM/yyyy";
+            this.ngayDK_col.DefaultCellStyle = dataGridViewCellStyle11;
             this.ngayDK_col.HeaderText = "Ngày đăng ký";
             this.ngayDK_col.MinimumWidth = 6;
             this.ngayDK_col.Name = "ngayDK_col";
@@ -348,97 +349,18 @@
             this.Them_bnt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.Them_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.Them_bnt.ForeColor = System.Drawing.Color.White;
-            this.Them_bnt.Location = new System.Drawing.Point(850, 27);
+            this.Them_bnt.Location = new System.Drawing.Point(858, 24);
             this.Them_bnt.Name = "Them_bnt";
             this.Them_bnt.Size = new System.Drawing.Size(201, 39);
             this.Them_bnt.TabIndex = 13;
             this.Them_bnt.Text = "Thêm Khách hàng";
             this.Them_bnt.Click += new System.EventHandler(this.Them_bnt_Click);
             // 
-            // id_col
-            // 
-            this.id_col.DataPropertyName = "IdFormat";
-            this.id_col.HeaderText = "Mã khách hàng";
-            this.id_col.MinimumWidth = 6;
-            this.id_col.Name = "id_col";
-            this.id_col.ReadOnly = true;
-            // 
-            // Ten_col
-            // 
-            this.Ten_col.DataPropertyName = "FullName";
-            this.Ten_col.FillWeight = 150F;
-            this.Ten_col.HeaderText = "Tên khách hàng";
-            this.Ten_col.MinimumWidth = 6;
-            this.Ten_col.Name = "Ten_col";
-            this.Ten_col.ReadOnly = true;
-            // 
-            // gioitinh_col
-            // 
-            this.gioitinh_col.DataPropertyName = "Gender";
-            this.gioitinh_col.HeaderText = "Giới tính";
-            this.gioitinh_col.MinimumWidth = 6;
-            this.gioitinh_col.Name = "gioitinh_col";
-            this.gioitinh_col.ReadOnly = true;
-            // 
-            // sdt_col
-            // 
-            this.sdt_col.DataPropertyName = "PhoneNumber";
-            this.sdt_col.HeaderText = "SDT";
-            this.sdt_col.MinimumWidth = 6;
-            this.sdt_col.Name = "sdt_col";
-            this.sdt_col.ReadOnly = true;
-            // 
-            // email_col
-            // 
-            this.email_col.DataPropertyName = "Email";
-            this.email_col.HeaderText = "Email";
-            this.email_col.MinimumWidth = 6;
-            this.email_col.Name = "email_col";
-            this.email_col.ReadOnly = true;
-            // 
-            // ngaysinh_col
-            // 
-            this.ngaysinh_col.DataPropertyName = "Birth";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            this.ngaysinh_col.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ngaysinh_col.HeaderText = "Ngày sinh";
-            this.ngaysinh_col.MinimumWidth = 6;
-            this.ngaysinh_col.Name = "ngaysinh_col";
-            this.ngaysinh_col.ReadOnly = true;
-            // 
-            // ngayDK_col
-            // 
-            this.ngayDK_col.DataPropertyName = "RegDate";
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            this.ngayDK_col.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ngayDK_col.HeaderText = "Ngày đăng ký";
-            this.ngayDK_col.MinimumWidth = 6;
-            this.ngayDK_col.Name = "ngayDK_col";
-            this.ngayDK_col.ReadOnly = true;
-            // 
-            // diem_col
-            // 
-            this.diem_col.DataPropertyName = "Point";
-            this.diem_col.HeaderText = "Điểm";
-            this.diem_col.MinimumWidth = 6;
-            this.diem_col.Name = "diem_col";
-            this.diem_col.ReadOnly = true;
-            // 
-            // Action
-            // 
-            this.Action.FillWeight = 50F;
-            this.Action.HeaderText = "";
-            this.Action.MinimumWidth = 6;
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
-            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // CustomerManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.Them_bnt);
             this.Controls.Add(this.canhbao_label);
             this.Controls.Add(this.guna2GroupBox1);
