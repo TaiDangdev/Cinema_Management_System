@@ -117,6 +117,10 @@
             // 
             // dgv_customer
             // 
+            this.dgv_customer.AllowUserToAddRows = false;
+            this.dgv_customer.AllowUserToDeleteRows = false;
+            this.dgv_customer.AllowUserToResizeColumns = false;
+            this.dgv_customer.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgv_customer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_customer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -261,6 +265,7 @@
             // 
             // chucnang_menu
             // 
+            this.chucnang_menu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chucnang_menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.chucnang_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chỉnhSửaToolStripMenuItem,
@@ -275,19 +280,20 @@
             this.chucnang_menu.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.chucnang_menu.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.chucnang_menu.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.chucnang_menu.Size = new System.Drawing.Size(126, 48);
+            this.chucnang_menu.Size = new System.Drawing.Size(167, 68);
+            this.chucnang_menu.Opening += new System.ComponentModel.CancelEventHandler(this.chucnang_menu_Opening);
             // 
             // chỉnhSửaToolStripMenuItem
             // 
             this.chỉnhSửaToolStripMenuItem.Name = "chỉnhSửaToolStripMenuItem";
-            this.chỉnhSửaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.chỉnhSửaToolStripMenuItem.Size = new System.Drawing.Size(166, 32);
             this.chỉnhSửaToolStripMenuItem.Text = "chỉnh sửa";
             this.chỉnhSửaToolStripMenuItem.Click += new System.EventHandler(this.chỉnhSửaToolStripMenuItem_Click);
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(166, 32);
             this.xóaToolStripMenuItem.Text = "xóa";
             // 
             // dataGridViewImageColumn1
@@ -330,7 +336,7 @@
             this.canhbao_label.ForeColor = System.Drawing.Color.Red;
             this.canhbao_label.Location = new System.Drawing.Point(39, 70);
             this.canhbao_label.Name = "canhbao_label";
-            this.canhbao_label.Size = new System.Drawing.Size(178, 21);
+            this.canhbao_label.Size = new System.Drawing.Size(222, 25);
             this.canhbao_label.TabIndex = 11;
             this.canhbao_label.Text = "Vui lòng chọn kiểu tìm kiếm!";
             // 
@@ -357,7 +363,7 @@
             // 
             // CustomerManagementView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.Controls.Add(this.Them_bnt);

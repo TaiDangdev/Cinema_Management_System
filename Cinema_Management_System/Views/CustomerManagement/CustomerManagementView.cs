@@ -226,5 +226,10 @@ namespace Cinema_Management_System.Views.CustomerManagement
             var filtered = _customerDA.SearchCustomers(keyword, searchType, 10);
             dgv_customer.DataSource = filtered;
         }
+
+        private void chucnang_menu_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
