@@ -126,7 +126,7 @@
             this.dgv_customer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -147,7 +147,7 @@
             this.dgv_customer.ContextMenuStrip = this.chucnang_menu;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -280,20 +280,20 @@
             this.chucnang_menu.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.chucnang_menu.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.chucnang_menu.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.chucnang_menu.Size = new System.Drawing.Size(167, 68);
+            this.chucnang_menu.Size = new System.Drawing.Size(147, 56);
             this.chucnang_menu.Opening += new System.ComponentModel.CancelEventHandler(this.chucnang_menu_Opening);
             // 
             // chỉnhSửaToolStripMenuItem
             // 
             this.chỉnhSửaToolStripMenuItem.Name = "chỉnhSửaToolStripMenuItem";
-            this.chỉnhSửaToolStripMenuItem.Size = new System.Drawing.Size(166, 32);
+            this.chỉnhSửaToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.chỉnhSửaToolStripMenuItem.Text = "chỉnh sửa";
             this.chỉnhSửaToolStripMenuItem.Click += new System.EventHandler(this.chỉnhSửaToolStripMenuItem_Click);
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(166, 32);
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.xóaToolStripMenuItem.Text = "xóa";
             // 
             // dataGridViewImageColumn1
@@ -336,7 +336,7 @@
             this.canhbao_label.ForeColor = System.Drawing.Color.Red;
             this.canhbao_label.Location = new System.Drawing.Point(39, 70);
             this.canhbao_label.Name = "canhbao_label";
-            this.canhbao_label.Size = new System.Drawing.Size(222, 25);
+            this.canhbao_label.Size = new System.Drawing.Size(178, 21);
             this.canhbao_label.TabIndex = 11;
             this.canhbao_label.Text = "Vui lòng chọn kiểu tìm kiếm!";
             // 
@@ -363,7 +363,7 @@
             // 
             // CustomerManagementView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.Controls.Add(this.Them_bnt);
