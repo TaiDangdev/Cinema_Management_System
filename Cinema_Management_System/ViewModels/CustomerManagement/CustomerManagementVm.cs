@@ -13,7 +13,6 @@ namespace Cinema_Management_System.ViewModels.CustomerManagement
 {
     public class CustomerManagementVm : INotifyPropertyChanged
     {
-        private readonly CustomerDA _customerDA = new CustomerDA();
 
         private ObservableCollection<CustomerDTO> _allCustomers;
         private ObservableCollection<CustomerDTO> _fillteredCustomer;
@@ -68,7 +67,7 @@ namespace Cinema_Management_System.ViewModels.CustomerManagement
         {
             try
             {
-                var customerList = _customerDA.GetAllCustomer();
+                var customerList = CustomerDA.Instance.GetAllCustomer();
                 _allCustomers = new ObservableCollection<CustomerDTO>(customerList);
                 Customers = new ObservableCollection<CustomerDTO>(_allCustomers);
 
@@ -100,7 +99,7 @@ namespace Cinema_Management_System.ViewModels.CustomerManagement
         {
             try
             {
-                bool result = _customerDA.AddCustomer(customer);
+                bool result = CustomerDA.Instance.AddCustomer(customer);
                 if (result)
                 {
                     _allCustomers.Add(customer);

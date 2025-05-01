@@ -1,17 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Cinema_Management_System.Models.DTOs;
-using Cinema_Management_System.ViewModels;
+using Cinema_Management_System.Views.MessageBox;
 
 namespace Cinema_Management_System.Models.DAOs
 {
     public class CustomerDA
     {
-        // lấy dữ liệu 10 khách hàng chưa bị xóa (Isdelete = False), 
+        private static CustomerDA instance;
+
+        public static CustomerDA Instance
+        {
+            get { if (instance == null) instance = new CustomerDA(); return instance; }
+            set { instance = value; }
+        }
+
+        private CustomerDA() { }
+
+        // lấy dữ liệu 10 khách hàng chưa bị xóa (Isdelete = False) 
         public List<CustomerDTO> GetAllCustomer()
         {
             try
@@ -41,7 +48,6 @@ namespace Cinema_Management_System.Models.DAOs
             }
         }
 
-
         public bool AddCustomer(CustomerDTO customer)
         {
             try
@@ -69,10 +75,7 @@ namespace Cinema_Management_System.Models.DAOs
             }
             catch
             {
-                MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống!",
-                                "Thông báo",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                MessageBoxHelper.ShowError("Lỗi", "Số điện thoại đã tồn tại trong hệ thống!");
                 return false;
             }
 
@@ -88,14 +91,11 @@ namespace Cinema_Management_System.Models.DAOs
 
                     if (existingCustomer != null)
                     {
-                        //MessageBox.Show("đã tìm thấy" + existingCustomer.FullName);
                         existingCustomer.FullName = customer.FullName;
                         existingCustomer.PhoneNumber = customer.PhoneNumber;
                         existingCustomer.Email = customer.Email;
                         existingCustomer.Birth = customer.Birth;
-                        //existingCustomer.RegDate = customer.RegDate;
                         existingCustomer.Gender = customer.Gender;
-                        //existingCustomer.Point = customer.Point;
 
                         db.SubmitChanges();
                         return true;
@@ -110,17 +110,19 @@ namespace Cinema_Management_System.Models.DAOs
             }
 
         }
+
         public int GetIdFromIdFormat(string idFormat)
         {
             if (!string.IsNullOrWhiteSpace(idFormat) && idFormat.StartsWith("KH"))
             {
-                string numberPart = idFormat.Substring(2); // Bỏ "KH"
+                string numberPart = idFormat.Substring(2);
                 if (int.TryParse(numberPart, out int id))
                 {
                     return id;
                 }
             }
-            throw new FormatException("IdFormat không hợp lệ: " + idFormat);
+            MessageBoxHelper.ShowError("Lỗi","IdFormat không hợp lệ: " + idFormat);
+            return -1;
         }
 
         public void UpdateDiem(CustomerDTO kh)
@@ -153,12 +155,9 @@ namespace Cinema_Management_System.Models.DAOs
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Lỗi khi xóa khách hàng: " + ex.Message,
-                                "Lỗi",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                MessageBoxHelper.ShowError("Lỗi","Không thể xóa khách hàng");
                 return false;
             }
         }
@@ -190,7 +189,7 @@ namespace Cinema_Management_System.Models.DAOs
                     return null;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
             }
@@ -212,9 +211,9 @@ namespace Cinema_Management_System.Models.DAOs
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Lỗi khi cập nhật điểm khách hàng: " + ex.Message);
+                MessageBoxHelper.ShowError("Lỗi", "Không thể cập nhật điểm khách hàng");
                 return false;
             }
         }

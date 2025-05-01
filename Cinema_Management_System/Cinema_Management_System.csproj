@@ -211,12 +211,6 @@
     <Compile Include="ViewModels\LoginVM\LoginViewModel.cs" />
     <Compile Include="ViewModels\MovieManagementVM\Feature\FilterMovie.cs" />
     <Compile Include="ViewModels\MovieManagementVM\Feature\SearchMovieHelper.cs" />
-    <Compile Include="Views\DashBoard\DashBoardView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\DashBoard\DashBoardView.Designer.cs">
-      <DependentUpon>DashBoardView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\CustomerManagement\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,12 +258,6 @@
     </Compile>
     <Compile Include="Views\MovieManagement\MovieManagementView.Designer.cs">
       <DependentUpon>MovieManagementView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\StaffForm\StaffForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\StaffForm\StaffForm.Designer.cs">
-      <DependentUpon>StaffForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Statistics\StatisticsView.cs">
       <SubType>UserControl</SubType>
@@ -363,9 +351,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\DashBoard\DashBoardView.resx">
-      <DependentUpon>DashBoardView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerManagement\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -415,9 +400,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ShowTimeManagement\ShowTimeManagementyForm.resx">
       <DependentUpon>ShowTimeManagementyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\StaffForm\StaffForm.resx">
-      <DependentUpon>StaffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Statistics\StatisticsView.resx">
       <DependentUpon>StatisticsView.cs</DependentUpon>
@@ -522,6 +504,7 @@
     <Folder Include="ViewModels\StatisticsVM\" />
     <Folder Include="ViewModels\VoucherManagement\" />
     <Folder Include="Views\ProductManagement\" />
+    <Folder Include="Views\StaffForm\" />
     <Folder Include="Views\StaffManagement\" />
     <Folder Include="Views\VoucherManagement\" />
   </ItemGroup>

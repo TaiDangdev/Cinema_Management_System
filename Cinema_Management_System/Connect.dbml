@@ -67,7 +67,6 @@
       <Column Name="UnitPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Total" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="Bill_BillDetail" Member="Bill" ThisKey="Bill_Id" OtherKey="Id" Type="Bill" IsForeignKey="true" />
-      <Association Name="Product_BillDetail" Member="Product" ThisKey="Product_Id" OtherKey="ID" Type="Product" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CUSTOMER" Member="CUSTOMERs">
@@ -82,20 +81,6 @@
       <Column Name="RegDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
       <Column Name="Gender" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Product" Member="Products">
-    <Type Name="Product">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="ImageSource" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PurchasePrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Product_Bill_AddProduct" Member="Bill_AddProducts" ThisKey="ID" OtherKey="Product_Id" Type="Bill_AddProduct" />
-      <Association Name="Product_Bill_ImportProduct" Member="Bill_ImportProducts" ThisKey="ID" OtherKey="Product_Id" Type="Bill_ImportProduct" />
-      <Association Name="Product_BillDetail" Member="BillDetails" ThisKey="ID" OtherKey="Product_Id" Type="BillDetail" />
     </Type>
   </Table>
   <Table Name="dbo.Seat" Member="Seats">
@@ -122,6 +107,7 @@
       <Association Name="STAFF_ACCOUNT" Member="ACCOUNTs" ThisKey="Id" OtherKey="Staff_Id" Type="ACCOUNT" />
       <Association Name="STAFF_Bill" Member="Bills" ThisKey="Id" OtherKey="Staff_Id" Type="Bill" />
       <Association Name="STAFF_Staff_Salary" Member="Staff_Salaries" ThisKey="Id" OtherKey="Staff_Id" Type="Staff_Salary" />
+      <Association Name="STAFF_Bill_SellProduct" Member="Bill_SellProducts" ThisKey="Id" OtherKey="Staff_Id" Type="Bill_SellProduct" />
     </Type>
   </Table>
   <Table Name="dbo.Staff_Salary" Member="Staff_Salaries">
@@ -198,6 +184,40 @@
       <Column Name="Condition" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Bill_SeatForShowtime" Member="Bill" ThisKey="Condition" OtherKey="Id" Type="Bill" IsForeignKey="true" />
       <Association Name="Seat_SeatForShowtime" Member="Seat" ThisKey="Seat_Id" OtherKey="Id" Type="Seat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bill_SellProduct" Member="Bill_SellProducts">
+    <Type Name="Bill_SellProduct">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BillDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StaffName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Bill_SellProduct_BillDetailProduct" Member="BillDetailProducts" ThisKey="Id" OtherKey="Bill_Id" Type="BillDetailProduct" />
+      <Association Name="STAFF_Bill_SellProduct" Member="STAFF" ThisKey="Staff_Id" OtherKey="Id" Type="STAFF" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BillDetailProduct" Member="BillDetailProducts">
+    <Type Name="BillDetailProduct">
+      <Column Name="Bill_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Bill_SellProduct_BillDetailProduct" Member="Bill_SellProduct" ThisKey="Bill_Id" OtherKey="Id" Type="Bill_SellProduct" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageSource" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PurchasePrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Product_Bill_AddProduct" Member="Bill_AddProducts" ThisKey="ID" OtherKey="Product_Id" Type="Bill_AddProduct" />
+      <Association Name="Product_Bill_ImportProduct" Member="Bill_ImportProducts" ThisKey="ID" OtherKey="Product_Id" Type="Bill_ImportProduct" />
     </Type>
   </Table>
 </Database>

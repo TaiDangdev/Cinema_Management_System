@@ -157,7 +157,6 @@ namespace Cinema_Management_System
                         name_Txt.MaximumSize = new Size(slidebar_Panel.Width - 20, 0); // chừa margin 10px mỗi bên
                         name_Txt.TextAlign = ContentAlignment.MiddleCenter;
 
-                        // Cập nhật kích thước label cho vừa nội dung (chiều cao)
                         Size preferredSize = TextRenderer.MeasureText(name_Txt.Text, name_Txt.Font, name_Txt.MaximumSize, TextFormatFlags.WordBreak);
                         name_Txt.Size = new Size(name_Txt.MaximumSize.Width, preferredSize.Height);
 
@@ -189,7 +188,7 @@ namespace Cinema_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ahaha: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

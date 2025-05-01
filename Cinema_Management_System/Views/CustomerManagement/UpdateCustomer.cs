@@ -9,17 +9,35 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
+using Guna.UI2.WinForms;
 using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace Cinema_Management_System.Views.CustomerManagement
 {
     public partial class UpdateCustomer : Form
     {
-        private CustomerDA _customerDA = new CustomerDA();
         private CustomerDTO currentCustomer;
+        private Guna2ShadowForm shadowForm;
         public UpdateCustomer()
         {
             InitializeComponent();
+            SetupUI();
+        }
+
+        private void SetupUI()
+        {
+            tenKH_error.Visible = false;
+            sdt_error.Visible = false;
+            email_error.Visible = false;
+            gioitinh_error.Visible = false;
+            ngaysinh_date.MaxDate = DateTime.Today;
+            DragHelper.EnableDrag(this, control_Panel);
+            shadowForm = new Guna2ShadowForm
+            {
+                ShadowColor = Color.Black,
+                BorderRadius = 20
+            };
+            shadowForm.SetShadowForm(this);
         }
 
         public UpdateCustomer(CustomerDTO customer)
@@ -38,26 +56,19 @@ namespace Cinema_Management_System.Views.CustomerManagement
             tenKH_error.Visible = false;
             sdt_error.Visible = false;
             email_error.Visible = false;
+            DragHelper.EnableDrag(this, control_Panel);
+            shadowForm = new Guna2ShadowForm
+            {
+                ShadowColor = Color.Black,
+                BorderRadius = 20
+            };
+            shadowForm.SetShadowForm(this);
         }
 
         private void UpdateCustomer_Load(object sender, EventArgs e)
         {
             ngaysinh_date.MaxDate = DateTime.Now;
 
-        }
-
-
-        private void huy_bnt_Click(object sender, EventArgs e)
-        {
-            DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có chắc chắn muốn hủy!",
-                                                    "Thông báo",
-                                                    MessageBoxButtons.YesNo,
-                                                    MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-
-            }
         }
 
         private void SDT_txt_TextChanged_1(object sender, EventArgs e)
@@ -95,9 +106,29 @@ namespace Cinema_Management_System.Views.CustomerManagement
             else email_error.Visible = false;
         }
 
+        private void Gender_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radnam.Checked || radnu.Checked)
+            {
+                gioitinh_error.Visible = false;
+            }
+        }
+
+        private void huy_bnt_Click(object sender, EventArgs e)
+        {
+            DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có chắc chắn muốn hủy!",
+                                                    "Thông báo",
+                                                    MessageBoxButtons.YesNo,
+                                                    MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+
+            }
+        }
+
         private void capnhat_bnt_Click(object sender, EventArgs e)
         {
-
             bool isValid = true;
 
             // Kiểm tra tên khách hàng
@@ -148,7 +179,7 @@ namespace Cinema_Management_System.Views.CustomerManagement
             };
 
 
-            if (_customerDA.UpdateCustomer(newcustomer))
+            if (CustomerDA.Instance.UpdateCustomer(newcustomer))
             {
                 System.Windows.Forms.MessageBox.Show("Chỉnh sửa thông tin khách hàng thành công!",
                                                         "Thông báo",
@@ -159,14 +190,6 @@ namespace Cinema_Management_System.Views.CustomerManagement
             else
             {
                 System.Windows.Forms.MessageBox.Show("Chỉnh sửa thông tin khách hàng thất bại.");
-            }
-
-        }
-        private void Gender_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radnam.Checked || radnu.Checked)
-            {
-                gioitinh_error.Visible = false;
             }
         }
     }

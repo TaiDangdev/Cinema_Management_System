@@ -116,11 +116,11 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                     {
                         if (!string.IsNullOrEmpty(this.txt_discount.Text))
                         {
-                            CustomerDA customerDA = new CustomerDA();
-                            var member = customerDA.GetCustomerByPhoneNumber(this.txt_member.Text.Trim());
+                            //CustomerDA customerDA = new CustomerDA();
+                            var member = CustomerDA.Instance.GetCustomerByPhoneNumber(this.txt_member.Text.Trim());
                             if (member != null)
                             {
-                                customerDA.UpdatePoint(this.txt_member.Text.Trim(), seatsShowTime.Count);  // Gọi UpdatePoint khi khách hàng hợp lệ
+                                CustomerDA.Instance.UpdatePoint(this.txt_member.Text.Trim(), seatsShowTime.Count);  // Gọi UpdatePoint khi khách hàng hợp lệ
                             }
                             else
                             {
@@ -140,7 +140,7 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                     this.txt_discount.Clear();
                     this.txt_member.Clear();
                 }
-                catch (Exception ex)
+                catch
                 {
                     MessageBoxHelper.ShowError("Lỗi", "Lỗi khi lưu trạng thái ghế!");
                 }
@@ -157,8 +157,7 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
             if (!string.IsNullOrEmpty(idTheHoiVien))
             {
                 // Kiểm tra thẻ hội viên
-                CustomerDA customerDA = new CustomerDA();
-                var member = customerDA.GetCustomerByPhoneNumber(idTheHoiVien);
+                var member = CustomerDA.Instance.GetCustomerByPhoneNumber(idTheHoiVien);
                 if (member != null)
                 {
                     long total = Convert.ToInt64(this.showTimSelect.SeatTicketPrice) * seatsShowTime.Count;

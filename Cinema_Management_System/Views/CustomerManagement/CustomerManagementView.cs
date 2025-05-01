@@ -14,21 +14,22 @@ using TheArtOfDevHtmlRenderer.Adapters;
 using Guna.UI2.WinForms;
 using ClosedXML.Excel;
 using System.IO;
+using static Cinema_Management_System.Views.MovieManagement.MovieManagementView;
+using Cinema_Management_System.Views.MessageBox;
 
 
 namespace Cinema_Management_System.Views.CustomerManagement
 {
     public partial class CustomerManagementView : UserControl
     {
-        private readonly CustomerDA _customerDA = new CustomerDA();
+        private string _debounceKeyword = "";
         private List<CustomerDTO> _allCustomers = new List<CustomerDTO>();
         private enum SearchType { FullName, PhoneNumber }
         private SearchType _currentSearchType = SearchType.FullName;
-        private System.Windows.Forms.Timer debounceTimer;
+        private Timer debounceTimer;
         public CustomerManagementView()
         {
             InitializeComponent();
-
             dgv_customer.AutoGenerateColumns = false;
             Action.UseColumnTextForButtonValue = true;
             Action.Text = "...";
@@ -37,8 +38,6 @@ namespace Cinema_Management_System.Views.CustomerManagement
             dulieutim_txt.TextChanged += dulieutim_txt_TextChanged;
             luachontim_cbb.SelectedIndexChanged += luachontim_cbb_SelectedIndexChanged;
             InitializeDebounce();
-
-
         }
 
         private void dulieutim_txt_TextChanged(object sender, EventArgs e)
@@ -50,8 +49,6 @@ namespace Cinema_Management_System.Views.CustomerManagement
             }
 
             canhbao_label.Visible = false;
-
-            string keyword = dulieutim_txt.Text.ToLower();
 
             _debounceKeyword = dulieutim_txt.Text;
             debounceTimer.Stop();
@@ -70,34 +67,143 @@ namespace Cinema_Management_System.Views.CustomerManagement
         {
             LoadCustomerData();
             dulieutim_txt.Focus();
+            this.BackColor = SystemColors.Control;
         }
 
         private void LoadCustomerData()
         {
-            try
+            //try
+            //{
+            //    _allCustomers = CustomerDA.Instance.GetAllCustomer();
+            //    dgv_customer.DataSource = _allCustomers;
+            //}
+            //catch
+            //{
+            //    MessageBoxHelper.ShowError("Lỗi", "Lỗi khi tải danh sách khách hàng");
+            //}
+            if (CustomerDA.Instance == null)
             {
-                _allCustomers = _customerDA.GetAllCustomer();
-                dgv_customer.DataSource = _allCustomers;
+                MessageBoxHelper.ShowError("Lỗi", "Không thể truy cập CustomerDA.");
+                return;
             }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show("Lỗi khi tải danh sách khách hàng: " + ex.Message);
-            }
+            _allCustomers = CustomerDA.Instance.GetAllCustomer() ?? new List<CustomerDTO>();
+            dgv_customer.DataSource = _allCustomers;
         }
-
-
 
         private void dgv_customer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && dgv_customer.Columns[e.ColumnIndex].Name == "Action")
             {
-                // Lưu thông tin hàng được chọn (tuỳ bạn dùng SelectedCustomer hay lưu index)
                 dgv_customer.ClearSelection();
                 dgv_customer.Rows[e.RowIndex].Selected = true;
 
-                // Hiển thị menu tại vị trí con trỏ chuột
-                var mousePos = dgv_customer.PointToClient(Cursor.Position);
-                chucnang_menu.Show(dgv_customer, mousePos);
+                string idformat = dgv_customer.Rows[e.RowIndex].Cells["id_col"].Value.ToString();
+                int id = CustomerDA.Instance.GetIdFromIdFormat(idformat);
+                string fullName = dgv_customer.Rows[e.RowIndex].Cells["Ten_col"].Value.ToString();
+                string phone = dgv_customer.Rows[e.RowIndex].Cells["sdt_col"].Value.ToString();
+                string email = dgv_customer.Rows[e.RowIndex].Cells["email_col"].Value.ToString();
+                DateTime birth = Convert.ToDateTime(dgv_customer.Rows[e.RowIndex].Cells["ngaysinh_col"].Value);
+                string gender = dgv_customer.Rows[e.RowIndex].Cells["gioitinh_col"].Value.ToString();
+
+                CustomerDTO selectedCustomer = new CustomerDTO
+                {
+                    Id = id,
+                    FullName = fullName,
+                    PhoneNumber = phone,
+                    Email = email,
+                    Birth = birth,
+                    Gender = gender
+                };
+
+                ContextMenuStrip menu = CreateContextMenu(selectedCustomer);
+                menu.Show(Cursor.Position);
+            }
+        }
+
+        private ContextMenuStrip CreateContextMenu(CustomerDTO customer)
+        {
+            ContextMenuStrip menu = new ContextMenuStrip
+            {
+                Renderer = new CustomMenuRenderer(),
+                ShowImageMargin = false,
+                BackColor = Color.White,
+                Font = new Font("Segoe UI", 9, FontStyle.Bold)
+            };
+
+            menu.Items.Add("✏ Chỉnh sửa", null, (s, e) => EditCustomer(customer));
+            menu.Items.Add("🗑 Xóa", null, (s, e) => DeleteCustomer(customer));
+
+            return menu;
+        }
+
+        public class CustomMenuRenderer : ToolStripProfessionalRenderer
+        {
+            public CustomMenuRenderer() : base(new CustomColorTable()) { }
+
+            protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
+            {
+                if (e.Item.Selected)
+                {
+                    e.TextColor = Color.White;
+                }
+                else
+                {
+                    e.TextColor = Color.Black;
+                }
+                base.OnRenderItemText(e);
+            }
+        }
+
+        public class CustomColorTable : ProfessionalColorTable
+        {
+            public override Color MenuItemSelected => Color.FromArgb(203, 45, 62); // Màu khi hover
+            public override Color MenuItemBorder => Color.FromArgb(239, 71, 58); // Viền khi hover
+            public override Color ToolStripDropDownBackground => Color.White; // Màu nền chính
+            public override Color MenuBorder => Color.LightGray; // Viền ngoài của menu
+        }
+
+        private void EditCustomer(CustomerDTO customer)
+        {
+            if (Application.OpenForms["UpdateCustomer"] == null)
+            {
+                UpdateCustomer updateForm = new UpdateCustomer
+                {
+                    Opacity = 0
+                };
+                updateForm.Show();
+
+                Timer fadeTimer = new Timer { Interval = 10 };
+                fadeTimer.Tick += (s, args) =>
+                {
+                    if (updateForm.Opacity < 1)
+                    {
+                        updateForm.Opacity += 0.05;
+                    }
+                    else
+                    {
+                        fadeTimer.Stop();
+                    }
+                };
+                fadeTimer.Start();
+
+                updateForm.FormClosed += (s, args) => LoadCustomerData();
+            }
+            else
+            {
+                Application.OpenForms["AddCustomer"].Activate();
+            }
+        }
+
+        private void DeleteCustomer(CustomerDTO customer)
+        {
+            var result = MessageBoxHelper.ShowQuestion("Xác nhận", "Bạn có chắc chắn muốn xóa khách hàng này?");
+            if (result == DialogResult.Yes)
+            {
+                if (CustomerDA.Instance.DeleteCustomer(customer.Id))
+                {
+                    MessageBoxHelper.ShowSuccess("Thông báo", "Xóa khách hàng thành công!");
+                    LoadCustomerData();
+                }
             }
         }
 
@@ -105,7 +211,7 @@ namespace Cinema_Management_System.Views.CustomerManagement
         {
             if (dgv_customer.Rows.Count == 0)
             {
-                System.Windows.Forms.MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBoxHelper.ShowInfo("Thông báo", "Không có dữ liệu để xuất!");
                 return;
             }
 
@@ -142,11 +248,11 @@ namespace Cinema_Management_System.Views.CustomerManagement
                             wb.SaveAs(sfd.FileName);
                         }
 
-                        System.Windows.Forms.MessageBox.Show("Xuất file Excel thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBoxHelper.ShowSuccess("Thông báo", "Xuất file Excel thành công!");
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        System.Windows.Forms.MessageBox.Show("Lỗi khi xuất file: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxHelper.ShowError("Lỗi", "Lỗi khi xuất file");
                     }
                 }
             }
@@ -154,76 +260,57 @@ namespace Cinema_Management_System.Views.CustomerManagement
 
         private void Them_bnt_Click(object sender, EventArgs e)
         {
-            var Addform = new AddCustomer();
-            Addform.ShowDialog();
-            LoadCustomerData();
-        }
-
-        private void chỉnhSửaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dgv_customer.CurrentRow != null)
+            if (Application.OpenForms["AddCustomer"] == null)
             {
-                // Lấy dữ liệu từ dòng đang chọn
-                string idformat = dgv_customer.CurrentRow.Cells["id_col"].Value.ToString();
-                int id = _customerDA.GetIdFromIdFormat(idformat);
-                string fullName = dgv_customer.CurrentRow.Cells["Ten_col"].Value.ToString();
-                string phone = dgv_customer.CurrentRow.Cells["sdt_col"].Value.ToString();
-                string email = dgv_customer.CurrentRow.Cells["email_col"].Value.ToString();
-                DateTime birth = Convert.ToDateTime(dgv_customer.CurrentRow.Cells["ngaysinh_col"].Value);
-                string gender = dgv_customer.CurrentRow.Cells["gioitinh_col"].Value.ToString();
-
-                // Tạo DTO
-                CustomerDTO selectedCustomer = new CustomerDTO()
+                AddCustomer addForm = new AddCustomer
                 {
-                    Id = id,
-                    FullName = fullName,
-                    PhoneNumber = phone,
-                    Email = email,
-                    Birth = birth,
-                    Gender = gender,
+                    Opacity = 0 
                 };
-                //System.Windows.Forms.MessageBox.Show("id là " +id);
+                addForm.Show();
 
-                // Truyền DTO vào form UpdateCustomer
-                UpdateCustomer updateForm = new UpdateCustomer(selectedCustomer);
-                updateForm.ShowDialog();
-                LoadCustomerData();
-            }
-        }
-
-        private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dgv_customer.CurrentRow != null)
-            {
-
-                var result = System.Windows.Forms.MessageBox.Show("Bạn có chắc muốn xóa khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                Timer fadeTimer = new Timer { Interval = 10 };
+                fadeTimer.Tick += (s, args) =>
                 {
-                    string idformat = dgv_customer.CurrentRow.Cells["id_col"].Value.ToString();
-                    int id = _customerDA.GetIdFromIdFormat(idformat);
-                    if (_customerDA.DeleteCustomer(id))
+                    if (addForm.Opacity < 1)
                     {
-                        System.Windows.Forms.MessageBox.Show("Xóa thành công!");
-                        LoadCustomerData(); // Gọi lại hàm load danh sách khách hàng
+                        addForm.Opacity += 0.05;
                     }
-                }
+                    else
+                    {
+                        fadeTimer.Stop();
+                    }
+                };
+                fadeTimer.Start();
+
+                addForm.FormClosed += (s, args) => LoadCustomerData();
             }
+            else
+            {
+                Application.OpenForms["AddCustomer"].Activate();
+            }
+
         }
 
-        // thiết lập debounce
-        private string _debounceKeyword = "";
         private void InitializeDebounce()
         {
-            debounceTimer = new System.Windows.Forms.Timer();
-            debounceTimer.Interval = 300; // 300ms
+            debounceTimer = new Timer();
+            debounceTimer.Interval = 300;
             debounceTimer.Tick += DebounceTimer_Tick;
         }
+
         private void DebounceTimer_Tick(object sender, EventArgs e)
         {
             debounceTimer.Stop();
             string keyword = _debounceKeyword;
             string searchType = _currentSearchType.ToString();
-            var filtered = _customerDA.SearchCustomers(keyword, searchType, 10);
+            //var filtered = CustomerDA.Instance.SearchCustomers(keyword, searchType, 10);
+            //dgv_customer.DataSource = filtered;
+            if (CustomerDA.Instance == null)
+            {
+                MessageBoxHelper.ShowError("Lỗi", "Không thể truy cập CustomerDA.");
+                return;
+            }
+            var filtered = CustomerDA.Instance.SearchCustomers(keyword, searchType, 10) ?? new List<CustomerDTO>();
             dgv_customer.DataSource = filtered;
         }
     }

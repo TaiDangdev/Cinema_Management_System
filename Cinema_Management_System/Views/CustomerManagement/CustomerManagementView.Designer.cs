@@ -30,32 +30,30 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.xuatEXEL_bnt = new Guna.UI2.WinForms.Guna2GradientButton();
             this.luachontim_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.dgv_customer = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioitinh_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaysinh_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayDK_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diem_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.chucnang_menu = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.chỉnhSửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dulieutim_txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.canhbao_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Them_bnt = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GroupBox1.SuspendLayout();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.dgv_customer = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.diem_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayDK_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaysinh_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sdt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioitinh_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).BeginInit();
-            this.chucnang_menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // xuatEXEL_bnt
@@ -72,7 +70,7 @@
             this.xuatEXEL_bnt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.xuatEXEL_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.xuatEXEL_bnt.ForeColor = System.Drawing.Color.White;
-            this.xuatEXEL_bnt.Location = new System.Drawing.Point(1122, 24);
+            this.xuatEXEL_bnt.Location = new System.Drawing.Point(1105, 24);
             this.xuatEXEL_bnt.Name = "xuatEXEL_bnt";
             this.xuatEXEL_bnt.Size = new System.Drawing.Size(186, 39);
             this.xuatEXEL_bnt.TabIndex = 9;
@@ -87,209 +85,22 @@
             this.luachontim_cbb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.luachontim_cbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.luachontim_cbb.FillColor = System.Drawing.SystemColors.Control;
-            this.luachontim_cbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.luachontim_cbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.luachontim_cbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.luachontim_cbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.luachontim_cbb.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.luachontim_cbb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.luachontim_cbb.ForeColor = System.Drawing.Color.Black;
+            this.luachontim_cbb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.luachontim_cbb.ItemHeight = 30;
             this.luachontim_cbb.Items.AddRange(new object[] {
             "Kiểu tìm kiếm",
             "Tên khách hàng",
             "Số điện thoại"});
-            this.luachontim_cbb.Location = new System.Drawing.Point(555, 27);
+            this.luachontim_cbb.Location = new System.Drawing.Point(575, 27);
             this.luachontim_cbb.Name = "luachontim_cbb";
             this.luachontim_cbb.Size = new System.Drawing.Size(224, 36);
             this.luachontim_cbb.StartIndex = 0;
             this.luachontim_cbb.TabIndex = 7;
             this.luachontim_cbb.SelectedIndexChanged += new System.EventHandler(this.luachontim_cbb_SelectedIndexChanged);
-            // 
-            // guna2GroupBox1
-            // 
-            this.guna2GroupBox1.Controls.Add(this.dgv_customer);
-            this.guna2GroupBox1.FillColor = System.Drawing.Color.Silver;
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(3, 103);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1323, 693);
-            this.guna2GroupBox1.TabIndex = 10;
-            this.guna2GroupBox1.Text = "THÔNG TIN KHÁCH HÀNG";
-            //this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
-            // 
-            // dgv_customer
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_customer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_customer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_customer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_customer.ColumnHeadersHeight = 32;
-            this.dgv_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgv_customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_col,
-            this.Ten_col,
-            this.gioitinh_col,
-            this.sdt_col,
-            this.email_col,
-            this.ngaysinh_col,
-            this.ngayDK_col,
-            this.diem_col,
-            this.Action});
-            this.dgv_customer.ContextMenuStrip = this.chucnang_menu;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_customer.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dgv_customer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_customer.Location = new System.Drawing.Point(6, 42);
-            this.dgv_customer.Name = "dgv_customer";
-            this.dgv_customer.ReadOnly = true;
-            this.dgv_customer.RowHeadersVisible = false;
-            this.dgv_customer.RowHeadersWidth = 51;
-            this.dgv_customer.Size = new System.Drawing.Size(1314, 648);
-            this.dgv_customer.TabIndex = 0;
-            this.dgv_customer.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_customer.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgv_customer.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgv_customer.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgv_customer.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgv_customer.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_customer.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_customer.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgv_customer.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_customer.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dgv_customer.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgv_customer.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgv_customer.ThemeStyle.HeaderStyle.Height = 32;
-            this.dgv_customer.ThemeStyle.ReadOnly = true;
-            this.dgv_customer.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_customer.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_customer.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dgv_customer.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.dgv_customer.ThemeStyle.RowsStyle.Height = 22;
-            this.dgv_customer.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_customer.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgv_customer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_customer_CellContentClick);
-            // 
-            // id_col
-            // 
-            this.id_col.DataPropertyName = "IdFormat";
-            this.id_col.HeaderText = "Mã khách hàng";
-            this.id_col.MinimumWidth = 6;
-            this.id_col.Name = "id_col";
-            this.id_col.ReadOnly = true;
-            // 
-            // Ten_col
-            // 
-            this.Ten_col.DataPropertyName = "FullName";
-            this.Ten_col.FillWeight = 150F;
-            this.Ten_col.HeaderText = "Tên khách hàng";
-            this.Ten_col.MinimumWidth = 6;
-            this.Ten_col.Name = "Ten_col";
-            this.Ten_col.ReadOnly = true;
-            // 
-            // gioitinh_col
-            // 
-            this.gioitinh_col.DataPropertyName = "Gender";
-            this.gioitinh_col.HeaderText = "Giới tính";
-            this.gioitinh_col.MinimumWidth = 6;
-            this.gioitinh_col.Name = "gioitinh_col";
-            this.gioitinh_col.ReadOnly = true;
-            // 
-            // sdt_col
-            // 
-            this.sdt_col.DataPropertyName = "PhoneNumber";
-            this.sdt_col.HeaderText = "SDT";
-            this.sdt_col.MinimumWidth = 6;
-            this.sdt_col.Name = "sdt_col";
-            this.sdt_col.ReadOnly = true;
-            // 
-            // email_col
-            // 
-            this.email_col.DataPropertyName = "Email";
-            this.email_col.HeaderText = "Email";
-            this.email_col.MinimumWidth = 6;
-            this.email_col.Name = "email_col";
-            this.email_col.ReadOnly = true;
-            // 
-            // ngaysinh_col
-            // 
-            this.ngaysinh_col.DataPropertyName = "Birth";
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            this.ngaysinh_col.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ngaysinh_col.HeaderText = "Ngày sinh";
-            this.ngaysinh_col.MinimumWidth = 6;
-            this.ngaysinh_col.Name = "ngaysinh_col";
-            this.ngaysinh_col.ReadOnly = true;
-            // 
-            // ngayDK_col
-            // 
-            this.ngayDK_col.DataPropertyName = "RegDate";
-            dataGridViewCellStyle11.Format = "dd/MM/yyyy";
-            this.ngayDK_col.DefaultCellStyle = dataGridViewCellStyle11;
-            this.ngayDK_col.HeaderText = "Ngày đăng ký";
-            this.ngayDK_col.MinimumWidth = 6;
-            this.ngayDK_col.Name = "ngayDK_col";
-            this.ngayDK_col.ReadOnly = true;
-            // 
-            // diem_col
-            // 
-            this.diem_col.DataPropertyName = "Point";
-            this.diem_col.HeaderText = "Điểm";
-            this.diem_col.MinimumWidth = 6;
-            this.diem_col.Name = "diem_col";
-            this.diem_col.ReadOnly = true;
-            // 
-            // Action
-            // 
-            this.Action.FillWeight = 50F;
-            this.Action.HeaderText = "";
-            this.Action.MinimumWidth = 6;
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
-            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // chucnang_menu
-            // 
-            this.chucnang_menu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.chucnang_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chỉnhSửaToolStripMenuItem,
-            this.xóaToolStripMenuItem});
-            this.chucnang_menu.Name = "guna2ContextMenuStrip1";
-            this.chucnang_menu.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.chucnang_menu.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.chucnang_menu.RenderStyle.ColorTable = null;
-            this.chucnang_menu.RenderStyle.RoundedEdges = true;
-            this.chucnang_menu.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.chucnang_menu.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.chucnang_menu.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.chucnang_menu.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.chucnang_menu.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.chucnang_menu.Size = new System.Drawing.Size(126, 48);
-            // 
-            // chỉnhSửaToolStripMenuItem
-            // 
-            this.chỉnhSửaToolStripMenuItem.Name = "chỉnhSửaToolStripMenuItem";
-            this.chỉnhSửaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.chỉnhSửaToolStripMenuItem.Text = "chỉnh sửa";
-            this.chỉnhSửaToolStripMenuItem.Click += new System.EventHandler(this.chỉnhSửaToolStripMenuItem_Click);
-            // 
-            // xóaToolStripMenuItem
-            // 
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.xóaToolStripMenuItem.Text = "xóa";
             // 
             // dataGridViewImageColumn1
             // 
@@ -310,10 +121,10 @@
             this.dulieutim_txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.dulieutim_txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.dulieutim_txt.FillColor = System.Drawing.SystemColors.Control;
-            this.dulieutim_txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dulieutim_txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.dulieutim_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dulieutim_txt.ForeColor = System.Drawing.Color.Black;
-            this.dulieutim_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dulieutim_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.dulieutim_txt.Location = new System.Drawing.Point(29, 27);
             this.dulieutim_txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dulieutim_txt.Name = "dulieutim_txt";
@@ -327,11 +138,11 @@
             // canhbao_label
             // 
             this.canhbao_label.BackColor = System.Drawing.Color.Transparent;
-            this.canhbao_label.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.canhbao_label.ForeColor = System.Drawing.Color.Red;
-            this.canhbao_label.Location = new System.Drawing.Point(39, 70);
+            this.canhbao_label.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.canhbao_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.canhbao_label.Location = new System.Drawing.Point(29, 70);
             this.canhbao_label.Name = "canhbao_label";
-            this.canhbao_label.Size = new System.Drawing.Size(178, 21);
+            this.canhbao_label.Size = new System.Drawing.Size(183, 19);
             this.canhbao_label.TabIndex = 11;
             this.canhbao_label.Text = "Vui lòng chọn kiểu tìm kiếm!";
             // 
@@ -349,32 +160,210 @@
             this.Them_bnt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.Them_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.Them_bnt.ForeColor = System.Drawing.Color.White;
-            this.Them_bnt.Location = new System.Drawing.Point(858, 24);
+            this.Them_bnt.Location = new System.Drawing.Point(853, 24);
             this.Them_bnt.Name = "Them_bnt";
-            this.Them_bnt.Size = new System.Drawing.Size(201, 39);
+            this.Them_bnt.Size = new System.Drawing.Size(198, 39);
             this.Them_bnt.TabIndex = 13;
             this.Them_bnt.Text = "Thêm Khách hàng";
             this.Them_bnt.Click += new System.EventHandler(this.Them_bnt_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Red;
+            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.add_icon;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(857, 29);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(28, 28);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 14;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
+            // dgv_customer
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgv_customer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_customer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_customer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_customer.ColumnHeadersHeight = 32;
+            this.dgv_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgv_customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_col,
+            this.Ten_col,
+            this.gioitinh_col,
+            this.sdt_col,
+            this.email_col,
+            this.ngaysinh_col,
+            this.ngayDK_col,
+            this.diem_col,
+            this.Action});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_customer.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_customer.GridColor = System.Drawing.Color.White;
+            this.dgv_customer.Location = new System.Drawing.Point(5, 138);
+            this.dgv_customer.Name = "dgv_customer";
+            this.dgv_customer.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_customer.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv_customer.RowHeadersVisible = false;
+            this.dgv_customer.RowHeadersWidth = 51;
+            this.dgv_customer.Size = new System.Drawing.Size(1314, 671);
+            this.dgv_customer.TabIndex = 0;
+            this.dgv_customer.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_customer.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgv_customer.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgv_customer.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgv_customer.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgv_customer.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_customer.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.dgv_customer.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgv_customer.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_customer.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dgv_customer.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgv_customer.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgv_customer.ThemeStyle.HeaderStyle.Height = 32;
+            this.dgv_customer.ThemeStyle.ReadOnly = true;
+            this.dgv_customer.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_customer.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_customer.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dgv_customer.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.dgv_customer.ThemeStyle.RowsStyle.Height = 22;
+            this.dgv_customer.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgv_customer.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_customer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_customer_CellContentClick);
+            // 
+            // Action
+            // 
+            this.Action.FillWeight = 50F;
+            this.Action.HeaderText = "";
+            this.Action.MinimumWidth = 6;
+            this.Action.Name = "Action";
+            this.Action.ReadOnly = true;
+            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // diem_col
+            // 
+            this.diem_col.DataPropertyName = "Point";
+            this.diem_col.HeaderText = "Điểm";
+            this.diem_col.MinimumWidth = 6;
+            this.diem_col.Name = "diem_col";
+            this.diem_col.ReadOnly = true;
+            // 
+            // ngayDK_col
+            // 
+            this.ngayDK_col.DataPropertyName = "RegDate";
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            this.ngayDK_col.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ngayDK_col.HeaderText = "Ngày đăng ký";
+            this.ngayDK_col.MinimumWidth = 6;
+            this.ngayDK_col.Name = "ngayDK_col";
+            this.ngayDK_col.ReadOnly = true;
+            // 
+            // ngaysinh_col
+            // 
+            this.ngaysinh_col.DataPropertyName = "Birth";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.ngaysinh_col.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ngaysinh_col.HeaderText = "Ngày sinh";
+            this.ngaysinh_col.MinimumWidth = 6;
+            this.ngaysinh_col.Name = "ngaysinh_col";
+            this.ngaysinh_col.ReadOnly = true;
+            // 
+            // email_col
+            // 
+            this.email_col.DataPropertyName = "Email";
+            this.email_col.HeaderText = "Email";
+            this.email_col.MinimumWidth = 6;
+            this.email_col.Name = "email_col";
+            this.email_col.ReadOnly = true;
+            // 
+            // sdt_col
+            // 
+            this.sdt_col.DataPropertyName = "PhoneNumber";
+            this.sdt_col.HeaderText = "SDT";
+            this.sdt_col.MinimumWidth = 6;
+            this.sdt_col.Name = "sdt_col";
+            this.sdt_col.ReadOnly = true;
+            // 
+            // gioitinh_col
+            // 
+            this.gioitinh_col.DataPropertyName = "Gender";
+            this.gioitinh_col.HeaderText = "Giới tính";
+            this.gioitinh_col.MinimumWidth = 6;
+            this.gioitinh_col.Name = "gioitinh_col";
+            this.gioitinh_col.ReadOnly = true;
+            // 
+            // Ten_col
+            // 
+            this.Ten_col.DataPropertyName = "FullName";
+            this.Ten_col.FillWeight = 150F;
+            this.Ten_col.HeaderText = "Tên khách hàng";
+            this.Ten_col.MinimumWidth = 6;
+            this.Ten_col.Name = "Ten_col";
+            this.Ten_col.ReadOnly = true;
+            // 
+            // id_col
+            // 
+            this.id_col.DataPropertyName = "IdFormat";
+            this.id_col.HeaderText = "Mã khách hàng";
+            this.id_col.MinimumWidth = 6;
+            this.id_col.Name = "id_col";
+            this.id_col.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(5, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
             // CustomerManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgv_customer);
+            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.Them_bnt);
             this.Controls.Add(this.canhbao_label);
-            this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.xuatEXEL_bnt);
             this.Controls.Add(this.luachontim_cbb);
             this.Controls.Add(this.dulieutim_txt);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "CustomerManagementView";
-            this.Size = new System.Drawing.Size(1329, 799);
+            this.Size = new System.Drawing.Size(1329, 838);
             this.Load += new System.EventHandler(this.CustomerManagementView_Load);
-            this.guna2GroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).EndInit();
-            this.chucnang_menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,14 +373,11 @@
         private Guna.UI2.WinForms.Guna2GradientButton xuatEXEL_bnt;
         private Guna.UI2.WinForms.Guna2ComboBox luachontim_cbb;
         private Guna.UI2.WinForms.Guna2TextBox dulieutim_txt;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgv_customer;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private Guna.UI2.WinForms.Guna2ContextMenuStrip chucnang_menu;
-        private System.Windows.Forms.ToolStripMenuItem chỉnhSửaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2HtmlLabel canhbao_label;
         private Guna.UI2.WinForms.Guna2GradientButton Them_bnt;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgv_customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioitinh_col;
@@ -401,5 +387,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayDK_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn diem_col;
         private System.Windows.Forms.DataGridViewButtonColumn Action;
+        private System.Windows.Forms.Label label1;
     }
 }

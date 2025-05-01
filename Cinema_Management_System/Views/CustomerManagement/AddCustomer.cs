@@ -1,74 +1,117 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.Models.DAOs;
+using Guna.UI2.WinForms;
+using Cinema_Management_System.Views.MessageBox;
 
 namespace Cinema_Management_System.Views.CustomerManagement
 {
     public partial class AddCustomer : Form
     {
-        private readonly CustomerDA _customerDA = new CustomerDA();
+        private Guna2ShadowForm shadowForm;
 
         public AddCustomer()
         {
             InitializeComponent();
+            SetupUI();
         }
 
-        private void AddCustomer_Load(object sender, EventArgs e)
+        private void SetupUI()
         {
-            TenKH_txt.Focus();
             tenKH_error.Visible = false;
             sdt_error.Visible = false;
             email_error.Visible = false;
             gioitinh_error.Visible = false;
-            ngaysinh_date.MaxDate = DateTime.Today; // Không cho chọn ngày sau hôm nay
-
+            ngaysinh_date.MaxDate = DateTime.Today;
+            DragHelper.EnableDrag(this, control_Panel);
+            shadowForm = new Guna2ShadowForm
+            {
+                ShadowColor = Color.Black,
+                BorderRadius = 20
+            };
+            shadowForm.SetShadowForm(this);
         }
 
+        private void AddCustomer_Load(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new Action(() => TenKH_txt.Focus()));
+        }
 
+        private void TenKH_txt_TextChanged_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TenKH_txt.Text))
+            {
+                tenKH_error.Text = "*Vui lòng nhập tên khách hàng!";
+                tenKH_error.Visible = true;
+            }
+            else if
+             (!string.IsNullOrWhiteSpace(TenKH_txt.Text))
+                tenKH_error.Visible = false;
+        }
 
-        private void xacnhan_bnt_Click(object sender, EventArgs e)
+        private void SDT_txt_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(SDT_txt.Text) || !System.Text.RegularExpressions.Regex.IsMatch(SDT_txt.Text, @"^0\d{9}$"))
+            {
+                sdt_error.Text = "*SĐT phải gồm 10 chữ số và bắt đầu bằng 0!";
+                sdt_error.Visible = true;
+            }
+
+            else if (System.Text.RegularExpressions.Regex.IsMatch(SDT_txt.Text, @"^0\d{9}$"))
+                sdt_error.Visible = false;
+        }
+
+        private void email_txt_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(email_error.Text) || !System.Text.RegularExpressions.Regex.IsMatch(email_txt.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|vn)$"))
+            {
+                email_error.Text = "*Email không hợp lệ!";
+                email_error.Visible = true;
+            }
+            else email_error.Visible = false;
+        }
+
+        private void Gender_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radnam.Checked || radnu.Checked)
+            {
+                gioitinh_error.Visible = false;
+            }
+        }
+
+        private void xacnhan_bnt_Click_1(object sender, EventArgs e)
         {
             bool isValid = true;
 
-            // Kiểm tra tên khách hàng
             if (string.IsNullOrWhiteSpace(TenKH_txt.Text))
             {
-                tenKH_error.Text = "Vui lòng nhập tên khách hàng!";
+                tenKH_error.Text = "*Vui lòng nhập tên khách hàng!";
                 tenKH_error.Visible = true;
                 isValid = false;
             }
 
-            // Kiểm tra số điện thoại
             if (string.IsNullOrWhiteSpace(SDT_txt.Text) ||
                 !System.Text.RegularExpressions.Regex.IsMatch(SDT_txt.Text, @"^0\d{9}$"))
             {
-                sdt_error.Text = "SĐT phải gồm 10 chữ số và bắt đầu bằng 0!";
+                sdt_error.Text = "*SĐT phải gồm 10 chữ số và bắt đầu bằng 0!";
                 sdt_error.Visible = true;
                 isValid = false;
             }
 
-            // Kiểm tra email
             if (string.IsNullOrWhiteSpace(email_txt.Text) ||
                 !System.Text.RegularExpressions.Regex.IsMatch(email_txt.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|vn|yahoo)$"))
             {
-                email_error.Text = "Email không hợp lệ!";
+                email_error.Text = "*Email không hợp lệ!";
                 email_error.Visible = true;
                 isValid = false;
             }
 
-            // kiểm tra giới tính
             if (!radnam.Checked && !radnu.Checked)
             {
 
-                gioitinh_error.Text = "Vui lòng chọn giới tính!";
+                gioitinh_error.Text = "*Vui lòng chọn giới tính!";
                 gioitinh_error.Visible = true;
                 isValid = false;
             }
@@ -88,72 +131,21 @@ namespace Cinema_Management_System.Views.CustomerManagement
             };
 
 
-            if (_customerDA.AddCustomer(customer))
+            if (CustomerDA.Instance.AddCustomer(customer))
             {
-                System.Windows.Forms.MessageBox.Show("Thêm khách hàng thành công!");
+                MessageBoxHelper.ShowSuccess("Thông báo","Thêm khách hàng thành công!");
                 this.Close();
             }
-
         }
 
-        private void HUY_bnt_Click(object sender, EventArgs e)
+        private void HUY_bnt_Click_1(object sender, EventArgs e)
         {
-            DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có chắc chắn muốn hủy!",
-                                                    "Thông báo",
-                                                    MessageBoxButtons.YesNo,
-                                                    MessageBoxIcon.Question);
+            DialogResult result = MessageBoxHelper.ShowQuestion("Thông báo", "Bạn có chắc chắn muốn hủy?");
             if (result == DialogResult.Yes)
             {
                 this.Close();
 
             }
-        }
-
-        private void TenKH_txt_TextChanged_1(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(TenKH_txt.Text))
-            {
-                tenKH_error.Text = "Vui lòng nhập tên khách hàng!";
-                tenKH_error.Visible = true;
-            }
-            else if
-             (!string.IsNullOrWhiteSpace(TenKH_txt.Text))
-                tenKH_error.Visible = false;
-        }
-
-        private void SDT_txt_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(SDT_txt.Text) || !System.Text.RegularExpressions.Regex.IsMatch(SDT_txt.Text, @"^0\d{9}$"))
-            {
-                sdt_error.Text = "SĐT phải gồm 10 chữ số và bắt đầu bằng 0!";
-                sdt_error.Visible = true;
-            }
-
-            else if (System.Text.RegularExpressions.Regex.IsMatch(SDT_txt.Text, @"^0\d{9}$"))
-                sdt_error.Visible = false;
-        }
-
-        private void email_txt_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(email_error.Text) || !System.Text.RegularExpressions.Regex.IsMatch(email_txt.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|vn)$"))
-            {
-                email_error.Text = "Email không hợp lệ!";
-                email_error.Visible = true;
-            }
-            else email_error.Visible = false;
-        }
-
-        private void Gender_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radnam.Checked || radnu.Checked)
-            {
-                gioitinh_error.Visible = false;
-            }
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
