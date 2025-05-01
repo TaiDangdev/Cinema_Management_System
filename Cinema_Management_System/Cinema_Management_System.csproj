@@ -205,6 +205,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -399,6 +400,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>reportBillSale.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Statistics\StatisticsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Statistics\StatisticsView.Designer.cs">
+      <DependentUpon>StatisticsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Statistics\StatisticsView.cs">
       <SubType>UserControl</SubType>
@@ -683,6 +690,7 @@
     <Folder Include="ViewModels\VoucherManagement\" />
     <Folder Include="Views\StaffForm\" />
     <Folder Include="Views\StaffManagement\" />
+    <Folder Include="Views\VoucherManagement\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\icons\film-reel.png" />

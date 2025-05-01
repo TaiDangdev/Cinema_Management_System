@@ -313,5 +313,10 @@ namespace Cinema_Management_System.Views.CustomerManagement
             var filtered = CustomerDA.Instance.SearchCustomers(keyword, searchType, 10) ?? new List<CustomerDTO>();
             dgv_customer.DataSource = filtered;
         }
+
+        private void chucnang_menu_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

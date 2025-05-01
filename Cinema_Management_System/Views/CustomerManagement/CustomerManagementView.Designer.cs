@@ -183,6 +183,10 @@
             // 
             // dgv_customer
             // 
+            this.dgv_customer.AllowUserToAddRows = false;
+            this.dgv_customer.AllowUserToDeleteRows = false;
+            this.dgv_customer.AllowUserToResizeColumns = false;
+            this.dgv_customer.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgv_customer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_customer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
