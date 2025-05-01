@@ -46,6 +46,7 @@
             this.showtimeManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.filmManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.usercontrol_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.productManagementView1 = new Cinema_Management_System.Views.ProductManagement.ProductManagementView();
             this.movieManagementView1 = new Cinema_Management_System.Views.MovieManagement.MovieManagementView();
             this.customerManagementView1 = new Cinema_Management_System.Views.CustomerManagement.CustomerManagementView();
             this.aboutAccount_Form1 = new Cinema_Management_System.AboutAccount_Form();
@@ -77,9 +78,9 @@
             this.guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.guna2ControlBox2.HoverState.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(1429, 8);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(1435, 4);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox2.Size = new System.Drawing.Size(51, 39);
             this.guna2ControlBox2.TabIndex = 5;
             // 
             // guna2ControlBox1
@@ -89,9 +90,9 @@
             this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1480, 8);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1485, 4);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(52, 39);
             this.guna2ControlBox1.TabIndex = 4;
             this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
@@ -147,7 +148,7 @@
             this.avatar_pic.TabIndex = 13;
             this.avatar_pic.TabStop = false;
             this.avatar_pic.UseTransparentBackground = true;
-            this.avatar_pic.Click += new System.EventHandler(this.avatar_pic_Click);
+            //this.avatar_pic.Click += new System.EventHandler(this.avatar_pic_Click);
             // 
             // name_Txt
             // 
@@ -370,6 +371,7 @@
             // 
             // usercontrol_Panel
             // 
+            this.usercontrol_Panel.Controls.Add(this.productManagementView1);
             this.usercontrol_Panel.Controls.Add(this.movieManagementView1);
             this.usercontrol_Panel.Controls.Add(this.customerManagementView1);
             this.usercontrol_Panel.Controls.Add(this.aboutAccount_Form1);
@@ -379,6 +381,16 @@
             this.usercontrol_Panel.Name = "usercontrol_Panel";
             this.usercontrol_Panel.Size = new System.Drawing.Size(1329, 799);
             this.usercontrol_Panel.TabIndex = 2;
+            // 
+            // productManagementView1
+            // 
+            this.productManagementView1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.productManagementView1.Location = new System.Drawing.Point(0, 0);
+            this.productManagementView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.productManagementView1.Name = "productManagementView1";
+            this.productManagementView1.Size = new System.Drawing.Size(1329, 838);
+            this.productManagementView1.TabIndex = 4;
+            this.productManagementView1.Load += new System.EventHandler(this.productManagementView1_Load);
             // 
             // movieManagementView1
             // 
@@ -474,9 +486,7 @@
         private Views.MovieManagement.MovieManagementView movieManagementView1;
         private Views.CustomerManagement.CustomerManagementView customerManagementView1;
         private AboutAccount_Form aboutAccount_Form1;
-        //private Views.MovieManagement.MovieManagementView movieManagementView1;
-        //private AboutAccount_Form aboutAccount_Form2;
-        //private Views.ShowTimeManagement.ShowTimeManagementyForm showTimeManagementyForm1;
+        private Views.ProductManagement.ProductManagementView productManagementView1;
     }
 }
 

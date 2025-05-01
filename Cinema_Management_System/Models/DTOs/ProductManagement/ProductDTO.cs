@@ -15,7 +15,6 @@ namespace Cinema_Management_System.Models.DTOs
         public string Name { get; set; }
         public Bitmap ImageSource { get; set; }
         public int Quantity { get; set; }
-
         public int PurchasePrice { get; set; }
         public int? Price { get; set; }
         public int Type { get; set; }

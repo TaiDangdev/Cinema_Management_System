@@ -28,7 +28,6 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
 
         public void LoadSeatForSowTime()
         {
-            //System.Windows.Forms.MessageBox.Show("hahaha");
             this.FLP_SeatForShowTime.Controls.Clear();
             
             var seatList = SeatForShowTimeDA.Instance.GetSeatByShowTimes(showTimeselect);

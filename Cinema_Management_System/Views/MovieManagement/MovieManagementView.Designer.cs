@@ -83,6 +83,7 @@
             this.moviePanel.Name = "moviePanel";
             this.moviePanel.Size = new System.Drawing.Size(1278, 647);
             this.moviePanel.TabIndex = 5;
+            //this.moviePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.moviePanel_Paint);
             // 
             // searchMovie_Txt
             // 
@@ -154,6 +155,7 @@
             this.guna2PictureBox1.TabIndex = 4;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
+            //this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // notification_Panel
             // 

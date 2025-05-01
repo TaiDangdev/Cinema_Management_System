@@ -54,7 +54,7 @@ namespace Cinema_Management_System
                 //customerManageForm1,
                 //statisticalForm1,
                 //voucherForm1,
-                //productManageForm1
+                productManagementView1,
                 showTimeManagementyForm1
             };
         }
@@ -120,7 +120,8 @@ namespace Cinema_Management_System
 
         private void productManage_Btn_Click(object sender, EventArgs e)
         {
-            //ShowSubForm(productManageForm1);
+            SelectSidebarButton(productManage_Btn);
+            ShowSubForm(productManagementView1);
         }
 
         private void voucher_Btn_Click(object sender, EventArgs e)
@@ -192,9 +193,14 @@ namespace Cinema_Management_System
             }
         }
 
-        private void avatar_pic_Click(object sender, EventArgs e)
+        private void movieManagementView1_Load(object sender, EventArgs e)
         {
-            NotificationHelper.showWarning("Cảnh báo", "Tôi là Trương Nhất Nguyên");
+
+        }
+
+        private void productManagementView1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
