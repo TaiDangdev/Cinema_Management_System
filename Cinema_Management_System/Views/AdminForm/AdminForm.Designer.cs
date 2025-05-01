@@ -46,11 +46,11 @@
             this.showtimeManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.filmManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.usercontrol_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.productManagementView1 = new Cinema_Management_System.Views.ProductManagement.ProductManagementView();
             this.movieManagementView1 = new Cinema_Management_System.Views.MovieManagement.MovieManagementView();
             this.customerManagementView1 = new Cinema_Management_System.Views.CustomerManagement.CustomerManagementView();
             this.aboutAccount_Form1 = new Cinema_Management_System.AboutAccount_Form();
             this.showTimeManagementyForm1 = new Cinema_Management_System.Views.ShowTimeManagement.ShowTimeManagementyForm();
+            this.productManagementView1 = new Cinema_Management_System.Views.ProductManagement.ProductManagementView();
             this.control_Panel.SuspendLayout();
             this.slidebar_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar_pic)).BeginInit();
@@ -102,7 +102,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(58, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 15);
+            this.label2.Size = new System.Drawing.Size(155, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Dành cho quản trị viên";
             // 
@@ -113,7 +113,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label1.Location = new System.Drawing.Point(46, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.Size = new System.Drawing.Size(110, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "StarCinema\r\n";
             // 
@@ -148,7 +148,6 @@
             this.avatar_pic.TabIndex = 13;
             this.avatar_pic.TabStop = false;
             this.avatar_pic.UseTransparentBackground = true;
-            //this.avatar_pic.Click += new System.EventHandler(this.avatar_pic_Click);
             // 
             // name_Txt
             // 
@@ -157,7 +156,7 @@
             this.name_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.name_Txt.Location = new System.Drawing.Point(70, 141);
             this.name_Txt.Name = "name_Txt";
-            this.name_Txt.Size = new System.Drawing.Size(70, 21);
+            this.name_Txt.Size = new System.Drawing.Size(89, 28);
             this.name_Txt.TabIndex = 14;
             this.name_Txt.Text = "Tên user";
             // 
@@ -382,16 +381,6 @@
             this.usercontrol_Panel.Size = new System.Drawing.Size(1329, 799);
             this.usercontrol_Panel.TabIndex = 2;
             // 
-            // productManagementView1
-            // 
-            this.productManagementView1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.productManagementView1.Location = new System.Drawing.Point(0, 0);
-            this.productManagementView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.productManagementView1.Name = "productManagementView1";
-            this.productManagementView1.Size = new System.Drawing.Size(1329, 838);
-            this.productManagementView1.TabIndex = 4;
-            this.productManagementView1.Load += new System.EventHandler(this.productManagementView1_Load);
-            // 
             // movieManagementView1
             // 
             this.movieManagementView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -434,9 +423,19 @@
             this.showTimeManagementyForm1.Size = new System.Drawing.Size(1329, 799);
             this.showTimeManagementyForm1.TabIndex = 2;
             // 
+            // productManagementView1
+            // 
+            this.productManagementView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productManagementView1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.productManagementView1.Location = new System.Drawing.Point(0, 0);
+            this.productManagementView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.productManagementView1.Name = "productManagementView1";
+            this.productManagementView1.Size = new System.Drawing.Size(1329, 799);
+            this.productManagementView1.TabIndex = 6;
+            // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1540, 845);
@@ -487,6 +486,7 @@
         private Views.CustomerManagement.CustomerManagementView customerManagementView1;
         private AboutAccount_Form aboutAccount_Form1;
         private Views.ProductManagement.ProductManagementView productManagementView1;
+        //private Views.ProductManagement.ProductManagementView productManagementView1;
     }
 }
 

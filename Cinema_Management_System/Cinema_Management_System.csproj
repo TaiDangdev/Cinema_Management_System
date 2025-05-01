@@ -1,12 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC</SSDTPath>
-  </PropertyGroup>
-  <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -352,6 +346,60 @@
     <Compile Include="Views\MovieManagement\MovieManagementView.Designer.cs">
       <DependentUpon>MovieManagementView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProductManagement\AddProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManagement\AddProductView.Designer.cs">
+      <DependentUpon>AddProductView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManagement\BillSaleReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillSaleReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManagement\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManagement\DataSet1.Designer.cs">
+      <DependentUpon>DataSet1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManagement\EditProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManagement\EditProductView.Designer.cs">
+      <DependentUpon>EditProductView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManagement\EditProductViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManagement\EditProductViews.Designer.cs">
+      <DependentUpon>EditProductViews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManagement\ImportProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManagement\ImportProductView.Designer.cs">
+      <DependentUpon>ImportProductView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManagement\PrintBillSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManagement\PrintBillSale.Designer.cs">
+      <DependentUpon>PrintBillSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManagement\ProductManagementView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManagement\ProductManagementView.Designer.cs">
+      <DependentUpon>ProductManagementView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManagement\reportBillSale.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportBillSale.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\Statistics\StatisticsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -370,30 +418,6 @@
       <DependentUpon>BillShowTimeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ShowTimeManagementVM\ShowTimeViewModels.cs" />
-    <Compile Include="Views\ProductManagement\AddProductView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ProductManagement\AddProductView.Designer.cs">
-      <DependentUpon>AddProductView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProductManagement\EditProductView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ProductManagement\EditProductView.Designer.cs">
-      <DependentUpon>EditProductView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProductManagement\ImportProductView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ProductManagement\ImportProductView.Designer.cs">
-      <DependentUpon>ImportProductView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProductManagement\ProductManagementView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ProductManagement\ProductManagementView.Designer.cs">
-      <DependentUpon>ProductManagementView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\ShowTimeManagement\AddShowTimeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -498,14 +522,28 @@
     <EmbeddedResource Include="Views\ProductManagement\AddProductView.resx">
       <DependentUpon>AddProductView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManagement\BillSaleReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BillSaleReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductManagement\EditProductView.resx">
       <DependentUpon>EditProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManagement\EditProductViews.resx">
+      <DependentUpon>EditProductViews.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductManagement\ImportProductView.resx">
       <DependentUpon>ImportProductView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManagement\PrintBillSale.resx">
+      <DependentUpon>PrintBillSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductManagement\ProductManagementView.resx">
       <DependentUpon>ProductManagementView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManagement\reportBillSale.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportBillSale1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ShowTimeManagement\AddShowTimeForm.resx">
       <DependentUpon>AddShowTimeForm.cs</DependentUpon>
@@ -551,6 +589,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Views\ProductManagement\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Views\ProductManagement\DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Views\ProductManagement\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Views\ShowTimeManagement\BillSeatsForShowTimes.xsc">
       <DependentUpon>BillSeatsForShowTimes.xsd</DependentUpon>
     </None>
@@ -632,10 +681,8 @@
     <Folder Include="ViewModels\StaffManagementVM\" />
     <Folder Include="ViewModels\StatisticsVM\" />
     <Folder Include="ViewModels\VoucherManagement\" />
-    <Folder Include="Views\ProductManagement\" />
     <Folder Include="Views\StaffForm\" />
     <Folder Include="Views\StaffManagement\" />
-    <Folder Include="Views\VoucherManagement\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\icons\film-reel.png" />
@@ -700,20 +747,6 @@
     <None Include="Resources\add.png" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup Condition="$(VisualStudioVersion) == '17.0'">
-    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3124.44\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3124.44\build\Microsoft.Web.WebView2.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -726,7 +759,7 @@
   <PropertyGroup>
     <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
   </PropertyGroup>
-  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' != ''" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' == ''" />
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="False" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="False" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
 </Project>

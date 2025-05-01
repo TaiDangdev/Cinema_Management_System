@@ -1,4 +1,6 @@
-﻿namespace Cinema_Management_System.Views.ProductManagement
+﻿using System.Windows.Forms;
+
+namespace Cinema_Management_System.Views.ProductManagement
 {
     partial class ProductManagementView
     {
@@ -327,7 +329,6 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1329, 139);
             this.guna2Panel3.TabIndex = 13;
-            this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
             // 
             // productPanel
             // 
@@ -396,5 +397,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private PaintEventHandler guna2Panel3_Paint;
     }
 }

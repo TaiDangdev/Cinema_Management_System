@@ -750,16 +750,6 @@ namespace Cinema_Management_System.Views.ProductManagement
             }
         }
 
-        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void addProduct_Btn_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms["AddProductView"] == null)
@@ -838,7 +828,6 @@ namespace Cinema_Management_System.Views.ProductManagement
             totalAmount = 0; // Đặt lại tổng tiền
             guna2HtmlLabel1.Text = $"Tổng tiền: {totalAmount:N0} VNĐ"; // Cập nhật lại label tổng tiền
             LoadProducts();
-
         }
 
         private void searcProduct_Txt_TextChanged(object sender, EventArgs e)
