@@ -231,7 +231,7 @@
             this.Tongquat_tab.Size = new System.Drawing.Size(1315, 745);
             this.Tongquat_tab.TabIndex = 2;
             this.Tongquat_tab.Text = "Tổng quát";
-            this.Tongquat_tab.Click += new System.EventHandler(this.tabPage3_Click);
+            //this.Tongquat_tab.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // guna2CustomGradientPanel2
             // 
@@ -376,7 +376,7 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(744, 108);
             this.guna2GroupBox1.TabIndex = 0;
             this.guna2GroupBox1.Text = "Khoảng thời gian";
-            this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
+            //this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
             // 
             // guna2DateTimePicker2
             // 
@@ -1171,7 +1171,7 @@
             this.Controls.Add(this.guna2TabControl1);
             this.Name = "StatisticsView";
             this.Size = new System.Drawing.Size(1329, 799);
-            this.Load += new System.EventHandler(this.StatisticsView_Load);
+            //this.Load += new System.EventHandler(this.StatisticsView_Load);
             this.guna2TabControl1.ResumeLayout(false);
             this.Tongquat_tab.ResumeLayout(false);
             this.guna2CustomGradientPanel2.ResumeLayout(false);

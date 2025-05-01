@@ -48,12 +48,8 @@ namespace Cinema_Management_System
                 aboutAccount_Form1,
                 movieManagementView1,
                 customerManagementView1,
-                //movieManageForm1,
-                //showtimeManageForm1,
-                //staffManageForm1,
-                //customerManageForm1,
-                //statisticalForm1,
-                //voucherForm1,
+                staffManagementView1,
+                statisticsView1,
                 productManagementView1,
                 showTimeManagementyForm1
             };
@@ -109,7 +105,8 @@ namespace Cinema_Management_System
 
         private void staffManage_Btn_Click(object sender, EventArgs e)
         {
-            //ShowSubForm(staffManageForm1);
+            SelectSidebarButton(staffManage_Btn);
+            ShowSubForm(staffManagementView1);
         }
 
         private void customerManage_Btn_Click(object sender, EventArgs e)
@@ -124,24 +121,10 @@ namespace Cinema_Management_System
             ShowSubForm(productManagementView1);
         }
 
-        private void voucher_Btn_Click(object sender, EventArgs e)
-        {
-            //ShowSubForm(voucherForm1);
-        }
-
         private void thongKe_Btn_Click(object sender, EventArgs e)
         {
-            //ShowSubForm(statisticalForm1);
-        }
-
-        private void customerManagementView1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customerManagementView1_Load_1(object sender, EventArgs e)
-        {
-
+            SelectSidebarButton(thongKe_Btn);
+            ShowSubForm(statisticsView1);
         }
 
         private void AdminForm_Load(object sender, EventArgs e)
@@ -191,16 +174,8 @@ namespace Cinema_Management_System
             {
                 MessageBox.Show("ahaha: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void movieManagementView1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productManagementView1_Load(object sender, EventArgs e)
-        {
-
+            SelectSidebarButton(filmManage_Btn);
+            ShowSubForm(movieManagementView1);
         }
     }
 }

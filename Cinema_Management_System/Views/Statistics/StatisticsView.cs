@@ -17,28 +17,13 @@ namespace Cinema_Management_System.Views.Statistics
             InitializeComponent();
         }
 
-        private void StatisticsView_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2GroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2TabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
             int[] allowedTabs = { 2, 3, 4 };
-            if(!allowedTabs.Contains(e.TabPageIndex) )
+            if (!allowedTabs.Contains(e.TabPageIndex))
             {
-                e.Cancel= true;
-            }    
+                e.Cancel = true;
+            }
         }
     }
 }

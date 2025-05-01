@@ -401,11 +401,23 @@
       <DependentUpon>reportBillSale.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\Statistics\StatisticsView.cs">
+    <Compile Include="Views\StaffManagement\AddStaffView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StaffManagement\AddStaffView.Designer.cs">
+      <DependentUpon>AddStaffView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StaffManagement\EditStaffView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StaffManagement\EditStaffView.Designer.cs">
+      <DependentUpon>EditStaffView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StaffManagement\StaffManagementView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Statistics\StatisticsView.Designer.cs">
-      <DependentUpon>StatisticsView.cs</DependentUpon>
+    <Compile Include="Views\StaffManagement\StaffManagementView.Designer.cs">
+      <DependentUpon>StaffManagementView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Statistics\StatisticsView.cs">
       <SubType>UserControl</SubType>
@@ -575,6 +587,12 @@
     <EmbeddedResource Include="Views\ShowTimeManagement\ShowTimeManagementyForm.resx">
       <DependentUpon>ShowTimeManagementyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\StaffManagement\AddStaffView.resx">
+      <DependentUpon>AddStaffView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StaffManagement\StaffManagementView.resx">
+      <DependentUpon>StaffManagementView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Statistics\StatisticsView.resx">
       <DependentUpon>StatisticsView.cs</DependentUpon>
     </EmbeddedResource>
@@ -687,10 +705,7 @@
     <Folder Include="ViewModels\ProductManagement\" />
     <Folder Include="ViewModels\StaffManagementVM\" />
     <Folder Include="ViewModels\StatisticsVM\" />
-    <Folder Include="ViewModels\VoucherManagement\" />
     <Folder Include="Views\StaffForm\" />
-    <Folder Include="Views\StaffManagement\" />
-    <Folder Include="Views\VoucherManagement\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\icons\film-reel.png" />
@@ -735,6 +750,7 @@
     <None Include="assets\movieManagementForm\image_icon.png" />
     <None Include="assets\movieManagementForm\add_icon.png" />
     <None Include="assets\icons8-notification-bell-48.png" />
+    <None Include="assets\file_icon.png" />
     <Content Include="assets\StoryboardMovie\1.jpg" />
     <Content Include="assets\StoryboardMovie\2.jpg" />
     <Content Include="assets\StoryboardMovie\3.jpg" />

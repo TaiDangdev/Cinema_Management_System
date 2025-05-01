@@ -371,15 +371,15 @@
             // 
             // guna2HtmlLabel2
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(25, 55);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(141, 26);
-            this.guna2HtmlLabel2.TabIndex = 42;
-            this.guna2HtmlLabel2.Text = "Tên khách hàng";
+            //this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            //this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            //this.guna2HtmlLabel2.Location = new System.Drawing.Point(25, 55);
+            //this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
+            //this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            //this.guna2HtmlLabel2.Size = new System.Drawing.Size(141, 26);
+            //this.guna2HtmlLabel2.TabIndex = 42;
+            //this.guna2HtmlLabel2.Text = "Tên khách hàng";
             // 
             // AddCustomer
             // 
@@ -432,18 +432,18 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private System.Windows.Forms.Label tenKH_error;
         private Guna.UI2.WinForms.Guna2TextBox TenKH_txt;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        //private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2RadioButton radnam;
+        //private Guna.UI2.WinForms.Guna2RadioButton radnam;
         private Guna.UI2.WinForms.Guna2TextBox email_txt;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2TextBox SDT_txt;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        //private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2RadioButton radnu;
-        private Guna.UI2.WinForms.Guna2TextBox TenKH_txt;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private System.Windows.Forms.Label tenKH_error;
+        //private Guna.UI2.WinForms.Guna2TextBox TenKH_txt;
+        //private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        //private System.Windows.Forms.Label tenKH_error;
         private Guna.UI2.WinForms.Guna2DateTimePicker ngaysinh_date;
         private Guna.UI2.WinForms.Guna2GradientButton xacnhan_bnt;
         private Guna.UI2.WinForms.Guna2GradientButton HUY_bnt;
