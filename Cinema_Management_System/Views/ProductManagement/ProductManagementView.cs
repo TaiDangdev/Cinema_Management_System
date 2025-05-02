@@ -21,6 +21,7 @@ using Cinema_Management_System.ViewModels;
 using Cursors = System.Windows.Forms.Cursors;
 using Guna.UI2.WinForms;
 using System.Drawing.Drawing2D;
+using static Cinema_Management_System.AboutAccount_Form;
 
 
 
@@ -42,7 +43,7 @@ namespace Cinema_Management_System.Views.ProductManagement
         {
             productPanel.Controls.Clear();
 
-            string searchText = searcProduct_Txt.Text.Trim().ToLower(); // Từ khóa tìm kiếm
+            string searchText = searchProduct_Txt.Text.Trim().ToLower(); // Từ khóa tìm kiếm
             string selectedFilter = filterProduct_Cbx.SelectedItem?.ToString(); // Lọc theo loại sản phẩm
 
             List<ProductDTO> products = _product.GetAllProducts(); // Lấy tất cả sản phẩm
@@ -188,8 +189,6 @@ namespace Cinema_Management_System.Views.ProductManagement
         {
             bool productExists = false;
             int availableQuantity = product.Quantity;
-
-            // Loop through the rows of the DataGridView to check if the product is already in the bill
             foreach (DataGridViewRow row in dgv.Rows)
             {
                 // Check if the product name matches
@@ -201,12 +200,12 @@ namespace Cinema_Management_System.Views.ProductManagement
                     // Kiểm tra nếu số lượng muốn thêm vượt quá số lượng có sẵn
                     if (currentQuantity + 1 > availableQuantity)
                     {
-                        System.Windows.Forms.MessageBox.Show($"Không thể thêm. Số lượng sản phẩm '{product.Name}' trong kho chỉ còn {availableQuantity}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return; // Dừng quá trình thêm sản phẩm vào hóa đơn
+                        MessageBoxHelper.ShowInfo("Cảnh báo", $"Không thể thêm. Số lượng sản phẩm '{product.Name}' trong kho chỉ còn {availableQuantity}!");
+                        return;
                     }
 
-                    row.Cells["Column2"].Value = currentQuantity + 1;  // Increase the quantity by 1
-                    totalAmount += (int)product.Price;  // Cập nhật tổng tiền
+                    row.Cells["Column2"].Value = currentQuantity + 1;
+                    totalAmount += (int)product.Price;
                     productExists = true;
                     break;
                 }
@@ -226,8 +225,7 @@ namespace Cinema_Management_System.Views.ProductManagement
                 }
                 else
                 {
-                    // With this corrected line:  
-                    System.Windows.Forms.MessageBox.Show($"Sản phẩm '{product.Name}' hiện không có trong kho!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxHelper.ShowInfo("Thông báo", $"Sản phẩm '{product.Name}' hiện đã hết hàng!");
                 }
             }
 
@@ -297,11 +295,11 @@ namespace Cinema_Management_System.Views.ProductManagement
                     {
                         // Nếu số lượng hiện tại nhỏ hơn số lượng có sẵn trong kho, tăng số lượng
                         dgv.Rows[rowIndex].Cells["Column2"].Value = currentQuantity + 1;
+                        UpdateTotalAmount();
                     }
                     else
-                    {
-                        // Hiển thị thông báo nếu không thể tăng số lượng vượt quá kho
-                        System.Windows.Forms.MessageBox.Show("Không thể tăng số lượng vượt quá số lượng sản phẩm có sẵn trong kho!");
+                    {   
+                        MessageBoxHelper.ShowInfo("Cảnh báo", $"Không thể tăng số lượng sản phẩm '{product.Name}' vượt quá số lượng có sẵn trong kho ({availableQuantity})!");
                     }
                 }
                 else
@@ -309,9 +307,9 @@ namespace Cinema_Management_System.Views.ProductManagement
                     System.Windows.Forms.MessageBox.Show("Sản phẩm không tìm thấy trong cơ sở dữ liệu!");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                System.Windows.Forms.MessageBox.Show("Lỗi: " + ex.Message);
             }
 
         }
@@ -526,10 +524,10 @@ namespace Cinema_Management_System.Views.ProductManagement
         /// </summary>
         private void DeleteProduct(ProductDTO product)
         {
-            DialogResult result = System.Windows.Forms.MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm '{product.Name}' không?",
-                "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
+            //DialogResult result = System.Windows.Forms.MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm '{product.Name}' không?",
+            //    "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //result = MessageBoxHelper.ShowQuestion("Xác nhận xóa", $"Bạn có chắc chắn muốn xóa sản phẩm '{product.Name}' không?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (MessageBoxHelper.ShowQuestion("Xác nhận xóa", $"Bạn có chắc chắn muốn xóa sản phẩm '{product.Name}' không?") == DialogResult.Yes)
             {
                 try
                 {
@@ -785,54 +783,133 @@ namespace Cinema_Management_System.Views.ProductManagement
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            // Duyệt qua các dòng trong DataGridView để giảm số lượng sản phẩm
-            foreach (DataGridViewRow row in dgv.Rows)
+            if (dgv.Rows.Count == 0 || dgv.Rows.Cast<DataGridViewRow>().All(row => row.IsNewRow))
             {
-                string productName = row.Cells["Column1"].Value.ToString(); // Lấy tên sản phẩm
-                int quantity = Convert.ToInt32(row.Cells["Column2"].Value); // Lấy số lượng sản phẩm trong hóa đơn
-                decimal price = Convert.ToDecimal(row.Cells["Column3"].Value); // Lấy giá sản phẩm
+                MessageBoxHelper.ShowInfo("Thông báo", "Giỏ hàng trống, không thể thanh toán!");
+                return;
+            }
 
-                // Tìm sản phẩm trong kho
-                ProductDTO product = _product.GetAllProducts().FirstOrDefault(p => p.Name == productName);
+            // Lấy thông tin nhân viên hiện tại từ CurrentUser
+            int staffId = CurrentUser.StaffId;
+            string staffName = string.Empty;
 
-                if (product != null)
+            // Lấy thông tin nhân viên từ cơ sở dữ liệu bằng staffId
+            using (var db = new ConnectDataContext())
+            {
+                var staff = db.STAFFs.FirstOrDefault(s => s.Id == staffId);
+                if (staff != null)
                 {
-                    // Kiểm tra nếu số lượng trong hóa đơn lớn hơn số lượng có sẵn trong kho
-                    if (quantity > product.Quantity)
-                    {
-                        System.Windows.Forms.MessageBox.Show($"Sản phẩm '{product.Name}' không đủ số lượng trong kho để thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return; // Dừng thanh toán nếu số lượng không đủ
-                    }
-
-                    // Giảm số lượng sản phẩm trong kho
-                    product.Quantity -= quantity;
-
-                    // Cập nhật lại số lượng trong cơ sở dữ liệu (nếu có)
-                    _product.EditProduct(product); // Giả sử phương thức EditProduct cập nhật sản phẩm trong cơ sở dữ liệu
-
-                    // Cập nhật tổng tiền thanh toán nếu cần
-                    // (Chú ý: Cần thêm các bước khác nếu muốn xử lý tổng tiền thanh toán hoặc hóa đơn chi tiết)
-                }
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show($"Sản phẩm '{productName}' không tồn tại trong kho!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    staffName = staff.FullName;
                 }
             }
 
-            // Sau khi thanh toán thành công, hiển thị thông báo và làm mới giao diện
-            System.Windows.Forms.MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (string.IsNullOrEmpty(staffName))
+            {
+                System.Windows.Forms.MessageBox.Show("Không tìm thấy thông tin nhân viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            // Làm mới giao diện (nếu cần)
-            dgv.Rows.Clear(); // Xóa hết sản phẩm trong DataGridView (giả sử đã thanh toán xong)
-            totalAmount = 0; // Đặt lại tổng tiền
-            guna2HtmlLabel1.Text = $"Tổng tiền: {totalAmount:N0} VNĐ"; // Cập nhật lại label tổng tiền
-            LoadProducts();
+            // Lấy ngày giờ hiện tại
+            DateTime billDate = DateTime.Now;
+
+            // Tạo một bản ghi hóa đơn mới
+            Bill_SellProduct newBill = new Bill_SellProduct
+            {
+                Staff_Id = staffId,
+                StaffName = staffName,
+                TotalAmount = (int)totalAmount, // Giả sử totalAmount là decimal, ép kiểu về int để lưu vào cơ sở dữ liệu
+                BillDate = billDate // Gán ngày hiện tại vào BillDate
+            };
+
+            // Chèn vào bảng Bill_SellProduct và lấy ID của hóa đơn mới
+            using (var db = new ConnectDataContext())
+            {
+                db.Bill_SellProducts.InsertOnSubmit(newBill);
+                db.SubmitChanges();
+                int billId = newBill.Id; // Lấy ID của hóa đơn sau khi chèn vào cơ sở dữ liệu
+
+                if (billId > 0)
+                {
+                    // Lặp qua các sản phẩm trong DataGridView và thêm vào bảng BillDetailProduct
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        string productName = row.Cells["Column1"].Value.ToString(); // Lấy tên sản phẩm từ DataGridView
+                        int quantity = Convert.ToInt32(row.Cells["Column2"].Value); // Lấy số lượng từ DataGridView
+                        decimal unitPrice = Convert.ToDecimal(row.Cells["Column3"].Value); // Lấy đơn giá từ DataGridView
+
+                        // Tính tổng tiền cho sản phẩm này
+                        int totalPrice = (int)(quantity * unitPrice);
+
+                        // Chèn vào bảng BillDetailProduct
+                        BillDetailProduct billDetail = new BillDetailProduct
+                        {
+                            Bill_Id = billId,
+                            Product_Id = GetProductIdByName(productName), // Lấy ID sản phẩm từ tên sản phẩm
+                            Quantity = quantity,
+                            UnitPrice = (int)unitPrice,  // Ép kiểu sang int để lưu vào cơ sở dữ liệu
+                            TotalPrice = totalPrice
+                        };
+
+                        db.BillDetailProducts.InsertOnSubmit(billDetail);  // Chèn chi tiết hóa đơn vào cơ sở dữ liệu
+
+                        // Cập nhật số lượng sản phẩm trong kho
+                        UpdateProductQuantityInStock(productName, quantity); // Cập nhật số lượng sản phẩm trong kho
+                    }
+
+                    // Lưu tất cả thay đổi vào cơ sở dữ liệu
+                    db.SubmitChanges();
+
+                    // Hiển thị thông báo thanh toán thành công
+                    MessageBoxHelper.ShowSuccess("Thông báo", "Thanh toán thành công!");
+
+                    // Mở form PrintBillSale để in hóa đơn
+                    PrintBillSale printForm = new PrintBillSale(billId);
+                    printForm.Show(); // Mở form in hóa đơn
+
+                    // Làm mới DataGridView và tổng tiền
+                    dgv.Rows.Clear();  // Xóa các sản phẩm trong DataGridView
+                    totalAmount = 0;   // Đặt lại tổng tiền
+                    guna2HtmlLabel1.Text = $"Tổng tiền: {totalAmount:N0} VNĐ"; // Cập nhật lại label với tổng tiền mới
+                    LoadProducts();    // Tải lại danh sách sản phẩm
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Lỗi khi tạo hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
+        // Phương thức để lấy Product ID từ tên sản phẩm (dùng trong cơ sở dữ liệu hoặc danh sách sản phẩm)
+        private int GetProductIdByName(string productName)
+        {
+            using (var db = new ConnectDataContext())
+            {
+                var product = db.Products.FirstOrDefault(p => p.Name == productName);
+                return product != null ? product.ID : 0;  // Trả về ID của sản phẩm, nếu không tìm thấy thì trả về 0
+            }
+        }
+
+        // Phương thức để cập nhật số lượng sản phẩm trong kho
+        private void UpdateProductQuantityInStock(string productName, int quantitySold)
+        {
+            using (var db = new ConnectDataContext())
+            {
+                var product = db.Products.FirstOrDefault(p => p.Name == productName);
+                if (product != null)
+                {
+                    product.Quantity -= quantitySold;  // Giảm số lượng sản phẩm theo số lượng bán ra
+                    db.SubmitChanges();  // Lưu thay đổi vào cơ sở dữ liệu
+                }
+            }
+        }
         private void searcProduct_Txt_TextChanged(object sender, EventArgs e)
         {
             LoadProducts();
+        }
+
+        private void guna2Panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
