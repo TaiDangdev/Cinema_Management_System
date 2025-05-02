@@ -36,7 +36,7 @@ namespace Cinema_Management_System.Views.ProductManagement
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.filterProduct_Cbx = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.searcProduct_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.searchProduct_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.addProduct_btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.thanhtoan_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -101,28 +101,28 @@ namespace Cinema_Management_System.Views.ProductManagement
             this.filterProduct_Cbx.TabIndex = 7;
             this.filterProduct_Cbx.SelectedIndexChanged += new System.EventHandler(this.filterMovie_Cbx_SelectedIndexChanged);
             // 
-            // searcProduct_Txt
+            // searchProduct_Txt
             // 
-            this.searcProduct_Txt.Animated = true;
-            this.searcProduct_Txt.BorderRadius = 10;
-            this.searcProduct_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searcProduct_Txt.DefaultText = "";
-            this.searcProduct_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.searcProduct_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.searcProduct_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searcProduct_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searcProduct_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.searcProduct_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searcProduct_Txt.ForeColor = System.Drawing.Color.Black;
-            this.searcProduct_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.searcProduct_Txt.Location = new System.Drawing.Point(16, 20);
-            this.searcProduct_Txt.Name = "searcProduct_Txt";
-            this.searcProduct_Txt.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.searcProduct_Txt.PlaceholderText = " Tìm kiếm sản phẩm";
-            this.searcProduct_Txt.SelectedText = "";
-            this.searcProduct_Txt.Size = new System.Drawing.Size(500, 39);
-            this.searcProduct_Txt.TabIndex = 6;
-            this.searcProduct_Txt.TextChanged += new System.EventHandler(this.searcProduct_Txt_TextChanged);
+            this.searchProduct_Txt.Animated = true;
+            this.searchProduct_Txt.BorderRadius = 10;
+            this.searchProduct_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchProduct_Txt.DefaultText = "";
+            this.searchProduct_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchProduct_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchProduct_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchProduct_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchProduct_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.searchProduct_Txt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchProduct_Txt.ForeColor = System.Drawing.Color.Black;
+            this.searchProduct_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.searchProduct_Txt.Location = new System.Drawing.Point(16, 20);
+            this.searchProduct_Txt.Name = "searchProduct_Txt";
+            this.searchProduct_Txt.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.searchProduct_Txt.PlaceholderText = " Tìm kiếm sản phẩm";
+            this.searchProduct_Txt.SelectedText = "";
+            this.searchProduct_Txt.Size = new System.Drawing.Size(500, 39);
+            this.searchProduct_Txt.TabIndex = 6;
+            this.searchProduct_Txt.TextChanged += new System.EventHandler(this.searcProduct_Txt_TextChanged);
             // 
             // addProduct_btn
             // 
@@ -321,7 +321,7 @@ namespace Cinema_Management_System.Views.ProductManagement
             // guna2Panel3
             // 
             this.guna2Panel3.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel3.Controls.Add(this.searcProduct_Txt);
+            this.guna2Panel3.Controls.Add(this.searchProduct_Txt);
             this.guna2Panel3.Controls.Add(this.filterProduct_Cbx);
             this.guna2Panel3.Controls.Add(this.addProduct_btn);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -329,6 +329,7 @@ namespace Cinema_Management_System.Views.ProductManagement
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1329, 139);
             this.guna2Panel3.TabIndex = 13;
+            this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint_1);
             // 
             // productPanel
             // 
@@ -379,7 +380,7 @@ namespace Cinema_Management_System.Views.ProductManagement
         #endregion
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2ComboBox filterProduct_Cbx;
-        private Guna.UI2.WinForms.Guna2TextBox searcProduct_Txt;
+        private Guna.UI2.WinForms.Guna2TextBox searchProduct_Txt;
         private Guna.UI2.WinForms.Guna2GradientButton addProduct_btn;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label2;

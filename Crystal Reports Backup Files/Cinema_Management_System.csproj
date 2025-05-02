@@ -361,6 +361,12 @@
     <Compile Include="Views\ProductManagement\AddProductView.Designer.cs">
       <DependentUpon>AddProductView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProductManagement\BillSaleReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillSaleReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\ProductManagement\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -547,6 +553,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductManagement\AddProductView.resx">
       <DependentUpon>AddProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManagement\BillSaleReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BillSaleReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductManagement\EditProductView.resx">
       <DependentUpon>EditProductView.cs</DependentUpon>
