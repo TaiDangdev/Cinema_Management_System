@@ -72,15 +72,6 @@ namespace Cinema_Management_System.Views.CustomerManagement
 
         private void LoadCustomerData()
         {
-            //try
-            //{
-            //    _allCustomers = CustomerDA.Instance.GetAllCustomer();
-            //    dgv_customer.DataSource = _allCustomers;
-            //}
-            //catch
-            //{
-            //    MessageBoxHelper.ShowError("Lỗi", "Lỗi khi tải danh sách khách hàng");
-            //}
             if (CustomerDA.Instance == null)
             {
                 MessageBoxHelper.ShowError("Lỗi", "Không thể truy cập CustomerDA.");
@@ -312,11 +303,6 @@ namespace Cinema_Management_System.Views.CustomerManagement
             }
             var filtered = CustomerDA.Instance.SearchCustomers(keyword, searchType, 10) ?? new List<CustomerDTO>();
             dgv_customer.DataSource = filtered;
-        }
-
-        private void chucnang_menu_Opening(object sender, CancelEventArgs e)
-        {
-
         }
     }
 }

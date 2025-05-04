@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Cinema_Management_System.Models.DAOs;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +21,7 @@ namespace Cinema_Management_System.Models.DTOs
         public int Salary { get; set; }
         public string Role { get; set; }
         public string NgayVaoLam { get; set; }
-        public BitmapImage ImageSource { get; set; }
+        public Bitmap ImageSource { get; set; }
 
         //phục vụ edit
         public StaffDTO(int id, string fullName, string birth, string gender, string email, string phoneNumber, int salary, string role, string ngayVL)
@@ -34,6 +36,18 @@ namespace Cinema_Management_System.Models.DTOs
             Role = role;
             NgayVaoLam = ngayVL;
             IdFormat = StaffDA.formatID(Id);
+        }
+
+        // phục vụ việc hiển thị datagridview
+        public StaffDTO(int id,string fullName,string gender,string email,string phone,string role)
+        {
+            Id = id;
+            IdFormat = StaffDA.formatID(id);
+            FullName = fullName;
+            Gender = gender;
+            Email = email;
+            PhoneNumber = phone;
+            Role = role;
         }
 
 
@@ -52,7 +66,7 @@ namespace Cinema_Management_System.Models.DTOs
 
 
         //phục vụ phần information và lấy data
-        public StaffDTO(int id, string fullName, string birth, string gender, string email, string phoneNumber, int salary, string role, string ngayVL, BitmapImage imageSource)
+        public StaffDTO(int id, string fullName, string birth, string gender, string email, string phoneNumber, int salary, string role, string ngayVL, Bitmap imageSource)
         {
             Id = id;
             FullName = fullName;
@@ -63,7 +77,7 @@ namespace Cinema_Management_System.Models.DTOs
             Salary = salary;
             Role = role;
             NgayVaoLam = ngayVL;
-            //IdFormat = StaffDA.formatID(Id);
+            IdFormat = StaffDA.formatID(Id);
             ImageSource = imageSource;
         }
     }

@@ -41,15 +41,15 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.luachontim_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.xuatEXEL_bnt = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioitinh_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sdt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaysinh_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.role_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.more_Btn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_staff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -91,8 +91,8 @@
             this.gioitinh_col,
             this.sdt_col,
             this.email_col,
-            this.ngaysinh_col,
-            this.Action});
+            this.role_col,
+            this.more_Btn});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -138,6 +138,7 @@
             this.dgv_staff.ThemeStyle.RowsStyle.Height = 22;
             this.dgv_staff.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_staff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_staff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_staff_CellContentClick);
             // 
             // Them_bnt
             // 
@@ -158,6 +159,7 @@
             this.Them_bnt.Size = new System.Drawing.Size(177, 39);
             this.Them_bnt.TabIndex = 21;
             this.Them_bnt.Text = "Thêm nhân viên";
+            this.Them_bnt.Click += new System.EventHandler(this.Them_bnt_Click);
             // 
             // canhbao_label
             // 
@@ -245,67 +247,7 @@
             this.xuatEXEL_bnt.Size = new System.Drawing.Size(177, 39);
             this.xuatEXEL_bnt.TabIndex = 19;
             this.xuatEXEL_bnt.Text = "Xuất file excel";
-            // 
-            // id_col
-            // 
-            this.id_col.DataPropertyName = "IdFormat";
-            this.id_col.HeaderText = "ID";
-            this.id_col.MinimumWidth = 6;
-            this.id_col.Name = "id_col";
-            this.id_col.ReadOnly = true;
-            // 
-            // Ten_col
-            // 
-            this.Ten_col.DataPropertyName = "FullName";
-            this.Ten_col.FillWeight = 150F;
-            this.Ten_col.HeaderText = "Họ và tên";
-            this.Ten_col.MinimumWidth = 6;
-            this.Ten_col.Name = "Ten_col";
-            this.Ten_col.ReadOnly = true;
-            // 
-            // gioitinh_col
-            // 
-            this.gioitinh_col.DataPropertyName = "Gender";
-            this.gioitinh_col.HeaderText = "Giới tính";
-            this.gioitinh_col.MinimumWidth = 6;
-            this.gioitinh_col.Name = "gioitinh_col";
-            this.gioitinh_col.ReadOnly = true;
-            // 
-            // sdt_col
-            // 
-            this.sdt_col.DataPropertyName = "PhoneNumber";
-            this.sdt_col.HeaderText = "SĐT";
-            this.sdt_col.MinimumWidth = 6;
-            this.sdt_col.Name = "sdt_col";
-            this.sdt_col.ReadOnly = true;
-            // 
-            // email_col
-            // 
-            this.email_col.DataPropertyName = "Email";
-            this.email_col.HeaderText = "Email";
-            this.email_col.MinimumWidth = 6;
-            this.email_col.Name = "email_col";
-            this.email_col.ReadOnly = true;
-            // 
-            // ngaysinh_col
-            // 
-            this.ngaysinh_col.DataPropertyName = "Birth";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            this.ngaysinh_col.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ngaysinh_col.HeaderText = "Chức vụ";
-            this.ngaysinh_col.MinimumWidth = 6;
-            this.ngaysinh_col.Name = "ngaysinh_col";
-            this.ngaysinh_col.ReadOnly = true;
-            // 
-            // Action
-            // 
-            this.Action.FillWeight = 50F;
-            this.Action.HeaderText = "";
-            this.Action.MinimumWidth = 6;
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
-            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.xuatEXEL_bnt.Click += new System.EventHandler(this.xuatEXEL_bnt_Click);
             // 
             // guna2PictureBox2
             // 
@@ -335,6 +277,73 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
+            // id_col
+            // 
+            this.id_col.DataPropertyName = "IdFormat";
+            this.id_col.FillWeight = 23.18797F;
+            this.id_col.HeaderText = "ID";
+            this.id_col.MinimumWidth = 6;
+            this.id_col.Name = "id_col";
+            this.id_col.ReadOnly = true;
+            // 
+            // Ten_col
+            // 
+            this.Ten_col.DataPropertyName = "FullName";
+            this.Ten_col.FillWeight = 34.78196F;
+            this.Ten_col.HeaderText = "Họ và tên";
+            this.Ten_col.MinimumWidth = 6;
+            this.Ten_col.Name = "Ten_col";
+            this.Ten_col.ReadOnly = true;
+            // 
+            // gioitinh_col
+            // 
+            this.gioitinh_col.DataPropertyName = "Gender";
+            this.gioitinh_col.FillWeight = 23.18797F;
+            this.gioitinh_col.HeaderText = "Giới tính";
+            this.gioitinh_col.MinimumWidth = 6;
+            this.gioitinh_col.Name = "gioitinh_col";
+            this.gioitinh_col.ReadOnly = true;
+            // 
+            // sdt_col
+            // 
+            this.sdt_col.DataPropertyName = "PhoneNumber";
+            this.sdt_col.FillWeight = 23.18797F;
+            this.sdt_col.HeaderText = "SĐT";
+            this.sdt_col.MinimumWidth = 6;
+            this.sdt_col.Name = "sdt_col";
+            this.sdt_col.ReadOnly = true;
+            // 
+            // email_col
+            // 
+            this.email_col.DataPropertyName = "Email";
+            this.email_col.FillWeight = 23.18797F;
+            this.email_col.HeaderText = "Email";
+            this.email_col.MinimumWidth = 6;
+            this.email_col.Name = "email_col";
+            this.email_col.ReadOnly = true;
+            // 
+            // role_col
+            // 
+            this.role_col.DataPropertyName = "Role";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.role_col.DefaultCellStyle = dataGridViewCellStyle3;
+            this.role_col.FillWeight = 23.18797F;
+            this.role_col.HeaderText = "Chức vụ";
+            this.role_col.MinimumWidth = 6;
+            this.role_col.Name = "role_col";
+            this.role_col.ReadOnly = true;
+            // 
+            // more_Btn
+            // 
+            this.more_Btn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.more_Btn.FillWeight = 50F;
+            this.more_Btn.HeaderText = "";
+            this.more_Btn.MinimumWidth = 6;
+            this.more_Btn.Name = "more_Btn";
+            this.more_Btn.ReadOnly = true;
+            this.more_Btn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.more_Btn.Width = 86;
+            // 
             // StaffManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -352,6 +361,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "StaffManagementView";
             this.Size = new System.Drawing.Size(1329, 838);
+            this.Load += new System.EventHandler(this.StaffManagementView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_staff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -363,7 +373,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgv_staff;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2GradientButton Them_bnt;
         private Guna.UI2.WinForms.Guna2HtmlLabel canhbao_label;
@@ -371,13 +380,14 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private Guna.UI2.WinForms.Guna2ComboBox luachontim_cbb;
         private Guna.UI2.WinForms.Guna2GradientButton xuatEXEL_bnt;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2DataGridView dgv_staff;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioitinh_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn sdt_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn email_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngaysinh_col;
-        private System.Windows.Forms.DataGridViewButtonColumn Action;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn role_col;
+        private System.Windows.Forms.DataGridViewButtonColumn more_Btn;
     }
 }

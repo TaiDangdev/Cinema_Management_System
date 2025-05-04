@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cinema_Management_System.Models.DTOs;
+using Cinema_Management_System.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +12,8 @@ namespace Cinema_Management_System.Models.DAOs
     {
         ConnectDataContext connect = new ConnectDataContext();
 
+        private static int soLuongChuSo;
+
         private static StaffDA instance;
 
         public static StaffDA Instance
@@ -19,6 +23,115 @@ namespace Cinema_Management_System.Models.DAOs
         }
 
         private StaffDA() { }
+
+        public List<object> GetAllStaff()
+        {
+            return connect.STAFFs.Select(staff => new
+            {
+                IdFormat = formatID(staff.Id,"NV"),
+                FullName = staff.FullName,
+                Gender = staff.Gender,
+                PhoneNumber = staff.PhoneNumber,
+                Email = staff.Email,
+                Role = staff.Role
+            }).Cast<object>().ToList();
+        }
+
+        //public List<StaffDTO> GetAllStaffFullInfo()
+        //{
+        //    return connect.STAFFs.Select(staff => new StaffDTO(
+        //        staff.Id,
+        //        staff.FullName,
+        //        staff.Birth.ToString("dd/MM/yyyy"),
+        //        staff.Gender,
+        //        staff.Email,
+        //        staff.PhoneNumber,
+        //        staff.Salary,
+        //        staff.Role,
+        //        staff.NgayVaoLam.ToString("dd/MM/yyyy"),
+        //        null // Không lấy ImageSource
+        //    )).ToList();
+        //}
+
+        public List<StaffDTO> GetAllStaffFullInfo()
+        {
+            // Lấy dữ liệu thô từ database
+            var staffData = connect.STAFFs.ToList();
+
+            // Định dạng ngày trên bộ nhớ
+            return staffData.Select(staff => new StaffDTO(
+                staff.Id,
+                staff.FullName,
+                staff.Birth.ToString("dd/MM/yyyy"),
+                staff.Gender,
+                staff.Email,
+                staff.PhoneNumber,
+                staff.Salary,
+                staff.Role,
+                staff.NgayVaoLam.ToString("dd/MM/yyyy"),
+                null // Không lấy ImageSource
+            )).ToList();
+        }
+
+        // add 1 staff
+        public int AddStaff(StaffDTO staffDTO)
+        {
+            STAFF staff = new STAFF
+            {
+                FullName = staffDTO.FullName,
+                Birth = string.IsNullOrWhiteSpace(staffDTO.Birth) ? DateTime.MinValue : DateTime.Parse(staffDTO.Birth),
+                Gender = staffDTO.Gender,
+                Email = staffDTO.Email,
+                PhoneNumber = staffDTO.PhoneNumber,
+                Salary = staffDTO.Salary,
+                Role = staffDTO.Role,
+                NgayVaoLam = string.IsNullOrWhiteSpace(staffDTO.NgayVaoLam) ? DateTime.MinValue : DateTime.Parse(staffDTO.NgayVaoLam),
+                ImageSource = staffDTO.ImageSource != null ? ImageVsSQL.BitmapToByteArray(staffDTO.ImageSource) : null
+            };
+
+            connect.STAFFs.InsertOnSubmit(staff);
+            connect.SubmitChanges();
+
+            return staff.Id;
+        }
+
+        public static string formatID(int id, string type = "NV")
+        {
+            string format = "";
+            if (soLuongChuSo < 4)
+            {
+                format = "000";
+            }
+            else
+            {
+                for (int k = 0; k < soLuongChuSo; k++)
+                {
+                    format += "0";
+                }
+            }
+            string ID = id.ToString();
+
+            int i = format.Length - 1;
+            int j = ID.Length - 1;
+            char[] s1 = format.ToCharArray();
+            char[] s2 = ID.ToCharArray();
+            while (i >= 0 && j >= 0)
+            {
+                s1[i--] = s2[j--];
+            }
+
+            format = new string(s1);
+            format = type + format;
+            return format;
+        }
+
+        public int GetIdFromIdFormat(string idFormat)
+        {
+            string idStr = idFormat.Replace("NV", "");
+            return int.Parse(idStr);
+        }
+
+
 
 
     }
