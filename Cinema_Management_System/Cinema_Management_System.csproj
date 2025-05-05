@@ -415,6 +415,12 @@
     <Compile Include="Views\StaffManagement\EditStaffView.Designer.cs">
       <DependentUpon>EditStaffView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\StaffManagement\StaffDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StaffManagement\StaffDetailView.Designer.cs">
+      <DependentUpon>StaffDetailView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\StaffManagement\StaffManagementView.cs">
       <SubType>UserControl</SubType>
     </Compile>
