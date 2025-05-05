@@ -11,7 +11,7 @@
 **Thành Viên Nhóm**
 + 23110273 - Trương Nhất Nguyên - [GitHub](https://github.com/Nnguyen-dev2805)
 + 23110207 - Nguyễn Hoàng Hà - 
-+ 23110222 - Nghiêm Quang Huy
++ 23110222 - Nghiêm Quang Huy - [GitHub](https://github.com/HuyinCP)
 + 23110304 - Đặng Ngọc Tài
 + 23110369 - Nguyễn Tấn Yên
 
