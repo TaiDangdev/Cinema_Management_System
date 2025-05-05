@@ -177,5 +177,10 @@ namespace Cinema_Management_System
             SelectSidebarButton(filmManage_Btn);
             ShowSubForm(movieManagementView1);
         }
+
+        private void statisticsView1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

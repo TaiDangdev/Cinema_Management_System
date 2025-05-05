@@ -46,13 +46,13 @@
             this.showtimeManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.filmManage_Btn = new Guna.UI2.WinForms.Guna2Button();
             this.usercontrol_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.statisticsView1 = new Cinema_Management_System.Views.Statistics.StatisticsView();
+            this.staffManagementView1 = new Cinema_Management_System.Views.StaffManagement.StaffManagementView();
             this.productManagementView1 = new Cinema_Management_System.Views.ProductManagement.ProductManagementView();
             this.movieManagementView1 = new Cinema_Management_System.Views.MovieManagement.MovieManagementView();
             this.customerManagementView1 = new Cinema_Management_System.Views.CustomerManagement.CustomerManagementView();
             this.aboutAccount_Form1 = new Cinema_Management_System.AboutAccount_Form();
             this.showTimeManagementyForm1 = new Cinema_Management_System.Views.ShowTimeManagement.ShowTimeManagementyForm();
-            this.staffManagementView1 = new Cinema_Management_System.Views.StaffManagement.StaffManagementView();
+            this.statisticsView1 = new Cinema_Management_System.Views.Statistics.StatisticsView();
             this.control_Panel.SuspendLayout();
             this.slidebar_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar_pic)).BeginInit();
@@ -372,8 +372,8 @@
             // 
             // usercontrol_Panel
             // 
-            this.usercontrol_Panel.Controls.Add(this.staffManagementView1);
             this.usercontrol_Panel.Controls.Add(this.statisticsView1);
+            this.usercontrol_Panel.Controls.Add(this.staffManagementView1);
             this.usercontrol_Panel.Controls.Add(this.productManagementView1);
             this.usercontrol_Panel.Controls.Add(this.movieManagementView1);
             this.usercontrol_Panel.Controls.Add(this.customerManagementView1);
@@ -385,14 +385,15 @@
             this.usercontrol_Panel.Size = new System.Drawing.Size(1329, 799);
             this.usercontrol_Panel.TabIndex = 2;
             // 
-            // statisticsView1
+            // staffManagementView1
             // 
-            this.statisticsView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statisticsView1.Location = new System.Drawing.Point(0, 0);
-            this.statisticsView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.statisticsView1.Name = "statisticsView1";
-            this.statisticsView1.Size = new System.Drawing.Size(1329, 799);
-            this.statisticsView1.TabIndex = 7;
+            this.staffManagementView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.staffManagementView1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.staffManagementView1.Location = new System.Drawing.Point(0, 0);
+            this.staffManagementView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.staffManagementView1.Name = "staffManagementView1";
+            this.staffManagementView1.Size = new System.Drawing.Size(1329, 799);
+            this.staffManagementView1.TabIndex = 8;
             // 
             // productManagementView1
             // 
@@ -446,15 +447,15 @@
             this.showTimeManagementyForm1.Size = new System.Drawing.Size(1329, 799);
             this.showTimeManagementyForm1.TabIndex = 2;
             // 
-            // staffManagementView1
+            // statisticsView1
             // 
-            this.staffManagementView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.staffManagementView1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.staffManagementView1.Location = new System.Drawing.Point(0, 0);
-            this.staffManagementView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.staffManagementView1.Name = "staffManagementView1";
-            this.staffManagementView1.Size = new System.Drawing.Size(1329, 799);
-            this.staffManagementView1.TabIndex = 8;
+            this.statisticsView1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statisticsView1.Location = new System.Drawing.Point(0, 0);
+            this.statisticsView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.statisticsView1.Name = "statisticsView1";
+            this.statisticsView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statisticsView1.Size = new System.Drawing.Size(1329, 799);
+            this.statisticsView1.TabIndex = 9;
             // 
             // AdminForm
             // 
@@ -509,8 +510,8 @@
         private Views.CustomerManagement.CustomerManagementView customerManagementView1;
         private AboutAccount_Form aboutAccount_Form1;
         private Views.ProductManagement.ProductManagementView productManagementView1;
-        private Views.Statistics.StatisticsView statisticsView1;
         private Views.StaffManagement.StaffManagementView staffManagementView1;
+        private Views.Statistics.StatisticsView statisticsView1;
         //private Views.ProductManagement.ProductManagementView productManagementView1;
     }
 }
