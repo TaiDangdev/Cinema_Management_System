@@ -37,6 +37,5 @@ namespace Cinema_Management_System.ViewModels
                    password.Any(char.IsLower) &&
                    password.Any(char.IsDigit);
         }
-
     }
 }

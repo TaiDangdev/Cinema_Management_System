@@ -15,6 +15,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
 using CsvHelper.Configuration.Attributes;
+using Cinema_Management_System.Models.DAOs;
+using Cinema_Management_System.Models.DTOs;
+using Cinema_Management_System.Models.DAOs.Bills;
+using Cinema_Management_System.Models.DTOs.Bills;
+using Cinema_Management_System.ViewModels;
 
 namespace Cinema_Management_System.Views.StaffManagement
 {
@@ -37,6 +42,7 @@ namespace Cinema_Management_System.Views.StaffManagement
             startDate_Txt.Value = DateTime.Today;
             birth_Txt.Value = DateTime.Today;
             startDate_Txt.MaxDate = DateTime.Today;
+            birth_Txt.MaxDate = DateTime.Today;
             accept_Btn.Enabled = false;
             salary_Txt.Text = "0";
             DragHelper.EnableDrag(this, control_Panel);
@@ -47,7 +53,6 @@ namespace Cinema_Management_System.Views.StaffManagement
             };
             shadowForm.SetShadowForm(this);
         }
-
         private void InitValidation()
         {
             errorMap = new Dictionary<Control, Label>
@@ -94,7 +99,6 @@ namespace Cinema_Management_System.Views.StaffManagement
 
             HideAllErrorLabels();
         }
-
         private void HideAllErrorLabels()
         {
             foreach (var entry in errorMap)
@@ -110,7 +114,6 @@ namespace Cinema_Management_System.Views.StaffManagement
                 errorLabel.Visible = false;
             }
         }
-
         private void ValidateSingleField(Control control)
         {
             string error = GetErrorMessage(control);
@@ -150,8 +153,6 @@ namespace Cinema_Management_System.Views.StaffManagement
                 int age = today.Year - birthDate.Year;
                 if (birthDate > today.AddYears(-age)) age--;
 
-                if (birthDate > today)
-                    return "*Ngày sinh không được ở tương lai!";
                 if (age < 16)
                     return "*Nhân viên phải từ 16 tuổi trở lên!";
             }
@@ -168,6 +169,8 @@ namespace Cinema_Management_System.Views.StaffManagement
                     return "*SĐT phải có đúng 10 chữ số!";
                 if (!text.StartsWith("0"))
                     return "*SĐT phải bắt đầu bằng số 0!";
+                if (StaffDA.Instance.IsPhoneNumberExists(text))
+                    return "*SĐT đã tồn tại trong hệ thống!";
             }
 
             if (control == startDate_Txt)
@@ -198,14 +201,13 @@ namespace Cinema_Management_System.Views.StaffManagement
 
             return string.Empty;
         }
-
         private void CheckAllFieldsValid()
         {
             bool allValid = errorMap.All(entry => string.IsNullOrEmpty(GetErrorMessage(entry.Key)));
             accept_Btn.Enabled = allValid;
         }
 
-        private void ReadCSV(string filePath)
+        private bool ReadCSV(string filePath)
         {
             try
             {
@@ -224,67 +226,24 @@ namespace Cinema_Management_System.Views.StaffManagement
                     if (records.Any())
                     {
                         var staff = records.First();
-                        if (ValidateStaffData(staff))
-                        {
-                            BindStaffToForm(staff);
-                        }
-                        else
-                        {
-                            MessageBoxHelper.ShowError("Lỗi", "Dữ liệu trong file CSV không hợp lệ!");
-                        }
+                        BindStaffToForm(staff);
+                        return true;
                     }
                     else
                     {
                         MessageBoxHelper.ShowError("Lỗi", "Dữ liệu trong file không hợp lệ!");
+                        return false;
                     }
                 }
             }
             catch
             {
                 MessageBoxHelper.ShowError("Lỗi", "Lỗi khi đọc file CSV");
+                return false;
             }
         }
 
-        private bool ValidateStaffData(StaffData staff)
-        {
-            if (!string.IsNullOrEmpty(staff.Email) && (!staff.Email.Contains("@") || !staff.Email.Contains(".")))
-            {
-                return false;
-            }
-
-            if (!string.IsNullOrEmpty(staff.PhoneNumber) && (!staff.PhoneNumber.All(char.IsDigit) || staff.PhoneNumber.Length != 10 || !staff.PhoneNumber.StartsWith("0")))
-            {
-                return false;
-            }
-
-            if (!string.IsNullOrEmpty(staff.Gender) && staff.Gender != "Nam" && staff.Gender != "Nữ")
-            {
-                return false;
-            }
-
-            if (!string.IsNullOrEmpty(staff.Password) && staff.Password.Length < 6)
-            {
-                return false;
-            }
-            if (!string.IsNullOrEmpty(staff.Password) && !string.IsNullOrEmpty(staff.ConfirmPassword) && staff.Password != staff.ConfirmPassword)
-            {
-                return false;
-            }
-
-            if (!string.IsNullOrEmpty(staff.Username) && (staff.Username.Length < 5 || staff.Username.Length > 20 || !staff.Username.All(c => char.IsLetterOrDigit(c))))
-            {
-                return false;
-            }
-
-            if (staff.Salary < 0)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        private void ReadExcel(string filePath)
+        private bool ReadExcel(string filePath)
         {
             try
             {
@@ -293,47 +252,51 @@ namespace Cinema_Management_System.Views.StaffManagement
                     var worksheet = workbook.Worksheet(1);
                     var rowCount = worksheet.LastRowUsed().RowNumber();
 
+                    if (rowCount < 2)
+                    {
+                        MessageBoxHelper.ShowError("Lỗi", "File Excel không có dữ liệu để đọc (ít nhất cần 2 dòng).");
+                        return false;
+                    }
+
                     string[] formats = { "d/M/yyyy", "dd/MM/yyyy", "M/d/yyyy", "MM/dd/yyyy", "yyyy-MM-dd" };
+                    bool hasValidData = false;
 
                     for (int row = 2; row <= rowCount; row++)
                     {
                         var staff = ExtractStaffFromExcel(worksheet, row);
-                        if (ValidateStaffData(staff))
+                        BindStaffToForm(staff);
+
+                        if (!DateTime.TryParseExact(staff.BirthDate, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out var birthDate))
                         {
-                            BindStaffToForm(staff);
-
-                            if (!DateTime.TryParseExact(staff.BirthDate, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out var birthDate))
-                            {
-                                MessageBoxHelper.ShowWarning("Cảnh báo", $"Dòng {row}: Ngày sinh không hợp lệ: {staff.BirthDate}");
-                            }
-                            else
-                            {
-                                birth_Txt.Value = birthDate;
-                            }
-
-                            if (!DateTime.TryParseExact(staff.StartDate, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out var startDate))
-                            {
-                                MessageBoxHelper.ShowWarning("Cảnh báo", $"Dòng {row}: Ngày vào làm không hợp lệ: {staff.StartDate}");
-                            }
-                            else if (startDate > DateTime.Today)
-                            {
-                                MessageBoxHelper.ShowWarning("Cảnh báo", $"Dòng {row}: Ngày vào làm không được ở tương lai: {staff.StartDate}");
-                            }
-                            else
-                            {
-                                startDate_Txt.Value = startDate;
-                            }
+                            MessageBoxHelper.ShowWarning("Cảnh báo", $"Dòng {row}: Ngày sinh không hợp lệ: {staff.BirthDate}");
                         }
                         else
                         {
-                            MessageBoxHelper.ShowWarning("Cảnh báo", $"Dòng {row}: Dữ liệu không hợp lệ, bỏ qua!");
+                            birth_Txt.Value = birthDate;
+                            hasValidData = true;
+                        }
+
+                        if (!DateTime.TryParseExact(staff.StartDate, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out var startDate))
+                        {
+                            MessageBoxHelper.ShowWarning("Cảnh báo", $"Dòng {row}: Ngày vào làm không hợp lệ: {staff.StartDate}");
+                        }
+                        else if (startDate > DateTime.Today)
+                        {
+                            MessageBoxHelper.ShowWarning("Cảnh báo", $"Dòng {row}: Ngày vào làm không được ở tương lai: {staff.StartDate}");
+                        }
+                        else
+                        {
+                            startDate_Txt.Value = startDate;
+                            hasValidData = true;
                         }
                     }
+                    return hasValidData;
                 }
             }
             catch
             {
                 MessageBoxHelper.ShowError("Lỗi", "Lỗi khi đọc file Excel");
+                return false;
             }
         }
 
@@ -392,14 +355,49 @@ namespace Cinema_Management_System.Views.StaffManagement
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
+                bool success = false;
+
                 if (filePath.EndsWith(".csv"))
-                    ReadCSV(filePath);
+                {
+                    success = ReadCSV(filePath);
+                }
                 else if (filePath.EndsWith(".xlsx"))
-                    ReadExcel(filePath);
-                MessageBoxHelper.ShowSuccess("Thông báo", "Dữ liệu đã được thêm thành công!");
+                {
+                    success = ReadExcel(filePath);
+                }
+
+                if (success)
+                {
+                    MessageBoxHelper.ShowSuccess("Thông báo", "Dữ liệu đã được thêm thành công!");
+                }
             }
         }
 
+        private StaffDTO GetStaffDTOFromForm()
+        {
+            return new StaffDTO
+            {
+                FullName = name_Txt.Text.Trim(),
+                Birth = birth_Txt.Value.ToString("dd/MM/yyyy"),
+                Gender = sex_Txt.Text,
+                Email = email_Txt.Text.Trim(),
+                PhoneNumber = phone_Txt.Text.Trim(),
+                Salary = int.Parse(salary_Txt.Text.Replace(",", "")),
+                Role = role_Txt.Text,
+                NgayVaoLam = startDate_Txt.Value.ToString("dd/MM/yyyy"),
+                ImageSource = isImageSelected ? avatarImage : null
+            };
+        }
+
+        private UserDTO GetUserDTOFromForm(int id)
+        {
+            return new UserDTO
+            {
+                Username = nameAccount_Txt.Text.Trim(),
+                Password = pass_Txt.Text.Trim(),
+                Staff_Id = id,
+            };
+        }
 
         private void chooseImage_Btn_Click(object sender, EventArgs e)
         {
@@ -450,6 +448,21 @@ namespace Cinema_Management_System.Views.StaffManagement
             [Name("Tên tài khoản")] public string Username { get; set; }
             [Name("Mật khẩu")] public string Password { get; set; }
             [Name("Xác nhận mật khẩu")] public string ConfirmPassword { get; set; }
+        }
+
+        private void accept_Btn_Click(object sender, EventArgs e)
+        {
+            var staffDTO = GetStaffDTOFromForm();
+            if (StaffDA.Instance.IsPhoneNumberExists(staffDTO.PhoneNumber))
+            {
+                MessageBoxHelper.ShowError("Lỗi", "Nhân viên đã tồn tại. Vui lòng kiểm tra lại.");
+                return;
+            }
+            int newStaffId = StaffDA.Instance.AddStaff(staffDTO);
+            var userDTO = GetUserDTOFromForm(newStaffId);
+            UserDA.Instance.AddUser(userDTO.Staff_Id, userDTO.Username, PasswordHelper.EncryptSHA256(userDTO.Password));
+            MessageBoxHelper.ShowSuccess("Thông báo", "Thêm nhân viên thành công!");
+            this.Close();
         }
     }
 }

@@ -2,6 +2,7 @@
 using Cinema_Management_System.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,28 +38,11 @@ namespace Cinema_Management_System.Models.DAOs
             }).Cast<object>().ToList();
         }
 
-        //public List<StaffDTO> GetAllStaffFullInfo()
-        //{
-        //    return connect.STAFFs.Select(staff => new StaffDTO(
-        //        staff.Id,
-        //        staff.FullName,
-        //        staff.Birth.ToString("dd/MM/yyyy"),
-        //        staff.Gender,
-        //        staff.Email,
-        //        staff.PhoneNumber,
-        //        staff.Salary,
-        //        staff.Role,
-        //        staff.NgayVaoLam.ToString("dd/MM/yyyy"),
-        //        null // Không lấy ImageSource
-        //    )).ToList();
-        //}
-
+        // hỗ trợ hiển thị datagridview
         public List<StaffDTO> GetAllStaffFullInfo()
         {
-            // Lấy dữ liệu thô từ database
             var staffData = connect.STAFFs.ToList();
 
-            // Định dạng ngày trên bộ nhớ
             return staffData.Select(staff => new StaffDTO(
                 staff.Id,
                 staff.FullName,
@@ -69,7 +53,7 @@ namespace Cinema_Management_System.Models.DAOs
                 staff.Salary,
                 staff.Role,
                 staff.NgayVaoLam.ToString("dd/MM/yyyy"),
-                null // Không lấy ImageSource
+                null 
             )).ToList();
         }
 
@@ -79,13 +63,13 @@ namespace Cinema_Management_System.Models.DAOs
             STAFF staff = new STAFF
             {
                 FullName = staffDTO.FullName,
-                Birth = string.IsNullOrWhiteSpace(staffDTO.Birth) ? DateTime.MinValue : DateTime.Parse(staffDTO.Birth),
+                Birth = string.IsNullOrWhiteSpace(staffDTO.Birth) ? DateTime.MinValue : DateTime.ParseExact(staffDTO.Birth, "dd/MM/yyyy", CultureInfo.InvariantCulture),
                 Gender = staffDTO.Gender,
                 Email = staffDTO.Email,
                 PhoneNumber = staffDTO.PhoneNumber,
                 Salary = staffDTO.Salary,
                 Role = staffDTO.Role,
-                NgayVaoLam = string.IsNullOrWhiteSpace(staffDTO.NgayVaoLam) ? DateTime.MinValue : DateTime.Parse(staffDTO.NgayVaoLam),
+                NgayVaoLam = string.IsNullOrWhiteSpace(staffDTO.NgayVaoLam) ? DateTime.MinValue : DateTime.ParseExact(staffDTO.NgayVaoLam, "dd/MM/yyyy", CultureInfo.InvariantCulture),
                 ImageSource = staffDTO.ImageSource != null ? ImageVsSQL.BitmapToByteArray(staffDTO.ImageSource) : null
             };
 
@@ -129,6 +113,11 @@ namespace Cinema_Management_System.Models.DAOs
         {
             string idStr = idFormat.Replace("NV", "");
             return int.Parse(idStr);
+        }
+
+        public bool IsPhoneNumberExists(string phoneNumber)
+        {
+            return connect.STAFFs.Any(s => s.PhoneNumber == phoneNumber);
         }
 
 

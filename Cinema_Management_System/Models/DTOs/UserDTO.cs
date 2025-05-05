@@ -11,7 +11,7 @@ namespace Cinema_Management_System.Models.DTOs
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int Staff_Id { get; set; }// khóa ngoại bảng Account tham chiếu đến khóa chính của bảng Staff
+        public int Staff_Id { get; set; }
 
         public UserDTO()
         {

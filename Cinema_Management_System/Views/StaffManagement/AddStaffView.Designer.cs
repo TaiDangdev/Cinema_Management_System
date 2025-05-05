@@ -344,6 +344,7 @@
             this.accept_Btn.Size = new System.Drawing.Size(96, 39);
             this.accept_Btn.TabIndex = 141;
             this.accept_Btn.Text = "Xong";
+            this.accept_Btn.Click += new System.EventHandler(this.accept_Btn_Click);
             // 
             // guna2PictureBox1
             // 

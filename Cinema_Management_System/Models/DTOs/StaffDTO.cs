@@ -23,6 +23,8 @@ namespace Cinema_Management_System.Models.DTOs
         public string NgayVaoLam { get; set; }
         public Bitmap ImageSource { get; set; }
 
+        public StaffDTO() { }
+
         //phục vụ edit
         public StaffDTO(int id, string fullName, string birth, string gender, string email, string phoneNumber, int salary, string role, string ngayVL)
         {
@@ -52,7 +54,7 @@ namespace Cinema_Management_System.Models.DTOs
 
 
         //phục vụ việc thêm 1 staff
-        public StaffDTO(string fullName, string birth, string gender, string email, string phoneNumber, int salary, string role, string ngayVL)
+        public StaffDTO(string fullName, string birth, string gender, string email, string phoneNumber, int salary, string role, string ngayVL,Bitmap avatar)
         {
             FullName = fullName;
             Birth = birth;
@@ -62,6 +64,7 @@ namespace Cinema_Management_System.Models.DTOs
             Salary = salary;
             Role = role;
             NgayVaoLam = ngayVL;
+            ImageSource = avatar;
         }
 
 
