@@ -405,11 +405,6 @@
       <DependentUpon>reportBillSale.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\ProductManagement\reportBillSale1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>reportBillSale.rpt</DependentUpon>
-    </Compile>
     <Compile Include="Views\StaffManagement\AddStaffView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -567,7 +562,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductManagement\reportBillSale.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>reportBillSale1.cs</LastGenOutput>
+      <LastGenOutput>reportBillSale.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ShowTimeManagement\AddShowTimeForm.resx">
       <DependentUpon>AddShowTimeForm.cs</DependentUpon>
