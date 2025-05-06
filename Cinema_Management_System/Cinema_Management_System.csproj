@@ -240,6 +240,7 @@
     <Compile Include="Models\DAOs\Bills\BillDetailDA.cs" />
     <Compile Include="Models\DAOs\Bills\BillImportProductDA.cs" />
     <Compile Include="Models\DAOs\StaffDA.cs" />
+    <Compile Include="Models\DAOs\StatisticDA.cs" />
     <Compile Include="Models\DTOs\BillAddMovieDTO.cs" />
     <Compile Include="Models\DTOs\BillSeatsForShowTimesDTO.cs" />
     <Compile Include="Models\DTOs\StaffDTO.cs" />

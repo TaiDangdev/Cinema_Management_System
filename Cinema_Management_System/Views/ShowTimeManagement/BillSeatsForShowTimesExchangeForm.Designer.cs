@@ -37,7 +37,6 @@
             this.btn_search = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgv_DataBill = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.luachontim_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.MaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TheHoiVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +48,8 @@
             this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Del = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.luachontim_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btn_Load = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DataBill)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +78,7 @@
             this.xuatEXEL_bnt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.xuatEXEL_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.xuatEXEL_bnt.ForeColor = System.Drawing.Color.White;
-            this.xuatEXEL_bnt.Location = new System.Drawing.Point(797, 10);
+            this.xuatEXEL_bnt.Location = new System.Drawing.Point(878, 10);
             this.xuatEXEL_bnt.Name = "xuatEXEL_bnt";
             this.xuatEXEL_bnt.Size = new System.Drawing.Size(151, 39);
             this.xuatEXEL_bnt.TabIndex = 16;
@@ -123,7 +124,7 @@
             this.btn_search.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.btn_search.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btn_search.ForeColor = System.Drawing.Color.White;
-            this.btn_search.Location = new System.Drawing.Point(640, 10);
+            this.btn_search.Location = new System.Drawing.Point(721, 10);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(151, 39);
             this.btn_search.TabIndex = 18;
@@ -206,29 +207,6 @@
             this.dgv_DataBill.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_DataBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_DataBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DataBill_CellContentClick);
-            // 
-            // luachontim_cbb
-            // 
-            this.luachontim_cbb.BackColor = System.Drawing.Color.Transparent;
-            this.luachontim_cbb.BorderColor = System.Drawing.Color.Black;
-            this.luachontim_cbb.BorderRadius = 10;
-            this.luachontim_cbb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.luachontim_cbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.luachontim_cbb.FillColor = System.Drawing.SystemColors.Control;
-            this.luachontim_cbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.luachontim_cbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.luachontim_cbb.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.luachontim_cbb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.luachontim_cbb.ItemHeight = 30;
-            this.luachontim_cbb.Items.AddRange(new object[] {
-            "Kiểu tìm kiếm",
-            "Mã Đơn",
-            "Mã Phim"});
-            this.luachontim_cbb.Location = new System.Drawing.Point(452, 13);
-            this.luachontim_cbb.Name = "luachontim_cbb";
-            this.luachontim_cbb.Size = new System.Drawing.Size(182, 36);
-            this.luachontim_cbb.StartIndex = 0;
-            this.luachontim_cbb.TabIndex = 20;
             // 
             // MaDon
             // 
@@ -319,11 +297,52 @@
             this.btn_Del.Name = "btn_Del";
             this.btn_Del.ReadOnly = true;
             // 
+            // luachontim_cbb
+            // 
+            this.luachontim_cbb.BackColor = System.Drawing.Color.Transparent;
+            this.luachontim_cbb.BorderColor = System.Drawing.Color.Black;
+            this.luachontim_cbb.BorderRadius = 10;
+            this.luachontim_cbb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.luachontim_cbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.luachontim_cbb.FillColor = System.Drawing.SystemColors.Control;
+            this.luachontim_cbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.luachontim_cbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.luachontim_cbb.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.luachontim_cbb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.luachontim_cbb.ItemHeight = 30;
+            this.luachontim_cbb.Items.AddRange(new object[] {
+            "Kiểu tìm kiếm",
+            "Mã Đơn",
+            "Mã Phim"});
+            this.luachontim_cbb.Location = new System.Drawing.Point(452, 13);
+            this.luachontim_cbb.Name = "luachontim_cbb";
+            this.luachontim_cbb.Size = new System.Drawing.Size(182, 36);
+            this.luachontim_cbb.StartIndex = 0;
+            this.luachontim_cbb.TabIndex = 20;
+            // 
+            // btn_Load
+            // 
+            this.btn_Load.BorderRadius = 16;
+            this.btn_Load.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Load.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Load.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Load.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Load.FillColor = System.Drawing.Color.White;
+            this.btn_Load.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_Load.ForeColor = System.Drawing.Color.White;
+            this.btn_Load.Image = global::Cinema_Management_System.Properties.Resources.watching_a_movie;
+            this.btn_Load.Location = new System.Drawing.Point(641, 13);
+            this.btn_Load.Name = "btn_Load";
+            this.btn_Load.Size = new System.Drawing.Size(52, 36);
+            this.btn_Load.TabIndex = 21;
+            this.btn_Load.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // BillSeatsForShowTimesExchangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1361, 686);
+            this.Controls.Add(this.btn_Load);
             this.Controls.Add(this.luachontim_cbb);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.btn_search);
@@ -359,5 +378,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewButtonColumn btn_Del;
+        private Guna.UI2.WinForms.Guna2Button btn_Load;
     }
 }

@@ -46,7 +46,8 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                 this.dgv_DataBill.AutoGenerateColumns = false;
                 this.dgv_DataBill.DataSource = BillForShowTimeDA.Instance.GetListBillSeatsForShowTimes();
             }
-            catch{
+            catch
+            {
                 MessageBoxHelper.ShowError("Lỗi", "Không thể tải dữ liệu hóa đơn");
             }
         }
@@ -70,10 +71,15 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
 
             var filtered = BillForShowTimeDA.Instance.GetListBillSeatsForShowTimes().Where(c =>
               (_currentSearchType == SearchType.MaDon && c.Id.ToString().ToLower().Trim() == keyword) ||
-              (_currentSearchType == SearchType.MaPhim && c.MovieId.ToString().ToLower().Trim()==keyword)
+              (_currentSearchType == SearchType.MaPhim && c.MovieId.ToString().ToLower().Trim() == keyword)
                 ).ToList();
-
-            this.dgv_DataBill.DataSource = filtered;
+            if (filtered.Count > 0) {
+                this.dgv_DataBill.DataSource = filtered;
+            }
+            else
+            {
+                MessageBoxHelper.ShowInfo("Thông báo", "Không tìm thấy Hóa Đơn");
+            }
         }
 
         private void dgv_DataBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -88,7 +94,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                 }
                 else
                 {
-                    if (result== DialogResult.Yes)
+                    if (result == DialogResult.Yes)
                     {
                         // Lấy ID của hóa đơn từ dòng hiện tại
                         int billId = Convert.ToInt32(this.dgv_DataBill.Rows[e.RowIndex].Cells["MaDon"].Value);
@@ -105,6 +111,12 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                     }
 
                 }
+            }
         }
-    }}
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.LoadBillData();
+        }
+    }
 }
