@@ -601,7 +601,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.label11.Location = new System.Drawing.Point(128, 10);
+            this.label11.Location = new System.Drawing.Point(4, 9);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(147, 30);
@@ -664,7 +664,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.label12.Location = new System.Drawing.Point(104, 3);
+            this.label12.Location = new System.Drawing.Point(4, 3);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(183, 30);
@@ -726,7 +726,7 @@
             this.lb_ChiPhi.AutoSize = true;
             this.lb_ChiPhi.BackColor = System.Drawing.Color.Transparent;
             this.lb_ChiPhi.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ChiPhi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lb_ChiPhi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.lb_ChiPhi.Location = new System.Drawing.Point(14, 11);
             this.lb_ChiPhi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ChiPhi.Name = "lb_ChiPhi";
@@ -789,7 +789,7 @@
             this.lb_Doanhthu.AutoSize = true;
             this.lb_Doanhthu.BackColor = System.Drawing.Color.Transparent;
             this.lb_Doanhthu.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Doanhthu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lb_Doanhthu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.lb_Doanhthu.Location = new System.Drawing.Point(14, 12);
             this.lb_Doanhthu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Doanhthu.Name = "lb_Doanhthu";
@@ -1134,9 +1134,6 @@
             this.guna2CustomGradientPanel6.BorderRadius = 15;
             this.guna2CustomGradientPanel6.Controls.Add(this.chiphi_product_pie);
             this.guna2CustomGradientPanel6.Controls.Add(this.label28);
-            this.guna2CustomGradientPanel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2CustomGradientPanel6.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2CustomGradientPanel6.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.guna2CustomGradientPanel6.Location = new System.Drawing.Point(938, 386);
             this.guna2CustomGradientPanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.guna2CustomGradientPanel6.Name = "guna2CustomGradientPanel6";
@@ -1145,9 +1142,8 @@
             // 
             // chiphi_product_pie
             // 
-            this.chiphi_product_pie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.chiphi_product_pie.BorderlineColor = System.Drawing.Color.Firebrick;
-            chartArea7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            chartArea7.BackColor = System.Drawing.Color.White;
             chartArea7.Name = "ChartArea1";
             this.chiphi_product_pie.ChartAreas.Add(chartArea7);
             this.chiphi_product_pie.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1169,8 +1165,8 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label28.Location = new System.Drawing.Point(115, 0);
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.label28.Location = new System.Drawing.Point(4, 0);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(147, 30);
@@ -1183,9 +1179,6 @@
             this.guna2CustomGradientPanel5.BorderRadius = 15;
             this.guna2CustomGradientPanel5.Controls.Add(this.doanhthu_product_pie);
             this.guna2CustomGradientPanel5.Controls.Add(this.label27);
-            this.guna2CustomGradientPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel5.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel5.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(938, 10);
             this.guna2CustomGradientPanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
@@ -1194,11 +1187,9 @@
             // 
             // doanhthu_product_pie
             // 
-            this.doanhthu_product_pie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.doanhthu_product_pie.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.doanhthu_product_pie.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
-            chartArea8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            chartArea8.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            chartArea8.BackColor = System.Drawing.Color.White;
+            chartArea8.BackSecondaryColor = System.Drawing.Color.White;
             chartArea8.Name = "ChartArea1";
             this.doanhthu_product_pie.ChartAreas.Add(chartArea8);
             this.doanhthu_product_pie.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1236,8 +1227,8 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label27.Location = new System.Drawing.Point(96, 0);
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.label27.Location = new System.Drawing.Point(4, 0);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(183, 30);
@@ -1248,14 +1239,14 @@
             // guna2Panel7
             // 
             this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel7.BorderRadius = 30;
+            this.guna2Panel7.BorderRadius = 5;
             this.guna2Panel7.Controls.Add(this.guna2Panel8);
             this.guna2Panel7.Controls.Add(this.barchart_product);
             this.guna2Panel7.Controls.Add(this.guna2Panel9);
             this.guna2Panel7.Controls.Add(this.label23);
             this.guna2Panel7.Controls.Add(this.label24);
             this.guna2Panel7.Controls.Add(this.guna2GroupBox3);
-            this.guna2Panel7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            this.guna2Panel7.FillColor = System.Drawing.Color.White;
             this.guna2Panel7.Location = new System.Drawing.Point(4, 10);
             this.guna2Panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.guna2Panel7.Name = "guna2Panel7";
@@ -1298,8 +1289,7 @@
             // 
             // barchart_product
             // 
-            this.barchart_product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            chartArea9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            chartArea9.BackColor = System.Drawing.Color.White;
             chartArea9.Name = "ChartArea1";
             this.barchart_product.ChartAreas.Add(chartArea9);
             this.barchart_product.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1355,7 +1345,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.label23.ForeColor = System.Drawing.Color.Chocolate;
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label23.Location = new System.Drawing.Point(583, 163);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
@@ -1367,7 +1357,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.label24.ForeColor = System.Drawing.Color.Chocolate;
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.label24.Location = new System.Drawing.Point(76, 163);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
@@ -1379,7 +1369,7 @@
             // 
             this.guna2GroupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
             this.guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2GroupBox3.BorderRadius = 20;
+            this.guna2GroupBox3.BorderRadius = 5;
             this.guna2GroupBox3.Controls.Add(this.xuatfile_btn);
             this.guna2GroupBox3.Controls.Add(this.denngay_lbl_Product);
             this.guna2GroupBox3.Controls.Add(this.tungay_lbl_Product);
@@ -1389,11 +1379,10 @@
             this.guna2GroupBox3.Controls.Add(this.label25);
             this.guna2GroupBox3.Controls.Add(this.dtpker_product1);
             this.guna2GroupBox3.Controls.Add(this.label26);
-            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.guna2GroupBox3.CustomBorderThickness = new System.Windows.Forms.Padding(1);
-            this.guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.guna2GroupBox3.Location = new System.Drawing.Point(25, 14);
             this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
@@ -1426,6 +1415,7 @@
             // denngay_lbl_Product
             // 
             this.denngay_lbl_Product.AutoSize = true;
+            this.denngay_lbl_Product.BackColor = System.Drawing.Color.White;
             this.denngay_lbl_Product.Location = new System.Drawing.Point(357, 72);
             this.denngay_lbl_Product.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.denngay_lbl_Product.Name = "denngay_lbl_Product";
@@ -1436,6 +1426,7 @@
             // tungay_lbl_Product
             // 
             this.tungay_lbl_Product.AutoSize = true;
+            this.tungay_lbl_Product.BackColor = System.Drawing.Color.White;
             this.tungay_lbl_Product.Location = new System.Drawing.Point(357, 7);
             this.tungay_lbl_Product.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tungay_lbl_Product.Name = "tungay_lbl_Product";
@@ -1446,15 +1437,17 @@
             // thodiem_cbb_product
             // 
             this.thodiem_cbb_product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.thodiem_cbb_product.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.thodiem_cbb_product.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.thodiem_cbb_product.BorderRadius = 17;
+            this.thodiem_cbb_product.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.thodiem_cbb_product.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.thodiem_cbb_product.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.thodiem_cbb_product.FillColor = System.Drawing.SystemColors.Control;
-            this.thodiem_cbb_product.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.thodiem_cbb_product.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.thodiem_cbb_product.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.thodiem_cbb_product.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.thodiem_cbb_product.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.thodiem_cbb_product.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.thodiem_cbb_product.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.thodiem_cbb_product.ItemHeight = 30;
             this.thodiem_cbb_product.Location = new System.Drawing.Point(351, 72);
             this.thodiem_cbb_product.Name = "thodiem_cbb_product";
@@ -1465,15 +1458,15 @@
             // chuky_cbb_product
             // 
             this.chuky_cbb_product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.chuky_cbb_product.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.chuky_cbb_product.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.chuky_cbb_product.BorderRadius = 17;
             this.chuky_cbb_product.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.chuky_cbb_product.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.chuky_cbb_product.FillColor = System.Drawing.SystemColors.Control;
-            this.chuky_cbb_product.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chuky_cbb_product.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chuky_cbb_product.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.chuky_cbb_product.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.chuky_cbb_product.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.chuky_cbb_product.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.chuky_cbb_product.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.chuky_cbb_product.ItemHeight = 30;
             this.chuky_cbb_product.Items.AddRange(new object[] {
             "Theo tháng",
@@ -1505,6 +1498,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.White;
             this.label25.Location = new System.Drawing.Point(49, 48);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
@@ -1532,6 +1526,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.White;
             this.label26.Location = new System.Drawing.Point(347, 48);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";

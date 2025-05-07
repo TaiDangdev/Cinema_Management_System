@@ -125,6 +125,45 @@ namespace Cinema_Management_System.Models.DAOs
             }
         }
 
+        public bool UpdateMovie(MovieDTO movieDTO)
+        {
+            try
+            {
+                var movie = connect.MOVIEs.FirstOrDefault(m => m.id == movieDTO.Id);
+                if (movie == null)
+                {
+                    MessageBoxHelper.ShowError("Lỗi", "Không tìm thấy phim để cập nhật.");
+                    return false;
+                }
+                movie.EndDate = string.IsNullOrWhiteSpace(movieDTO.EndDate) ? DateTime.MinValue : DateTime.Parse(movieDTO.EndDate);
+                movie.TotalShowtimes = movieDTO.TotalShowtimes;
+                movie.ImportPrice = movieDTO.ImportPrice;
+
+                connect.SubmitChanges();
+
+                ExecuteUpdateMovieStatus();
+
+                return true;
+            }
+            catch 
+            {
+                MessageBoxHelper.ShowError("Lỗi", "Lỗi khi cập nhật phim");
+                return false;
+            }
+        }
+
+        public void ExecuteUpdateMovieStatus()
+        {
+            try
+            {
+                connect.ExecuteCommand("EXEC sp_UpdateMovieStatus");
+            }
+            catch
+            {
+                MessageBoxHelper.ShowError("Lỗi", "Lỗi khi thực thi sp_UpdateMovieStatus");
+            }
+        }
+
         // delete 1 movie theo movieCode
         public void DeleteMovie(string movieCode)
         {

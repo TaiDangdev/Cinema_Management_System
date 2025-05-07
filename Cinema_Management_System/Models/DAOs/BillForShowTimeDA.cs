@@ -28,8 +28,10 @@ namespace Cinema_Management_System.Models.DAOs
 
         public int AddBillShowTime(Bill newBill)
         {
+            
             try
             {
+                Connect.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, Connect.Bills);
                 Connect.Bills.InsertOnSubmit(newBill);
                 Connect.SubmitChanges();
                 return newBill.Id;

@@ -151,8 +151,8 @@
   <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\adminForm\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\logo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\movieManagementForm\add_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="starcinema-bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\loginForm\starcinema-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,14 +214,17 @@
   <data name="icons8-cinema-ticket-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\icons8-cinema-ticket-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="preview_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\preview_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-person-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\adminForm\icons8-person-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_Succes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\messageBox\icon_Succes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\movieManagementForm\add_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\logo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="QLProduct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\adminForm\QLProduct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,7 +256,7 @@
   <data name="coin_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\coin_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="preview_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\preview_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="reload_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\reload_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

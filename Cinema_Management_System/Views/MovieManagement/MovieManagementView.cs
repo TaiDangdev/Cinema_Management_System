@@ -91,8 +91,9 @@ namespace Cinema_Management_System.Views.MovieManagement
             };
 
             menu.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-            menu.Items.Add("✏ Chỉnh sửa", null, (s, e) => EditMovie(movie));
+            //menu.Items.Add("✏ Chỉnh sửa", null, (s, e) => EditMovie(movie));
             menu.Items.Add("🗑 Xóa", null, (s, e) => DeleteMovie(movie));
+            menu.Items.Add("⏳ Gia hạn", null, (s, e) => ExtendMovie(movie));
             btnMoreOptions.Click += (s, e) => menu.Show(Cursor.Position);
 
             return btnMoreOptions;
@@ -248,22 +249,53 @@ namespace Cinema_Management_System.Views.MovieManagement
             }
         }
 
-        private void EditMovie(MovieDTO movie)
+        //private void EditMovie(MovieDTO movie)
+        //{
+        //    if (Application.OpenForms["EditMovieView"] == null)
+        //    {
+        //        EditMovieView editMovieView = new EditMovieView(movie)
+        //        {
+        //            Opacity = 0
+        //        };
+        //        editMovieView.Show();
+
+        //        Timer fadeTimer = new Timer { Interval = 10 };
+        //        fadeTimer.Tick += (s, args) =>
+        //        {
+        //            if (editMovieView.Opacity < 1)
+        //            {
+        //                editMovieView.Opacity += 0.05;
+        //            }
+        //            else
+        //            {
+        //                fadeTimer.Stop();
+        //            }
+        //        };
+        //        fadeTimer.Start();
+        //        editMovieView.FormClosed += (s, args) => LoadMovies();
+        //    }
+        //    else
+        //    {
+        //        Application.OpenForms["EditMovieView"].Activate();
+        //    }
+        //}
+
+        private void ExtendMovie(MovieDTO movie)
         {
-            if (Application.OpenForms["EditMovieView"] == null)
+            if (Application.OpenForms["ExtendMovieView"] == null)
             {
-                EditMovieView editMovieView = new EditMovieView(movie)
+                ExtendMovieView extendMovieView = new ExtendMovieView(movie)
                 {
                     Opacity = 0
                 };
-                editMovieView.Show();
+                extendMovieView.Show();
 
                 Timer fadeTimer = new Timer { Interval = 10 };
                 fadeTimer.Tick += (s, args) =>
                 {
-                    if (editMovieView.Opacity < 1)
+                    if (extendMovieView.Opacity < 1)
                     {
-                        editMovieView.Opacity += 0.05;
+                        extendMovieView.Opacity += 0.05;
                     }
                     else
                     {
@@ -271,15 +303,14 @@ namespace Cinema_Management_System.Views.MovieManagement
                     }
                 };
                 fadeTimer.Start();
-                editMovieView.FormClosed += (s, args) => LoadMovies();
+                extendMovieView.FormClosed += (s, args) => LoadMovies();
             }
             else
             {
-                Application.OpenForms["EditMovieView"].Activate();
+                Application.OpenForms["ExtendMovieView"].Activate();
             }
         }
 
-        // còn thiếu việc kiểm tra xem phim suất chiếu đã qua time chiếu chưa
         private void DeleteMovie(MovieDTO movie)
         {
             if(ShowTimeDA.Instance.checkShowTimeByMovie(movie.Id))
@@ -288,7 +319,7 @@ namespace Cinema_Management_System.Views.MovieManagement
                 return;
             }
 
-            //BillAddMovieDA.Instance.updateMovie_IdNull(movie.Id);
+            BillAddMovieDA.Instance.updateMovie_IdNull(movie.Id);
 
             DialogResult result = MessageBoxHelper.ShowQuestion("Xóa phim", "Bạn có chắc chắn muốn xóa phim này không?");
             if (result == DialogResult.Yes)

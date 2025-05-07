@@ -33,7 +33,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             this.LoadRoom();
             this.load_ShowTimeMovie(-1);
             AboutAccount_Form.getRole();
-            if(AboutAccount_Form.currentRole=="Nhân Viên")
+            if(AboutAccount_Form.currentRole=="Nhân viên")
             {
                 this.btn_AddShowTimeMovie.Hide();
             }

@@ -18,6 +18,9 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Cinema_Management_System.Views.MessageBox;
 using ClosedXML.Excel;
+using System.IO;
+using System.Net.Mail;
+using System.Net;
 
 namespace Cinema_Management_System.Views.Statistics
 {
@@ -60,7 +63,7 @@ namespace Cinema_Management_System.Views.Statistics
                 {
                     // Gửi báo cáo cho tháng trước
                     DateTime lastMonth = DateTime.Now.AddMonths(-1);
-                    SendMonthlyStatisticsEmail(lastMonth.Year, lastMonth.Month, "recipient@example.com");
+                    SendMonthlyStatisticsEmail(lastMonth.Year, lastMonth.Month, "truongnhatnguyen282005@gmail.com");
                 }
             };
             timer.Start();
@@ -100,28 +103,29 @@ namespace Cinema_Management_System.Views.Statistics
                 GenerateExcelReport(startDate, endDate, tempFilePath);
 
                 // Thiết lập thông tin email
-                string fromEmail = "your-email@gmail.com"; // Thay bằng email của bạn
-                string fromPassword = "your-app-password"; // Thay bằng app password của bạn
-                string subject = $"Báo cáo thống kê tháng {month}/{year}";
-                string body = $"Kính gửi,\n\nĐính kèm là báo cáo thống kê doanh thu và chi phí tháng {month}/{year}.\n\nTrân trọng,\nHệ thống quản lý rạp chiếu phim";
-
-                // Tạo đối tượng MailMessage
-                using (MailMessage mail = new MailMessage())
+                MailMessage mail = new MailMessage();
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com")
                 {
-                    mail.From = new MailAddress(fromEmail);
-                    mail.To.Add(toEmail);
-                    mail.Subject = subject;
-                    mail.Body = body;
-                    mail.Attachments.Add(new Attachment(tempFilePath));
+                    Port = 587,
+                    Credentials = new NetworkCredential("truongnhatnguyen282005@gmail.com", "ltpj zfjw trwt bubn"),
+                    EnableSsl = true
+                };
 
-                    // Thiết lập SMTP client (dùng Gmail làm ví dụ)
-                    using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
-                    {
-                        smtp.Credentials = new NetworkCredential(fromEmail, fromPassword);
-                        smtp.EnableSsl = true;
-                        smtp.Send(mail);
-                    }
-                }
+                mail.From = new MailAddress("truongnhatnguyen282005@gmail.com");
+                mail.To.Add(toEmail);
+                mail.Subject = $"Báo cáo thống kê tháng {month}/{year}";
+                mail.Body = $@"Kính gửi,
+
+Đính kèm là báo cáo thống kê doanh thu và chi phí tháng {month}/{year}.
+
+Trân trọng,
+Hệ thống quản lý rạp chiếu phim StarCinema";
+
+                // Đính kèm file Excel
+                mail.Attachments.Add(new Attachment(tempFilePath));
+
+                // Gửi email
+                smtp.Send(mail);
 
                 // Xóa file tạm sau khi gửi
                 if (File.Exists(tempFilePath))
@@ -131,10 +135,11 @@ namespace Cinema_Management_System.Views.Statistics
 
                 MessageBoxHelper.ShowSuccess("Thành công", "Email báo cáo thống kê đã được gửi!");
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBoxHelper.ShowError("Lỗi", $"Đã xảy ra lỗi khi gửi email: {ex.Message}");
+                MessageBoxHelper.ShowError("Lỗi", "Đã xảy ra lỗi khi gửi email");
             }
+        }
 
         public void LoadChartMovie()
         {

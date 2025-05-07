@@ -62,7 +62,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             MOVIE currentMovie=MovieDA.Instance.GetMovieById(idMovie);
             if (currentMovie == null)
             {
-                System.Windows.Forms.MessageBox.Show("Khong lay duoc phim");
+                MessageBoxHelper.ShowError("Lỗi", "Không thể lấy thông tin phim. Vui lòng thử lại!");
             }
             else
             {
@@ -152,7 +152,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             btn.BorderColor = Color.Black;
             btn.BorderThickness = 2;
             btn.Click += BtnShowTimeMovie_Click; // them su kien khi bam chuojt trai
-            if (AboutAccount_Form.currentRole != "Nhân Viên")
+            if (AboutAccount_Form.currentRole != "Nhân viên")
             {
                 btn.MouseDown += ShowContextMenuOnRightClick;
             }
@@ -163,25 +163,26 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
         // tao menu khi click chuot phai
         private void CreateContextMenu()
         {
-            showTimeContextMenu = new ContextMenuStrip();
-            //Segoe UI Semibold, 9.75pt, style = Bold
-            showTimeContextMenu.Font = new Font("Segoe UI Semibold", 9, FontStyle.Regular);
-            //showTimeContextMenu.BackColor = Color.LightGray;
-            showTimeContextMenu.RenderMode = ToolStripRenderMode.System;
-            ToolStripMenuItem updateItem = new ToolStripMenuItem("🔧 Sửa");
-            ToolStripMenuItem deleteItem = new ToolStripMenuItem("🗑️ Xóa");
+                showTimeContextMenu = new ContextMenuStrip();
+                //Segoe UI Semibold, 9.75pt, style = Bold
+                showTimeContextMenu.Font = new Font("Segoe UI Semibold", 9, FontStyle.Regular);
+                //showTimeContextMenu.BackColor = Color.LightGray;
+                showTimeContextMenu.RenderMode = ToolStripRenderMode.System;
+                ToolStripMenuItem updateItem = new ToolStripMenuItem("🔧 Sửa");
+                ToolStripMenuItem deleteItem = new ToolStripMenuItem("🗑️ Xóa");
 
-            updateItem.Click += UpdateShowTime;
-            deleteItem.Click += DeleteShowTime;
+                updateItem.Click += UpdateShowTime;
+                deleteItem.Click += DeleteShowTime;
 
-            showTimeContextMenu.Items.Add(updateItem);
-            showTimeContextMenu.Items.Add(deleteItem);
+                showTimeContextMenu.Items.Add(updateItem);
+                showTimeContextMenu.Items.Add(deleteItem);
+            
         }
 
         // su kien hien thi MenuStrp khi click chuot phai
         private void ShowContextMenuOnRightClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right && sender is Guna.UI2.WinForms.Guna2Button btn)
+            if (e.Button == MouseButtons.Right && sender is Guna.UI2.WinForms.Guna2Button btn )
             {
                 // Lưu button vào ContextMenu để biết đang xử lý button nào
                 showTimeContextMenu.Tag = btn;
@@ -199,7 +200,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                 {
                     MessageBoxHelper.ShowError("Lỗi", "Không thể xóa suất chiếu đang diễn ra");
                 }
-                DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có chắc muốn xóa suất chiếu này?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBoxHelper.ShowQuestion("Xác nhận", "Bạn có chắc muốn xóa suất chiếu này?");
                 if (result == DialogResult.Yes)
                 {
                     btn.Parent.Controls.Remove(btn);

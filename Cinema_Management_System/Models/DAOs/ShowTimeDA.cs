@@ -288,7 +288,7 @@ namespace Cinema_Management_System.Models.DAOs
             {
                 if (newshowtime.StartTime < DateTime.Now)
                 {
-                    System.Windows.Forms.MessageBox.Show("Thời gian bắt đầu không hợp lệ. Vui lòng chọn thời gian trong tương lai.");
+                    MessageBoxHelper.ShowError("Lỗi", "Thời gian bắt đầu không hợp lệ. Vui lòng chọn thời gian trong tương lai.");
                     return false;
                 }
                 // kiem tra xem phim moiw o phong nao va co bi trung thoi gian voi suat khasc khong
@@ -300,7 +300,7 @@ namespace Cinema_Management_System.Models.DAOs
                 );
                 if (isOverLap)
                 {
-                    System.Windows.Forms.MessageBox.Show("Lịch chiếu bị trùng thời gian hoặc phòng chiếu. Vui lòng chọn thời gian khác.");
+                    MessageBoxHelper.ShowError("Lỗi", "Lịch chiếu bị trùng thời gian hoặc phòng chiếu. Vui lòng chọn thời gian khác.");
                     return false;
                 }
                 Connect.ShowTimes.InsertOnSubmit(newshowtime);
@@ -326,9 +326,9 @@ namespace Cinema_Management_System.Models.DAOs
 
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
-                System.Windows.Forms.MessageBox.Show("Loi them suat chieu" + ex);
+                MessageBoxHelper.ShowError("Lỗi", "Lỗi thêm suất chiếu");
                 return false;
             }
         }
@@ -340,14 +340,14 @@ namespace Cinema_Management_System.Models.DAOs
             {
                 if(showTimeUpdate.StartTime < DateTime.Now)
                 {
-                    System.Windows.Forms.MessageBox.Show("Thời gian bắt đầu không hợp lệ. Vui lòng chọn thời gian trong tương lai.");
+                    MessageBoxHelper.ShowError("Lỗi", "Thời gian bắt đầu không hợp lệ. Vui lòng chọn thời gian trong tương lai.");
                     return false;
                 }
                 // tim xem co suat chieu cap nhat trong du lieu khong
                 var existingShowTime = Connect.ShowTimes.FirstOrDefault(s => s.Id == showTimeUpdate.Id);
                 if (existingShowTime == null)
                 {
-                    System.Windows.Forms.MessageBox.Show("Không tìm thấy suất chiếu cần cập nhật.");
+                    MessageBoxHelper.ShowError("Lỗi", "Không tìm thấy suất chiếu cần cập nhật.");
                     return false;
                 }
                 else
@@ -363,7 +363,7 @@ namespace Cinema_Management_System.Models.DAOs
 
                     if (isOverLap)
                     {
-                        System.Windows.Forms.MessageBox.Show("Lịch chiếu bị trùng thời gian hoặc phòng chiếu. Vui lòng chọn thời gian khác.");
+                        MessageBoxHelper.ShowError("Lỗi", "Lịch chiếu bị trùng thời gian hoặc phòng chiếu. Vui lòng chọn thời gian khác.");
                         return false;
                     }
                     // Cập nhật thông tin suất chiếu
@@ -399,9 +399,9 @@ namespace Cinema_Management_System.Models.DAOs
                 }
                 return false;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBoxHelper.ShowInfo("thong bao", "xoa khong thanh cong DA" + ex.Message); 
+                MessageBoxHelper.ShowInfo("Thông báo", "Xóa không thành công"); 
                 return false;
             }
         }
@@ -412,12 +412,28 @@ namespace Cinema_Management_System.Models.DAOs
             DateTime currentTime = DateTime.Now;
             try
             {
-                return Connect.ShowTimes.Any(st => st.Movie_Id == movieID && st.EndTime >= currentTime);
+                // Kiểm tra suất chiếu đang diễn ra (StartTime <= currentTime <= EndTime) hoặc trong tương lai (StartTime > currentTime)
+                return Connect.ShowTimes.Any(st =>
+                    (st.Movie_Id == movieID) &&
+                    (
+                        (st.StartTime <= currentTime && st.EndTime >= currentTime) || // Đang diễn ra
+                        (st.StartTime > currentTime) // Trong tương lai
+                    )
+                );
             }
             catch
             {
                 return false;
             }
+            //DateTime currentTime = DateTime.Now;
+            //try
+            //{
+            //    return Connect.ShowTimes.Any(st => st.Movie_Id == movieID && st.EndTime >= currentTime);
+            //}
+            //catch
+            //{
+            //    return false;
+            //}
         }
     }
 }

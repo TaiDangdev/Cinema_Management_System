@@ -45,6 +45,7 @@ namespace Cinema_Management_System.Models.DAOs
         public void UpdateSeatCondition(List<SeatForShowTimesDTO> seatsToUpdate)
         {
             if (seatsToUpdate == null || !seatsToUpdate.Any()) return;
+            Connect.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, Connect.SeatForShowtimes);
             try
             {
                 foreach (var seat in seatsToUpdate)
@@ -66,6 +67,7 @@ namespace Cinema_Management_System.Models.DAOs
 
         public void ResetSeatsCodition(int idSeat)
         {
+            Connect.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, Connect.SeatForShowtimes);
             var seatInDb = Connect.SeatForShowtimes.FirstOrDefault(sfs => sfs.Id == idSeat);
             if (seatInDb != null)
             {

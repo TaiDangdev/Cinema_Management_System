@@ -30,6 +30,9 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             InitializeComponent();
             _viewModelShowTime = new ShowTimeViewModels();
             _viewModelAuditorium= new AuditoriumViewModels();
+            CB_NameShowTime.Enabled = true;
+            DTP_DateShowTimeMovie.Enabled = true;
+            DTP_TimeStartShowTimes.Enabled = true;
             this.LoadListMovie();
             this.LoadAuditorium();
             this.AddStatus = true;
@@ -54,12 +57,15 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             _showTimeUpdate = showtimeUpdate;
             _viewModelShowTime = new ShowTimeViewModels();
             _viewModelAuditorium = new AuditoriumViewModels();
+            CB_NameShowTime.Enabled = false;
+            DTP_DateShowTimeMovie.Enabled = false;
+            DTP_TimeStartShowTimes.Enabled = false;
             this.LoadListMovie();
             this.LoadAuditorium();
             this.AddStatus = false;
             this.Label_Title.Text = "Sửa xuất chiếu";
             this.LoadinfoShowTime(showtimeUpdate);
-            DTP_DateShowTimeMovie.Value = DateTime.Now.Date;
+            DTP_DateShowTimeMovie.Value = showtimeUpdate.StartTime.Date;
         }
 
         // hien thi thong hien hien co
@@ -130,7 +136,6 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                 if (!int.TryParse(txt_PriceTicket.Text, out ticketPrice))
                 {
                     MessageBoxHelper.ShowError("Lỗi", "Giá vé không hợp lệ!");
-                    //System.Windows.Forms.MessageBox.Show("Giá vé không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 // Neu la formn Add ShowTime
@@ -141,13 +146,11 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                     if (success)
                     {
                         MessageBoxHelper.ShowSuccess("Thông báo", "Thêm suất chiếu thành công!");
-                        //System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
                         MessageBoxHelper.ShowError("Lỗi", "Thêm suất chiếu thất bại!");
-                        //System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 // Neu la Form Update Showtime

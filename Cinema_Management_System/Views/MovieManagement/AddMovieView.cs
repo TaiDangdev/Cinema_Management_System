@@ -209,11 +209,12 @@ namespace Cinema_Management_System.Views.MovieManagement
         private void UpdateMovieStatus()
         {
             DateTime startDate = startDateMovie_Txt.Value.Date;
+            DateTime endDate = endMovie_Txt.Value.Date;
             DateTime today = DateTime.Today;
 
-            if (startDate < today)
+            if (endDate < today)
                 statusMovie_Txt.Text = "Ngưng phát hành";
-            else if (startDate == today)
+            else if (startDate <= today && today <= endDate)
                 statusMovie_Txt.Text = "Đang phát hành";
             else
                 statusMovie_Txt.Text = "Sắp phát hành";

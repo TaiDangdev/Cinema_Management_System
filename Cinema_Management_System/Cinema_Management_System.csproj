@@ -269,6 +269,12 @@
     </Compile>
     <Compile Include="Views\MessageBox\MessageBoxHelper.cs" />
     <Compile Include="Views\MessageBox\MessageBoxType.cs" />
+    <Compile Include="Views\MovieManagement\ExtendMovieView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MovieManagement\ExtendMovieView.Designer.cs">
+      <DependentUpon>ExtendMovieView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Notification\NotificationHelper.cs" />
     <Compile Include="Views\Notification\NotificationView.cs">
       <SubType>Form</SubType>
@@ -496,6 +502,9 @@
     </Compile>
     <EmbeddedResource Include="Views\AdminForm\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MovieManagement\ExtendMovieView.resx">
+      <DependentUpon>ExtendMovieView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Notification\NotificationView.resx">
       <DependentUpon>NotificationView.cs</DependentUpon>
@@ -751,6 +760,7 @@
     <None Include="assets\file_icon.png" />
     <None Include="assets\coin_icon.png" />
     <None Include="assets\preview_icon.png" />
+    <None Include="assets\reload_icon.png" />
     <Content Include="assets\StoryboardMovie\1.jpg" />
     <Content Include="assets\StoryboardMovie\2.jpg" />
     <Content Include="assets\StoryboardMovie\3.jpg" />
