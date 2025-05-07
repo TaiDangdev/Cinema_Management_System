@@ -1,18 +1,13 @@
 ﻿using Cinema_Management_System.Models.DTOs;
-using Cinema_Management_System.ViewModels.MovieManagementVM.Feature;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using Cinema_Management_System.Views.MessageBox;
 using Cinema_Management_System.Models.DAOs;
+using System.Globalization;
 
 namespace Cinema_Management_System.Views.MovieManagement
 {
@@ -208,7 +203,16 @@ namespace Cinema_Management_System.Views.MovieManagement
             releaseYearMovie_Txt.Text = movie.ReleaseYear;
             languageMovie_Txt.Text = movie.Language;
             countryMovie_Txt.Text = movie.Country;
-            startDateMovie_Txt.Value = DateTime.TryParse(movie.StartDate, out DateTime parsedDate) ? parsedDate : DateTime.Now;
+            System.Windows.Forms.MessageBox.Show(movie.StartDate, "Start Date", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (DateTime.TryParseExact(movie.StartDate, "d/M/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedStartDate))
+            {
+                startDateMovie_Txt.Value = parsedStartDate;
+            }
+            else
+            {
+                startDateMovie_Txt.Value = DateTime.Today;
+            }
+            //startDateMovie_Txt.Value = DateTime.TryParse(movie.StartDate, out DateTime parsedDate) ? parsedDate : DateTime.Now;
             trailerMovie_Txt.Text = movie.Trailer;
             priceMovie_Txt.Text = movie.ImportPrice.ToString("N0");
 

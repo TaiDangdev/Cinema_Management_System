@@ -1,4 +1,5 @@
-﻿using Cinema_Management_System.Views.Notification;
+﻿using Cinema_Management_System.Views.MessageBox;
+using Cinema_Management_System.Views.Notification;
 using Cinema_Management_System.Views.ShowTimeManagement;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,13 @@ namespace Cinema_Management_System
     public partial class AdminForm : Form
     {
         private Guna.UI2.WinForms.Guna2Button currentSelectedButton = null;
+        private List<UserControl> subControls;
 
         public AdminForm()
         {
             InitializeComponent();
             InitializeSubForms();
         }
-
-        private List<UserControl> subControls;
 
         private void SelectSidebarButton(Guna.UI2.WinForms.Guna2Button selectedButton)
         {
@@ -144,15 +144,14 @@ namespace Cinema_Management_System
                         Size preferredSize = TextRenderer.MeasureText(name_Txt.Text, name_Txt.Font, name_Txt.MaximumSize, TextFormatFlags.WordBreak);
                         name_Txt.Size = new Size(name_Txt.MaximumSize.Width, preferredSize.Height);
 
-                        // Căn giữa theo chiều ngang
                         name_Txt.Location = new Point(
                             (slidebar_Panel.Width - name_Txt.Width) / 2,
-                            name_Txt.Location.Y // Giữ nguyên vị trí Y hiện tại
+                            name_Txt.Location.Y
                         );
 
                         avatar_pic.Location = new Point(
                         (slidebar_Panel.Width - avatar_pic.Width) / 2,
-                            avatar_pic.Location.Y // giữ nguyên vị trí Y
+                            avatar_pic.Location.Y 
                         );
 
                         if (staff.ImageSource != null)
@@ -172,15 +171,10 @@ namespace Cinema_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ahaha: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi:" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             SelectSidebarButton(filmManage_Btn);
             ShowSubForm(movieManagementView1);
-        }
-
-        private void statisticsView1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

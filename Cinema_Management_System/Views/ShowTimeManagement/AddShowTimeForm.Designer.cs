@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddShowTimeForm));
+            this.control_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.Label_Title = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -45,23 +47,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Panel1.SuspendLayout();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.control_Panel.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Panel1
+            // control_Panel
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.guna2Panel1.BorderRadius = 5;
-            this.guna2Panel1.Controls.Add(this.Label_Title);
-            this.guna2Panel1.Controls.Add(this.guna2Panel3);
-            this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(703, 50);
-            this.guna2Panel1.TabIndex = 0;
+            this.control_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            this.control_Panel.BorderRadius = 5;
+            this.control_Panel.Controls.Add(this.Label_Title);
+            this.control_Panel.Controls.Add(this.guna2Panel3);
+            this.control_Panel.Controls.Add(this.guna2Panel2);
+            this.control_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.control_Panel.Location = new System.Drawing.Point(0, 0);
+            this.control_Panel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.control_Panel.Name = "control_Panel";
+            this.control_Panel.Size = new System.Drawing.Size(703, 43);
+            this.control_Panel.TabIndex = 0;
             // 
             // Label_Title
             // 
@@ -92,6 +95,7 @@
             // 
             // guna2Panel4
             // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.White;
             this.guna2Panel4.BorderColor = System.Drawing.Color.Red;
             this.guna2Panel4.BorderRadius = 10;
             this.guna2Panel4.Controls.Add(this.btn_AddShowTimeMovie);
@@ -106,10 +110,10 @@
             this.guna2Panel4.Controls.Add(this.label3);
             this.guna2Panel4.Controls.Add(this.label2);
             this.guna2Panel4.Controls.Add(this.label1);
-            this.guna2Panel4.Location = new System.Drawing.Point(0, 41);
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 42);
             this.guna2Panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(703, 221);
+            this.guna2Panel4.Size = new System.Drawing.Size(703, 220);
             this.guna2Panel4.TabIndex = 1;
             // 
             // btn_AddShowTimeMovie
@@ -119,7 +123,7 @@
             this.btn_AddShowTimeMovie.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_AddShowTimeMovie.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_AddShowTimeMovie.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_AddShowTimeMovie.FillColor = System.Drawing.Color.DimGray;
+            this.btn_AddShowTimeMovie.FillColor = System.Drawing.Color.Red;
             this.btn_AddShowTimeMovie.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_AddShowTimeMovie.ForeColor = System.Drawing.Color.White;
             this.btn_AddShowTimeMovie.Location = new System.Drawing.Point(567, 155);
@@ -136,7 +140,7 @@
             this.btn_Cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_Cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Cancel.FillColor = System.Drawing.Color.Red;
+            this.btn_Cancel.FillColor = System.Drawing.Color.DimGray;
             this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_Cancel.ForeColor = System.Drawing.Color.White;
             this.btn_Cancel.Location = new System.Drawing.Point(455, 155);
@@ -148,14 +152,16 @@
             // 
             // txt_TimeMovieStart
             // 
+            this.txt_TimeMovieStart.BorderColor = System.Drawing.Color.Black;
             this.txt_TimeMovieStart.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_TimeMovieStart.DefaultText = "";
-            this.txt_TimeMovieStart.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_TimeMovieStart.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.txt_TimeMovieStart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txt_TimeMovieStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_TimeMovieStart.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_TimeMovieStart.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_TimeMovieStart.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.txt_TimeMovieStart.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.txt_TimeMovieStart.ForeColor = System.Drawing.Color.Black;
             this.txt_TimeMovieStart.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_TimeMovieStart.Location = new System.Drawing.Point(12, 99);
             this.txt_TimeMovieStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -172,7 +178,9 @@
             this.DTP_DateShowTimeMovie.CustomFormat = "dd/MM/yyyy";
             this.DTP_DateShowTimeMovie.FillColor = System.Drawing.Color.White;
             this.DTP_DateShowTimeMovie.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DTP_DateShowTimeMovie.ForeColor = System.Drawing.Color.Black;
             this.DTP_DateShowTimeMovie.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DTP_DateShowTimeMovie.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.DTP_DateShowTimeMovie.Location = new System.Drawing.Point(473, 29);
             this.DTP_DateShowTimeMovie.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DTP_DateShowTimeMovie.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -183,14 +191,16 @@
             // 
             // txt_PriceTicket
             // 
+            this.txt_PriceTicket.BorderColor = System.Drawing.Color.Black;
             this.txt_PriceTicket.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_PriceTicket.DefaultText = "";
-            this.txt_PriceTicket.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_PriceTicket.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.txt_PriceTicket.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txt_PriceTicket.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_PriceTicket.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_PriceTicket.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_PriceTicket.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.txt_PriceTicket.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.txt_PriceTicket.ForeColor = System.Drawing.Color.Black;
             this.txt_PriceTicket.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_PriceTicket.Location = new System.Drawing.Point(473, 99);
             this.txt_PriceTicket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -204,12 +214,14 @@
             // CB_Auditorium
             // 
             this.CB_Auditorium.BackColor = System.Drawing.Color.Transparent;
+            this.CB_Auditorium.BorderColor = System.Drawing.Color.Black;
+            this.CB_Auditorium.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.CB_Auditorium.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CB_Auditorium.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_Auditorium.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CB_Auditorium.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CB_Auditorium.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.CB_Auditorium.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.CB_Auditorium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.CB_Auditorium.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.CB_Auditorium.ForeColor = System.Drawing.Color.Black;
             this.CB_Auditorium.ItemHeight = 30;
             this.CB_Auditorium.Location = new System.Drawing.Point(232, 101);
             this.CB_Auditorium.Name = "CB_Auditorium";
@@ -220,12 +232,15 @@
             // CB_NameShowTime
             // 
             this.CB_NameShowTime.BackColor = System.Drawing.Color.Transparent;
+            this.CB_NameShowTime.BorderColor = System.Drawing.Color.Black;
+            this.CB_NameShowTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.CB_NameShowTime.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CB_NameShowTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_NameShowTime.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CB_NameShowTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CB_NameShowTime.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.CB_NameShowTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.CB_NameShowTime.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.CB_NameShowTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.CB_NameShowTime.ForeColor = System.Drawing.Color.Black;
+            this.CB_NameShowTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.CB_NameShowTime.ItemHeight = 30;
             this.CB_NameShowTime.Location = new System.Drawing.Point(13, 29);
             this.CB_NameShowTime.Name = "CB_NameShowTime";
@@ -278,22 +293,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên phim:";
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // AddShowTimeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 263);
             this.Controls.Add(this.guna2Panel4);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.control_Panel);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddShowTimeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddShowTimeForm";
             this.Load += new System.EventHandler(this.AddShowTimeForm_Load);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.control_Panel.ResumeLayout(false);
+            this.control_Panel.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -302,7 +323,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel control_Panel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
@@ -319,5 +340,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_AddShowTimeMovie;
         private Guna.UI2.WinForms.Guna2Button btn_Cancel;
         private Guna.UI2.WinForms.Guna2HtmlLabel Label_Title;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

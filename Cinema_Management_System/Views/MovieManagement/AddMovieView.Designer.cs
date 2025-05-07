@@ -79,7 +79,6 @@
             this.trailer_btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.countryMovie_Txt = new Guna.UI2.WinForms.Guna2ComboBox();
             this.genreMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.endMovie_Txt = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.showTime_Txt = new Guna.UI2.WinForms.Guna2TextBox();
@@ -88,7 +87,6 @@
             this.control_Panel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poster_Pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -359,7 +357,6 @@
             this.label13.Size = new System.Drawing.Size(90, 20);
             this.label13.TabIndex = 33;
             this.label13.Text = "Poster phim";
-            //this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // chooseImage_Btn
             // 
@@ -375,9 +372,10 @@
             this.chooseImage_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.chooseImage_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.chooseImage_Btn.ForeColor = System.Drawing.Color.White;
+            this.chooseImage_Btn.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
             this.chooseImage_Btn.Location = new System.Drawing.Point(747, 134);
             this.chooseImage_Btn.Name = "chooseImage_Btn";
-            this.chooseImage_Btn.Size = new System.Drawing.Size(156, 39);
+            this.chooseImage_Btn.Size = new System.Drawing.Size(100, 39);
             this.chooseImage_Btn.TabIndex = 34;
             this.chooseImage_Btn.Text = "Chọn ảnh";
             this.chooseImage_Btn.Click += new System.EventHandler(this.chooseImage_Btn_Click);
@@ -396,9 +394,9 @@
             this.acceptMovie_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.acceptMovie_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.acceptMovie_Btn.ForeColor = System.Drawing.Color.White;
-            this.acceptMovie_Btn.Location = new System.Drawing.Point(817, 483);
+            this.acceptMovie_Btn.Location = new System.Drawing.Point(814, 483);
             this.acceptMovie_Btn.Name = "acceptMovie_Btn";
-            this.acceptMovie_Btn.Size = new System.Drawing.Size(96, 39);
+            this.acceptMovie_Btn.Size = new System.Drawing.Size(109, 39);
             this.acceptMovie_Btn.TabIndex = 37;
             this.acceptMovie_Btn.Text = "Xong";
             this.acceptMovie_Btn.Click += new System.EventHandler(this.acceptMovie_Btn_Click);
@@ -724,7 +722,7 @@
             this.importFilm_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.importFilm_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.importFilm_Btn.ForeColor = System.Drawing.Color.White;
-            this.importFilm_Btn.Location = new System.Drawing.Point(702, 483);
+            this.importFilm_Btn.Location = new System.Drawing.Point(699, 483);
             this.importFilm_Btn.Name = "importFilm_Btn";
             this.importFilm_Btn.Size = new System.Drawing.Size(109, 39);
             this.importFilm_Btn.TabIndex = 102;
@@ -793,7 +791,7 @@
             this.reset_button.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.reset_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.reset_button.ForeColor = System.Drawing.Color.White;
-            this.reset_button.Location = new System.Drawing.Point(587, 483);
+            this.reset_button.Location = new System.Drawing.Point(584, 483);
             this.reset_button.Name = "reset_button";
             this.reset_button.Size = new System.Drawing.Size(109, 39);
             this.reset_button.TabIndex = 106;
@@ -814,6 +812,7 @@
             this.trailer_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.trailer_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.trailer_btn.ForeColor = System.Drawing.Color.White;
+            this.trailer_btn.Image = global::Cinema_Management_System.Properties.Resources.preview_icon;
             this.trailer_btn.Location = new System.Drawing.Point(195, 321);
             this.trailer_btn.Name = "trailer_btn";
             this.trailer_btn.Size = new System.Drawing.Size(109, 39);
@@ -882,19 +881,6 @@
             this.genreMovie_Txt.Size = new System.Drawing.Size(145, 36);
             this.genreMovie_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.genreMovie_Txt.TabIndex = 11;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(756, 139);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(28, 28);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 35;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // endMovie_Txt
             // 
@@ -1014,7 +1000,6 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.titleError_Txt);
             this.Controls.Add(this.acceptMovie_Btn);
-            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.chooseImage_Btn);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.descriptionMovie_Txt);
@@ -1042,7 +1027,6 @@
             this.control_Panel.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.poster_Pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1071,7 +1055,6 @@
         private Guna.UI2.WinForms.Guna2TextBox descriptionMovie_Txt;
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2GradientButton chooseImage_Btn;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2GradientButton acceptMovie_Btn;
         private System.Windows.Forms.Label titleError_Txt;
         private System.Windows.Forms.Label label15;

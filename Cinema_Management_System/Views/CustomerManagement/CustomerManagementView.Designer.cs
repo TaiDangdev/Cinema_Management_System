@@ -51,11 +51,7 @@
             this.diem_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // xuatEXEL_bnt
@@ -72,9 +68,10 @@
             this.xuatEXEL_bnt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.xuatEXEL_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.xuatEXEL_bnt.ForeColor = System.Drawing.Color.White;
+            this.xuatEXEL_bnt.Image = global::Cinema_Management_System.Properties.Resources.file_icon;
             this.xuatEXEL_bnt.Location = new System.Drawing.Point(1105, 24);
             this.xuatEXEL_bnt.Name = "xuatEXEL_bnt";
-            this.xuatEXEL_bnt.Size = new System.Drawing.Size(186, 39);
+            this.xuatEXEL_bnt.Size = new System.Drawing.Size(162, 39);
             this.xuatEXEL_bnt.TabIndex = 9;
             this.xuatEXEL_bnt.Text = "Xuất file excel";
             this.xuatEXEL_bnt.Click += new System.EventHandler(this.xuatEXEL_bnt_Click);
@@ -89,7 +86,7 @@
             this.luachontim_cbb.FillColor = System.Drawing.SystemColors.Control;
             this.luachontim_cbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.luachontim_cbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.luachontim_cbb.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.luachontim_cbb.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.luachontim_cbb.ForeColor = System.Drawing.Color.Black;
             this.luachontim_cbb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.luachontim_cbb.ItemHeight = 30;
@@ -97,7 +94,7 @@
             "Kiểu tìm kiếm",
             "Tên khách hàng",
             "Số điện thoại"});
-            this.luachontim_cbb.Location = new System.Drawing.Point(575, 27);
+            this.luachontim_cbb.Location = new System.Drawing.Point(587, 27);
             this.luachontim_cbb.Name = "luachontim_cbb";
             this.luachontim_cbb.Size = new System.Drawing.Size(224, 36);
             this.luachontim_cbb.StartIndex = 0;
@@ -162,9 +159,10 @@
             this.Them_bnt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.Them_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.Them_bnt.ForeColor = System.Drawing.Color.White;
-            this.Them_bnt.Location = new System.Drawing.Point(853, 24);
+            this.Them_bnt.Image = global::Cinema_Management_System.Properties.Resources.add_icon;
+            this.Them_bnt.Location = new System.Drawing.Point(877, 24);
             this.Them_bnt.Name = "Them_bnt";
-            this.Them_bnt.Size = new System.Drawing.Size(198, 39);
+            this.Them_bnt.Size = new System.Drawing.Size(162, 39);
             this.Them_bnt.TabIndex = 13;
             this.Them_bnt.Text = "Thêm khách hàng";
             this.Them_bnt.Click += new System.EventHandler(this.Them_bnt_Click);
@@ -335,44 +333,13 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Red;
-            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.add_icon;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(857, 29);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(28, 28);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 14;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            //this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Red;
-            this.guna2PictureBox2.Image = global::Cinema_Management_System.Properties.Resources.file_icon;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(1116, 29);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(28, 28);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 25;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
-            // 
             // CustomerManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_customer);
-            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.Them_bnt);
             this.Controls.Add(this.canhbao_label);
             this.Controls.Add(this.xuatEXEL_bnt);
@@ -385,8 +352,6 @@
             this.Size = new System.Drawing.Size(1329, 838);
             this.Load += new System.EventHandler(this.CustomerManagementView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,7 +364,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private Guna.UI2.WinForms.Guna2HtmlLabel canhbao_label;
         private Guna.UI2.WinForms.Guna2GradientButton Them_bnt;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_customer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
@@ -411,6 +375,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayDK_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn diem_col;
         private System.Windows.Forms.DataGridViewButtonColumn Action;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
     }
 }

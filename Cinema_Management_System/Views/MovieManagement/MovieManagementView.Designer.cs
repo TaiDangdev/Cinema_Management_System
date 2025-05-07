@@ -35,11 +35,9 @@
             this.searchMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.addMovie_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.notification_Btn = new System.Windows.Forms.PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.notification_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.notificationPainter = new Guna.UI2.WinForms.Guna2NotificationPaint(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.notification_Btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // filterMovie_Cbx
@@ -83,7 +81,6 @@
             this.moviePanel.Name = "moviePanel";
             this.moviePanel.Size = new System.Drawing.Size(1278, 647);
             this.moviePanel.TabIndex = 5;
-            //this.moviePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.moviePanel_Paint);
             // 
             // searchMovie_Txt
             // 
@@ -124,9 +121,10 @@
             this.addMovie_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.addMovie_Btn.ForeColor = System.Drawing.Color.White;
             this.addMovie_Btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.addMovie_Btn.Image = global::Cinema_Management_System.Properties.Resources.add_icon;
             this.addMovie_Btn.Location = new System.Drawing.Point(561, 12);
             this.addMovie_Btn.Name = "addMovie_Btn";
-            this.addMovie_Btn.Size = new System.Drawing.Size(166, 39);
+            this.addMovie_Btn.Size = new System.Drawing.Size(120, 39);
             this.addMovie_Btn.TabIndex = 3;
             this.addMovie_Btn.Text = "Thêm phim";
             this.addMovie_Btn.Click += new System.EventHandler(this.addMovie_Btn_Click);
@@ -141,21 +139,6 @@
             this.notification_Btn.TabIndex = 6;
             this.notification_Btn.TabStop = false;
             this.notification_Btn.Click += new System.EventHandler(this.notification_Btn_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Red;
-            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.add_icon;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(572, 18);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(28, 28);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 4;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            //this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // notification_Panel
             // 
@@ -183,7 +166,6 @@
             this.Controls.Add(this.notification_Panel);
             this.Controls.Add(this.notification_Btn);
             this.Controls.Add(this.moviePanel);
-            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.addMovie_Btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.filterMovie_Cbx);
@@ -193,7 +175,6 @@
             this.Name = "MovieManagementView";
             this.Size = new System.Drawing.Size(1329, 838);
             ((System.ComponentModel.ISupportInitialize)(this.notification_Btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,7 +185,6 @@
         private Guna.UI2.WinForms.Guna2TextBox searchMovie_Txt;
         private Guna.UI2.WinForms.Guna2ComboBox filterMovie_Cbx;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.FlowLayoutPanel moviePanel;
         private Guna.UI2.WinForms.Guna2GradientButton addMovie_Btn;
         private System.Windows.Forms.PictureBox notification_Btn;

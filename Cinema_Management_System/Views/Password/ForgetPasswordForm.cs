@@ -18,8 +18,7 @@ using Cinema_Management_System.ViewModels;
 
 namespace Cinema_Management_System
 {
-    
-
+ 
     public partial class ForgetPasswordForm : Form
     {
         private LoginForm _loginForm;
@@ -34,7 +33,7 @@ namespace Cinema_Management_System
 
         private string generatedOTP;
 
-        private bool isResendMode = false; // xác nhận việc gửi lại mã OTP
+        private bool isResendMode = false;
 
         public ForgetPasswordForm(LoginForm loginForm)
         {
@@ -57,7 +56,7 @@ namespace Cinema_Management_System
         private string GenerateOTP()
         {
             Random rnd = new Random();
-            return rnd.Next(100000, 999999).ToString(); // 6 chữ số
+            return rnd.Next(100000, 999999).ToString();
         }
 
         private void ShowPanel(Control panelToShow)
@@ -100,14 +99,6 @@ namespace Cinema_Management_System
 
             UpdatePosterImage();
         }
-
-        //private bool IsValidPassword(string password)
-        //{
-        //    return password.Length >= 8 &&
-        //           password.Any(char.IsUpper) &&
-        //           password.Any(char.IsLower) &&
-        //           password.Any(char.IsDigit);
-        //}
 
         private void OnEnterKeyPressed(object sender, KeyEventArgs e)
         {
@@ -197,7 +188,6 @@ namespace Cinema_Management_System
             }
             catch (Exception ex)
             {
-                // Tránh crash nếu ảnh không tồn tại
                 Console.WriteLine("Lỗi load ảnh: " + ex.Message);
             }
         }
@@ -207,7 +197,6 @@ namespace Cinema_Management_System
             string username = username_Txt.Text.Trim();
             if (isResendMode)
             {
-                // Gửi lại mã OTP
                 var user = db.STAFFs.Join(db.ACCOUNTs,
                                           staff => staff.Id,
                                           acc => acc.Staff_Id,
@@ -226,10 +215,9 @@ namespace Cinema_Management_System
                 }
                 else
                 {
-                    MessageBox.Show("❌ Không tìm thấy người dùng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxHelper.ShowError("Lỗi", "Không tìm thấy người dùng với tên tài khoản này!");
                 }
 
-                // Trở lại chế độ xác nhận
                 accept_Btn.Text = "Xác nhận";
                 isResendMode = false;
                 return;
@@ -399,15 +387,11 @@ namespace Cinema_Management_System
 
                 await smtp.SendMailAsync(mail);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("❌ Lỗi gửi OTP: " + ex.Message);
+                MessageBoxHelper.ShowError("Lỗi", "Không thể gửi mã OTP qua email. Vui lòng kiểm tra lại địa chỉ email của bạn.");
             }
         }
-
-
-
-
         private void notReceived_Label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             YesMessage confirmResend = new YesMessage(
@@ -428,7 +412,6 @@ namespace Cinema_Management_System
             string confirmPassword = confirmPass_Txt.Text.Trim();
             string username = username_Txt.Text.Trim();
 
-            // Kiểm tra mật khẩu rỗng
             if (string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmPassword))
             {
                 errorPass_Txt.Text = "*Vui lòng nhập đầy đủ thông tin!";
@@ -436,15 +419,13 @@ namespace Cinema_Management_System
                 return;
             }
 
-            // Kiểm tra chuẩn mật khẩu
-            //if (!PasswordHelper.IsValidPassword(newPassword))
-            //{
-            //    errorPass_Txt.Text = $"*Mật khẩu phải từ 8 ký tự, gồm chữ hoa,\nchữ thường và số!";
-            //    errorPass_Txt.Visible = true;
-            //    return;
-            //}
+            if (!PasswordHelper.IsValidPassword(newPassword))
+            {
+                errorPass_Txt.Text = $"*Mật khẩu phải từ 8 ký tự, gồm chữ hoa,\nchữ thường và số!";
+                errorPass_Txt.Visible = true;
+                return;
+            }
 
-            // Kiểm tra xác nhận khớp
             if (newPassword != confirmPassword)
             {
                 errorPass_Txt.Text = "*Xác nhận mật khẩu không khớp!";
@@ -454,14 +435,13 @@ namespace Cinema_Management_System
 
             try
             {
-                // Tìm tài khoản theo username
                 var account = db.ACCOUNTs.FirstOrDefault(a => a.Username == username);
                 if (account != null)
                 {
-                    account.Password = newPassword;
+                    account.Password = PasswordHelper.EncryptSHA256(newPassword);
                     db.SubmitChanges();
 
-                    MessageBox.Show("✅ Đổi mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxHelper.ShowSuccess("Thông báo", "Đổi mật khẩu thành công!");
                     this.Close();
                     _loginForm.SetPassword("");
                     _loginForm.SetError("");

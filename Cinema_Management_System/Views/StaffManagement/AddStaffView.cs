@@ -17,8 +17,6 @@ using ClosedXML.Excel;
 using CsvHelper.Configuration.Attributes;
 using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
-using Cinema_Management_System.Models.DAOs.Bills;
-using Cinema_Management_System.Models.DTOs.Bills;
 using Cinema_Management_System.ViewModels;
 
 namespace Cinema_Management_System.Views.StaffManagement
@@ -189,8 +187,8 @@ namespace Cinema_Management_System.Views.StaffManagement
 
             if (control == pass_Txt)
             {
-                if (text.Length < 6)
-                    return "*Mật khẩu phải từ 6 ký tự trở lên!";
+                if(!PasswordHelper.IsValidPassword(text))
+                    return "*Mật khẩu phải từ 8 ký tự,bao gồm \nchữ hoa, chữ thường và số!";
             }
 
             if (control == confirmPass_Txt)
@@ -321,6 +319,8 @@ namespace Cinema_Management_System.Views.StaffManagement
         private void BindStaffToForm(StaffData staff)
         {
             name_Txt.Text = staff.FullName;
+            role_Txt.Text = staff.Role;
+            sex_Txt.Text = staff.Gender;
             email_Txt.Text = staff.Email;
             phone_Txt.Text = staff.PhoneNumber;
             salary_Txt.Text = staff.Salary.ToString("N0");

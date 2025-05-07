@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillTicketForms));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.BillSeatsForShowTimesRP3 = new Cinema_Management_System.Views.ShowTimeManagement.BillSeatsForShowTimesRP();
             this.BillSeatsForShowTimesRP1 = new Cinema_Management_System.Views.ShowTimeManagement.BillSeatsForShowTimesRP();
             this.BillSeatsForShowTimesRP2 = new Cinema_Management_System.Views.ShowTimeManagement.BillSeatsForShowTimesRP();
-            this.BillSeatsForShowTimesRP3 = new Cinema_Management_System.Views.ShowTimeManagement.BillSeatsForShowTimesRP();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -52,6 +53,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 579);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BillTicketForms";
             this.Text = "BillTicketForms";
             this.Load += new System.EventHandler(this.BillTicketForms_Load);

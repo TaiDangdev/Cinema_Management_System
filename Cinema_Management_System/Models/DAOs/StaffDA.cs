@@ -1,11 +1,12 @@
 ﻿using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.ViewModels;
+using Cinema_Management_System.Views.MessageBox;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Input;
+using static Cinema_Management_System.AboutAccount_Form;
 
 namespace Cinema_Management_System.Models.DAOs
 {
@@ -25,22 +26,25 @@ namespace Cinema_Management_System.Models.DAOs
 
         private StaffDA() { }
 
-        public List<object> GetAllStaff()
+        public List<StaffDTO> GetAllStaff()
         {
-            return connect.STAFFs.Select(staff => new
-            {
-                IdFormat = formatID(staff.Id,"NV"),
-                FullName = staff.FullName,
-                Gender = staff.Gender,
-                PhoneNumber = staff.PhoneNumber,
-                Email = staff.Email,
-                Role = staff.Role
-            }).Cast<object>().ToList();
+            return connect.STAFFs
+                .Where(staff => staff.Id != CurrentUser.StaffId)
+                .Select(staff => new StaffDTO(
+                    formatID(staff.Id, "NV"),
+                    staff.FullName,
+                    staff.Gender,
+                    staff.PhoneNumber,
+                    staff.Email,
+                    staff.Role
+                ))
+                .ToList();
         }
 
-        // hỗ trợ hiển thị datagridview
+        // hỗ trợ việc xuất file excel
         public List<StaffDTO> GetAllStaffFullInfo()
         {
+            connect.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, connect.STAFFs);
             var staffData = connect.STAFFs.ToList();
 
             return staffData.Select(staff => new StaffDTO(
@@ -77,6 +81,45 @@ namespace Cinema_Management_System.Models.DAOs
             connect.SubmitChanges();
 
             return staff.Id;
+        }
+
+        public bool DeleteStaff(int staffId)
+        {
+            var staff = connect.STAFFs.FirstOrDefault(s => s.Id == staffId);
+            if (staff == null)
+            {
+                MessageBoxHelper.ShowError("Lỗi", $"Không tìm thấy nhân viên với ID {staffId} để xóa.");
+                return false;
+            }
+
+            connect.STAFFs.DeleteOnSubmit(staff);
+            connect.SubmitChanges();
+            return true;
+        }
+
+        public bool UpdateStaff(StaffDTO staffDTO)
+        {
+            var staff = connect.STAFFs.FirstOrDefault(s => s.Id == staffDTO.Id);
+            if (staff == null)
+            {
+                MessageBoxHelper.ShowError("Lỗi", $"Không tìm thấy nhân viên với ID {staffDTO.Id} để cập nhật.");
+                return false;
+            }
+
+            staff.FullName = staffDTO.FullName;
+            staff.Birth = string.IsNullOrWhiteSpace(staffDTO.Birth) ? DateTime.MinValue : DateTime.Parse(staffDTO.Birth);
+            staff.Gender = staffDTO.Gender;
+            staff.Email = staffDTO.Email;
+            staff.PhoneNumber = staffDTO.PhoneNumber;
+            staff.Salary = staffDTO.Salary;
+            staff.Role = staffDTO.Role;
+            staff.NgayVaoLam = string.IsNullOrWhiteSpace(staffDTO.NgayVaoLam) ? DateTime.MinValue : DateTime.Parse(staffDTO.NgayVaoLam);
+            staff.ImageSource = staffDTO.ImageSource != null
+                                ? ImageVsSQL.BitmapToByteArray(staffDTO.ImageSource)
+                                : null;
+
+            connect.SubmitChanges();
+            return true;
         }
 
         public static string formatID(int id, string type = "NV")
@@ -120,8 +163,71 @@ namespace Cinema_Management_System.Models.DAOs
             return connect.STAFFs.Any(s => s.PhoneNumber == phoneNumber);
         }
 
+        public StaffDTO GetStaffById(int staffId)
+        {
+            connect.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, connect.STAFFs);
+            var staff = connect.STAFFs.FirstOrDefault(s => s.Id == staffId);
 
+            if (staff == null)
+            {
+                MessageBoxHelper.ShowError("Lỗi", "Không tìm thấy nhân viên với Id " + staffId);
+                return null;
+            }
+                
+            return new StaffDTO
+            {
+                Id = staff.Id,
+                FullName = staff.FullName,
+                Birth = staff.Birth.ToString("dd/MM/yyyy"),
+                Gender = staff.Gender,
+                Email = staff.Email,
+                PhoneNumber = staff.PhoneNumber,
+                Salary = staff.Salary,
+                Role = staff.Role,
+                NgayVaoLam = staff.NgayVaoLam.ToString("dd/MM/yyyy"), 
+                ImageSource = staff.ImageSource != null
+                              ? ImageVsSQL.ByteArrayToBitmap(staff.ImageSource.ToArray())
+                              : null
+            };
+        }
 
-
+        public List<StaffDTO> SearchStaff(string keyword, string searchType, int limit = 15)
+        {
+            keyword = keyword.ToLower();
+            if (searchType == "FullName")
+            {
+                return connect.STAFFs
+                        .Where(c => c.Id != CurrentUser.StaffId && c.FullName.ToLower().Contains(keyword))
+                        .OrderBy(c => c.FullName)
+                        .Take(limit)
+                        .Select(c => new StaffDTO(
+                            formatID(c.Id, "NV"),
+                            c.FullName,
+                            c.Gender,
+                            c.PhoneNumber,
+                            c.Email,
+                            c.Role
+                        ))
+                        .ToList();
+            }
+            else if (searchType == "PhoneNumber")
+            {
+                return connect.STAFFs
+                        .Where(c => c.Id != CurrentUser.StaffId && c.PhoneNumber.Contains(keyword))
+                        .OrderBy(c => c.PhoneNumber)
+                        .Take(limit)
+                        .Select(c => new StaffDTO(
+                            formatID(c.Id, "NV"),
+                            c.FullName,
+                            c.Gender,
+                            c.PhoneNumber,
+                            c.Email,
+                            c.Role
+                        ))
+                        .ToList();
+            }
+            MessageBoxHelper.ShowInfo("Thông báo", "Không tìm thấy nhân viên nào với từ khóa tìm kiếm này.");
+            return new List<StaffDTO>();
+        }
     }
 }

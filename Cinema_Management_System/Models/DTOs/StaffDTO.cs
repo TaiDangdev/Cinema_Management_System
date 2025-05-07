@@ -1,4 +1,5 @@
 ﻿using Cinema_Management_System.Models.DAOs;
+using Cinema_Management_System.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -40,7 +41,7 @@ namespace Cinema_Management_System.Models.DTOs
             IdFormat = StaffDA.formatID(Id);
         }
 
-        // phục vụ việc hiển thị datagridview
+        
         public StaffDTO(int id,string fullName,string gender,string email,string phone,string role)
         {
             Id = id;
@@ -49,6 +50,17 @@ namespace Cinema_Management_System.Models.DTOs
             Gender = gender;
             Email = email;
             PhoneNumber = phone;
+            Role = role;
+        }
+
+        // phục vụ việc hiển thị datagridview
+        public StaffDTO(string idFormat, string fullName, string gender, string phoneNumber, string email, string role)
+        {
+            IdFormat = idFormat;
+            FullName = fullName;
+            Gender = gender;
+            PhoneNumber = phoneNumber;
+            Email = email;
             Role = role;
         }
 
@@ -83,5 +95,6 @@ namespace Cinema_Management_System.Models.DTOs
             IdFormat = StaffDA.formatID(Id);
             ImageSource = imageSource;
         }
+
     }
 }

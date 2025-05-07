@@ -2,6 +2,8 @@
 using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.ViewModels.ShowTimeManagementVM;
+using Guna.UI2.WinForms.Suite;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +23,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
         private AuditoriumViewModels _viewModelAuditorium;
         bool AddStatus = true;
         ShowTimeDTO _showTimeUpdate;
+        private Guna2ShadowForm shadowForm;
         public AddShowTimeForm()
         {
             InitializeComponent();
@@ -30,6 +33,18 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             this.LoadAuditorium();
             this.AddStatus = true;
             DTP_DateShowTimeMovie.Value = DateTime.Now.Date;
+            SetupUI();
+        }
+
+        private void SetupUI()
+        {
+            DragHelper.EnableDrag(this, control_Panel);
+            shadowForm = new Guna2ShadowForm
+            {
+                ShadowColor = Color.Black,
+                BorderRadius = 20
+            };
+            shadowForm.SetShadowForm(this);
         }
 
         public AddShowTimeForm(ShowTimeDTO showtimeUpdate)

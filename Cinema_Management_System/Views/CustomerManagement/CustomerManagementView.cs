@@ -294,13 +294,6 @@ namespace Cinema_Management_System.Views.CustomerManagement
             debounceTimer.Stop();
             string keyword = _debounceKeyword;
             string searchType = _currentSearchType.ToString();
-            //var filtered = CustomerDA.Instance.SearchCustomers(keyword, searchType, 10);
-            //dgv_customer.DataSource = filtered;
-            if (CustomerDA.Instance == null)
-            {
-                MessageBoxHelper.ShowError("Lỗi", "Không thể truy cập CustomerDA.");
-                return;
-            }
             var filtered = CustomerDA.Instance.SearchCustomers(keyword, searchType, 10) ?? new List<CustomerDTO>();
             dgv_customer.DataSource = filtered;
         }

@@ -629,51 +629,6 @@ namespace Cinema_Management_System.Views.ProductManagement
             LoadProducts();
         }
 
-        private void ProductManagementView_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void productPanel_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void guna2Panel6_Paint(object sender, PaintEventArgs e)
         {
             int radius = 20; // bo góc 20px
@@ -690,10 +645,10 @@ namespace Cinema_Management_System.Views.ProductManagement
                 path.CloseFigure();
 
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
-                {
-                    e.Graphics.DrawPath(pen, path);
-                }
+                //using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
+                //{
+                //    e.Graphics.DrawPath(pen, path);
+                //}
             }
         }
 
@@ -713,10 +668,10 @@ namespace Cinema_Management_System.Views.ProductManagement
                 path.CloseFigure();
 
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
-                {
-                    e.Graphics.DrawPath(pen, path);
-                }
+                //using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
+                //{
+                //    e.Graphics.DrawPath(pen, path);
+                //}
             }
         }
 
@@ -741,10 +696,10 @@ namespace Cinema_Management_System.Views.ProductManagement
                 path.CloseFigure();
 
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
-                {
-                    e.Graphics.DrawPath(pen, path);
-                }
+                //using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
+                //{
+                //    e.Graphics.DrawPath(pen, path);
+                //}
             }
         }
 

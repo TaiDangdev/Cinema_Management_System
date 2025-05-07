@@ -45,9 +45,6 @@ namespace Cinema_Management_System
     partial void InsertBill_ImportProduct(Bill_ImportProduct instance);
     partial void UpdateBill_ImportProduct(Bill_ImportProduct instance);
     partial void DeleteBill_ImportProduct(Bill_ImportProduct instance);
-    partial void InsertBillDetail(BillDetail instance);
-    partial void UpdateBillDetail(BillDetail instance);
-    partial void DeleteBillDetail(BillDetail instance);
     partial void InsertCUSTOMER(CUSTOMER instance);
     partial void UpdateCUSTOMER(CUSTOMER instance);
     partial void DeleteCUSTOMER(CUSTOMER instance);
@@ -60,9 +57,6 @@ namespace Cinema_Management_System
     partial void InsertStaff_Salary(Staff_Salary instance);
     partial void UpdateStaff_Salary(Staff_Salary instance);
     partial void DeleteStaff_Salary(Staff_Salary instance);
-    partial void InsertVOUCHER(VOUCHER instance);
-    partial void UpdateVOUCHER(VOUCHER instance);
-    partial void DeleteVOUCHER(VOUCHER instance);
     partial void InsertMOVIE(MOVIE instance);
     partial void UpdateMOVIE(MOVIE instance);
     partial void DeleteMOVIE(MOVIE instance);
@@ -156,14 +150,6 @@ namespace Cinema_Management_System
 			}
 		}
 		
-		public System.Data.Linq.Table<BillDetail> BillDetails
-		{
-			get
-			{
-				return this.GetTable<BillDetail>();
-			}
-		}
-		
 		public System.Data.Linq.Table<CUSTOMER> CUSTOMERs
 		{
 			get
@@ -193,14 +179,6 @@ namespace Cinema_Management_System
 			get
 			{
 				return this.GetTable<Staff_Salary>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VOUCHER> VOUCHERs
-		{
-			get
-			{
-				return this.GetTable<VOUCHER>();
 			}
 		}
 		
@@ -628,8 +606,6 @@ namespace Cinema_Management_System
 		
 		private int _Total;
 		
-		private EntitySet<BillDetail> _BillDetails;
-		
 		private EntitySet<SeatForShowtime> _SeatForShowtimes;
 		
 		private EntityRef<STAFF> _STAFF;
@@ -664,7 +640,6 @@ namespace Cinema_Management_System
 		
 		public Bill()
 		{
-			this._BillDetails = new EntitySet<BillDetail>(new Action<BillDetail>(this.attach_BillDetails), new Action<BillDetail>(this.detach_BillDetails));
 			this._SeatForShowtimes = new EntitySet<SeatForShowtime>(new Action<SeatForShowtime>(this.attach_SeatForShowtimes), new Action<SeatForShowtime>(this.detach_SeatForShowtimes));
 			this._STAFF = default(EntityRef<STAFF>);
 			this._ShowTime = default(EntityRef<ShowTime>);
@@ -879,19 +854,6 @@ namespace Cinema_Management_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bill_BillDetail", Storage="_BillDetails", ThisKey="Id", OtherKey="Bill_Id")]
-		public EntitySet<BillDetail> BillDetails
-		{
-			get
-			{
-				return this._BillDetails;
-			}
-			set
-			{
-				this._BillDetails.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bill_SeatForShowtime", Storage="_SeatForShowtimes", ThisKey="Id", OtherKey="Condition")]
 		public EntitySet<SeatForShowtime> SeatForShowtimes
 		{
@@ -991,18 +953,6 @@ namespace Cinema_Management_System
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_BillDetails(BillDetail entity)
-		{
-			this.SendPropertyChanging();
-			entity.Bill = this;
-		}
-		
-		private void detach_BillDetails(BillDetail entity)
-		{
-			this.SendPropertyChanging();
-			entity.Bill = null;
 		}
 		
 		private void attach_SeatForShowtimes(SeatForShowtime entity)
@@ -1439,229 +1389,6 @@ namespace Cinema_Management_System
 						this._Product_Id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Product");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BillDetail")]
-	public partial class BillDetail : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private int _Bill_Id;
-		
-		private System.Nullable<int> _Product_Id;
-		
-		private int _Quantity;
-		
-		private int _UnitPrice;
-		
-		private System.Nullable<int> _Total;
-		
-		private EntityRef<Bill> _Bill;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnBill_IdChanging(int value);
-    partial void OnBill_IdChanged();
-    partial void OnProduct_IdChanging(System.Nullable<int> value);
-    partial void OnProduct_IdChanged();
-    partial void OnQuantityChanging(int value);
-    partial void OnQuantityChanged();
-    partial void OnUnitPriceChanging(int value);
-    partial void OnUnitPriceChanged();
-    partial void OnTotalChanging(System.Nullable<int> value);
-    partial void OnTotalChanged();
-    #endregion
-		
-		public BillDetail()
-		{
-			this._Bill = default(EntityRef<Bill>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bill_Id", DbType="Int NOT NULL")]
-		public int Bill_Id
-		{
-			get
-			{
-				return this._Bill_Id;
-			}
-			set
-			{
-				if ((this._Bill_Id != value))
-				{
-					if (this._Bill.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnBill_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Bill_Id = value;
-					this.SendPropertyChanged("Bill_Id");
-					this.OnBill_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Id", DbType="Int")]
-		public System.Nullable<int> Product_Id
-		{
-			get
-			{
-				return this._Product_Id;
-			}
-			set
-			{
-				if ((this._Product_Id != value))
-				{
-					this.OnProduct_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Product_Id = value;
-					this.SendPropertyChanged("Product_Id");
-					this.OnProduct_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
-		public int Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this.OnQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPrice", DbType="Int NOT NULL")]
-		public int UnitPrice
-		{
-			get
-			{
-				return this._UnitPrice;
-			}
-			set
-			{
-				if ((this._UnitPrice != value))
-				{
-					this.OnUnitPriceChanging(value);
-					this.SendPropertyChanging();
-					this._UnitPrice = value;
-					this.SendPropertyChanged("UnitPrice");
-					this.OnUnitPriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", AutoSync=AutoSync.Always, DbType="Int", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Nullable<int> Total
-		{
-			get
-			{
-				return this._Total;
-			}
-			set
-			{
-				if ((this._Total != value))
-				{
-					this.OnTotalChanging(value);
-					this.SendPropertyChanging();
-					this._Total = value;
-					this.SendPropertyChanged("Total");
-					this.OnTotalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bill_BillDetail", Storage="_Bill", ThisKey="Bill_Id", OtherKey="Id", IsForeignKey=true)]
-		public Bill Bill
-		{
-			get
-			{
-				return this._Bill.Entity;
-			}
-			set
-			{
-				Bill previousValue = this._Bill.Entity;
-				if (((previousValue != value) 
-							|| (this._Bill.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Bill.Entity = null;
-						previousValue.BillDetails.Remove(this);
-					}
-					this._Bill.Entity = value;
-					if ((value != null))
-					{
-						value.BillDetails.Add(this);
-						this._Bill_Id = value.Id;
-					}
-					else
-					{
-						this._Bill_Id = default(int);
-					}
-					this.SendPropertyChanged("Bill");
 				}
 			}
 		}
@@ -2684,212 +2411,6 @@ namespace Cinema_Management_System
 						this._Staff_Id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("STAFF");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VOUCHER")]
-	public partial class VOUCHER : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _NAME;
-		
-		private string _CODE;
-		
-		private string _VOUCHERDETAIL;
-		
-		private string _TYPE;
-		
-		private System.DateTime _STARTDATE;
-		
-		private System.DateTime _FINDATE;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void OnCODEChanging(string value);
-    partial void OnCODEChanged();
-    partial void OnVOUCHERDETAILChanging(string value);
-    partial void OnVOUCHERDETAILChanged();
-    partial void OnTYPEChanging(string value);
-    partial void OnTYPEChanged();
-    partial void OnSTARTDATEChanging(System.DateTime value);
-    partial void OnSTARTDATEChanged();
-    partial void OnFINDATEChanging(System.DateTime value);
-    partial void OnFINDATEChanged();
-    #endregion
-		
-		public VOUCHER()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODE", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string CODE
-		{
-			get
-			{
-				return this._CODE;
-			}
-			set
-			{
-				if ((this._CODE != value))
-				{
-					this.OnCODEChanging(value);
-					this.SendPropertyChanging();
-					this._CODE = value;
-					this.SendPropertyChanged("CODE");
-					this.OnCODEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VOUCHERDETAIL", DbType="NText NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string VOUCHERDETAIL
-		{
-			get
-			{
-				return this._VOUCHERDETAIL;
-			}
-			set
-			{
-				if ((this._VOUCHERDETAIL != value))
-				{
-					this.OnVOUCHERDETAILChanging(value);
-					this.SendPropertyChanging();
-					this._VOUCHERDETAIL = value;
-					this.SendPropertyChanged("VOUCHERDETAIL");
-					this.OnVOUCHERDETAILChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYPE", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string TYPE
-		{
-			get
-			{
-				return this._TYPE;
-			}
-			set
-			{
-				if ((this._TYPE != value))
-				{
-					this.OnTYPEChanging(value);
-					this.SendPropertyChanging();
-					this._TYPE = value;
-					this.SendPropertyChanged("TYPE");
-					this.OnTYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STARTDATE", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime STARTDATE
-		{
-			get
-			{
-				return this._STARTDATE;
-			}
-			set
-			{
-				if ((this._STARTDATE != value))
-				{
-					this.OnSTARTDATEChanging(value);
-					this.SendPropertyChanging();
-					this._STARTDATE = value;
-					this.SendPropertyChanged("STARTDATE");
-					this.OnSTARTDATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FINDATE", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime FINDATE
-		{
-			get
-			{
-				return this._FINDATE;
-			}
-			set
-			{
-				if ((this._FINDATE != value))
-				{
-					this.OnFINDATEChanging(value);
-					this.SendPropertyChanging();
-					this._FINDATE = value;
-					this.SendPropertyChanged("FINDATE");
-					this.OnFINDATEChanged();
 				}
 			}
 		}

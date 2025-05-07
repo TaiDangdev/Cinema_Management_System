@@ -63,6 +63,9 @@
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label20 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.hidePass_Btn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.hideConfirmPass_Btn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.hideOldPass_Btn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
             this.avatar_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar_pic)).BeginInit();
@@ -70,6 +73,9 @@
             this.guna2Panel2.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hidePass_Btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hideConfirmPass_Btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hideOldPass_Btn)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -485,6 +491,9 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.guna2Panel2.Controls.Add(this.hideOldPass_Btn);
+            this.guna2Panel2.Controls.Add(this.hideConfirmPass_Btn);
+            this.guna2Panel2.Controls.Add(this.hidePass_Btn);
             this.guna2Panel2.Controls.Add(this.confirmPass_Txt);
             this.guna2Panel2.Controls.Add(this.newPass_Txt);
             this.guna2Panel2.Controls.Add(this.oldPass_Txt);
@@ -612,7 +621,7 @@
             this.changePass_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.changePass_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.changePass_Btn.ForeColor = System.Drawing.Color.White;
-            this.changePass_Btn.Location = new System.Drawing.Point(512, 185);
+            this.changePass_Btn.Location = new System.Drawing.Point(547, 185);
             this.changePass_Btn.Name = "changePass_Btn";
             this.changePass_Btn.Size = new System.Drawing.Size(159, 39);
             this.changePass_Btn.TabIndex = 6;
@@ -657,6 +666,51 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // hidePass_Btn
+            // 
+            this.hidePass_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.hidePass_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.hidePass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
+            this.hidePass_Btn.ImageRotate = 0F;
+            this.hidePass_Btn.Location = new System.Drawing.Point(457, 185);
+            this.hidePass_Btn.Name = "hidePass_Btn";
+            this.hidePass_Btn.Size = new System.Drawing.Size(25, 24);
+            this.hidePass_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hidePass_Btn.TabIndex = 15;
+            this.hidePass_Btn.TabStop = false;
+            this.hidePass_Btn.UseTransparentBackground = true;
+            this.hidePass_Btn.Click += new System.EventHandler(this.hidePass_Btn_Click);
+            // 
+            // hideConfirmPass_Btn
+            // 
+            this.hideConfirmPass_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.hideConfirmPass_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.hideConfirmPass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
+            this.hideConfirmPass_Btn.ImageRotate = 0F;
+            this.hideConfirmPass_Btn.Location = new System.Drawing.Point(457, 252);
+            this.hideConfirmPass_Btn.Name = "hideConfirmPass_Btn";
+            this.hideConfirmPass_Btn.Size = new System.Drawing.Size(25, 24);
+            this.hideConfirmPass_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hideConfirmPass_Btn.TabIndex = 16;
+            this.hideConfirmPass_Btn.TabStop = false;
+            this.hideConfirmPass_Btn.UseTransparentBackground = true;
+            this.hideConfirmPass_Btn.Click += new System.EventHandler(this.hideConfirmPass_Btn_Click);
+            // 
+            // hideOldPass_Btn
+            // 
+            this.hideOldPass_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.hideOldPass_Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.hideOldPass_Btn.Image = global::Cinema_Management_System.Properties.Resources.eye;
+            this.hideOldPass_Btn.ImageRotate = 0F;
+            this.hideOldPass_Btn.Location = new System.Drawing.Point(457, 125);
+            this.hideOldPass_Btn.Name = "hideOldPass_Btn";
+            this.hideOldPass_Btn.Size = new System.Drawing.Size(25, 24);
+            this.hideOldPass_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hideOldPass_Btn.TabIndex = 17;
+            this.hideOldPass_Btn.TabStop = false;
+            this.hideOldPass_Btn.UseTransparentBackground = true;
+            this.hideOldPass_Btn.Click += new System.EventHandler(this.hideOldPass_Btn_Click);
+            // 
             // AboutAccount_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -680,6 +734,9 @@
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hidePass_Btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hideConfirmPass_Btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hideOldPass_Btn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -720,5 +777,8 @@
         private Guna.UI2.WinForms.Guna2TextBox newPass_Txt;
         private Guna.UI2.WinForms.Guna2TextBox oldPass_Txt;
         private System.Windows.Forms.Panel avatar_Panel;
+        private Guna.UI2.WinForms.Guna2PictureBox hideOldPass_Btn;
+        private Guna.UI2.WinForms.Guna2PictureBox hideConfirmPass_Btn;
+        private Guna.UI2.WinForms.Guna2PictureBox hidePass_Btn;
     }
 }

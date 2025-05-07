@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using Cinema_Management_System.Views.MessageBox;
 using Cinema_Management_System.Models.DAOs;
+using Cinema_Management_System.ViewModels;
 
 namespace Cinema_Management_System
 {
@@ -49,9 +50,9 @@ namespace Cinema_Management_System
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxHelper.ShowError("Lỗi","Lỗi tải dữ liệu");
             }
 
         }
@@ -66,8 +67,8 @@ namespace Cinema_Management_System
                     if (staff != null)
                     {
                         nameStaff_Txt.Text = staff.FullName;
-                        nameStaff_Txt.MaximumSize = new Size(avatar_Panel.Width - 20, 0); 
-                        nameStaff_Txt.TextAlign = ContentAlignment.MiddleCenter;
+                        //nameStaff_Txt.MaximumSize = new Size(avatar_Panel.Width - 20, 0); 
+                        //nameStaff_Txt.TextAlign = ContentAlignment.MiddleCenter;
                         fullname_txt.Text = staff.FullName;
                         birth_txt.Text = staff.Birth.ToString("dd/MM/yyyy");
                         ngayvaolam_txt.Text = staff.NgayVaoLam.ToString("dd/MM/yyyy");
@@ -88,13 +89,21 @@ namespace Cinema_Management_System
                             avatar_pic.Image = Properties.Resources.icons8_person_32;
                         }
                     }
+
+                    nameStaff_Txt.AutoSize = true;
+                    nameStaff_Txt.MaximumSize = new Size(avatar_Panel.Width - 20, 0); 
+                    nameStaff_Txt.TextAlign = ContentAlignment.TopCenter; 
+                    nameStaff_Txt.Location = new Point(
+                        (avatar_Panel.Width - nameStaff_Txt.Width) / 2, 
+                        nameStaff_Txt.Location.Y 
+                    );
                     CurrentUser.Role = staff.Role;
                     currentRole=staff.Role;
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxHelper.ShowError("Lỗi", "Lỗi tải dữ liệu");
             }
         }
 
@@ -102,10 +111,9 @@ namespace Cinema_Management_System
         {
             bool isValid = true;
 
-            // Validate Old Password
             if (string.IsNullOrWhiteSpace(oldPass_Txt.Text))
             {
-                errorProvider1.SetError(oldPass_Txt, "Old Password is required.");
+                errorProvider1.SetError(oldPass_Txt, "Vui lòng nhập mật khẩu cũ");
                 isValid = false;
             }
             else
@@ -113,26 +121,29 @@ namespace Cinema_Management_System
                 errorProvider1.SetError(oldPass_Txt, string.Empty);
             }
 
-            // Validate New Password
             if (string.IsNullOrWhiteSpace(newPass_Txt.Text))
             {
-                errorProvider1.SetError(newPass_Txt, "New Password is required.");
+                errorProvider1.SetError(newPass_Txt, "Vui lòng nhập mật khẩu mới");
                 isValid = false;
             }
+            else if(!PasswordHelper.IsValidPassword(newPass_Txt.Text))
+            {
+                errorProvider1.SetError(newPass_Txt, "Mật khẩu phải từ 8 ký tự,gồm chữ hoa,chữ thường và số");
+                isValid = false;
+            }    
             else
             {
                 errorProvider1.SetError(newPass_Txt, string.Empty);
             }
 
-            // Validate Confirm Password
             if (string.IsNullOrWhiteSpace(confirmPass_Txt.Text))
             {
-                errorProvider1.SetError(confirmPass_Txt, "Confirm Password is required.");
+                errorProvider1.SetError(confirmPass_Txt, "Vui lòng nhập xác nhận mật khẩu");
                 isValid = false;
             }
             else if (newPass_Txt.Text != confirmPass_Txt.Text)
             {
-                errorProvider1.SetError(confirmPass_Txt, "Passwords do not match.");
+                errorProvider1.SetError(confirmPass_Txt, "Mật khẩu không khớp");
                 isValid = false;
             }
             else
@@ -155,7 +166,6 @@ namespace Cinema_Management_System
                 avatar_pic.Image = Image.FromFile(imagePath);
 
 
-                // chuyển đổi ảnh sang mảng byte
                 byte[] imageBytes = File.ReadAllBytes(imagePath);
 
                 using (var db = new ConnectDataContext())
@@ -165,8 +175,7 @@ namespace Cinema_Management_System
                     {
                         user.ImageSource = imageBytes;
                         db.SubmitChanges();
-                        //YesMessage msgBox = new YesMessage("Thông báo","Cập nhật ảnh đại diện thành công!");
-                        //msgBox.ShowDialog();
+                        MessageBoxHelper.ShowSuccess("Thông báo", "Cập nhật ảnh đại diện thành công!");
                     }
                 }
             }
@@ -176,25 +185,69 @@ namespace Cinema_Management_System
         {
             if (ValidatePasswordInput())
             {
-                string oldPassword = oldPass_Txt.Text;
-                string newPassword = newPass_Txt.Text;
+                string oldPassword = PasswordHelper.EncryptSHA256(oldPass_Txt.Text);
+                string newPassword = PasswordHelper.EncryptSHA256(newPass_Txt.Text);
                 string confirmPassword = confirmPass_Txt.Text;
 
-                // Gọi phương thức đổi mật khẩu trong UserDA
                 bool result = UserDA.ChangePassword(CurrentUser.StaffId, oldPassword, newPassword);
 
                 if (result)
                 {
-                    MessageBox.Show("Mật khẩu đã được thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxHelper.ShowSuccess("Thông báo", "Đổi mật khẩu thành công!");
+                    oldPass_Txt.Clear();
+                    newPass_Txt.Clear();
+                    confirmPass_Txt.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu cũ không chính xác hoặc có lỗi xảy ra.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxHelper.ShowError("Lỗi", "Mật khẩu cũ không chính xác!");
                 }
             }
             else
             {
-                MessageBox.Show("Please correct the highlighted errors.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxHelper.ShowError("Lỗi", "Vui lòng kiểm tra lại thông tin nhập vào!");
+            }
+        }
+
+        private void hideOldPass_Btn_Click(object sender, EventArgs e)
+        {
+            if (oldPass_Txt.UseSystemPasswordChar)
+            {
+                oldPass_Txt.UseSystemPasswordChar = false;
+                hideOldPass_Btn.Image = Properties.Resources.visible;
+            }
+            else
+            {
+                oldPass_Txt.UseSystemPasswordChar = true;
+                hideOldPass_Btn.Image = Properties.Resources.eye;
+            }
+        }
+
+        private void hidePass_Btn_Click(object sender, EventArgs e)
+        {
+            if (newPass_Txt.UseSystemPasswordChar)
+            {
+                newPass_Txt.UseSystemPasswordChar = false;
+                hidePass_Btn.Image = Properties.Resources.visible;
+            }
+            else
+            {
+                newPass_Txt.UseSystemPasswordChar = true;
+                hidePass_Btn.Image = Properties.Resources.eye;
+            }
+        }
+
+        private void hideConfirmPass_Btn_Click(object sender, EventArgs e)
+        {
+            if (confirmPass_Txt.UseSystemPasswordChar)
+            {
+                confirmPass_Txt.UseSystemPasswordChar = false;
+                hideConfirmPass_Btn.Image = Properties.Resources.visible;
+            }
+            else
+            {
+                confirmPass_Txt.UseSystemPasswordChar = true;
+                hideConfirmPass_Btn.Image = Properties.Resources.eye;
             }
         }
     }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductView));
             this.typeProduct_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.nameError_Txt = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -50,11 +51,9 @@
             this.nameProduct_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.control_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.reset_btn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poster_Pic)).BeginInit();
             this.control_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // typeProduct_cbb
@@ -173,9 +172,9 @@
             this.acceptProduct_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.acceptProduct_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.acceptProduct_Btn.ForeColor = System.Drawing.Color.White;
-            this.acceptProduct_Btn.Location = new System.Drawing.Point(274, 500);
+            this.acceptProduct_Btn.Location = new System.Drawing.Point(274, 459);
             this.acceptProduct_Btn.Name = "acceptProduct_Btn";
-            this.acceptProduct_Btn.Size = new System.Drawing.Size(96, 39);
+            this.acceptProduct_Btn.Size = new System.Drawing.Size(109, 39);
             this.acceptProduct_Btn.TabIndex = 136;
             this.acceptProduct_Btn.Text = "Xong";
             this.acceptProduct_Btn.Click += new System.EventHandler(this.acceptProduct_Btn_Click);
@@ -220,6 +219,7 @@
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this;
             // 
             // guna2ControlBox1
             // 
@@ -259,6 +259,8 @@
             this.choseImage_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.choseImage_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.choseImage_btn.ForeColor = System.Drawing.Color.White;
+            this.choseImage_btn.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
+            this.choseImage_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.choseImage_btn.Location = new System.Drawing.Point(271, 379);
             this.choseImage_btn.Name = "choseImage_btn";
             this.choseImage_btn.Size = new System.Drawing.Size(112, 39);
@@ -364,32 +366,19 @@
             this.reset_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.reset_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.reset_btn.ForeColor = System.Drawing.Color.White;
-            this.reset_btn.Location = new System.Drawing.Point(403, 500);
+            this.reset_btn.Location = new System.Drawing.Point(403, 459);
             this.reset_btn.Name = "reset_btn";
             this.reset_btn.Size = new System.Drawing.Size(109, 39);
             this.reset_btn.TabIndex = 153;
             this.reset_btn.Text = "Làm mới";
             this.reset_btn.Click += new System.EventHandler(this.reset_btn_Click);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(274, 390);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(28, 28);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 135;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
             // AddProductView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 551);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(524, 517);
             this.Controls.Add(this.typeProduct_cbb);
             this.Controls.Add(this.reset_btn);
             this.Controls.Add(this.nameError_Txt);
@@ -400,7 +389,6 @@
             this.Controls.Add(this.acceptProduct_Btn);
             this.Controls.Add(this.quantityError_Txt);
             this.Controls.Add(this.quantity_Txt);
-            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.choseImage_btn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -409,6 +397,7 @@
             this.Controls.Add(this.nameProduct_Txt);
             this.Controls.Add(this.control_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddProductView";
             this.Text = "AddProductView";
             this.Load += new System.EventHandler(this.AddProductView_Load);
@@ -416,7 +405,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.poster_Pic)).EndInit();
             this.control_Panel.ResumeLayout(false);
             this.control_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,6 +432,5 @@
         private Guna.UI2.WinForms.Guna2TextBox nameProduct_Txt;
         private Guna.UI2.WinForms.Guna2Panel control_Panel;
         private Guna.UI2.WinForms.Guna2GradientButton reset_btn;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

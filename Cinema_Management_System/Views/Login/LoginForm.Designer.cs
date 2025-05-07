@@ -43,8 +43,8 @@
             this.showMess_label = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.hide_Pic = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.username_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.password_Txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.username_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posterPic)).BeginInit();
@@ -180,11 +180,11 @@
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.hide_Pic);
             this.guna2Panel1.Controls.Add(this.showMess_label);
-            this.guna2Panel1.Controls.Add(this.username_Txt);
             this.guna2Panel1.Controls.Add(this.password_Txt);
             this.guna2Panel1.Controls.Add(this.login_Btn);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.forgetpassword_Txt);
+            this.guna2Panel1.Controls.Add(this.username_Txt);
             this.guna2Transition1.SetDecoration(this.guna2Panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(494, 75);
@@ -213,6 +213,32 @@
             this.hide_Pic.UseTransparentBackground = true;
             this.hide_Pic.Click += new System.EventHandler(this.hide_Pic_Click);
             // 
+            // password_Txt
+            // 
+            this.password_Txt.Animated = true;
+            this.password_Txt.BorderRadius = 8;
+            this.password_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.password_Txt, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.password_Txt.DefaultText = "Abc123@@";
+            this.password_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.password_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.password_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.password_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.password_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.password_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password_Txt.ForeColor = System.Drawing.Color.Black;
+            this.password_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.password_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
+            this.password_Txt.Location = new System.Drawing.Point(60, 190);
+            this.password_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.password_Txt.Name = "password_Txt";
+            this.password_Txt.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.password_Txt.PlaceholderText = "Mật khẩu";
+            this.password_Txt.SelectedText = "";
+            this.password_Txt.Size = new System.Drawing.Size(263, 48);
+            this.password_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.password_Txt.TabIndex = 2;
+            // 
             // username_Txt
             // 
             this.username_Txt.Animated = true;
@@ -239,32 +265,6 @@
             this.username_Txt.Size = new System.Drawing.Size(263, 48);
             this.username_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.username_Txt.TabIndex = 1;
-            // 
-            // password_Txt
-            // 
-            this.password_Txt.Animated = true;
-            this.password_Txt.BorderRadius = 8;
-            this.password_Txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2Transition1.SetDecoration(this.password_Txt, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.password_Txt.DefaultText = "admin123";
-            this.password_Txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.password_Txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.password_Txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.password_Txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.password_Txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.password_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password_Txt.ForeColor = System.Drawing.Color.Black;
-            this.password_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.password_Txt.IconLeft = global::Cinema_Management_System.Properties.Resources.icons8_lock_32;
-            this.password_Txt.Location = new System.Drawing.Point(60, 190);
-            this.password_Txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.password_Txt.Name = "password_Txt";
-            this.password_Txt.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.password_Txt.PlaceholderText = "Mật khẩu";
-            this.password_Txt.SelectedText = "";
-            this.password_Txt.Size = new System.Drawing.Size(263, 48);
-            this.password_Txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.password_Txt.TabIndex = 2;
             // 
             // guna2Transition1
             // 
@@ -294,9 +294,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(926, 589);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.hide_Btn);
             this.Controls.Add(this.close_Btn);
+            this.Controls.Add(this.guna2Panel1);
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

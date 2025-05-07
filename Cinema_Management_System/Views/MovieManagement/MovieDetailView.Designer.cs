@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieDetailView));
             this.control_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -494,6 +495,7 @@
             this.trailer_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.trailer_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.trailer_btn.ForeColor = System.Drawing.Color.White;
+            this.trailer_btn.Image = global::Cinema_Management_System.Properties.Resources.preview_icon;
             this.trailer_btn.Location = new System.Drawing.Point(248, 246);
             this.trailer_btn.Name = "trailer_btn";
             this.trailer_btn.Size = new System.Drawing.Size(109, 39);
@@ -511,6 +513,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.control_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MovieDetailView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieDetailView";

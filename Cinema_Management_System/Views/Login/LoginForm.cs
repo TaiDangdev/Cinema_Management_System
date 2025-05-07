@@ -10,6 +10,9 @@ using Cinema_Management_System.Views;
 using System.Threading.Tasks;
 using Cinema_Management_System.Views.MessageBox;
 using Cinema_Management_System.Views.Notification;
+using Cinema_Management_System.Views.StaffForm;
+using Cinema_Management_System.ViewModels;
+using Cinema_Management_System.Models.DAOs;
 
 namespace Cinema_Management_System
 {
@@ -128,15 +131,17 @@ namespace Cinema_Management_System
                 posterPic.Image = Image.FromFile(Path.GetFullPath(imagePath));
                 posterPic.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Lỗi load ảnh: " + ex.Message);
+                MessageBoxHelper.ShowError("Lỗi", "Lỗi load ảnh");
             }
         }
 
         private void login_Btn_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs()) return;
+
+
 
             var user = AuthenticateUser(username_Txt.Text.Trim(), password_Txt.Text.Trim());
             if (user != null)
@@ -161,7 +166,7 @@ namespace Cinema_Management_System
 
         private dynamic AuthenticateUser(string username, string password)
         {
-            // dùng dynamic vì LINQ không xác định được kiểu trả về
+            password = PasswordHelper.EncryptSHA256(password);
             using (var db = new ConnectDataContext())
             {
                 return (from acc in db.ACCOUNTs
@@ -175,15 +180,14 @@ namespace Cinema_Management_System
         {
             CurrentUser.StaffId = staffId;
             this.Hide();
-            //if (role == "Admin")
-            //{
-            //    new AdminForm().Show();
-            //}
-            //else if (role == "Staff")
-            //{
-            //    ShowError("Chưa làm form Staff");
-            //}
-            new AdminForm().Show();
+            if (role == "Quản lý")
+            {
+                new AdminForm().Show();
+            }
+            else if (role == "Nhân viên")
+            {
+                new StaffForm().Show();
+            }
         }
 
         private void ShowError(string message)

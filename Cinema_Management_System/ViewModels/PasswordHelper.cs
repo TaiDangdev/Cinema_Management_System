@@ -22,13 +22,6 @@ namespace Cinema_Management_System.ViewModels
             }
         }
 
-        // kiểm tra mật khẩu đăng nhập có đúng không 
-        public static bool VerifyHash(string input, string hashed)
-        {
-            string inputHash = EncryptSHA256(input);
-            return StringComparer.OrdinalIgnoreCase.Compare(inputHash, hashed) == 0;
-        }
-
         // kiểm tra tính bảo mật của mật khẩu
         public static bool IsValidPassword(string password)
         {

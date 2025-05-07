@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMovieView));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.priceError_Txt = new System.Windows.Forms.Label();
             this.priceMovie_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.chooseImage_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -84,7 +84,6 @@
             this.panel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poster_Pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -152,7 +151,6 @@
             this.panel.Controls.Add(this.priceError_Txt);
             this.panel.Controls.Add(this.priceMovie_Txt);
             this.panel.Controls.Add(this.label15);
-            this.panel.Controls.Add(this.guna2PictureBox1);
             this.panel.Controls.Add(this.chooseImage_Btn);
             this.panel.Controls.Add(this.label13);
             this.panel.Controls.Add(this.label7);
@@ -228,6 +226,7 @@
             this.trailer_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.trailer_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.trailer_btn.ForeColor = System.Drawing.Color.White;
+            this.trailer_btn.Image = global::Cinema_Management_System.Properties.Resources.preview_icon;
             this.trailer_btn.Location = new System.Drawing.Point(241, 288);
             this.trailer_btn.Name = "trailer_btn";
             this.trailer_btn.Size = new System.Drawing.Size(109, 39);
@@ -640,19 +639,6 @@
             this.label15.TabIndex = 125;
             this.label15.Text = "(VNĐ)";
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(705, 100);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(28, 28);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 124;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            // 
             // chooseImage_Btn
             // 
             this.chooseImage_Btn.Animated = true;
@@ -667,9 +653,10 @@
             this.chooseImage_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.chooseImage_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.chooseImage_Btn.ForeColor = System.Drawing.Color.White;
+            this.chooseImage_Btn.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
             this.chooseImage_Btn.Location = new System.Drawing.Point(694, 97);
             this.chooseImage_Btn.Name = "chooseImage_Btn";
-            this.chooseImage_Btn.Size = new System.Drawing.Size(156, 39);
+            this.chooseImage_Btn.Size = new System.Drawing.Size(104, 39);
             this.chooseImage_Btn.TabIndex = 123;
             this.chooseImage_Btn.Text = "Chọn ảnh";
             this.chooseImage_Btn.Click += new System.EventHandler(this.chooseImage_Btn_Click);
@@ -930,6 +917,7 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.control_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditMovieView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditMovieView";
@@ -939,7 +927,6 @@
             this.panel.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.poster_Pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -969,7 +956,6 @@
         private System.Windows.Forms.Label priceError_Txt;
         private Guna.UI2.WinForms.Guna2TextBox priceMovie_Txt;
         private System.Windows.Forms.Label label15;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2GradientButton chooseImage_Btn;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label7;

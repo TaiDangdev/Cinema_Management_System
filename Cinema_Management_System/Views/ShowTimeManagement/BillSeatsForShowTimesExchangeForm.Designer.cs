@@ -31,13 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillSeatsForShowTimesExchangeForm));
             this.canhbao_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.xuatEXEL_bnt = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dulieutim_txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_search = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgv_DataBill = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.luachontim_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.MaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TheHoiVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +49,7 @@
             this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Del = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.luachontim_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DataBill)).BeginInit();
             this.SuspendLayout();
@@ -207,29 +208,6 @@
             this.dgv_DataBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_DataBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DataBill_CellContentClick);
             // 
-            // luachontim_cbb
-            // 
-            this.luachontim_cbb.BackColor = System.Drawing.Color.Transparent;
-            this.luachontim_cbb.BorderColor = System.Drawing.Color.Black;
-            this.luachontim_cbb.BorderRadius = 10;
-            this.luachontim_cbb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.luachontim_cbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.luachontim_cbb.FillColor = System.Drawing.SystemColors.Control;
-            this.luachontim_cbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.luachontim_cbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.luachontim_cbb.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.luachontim_cbb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.luachontim_cbb.ItemHeight = 30;
-            this.luachontim_cbb.Items.AddRange(new object[] {
-            "Kiểu tìm kiếm",
-            "Mã Đơn",
-            "Mã Phim"});
-            this.luachontim_cbb.Location = new System.Drawing.Point(452, 13);
-            this.luachontim_cbb.Name = "luachontim_cbb";
-            this.luachontim_cbb.Size = new System.Drawing.Size(182, 36);
-            this.luachontim_cbb.StartIndex = 0;
-            this.luachontim_cbb.TabIndex = 20;
-            // 
             // MaDon
             // 
             this.MaDon.DataPropertyName = "Id";
@@ -319,6 +297,29 @@
             this.btn_Del.Name = "btn_Del";
             this.btn_Del.ReadOnly = true;
             // 
+            // luachontim_cbb
+            // 
+            this.luachontim_cbb.BackColor = System.Drawing.Color.Transparent;
+            this.luachontim_cbb.BorderColor = System.Drawing.Color.Black;
+            this.luachontim_cbb.BorderRadius = 10;
+            this.luachontim_cbb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.luachontim_cbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.luachontim_cbb.FillColor = System.Drawing.SystemColors.Control;
+            this.luachontim_cbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.luachontim_cbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.luachontim_cbb.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.luachontim_cbb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.luachontim_cbb.ItemHeight = 30;
+            this.luachontim_cbb.Items.AddRange(new object[] {
+            "Kiểu tìm kiếm",
+            "Mã Đơn",
+            "Mã Phim"});
+            this.luachontim_cbb.Location = new System.Drawing.Point(452, 13);
+            this.luachontim_cbb.Name = "luachontim_cbb";
+            this.luachontim_cbb.Size = new System.Drawing.Size(182, 36);
+            this.luachontim_cbb.StartIndex = 0;
+            this.luachontim_cbb.TabIndex = 20;
+            // 
             // BillSeatsForShowTimesExchangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,6 +331,7 @@
             this.Controls.Add(this.canhbao_label);
             this.Controls.Add(this.xuatEXEL_bnt);
             this.Controls.Add(this.dulieutim_txt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BillSeatsForShowTimesExchangeForm";
             this.Text = "BillSeatsForShowTimesExchangeForm";
             this.guna2GroupBox1.ResumeLayout(false);

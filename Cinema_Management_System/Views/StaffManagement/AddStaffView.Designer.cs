@@ -45,7 +45,6 @@
             this.nameAccountError_Txt = new System.Windows.Forms.Label();
             this.nameAccount_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.accept_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.chooseImage_Btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label13 = new System.Windows.Forms.Label();
             this.birth_Txt = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -70,7 +69,6 @@
             this.name_Txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.avatar_Pic = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.control_Panel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar_Pic)).BeginInit();
@@ -103,7 +101,7 @@
             this.confirmPassError_Txt.AutoSize = true;
             this.confirmPassError_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPassError_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.confirmPassError_Txt.Location = new System.Drawing.Point(471, 285);
+            this.confirmPassError_Txt.Location = new System.Drawing.Point(471, 291);
             this.confirmPassError_Txt.Name = "confirmPassError_Txt";
             this.confirmPassError_Txt.Size = new System.Drawing.Size(41, 17);
             this.confirmPassError_Txt.TabIndex = 146;
@@ -147,7 +145,7 @@
             this.startDate_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.startDate_Txt.ForeColor = System.Drawing.Color.Black;
             this.startDate_Txt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.startDate_Txt.Location = new System.Drawing.Point(261, 246);
+            this.startDate_Txt.Location = new System.Drawing.Point(261, 250);
             this.startDate_Txt.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.startDate_Txt.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.startDate_Txt.Name = "startDate_Txt";
@@ -160,7 +158,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(261, 220);
+            this.label16.Location = new System.Drawing.Point(261, 224);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(104, 20);
             this.label16.TabIndex = 160;
@@ -251,7 +249,7 @@
             this.confirmPass_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.confirmPass_Txt.ForeColor = System.Drawing.Color.Black;
             this.confirmPass_Txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.confirmPass_Txt.Location = new System.Drawing.Point(471, 246);
+            this.confirmPass_Txt.Location = new System.Drawing.Point(471, 252);
             this.confirmPass_Txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confirmPass_Txt.Name = "confirmPass_Txt";
             this.confirmPass_Txt.PlaceholderText = "";
@@ -341,23 +339,10 @@
             this.accept_Btn.ForeColor = System.Drawing.Color.White;
             this.accept_Btn.Location = new System.Drawing.Point(755, 386);
             this.accept_Btn.Name = "accept_Btn";
-            this.accept_Btn.Size = new System.Drawing.Size(96, 39);
+            this.accept_Btn.Size = new System.Drawing.Size(109, 39);
             this.accept_Btn.TabIndex = 141;
             this.accept_Btn.Text = "Xong";
             this.accept_Btn.Click += new System.EventHandler(this.accept_Btn_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(772, 49);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(28, 28);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 140;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // chooseImage_Btn
             // 
@@ -373,9 +358,10 @@
             this.chooseImage_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.chooseImage_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.chooseImage_Btn.ForeColor = System.Drawing.Color.White;
+            this.chooseImage_Btn.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
             this.chooseImage_Btn.Location = new System.Drawing.Point(770, 44);
             this.chooseImage_Btn.Name = "chooseImage_Btn";
-            this.chooseImage_Btn.Size = new System.Drawing.Size(127, 39);
+            this.chooseImage_Btn.Size = new System.Drawing.Size(102, 39);
             this.chooseImage_Btn.TabIndex = 139;
             this.chooseImage_Btn.Text = "Chọn ảnh";
             this.chooseImage_Btn.Click += new System.EventHandler(this.chooseImage_Btn_Click);
@@ -403,7 +389,7 @@
             this.birth_Txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.birth_Txt.ForeColor = System.Drawing.Color.Black;
             this.birth_Txt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.birth_Txt.Location = new System.Drawing.Point(21, 246);
+            this.birth_Txt.Location = new System.Drawing.Point(21, 250);
             this.birth_Txt.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.birth_Txt.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.birth_Txt.Name = "birth_Txt";
@@ -438,7 +424,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(471, 221);
+            this.label4.Location = new System.Drawing.Point(471, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(140, 20);
             this.label4.TabIndex = 128;
@@ -471,7 +457,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(21, 221);
+            this.label8.Location = new System.Drawing.Point(21, 225);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 20);
             this.label8.TabIndex = 132;
@@ -735,7 +721,6 @@
             this.Controls.Add(this.nameAccount_Txt);
             this.Controls.Add(this.phoneError_Txt);
             this.Controls.Add(this.accept_Btn);
-            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.chooseImage_Btn);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.birth_Txt);
@@ -757,7 +742,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xác nhận mật khẩu";
             this.Load += new System.EventHandler(this.AddStaffView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.control_Panel.ResumeLayout(false);
             this.control_Panel.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -784,7 +768,6 @@
         private System.Windows.Forms.Label nameAccountError_Txt;
         private Guna.UI2.WinForms.Guna2TextBox nameAccount_Txt;
         private Guna.UI2.WinForms.Guna2GradientButton accept_Btn;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2GradientButton chooseImage_Btn;
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2DateTimePicker birth_Txt;

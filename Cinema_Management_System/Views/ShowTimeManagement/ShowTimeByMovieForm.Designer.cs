@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowTimeByMovieForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.seatForShowTineUC1 = new Cinema_Management_System.Views.ShowTimeManagement.SeatForShowTineUC();
             this.FLP_ShowTimeFoerMovie = new System.Windows.Forms.FlowLayoutPanel();
@@ -399,6 +400,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ShowTimeByMovieForm";
             this.Text = "ShowTimeByMovieForm";
             this.panel1.ResumeLayout(false);

@@ -148,6 +148,7 @@ namespace Cinema_Management_System.Views.MessageBox
 
         private void close_Btn_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.No;
             this.Close();
         }
 

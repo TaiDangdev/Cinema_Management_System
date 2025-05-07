@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProductView));
             this.choseImage_btn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,6 +70,8 @@
             this.choseImage_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.choseImage_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.choseImage_btn.ForeColor = System.Drawing.Color.White;
+            this.choseImage_btn.Image = global::Cinema_Management_System.Properties.Resources.image_icon;
+            this.choseImage_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.choseImage_btn.Location = new System.Drawing.Point(271, 385);
             this.choseImage_btn.Name = "choseImage_btn";
             this.choseImage_btn.Size = new System.Drawing.Size(112, 39);
@@ -186,6 +189,7 @@
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this;
             // 
             // purchasepriceError_Txt
             // 
@@ -238,9 +242,9 @@
             this.acceptProduct_Btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.acceptProduct_Btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.acceptProduct_Btn.ForeColor = System.Drawing.Color.White;
-            this.acceptProduct_Btn.Location = new System.Drawing.Point(274, 506);
+            this.acceptProduct_Btn.Location = new System.Drawing.Point(262, 446);
             this.acceptProduct_Btn.Name = "acceptProduct_Btn";
-            this.acceptProduct_Btn.Size = new System.Drawing.Size(96, 39);
+            this.acceptProduct_Btn.Size = new System.Drawing.Size(109, 39);
             this.acceptProduct_Btn.TabIndex = 165;
             this.acceptProduct_Btn.Text = "Xong";
             this.acceptProduct_Btn.Click += new System.EventHandler(this.acceptProduct_Btn_Click);
@@ -330,7 +334,7 @@
             this.reset_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(58)))));
             this.reset_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.reset_btn.ForeColor = System.Drawing.Color.White;
-            this.reset_btn.Location = new System.Drawing.Point(403, 506);
+            this.reset_btn.Location = new System.Drawing.Point(403, 446);
             this.reset_btn.Name = "reset_btn";
             this.reset_btn.Size = new System.Drawing.Size(109, 39);
             this.reset_btn.TabIndex = 171;
@@ -371,7 +375,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 551);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(524, 509);
             this.Controls.Add(this.typeError_Txt);
             this.Controls.Add(this.choseImage_btn);
             this.Controls.Add(this.label6);
@@ -390,6 +395,7 @@
             this.Controls.Add(this.nameError_Txt);
             this.Controls.Add(this.guna2Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditProductView";
             this.Text = "EditProductView";
             this.Load += new System.EventHandler(this.EditProductView_Load);
