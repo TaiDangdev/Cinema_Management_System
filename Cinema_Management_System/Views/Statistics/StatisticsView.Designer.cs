@@ -29,136 +29,62 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend23 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend24 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea25 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend25 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea26 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend26 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea27 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend27 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Tongquat_tab = new System.Windows.Forms.TabPage();
-            this.sanpham_tab = new System.Windows.Forms.TabPage();
-            this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.chart8 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label28 = new System.Windows.Forms.Label();
-            this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.chart7 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label27 = new System.Windows.Forms.Label();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.chart6 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2DateTimePicker5 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label25 = new System.Windows.Forms.Label();
-            this.guna2DateTimePicker6 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label26 = new System.Windows.Forms.Label();
-            this.guna2MouseStateHandler1 = new Guna.UI2.WinForms.Guna2MouseStateHandler(this.components);
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.phim_tab = new System.Windows.Forms.TabPage();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label9 = new System.Windows.Forms.Label();
-            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label10 = new System.Windows.Forms.Label();
-            this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label11 = new System.Windows.Forms.Label();
-            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label12 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.chart9 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.bar_chart_TQ = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.tongchiphi_label = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.tongdoanhthu_label = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2DateTimePicker3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label29 = new System.Windows.Forms.Label();
-            this.guna2DateTimePicker4 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label30 = new System.Windows.Forms.Label();
+            this.lammoi_bnt = new Guna.UI2.WinForms.Guna2Button();
+            this.thoidiem_label = new System.Windows.Forms.Label();
+            this.thoidiem_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.chuki_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.endDay_date = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.Denngay_label = new System.Windows.Forms.Label();
+            this.startDay_date = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.Tungay_label = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.CPTQ_piechart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label11 = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.DTTQ_piechart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label12 = new System.Windows.Forms.Label();
+            this.phim_tab = new System.Windows.Forms.TabPage();
+            this.sanpham_tab = new System.Windows.Forms.TabPage();
+            this.guna2MouseStateHandler1 = new Guna.UI2.WinForms.Guna2MouseStateHandler(this.components);
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.xuatExcel_bnt = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TabControl1.SuspendLayout();
             this.Tongquat_tab.SuspendLayout();
-            this.sanpham_tab.SuspendLayout();
-            this.guna2CustomGradientPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart8)).BeginInit();
-            this.guna2CustomGradientPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart7)).BeginInit();
-            this.guna2Panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart6)).BeginInit();
-            this.guna2Panel8.SuspendLayout();
-            this.guna2Panel9.SuspendLayout();
-            this.guna2GroupBox3.SuspendLayout();
-            this.phim_tab.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
-            this.guna2GroupBox1.SuspendLayout();
-            this.guna2CustomGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            this.guna2CustomGradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
-            this.guna2CustomGradientPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
-            this.guna2CustomGradientPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart5)).BeginInit();
             this.guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bar_chart_TQ)).BeginInit();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
+            this.guna2CustomGradientPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CPTQ_piechart)).BeginInit();
+            this.guna2CustomGradientPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DTTQ_piechart)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -196,13 +122,23 @@
             this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             this.guna2TabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.guna2TabControl1_Selecting);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 44);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage1.Size = new System.Drawing.Size(1317, 751);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(1321, 751);
+            this.tabPage2.Size = new System.Drawing.Size(1317, 751);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -217,700 +153,305 @@
             this.Tongquat_tab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Tongquat_tab.Name = "Tongquat_tab";
             this.Tongquat_tab.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Tongquat_tab.Size = new System.Drawing.Size(1321, 751);
+            this.Tongquat_tab.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Tongquat_tab.Size = new System.Drawing.Size(1317, 751);
             this.Tongquat_tab.TabIndex = 2;
             this.Tongquat_tab.Text = "Tổng quát";
             // 
-            // sanpham_tab
-            // 
-            this.sanpham_tab.Controls.Add(this.guna2CustomGradientPanel6);
-            this.sanpham_tab.Controls.Add(this.guna2CustomGradientPanel5);
-            this.sanpham_tab.Controls.Add(this.guna2Panel7);
-            this.sanpham_tab.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sanpham_tab.Location = new System.Drawing.Point(4, 44);
-            this.sanpham_tab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.sanpham_tab.Name = "sanpham_tab";
-            this.sanpham_tab.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.sanpham_tab.Size = new System.Drawing.Size(1321, 751);
-            this.sanpham_tab.TabIndex = 4;
-            this.sanpham_tab.Text = "Sản phẩm";
-            this.sanpham_tab.UseVisualStyleBackColor = true;
-            // 
-            // guna2CustomGradientPanel6
-            // 
-            this.guna2CustomGradientPanel6.BorderRadius = 15;
-            this.guna2CustomGradientPanel6.Controls.Add(this.chart8);
-            this.guna2CustomGradientPanel6.Controls.Add(this.label28);
-            this.guna2CustomGradientPanel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2CustomGradientPanel6.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2CustomGradientPanel6.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel6.Location = new System.Drawing.Point(938, 386);
-            this.guna2CustomGradientPanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2CustomGradientPanel6.Name = "guna2CustomGradientPanel6";
-            this.guna2CustomGradientPanel6.Size = new System.Drawing.Size(383, 362);
-            this.guna2CustomGradientPanel6.TabIndex = 7;
-            // 
-            // chart8
-            // 
-            this.chart8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.chart8.BorderlineColor = System.Drawing.Color.Firebrick;
-            chartArea19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            chartArea19.Name = "ChartArea1";
-            this.chart8.ChartAreas.Add(chartArea19);
-            this.chart8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend19.Name = "Legend1";
-            this.chart8.Legends.Add(legend19);
-            this.chart8.Location = new System.Drawing.Point(0, 58);
-            this.chart8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.chart8.Name = "chart8";
-            series19.ChartArea = "ChartArea1";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series19.Legend = "Legend1";
-            series19.Name = "Series1";
-            this.chart8.Series.Add(series19);
-            this.chart8.Size = new System.Drawing.Size(383, 304);
-            this.chart8.TabIndex = 2;
-            this.chart8.Text = "chart8";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label28.Location = new System.Drawing.Point(114, 12);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(147, 30);
-            this.label28.TabIndex = 1;
-            this.label28.Text = "Cơ cấu chi phí";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // guna2CustomGradientPanel5
-            // 
-            this.guna2CustomGradientPanel5.BorderRadius = 15;
-            this.guna2CustomGradientPanel5.Controls.Add(this.chart7);
-            this.guna2CustomGradientPanel5.Controls.Add(this.label27);
-            this.guna2CustomGradientPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel5.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel5.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(938, 10);
-            this.guna2CustomGradientPanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
-            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(383, 362);
-            this.guna2CustomGradientPanel5.TabIndex = 6;
-            // 
-            // chart7
-            // 
-            this.chart7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chart7.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chart7.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
-            chartArea20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            chartArea20.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            chartArea20.Name = "ChartArea1";
-            this.chart7.ChartAreas.Add(chartArea20);
-            this.chart7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend20.Name = "Legend1";
-            this.chart7.Legends.Add(legend20);
-            this.chart7.Location = new System.Drawing.Point(0, 45);
-            this.chart7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.chart7.Name = "chart7";
-            this.chart7.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series20.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
-            series20.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series20.ChartArea = "ChartArea1";
-            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series20.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series20.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
-            series20.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series20.LabelBorderColor = System.Drawing.Color.Cyan;
-            series20.LabelForeColor = System.Drawing.Color.Silver;
-            series20.Legend = "Legend1";
-            series20.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            series20.MarkerColor = System.Drawing.Color.Lime;
-            series20.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
-            series20.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
-            series20.Name = "Series1";
-            series20.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series20.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series20.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
-            this.chart7.Series.Add(series20);
-            this.chart7.Size = new System.Drawing.Size(383, 317);
-            this.chart7.TabIndex = 1;
-            this.chart7.Text = "chart7";
-            this.chart7.Click += new System.EventHandler(this.chart7_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label27.Location = new System.Drawing.Point(99, 14);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(183, 30);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Cơ cấu doanh thu";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel7.BorderRadius = 30;
-            this.guna2Panel7.Controls.Add(this.chart6);
-            this.guna2Panel7.Controls.Add(this.guna2Panel8);
-            this.guna2Panel7.Controls.Add(this.guna2Panel9);
-            this.guna2Panel7.Controls.Add(this.label23);
-            this.guna2Panel7.Controls.Add(this.label24);
-            this.guna2Panel7.Controls.Add(this.guna2GroupBox3);
-            this.guna2Panel7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.guna2Panel7.Location = new System.Drawing.Point(4, 10);
-            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(911, 738);
-            this.guna2Panel7.TabIndex = 3;
-            // 
-            // chart6
-            // 
-            this.chart6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            chartArea21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            chartArea21.Name = "ChartArea1";
-            this.chart6.ChartAreas.Add(chartArea21);
-            this.chart6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend21.Name = "Legend1";
-            this.chart6.Legends.Add(legend21);
-            this.chart6.Location = new System.Drawing.Point(0, 261);
-            this.chart6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.chart6.Name = "chart6";
-            series21.ChartArea = "ChartArea1";
-            series21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series21.Legend = "Legend1";
-            series21.Name = "Series1";
-            this.chart6.Series.Add(series21);
-            this.chart6.Size = new System.Drawing.Size(911, 477);
-            this.chart6.TabIndex = 7;
-            this.chart6.Text = "Biểu đồ";
-            // 
-            // guna2Panel8
-            // 
-            this.guna2Panel8.BorderRadius = 17;
-            this.guna2Panel8.Controls.Add(this.label19);
-            this.guna2Panel8.Controls.Add(this.label20);
-            this.guna2Panel8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2Panel8.Location = new System.Drawing.Point(491, 190);
-            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(286, 50);
-            this.guna2Panel8.TabIndex = 5;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(255, 8);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(23, 25);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "đ";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label20.Location = new System.Drawing.Point(4, 12);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 21);
-            this.label20.TabIndex = 3;
-            this.label20.Text = "label20";
-            // 
-            // guna2Panel9
-            // 
-            this.guna2Panel9.BorderRadius = 17;
-            this.guna2Panel9.Controls.Add(this.label21);
-            this.guna2Panel9.Controls.Add(this.label22);
-            this.guna2Panel9.FillColor = System.Drawing.Color.Cyan;
-            this.guna2Panel9.Location = new System.Drawing.Point(104, 190);
-            this.guna2Panel9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(286, 50);
-            this.guna2Panel9.TabIndex = 2;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Cyan;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(255, 8);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(23, 25);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "đ";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Cyan;
-            this.label22.Location = new System.Drawing.Point(4, 12);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(52, 21);
-            this.label22.TabIndex = 3;
-            this.label22.Text = "label4";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(486, 163);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(104, 21);
-            this.label23.TabIndex = 4;
-            this.label23.Text = "Tổng chi phí ";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(99, 163);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(126, 21);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "Tổng doanh thu";
-            // 
-            // guna2GroupBox3
-            // 
-            this.guna2GroupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2GroupBox3.BorderRadius = 20;
-            this.guna2GroupBox3.Controls.Add(this.guna2DateTimePicker5);
-            this.guna2GroupBox3.Controls.Add(this.label25);
-            this.guna2GroupBox3.Controls.Add(this.guna2DateTimePicker6);
-            this.guna2GroupBox3.Controls.Add(this.label26);
-            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2GroupBox3.CustomBorderThickness = new System.Windows.Forms.Padding(1);
-            this.guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(4, 14);
-            this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(886, 117);
-            this.guna2GroupBox3.TabIndex = 0;
-            this.guna2GroupBox3.Text = "Khoảng thời gian";
-            // 
-            // guna2DateTimePicker5
-            // 
-            this.guna2DateTimePicker5.BorderRadius = 17;
-            this.guna2DateTimePicker5.Checked = true;
-            this.guna2DateTimePicker5.FillColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guna2DateTimePicker5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker5.Location = new System.Drawing.Point(542, 65);
-            this.guna2DateTimePicker5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2DateTimePicker5.MaxDate = new System.DateTime(2025, 4, 29, 23, 3, 25, 0);
-            this.guna2DateTimePicker5.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker5.Name = "guna2DateTimePicker5";
-            this.guna2DateTimePicker5.Size = new System.Drawing.Size(287, 38);
-            this.guna2DateTimePicker5.TabIndex = 4;
-            this.guna2DateTimePicker5.Value = new System.DateTime(2025, 4, 29, 0, 0, 0, 0);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(538, 38);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(90, 21);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "Đến ngày : ";
-            // 
-            // guna2DateTimePicker6
-            // 
-            this.guna2DateTimePicker6.BorderRadius = 17;
-            this.guna2DateTimePicker6.Checked = true;
-            this.guna2DateTimePicker6.FillColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guna2DateTimePicker6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker6.Location = new System.Drawing.Point(47, 65);
-            this.guna2DateTimePicker6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2DateTimePicker6.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker6.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker6.Name = "guna2DateTimePicker6";
-            this.guna2DateTimePicker6.Size = new System.Drawing.Size(287, 38);
-            this.guna2DateTimePicker6.TabIndex = 2;
-            this.guna2DateTimePicker6.Value = new System.DateTime(2025, 4, 29, 22, 59, 43, 350);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(42, 38);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(80, 21);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "Từ ngày : ";
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 44);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage1.Size = new System.Drawing.Size(1321, 751);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // phim_tab
-            // 
-            this.phim_tab.BackColor = System.Drawing.Color.White;
-            this.phim_tab.Controls.Add(this.guna2CustomGradientPanel1);
-            this.phim_tab.Controls.Add(this.guna2CustomGradientPanel2);
-            this.phim_tab.Controls.Add(this.guna2Panel1);
-            this.phim_tab.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phim_tab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.phim_tab.Location = new System.Drawing.Point(4, 44);
-            this.phim_tab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.phim_tab.Name = "phim_tab";
-            this.phim_tab.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.phim_tab.Size = new System.Drawing.Size(1317, 751);
-            this.phim_tab.TabIndex = 3;
-            this.phim_tab.Text = "Phim";
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderRadius = 30;
-            this.guna2Panel1.Controls.Add(this.chart1);
-            this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Controls.Add(this.guna2Panel3);
-            this.guna2Panel1.Controls.Add(this.label5);
-            this.guna2Panel1.Controls.Add(this.label6);
-            this.guna2Panel1.Controls.Add(this.guna2GroupBox1);
-            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(4, 6);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(911, 738);
-            this.guna2Panel1.TabIndex = 4;
-            // 
-            // chart1
-            // 
-            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            chartArea22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            chartArea22.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea22);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend22.Name = "Legend1";
-            this.chart1.Legends.Add(legend22);
-            this.chart1.Location = new System.Drawing.Point(0, 261);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.chart1.Name = "chart1";
-            series22.ChartArea = "ChartArea1";
-            series22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series22.Legend = "Legend1";
-            series22.Name = "Series1";
-            this.chart1.Series.Add(series22);
-            this.chart1.Size = new System.Drawing.Size(911, 477);
-            this.chart1.TabIndex = 7;
-            this.chart1.Text = "Biểu đồ";
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BorderRadius = 17;
-            this.guna2Panel2.Controls.Add(this.label1);
-            this.guna2Panel2.Controls.Add(this.label2);
-            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(491, 190);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(286, 50);
-            this.guna2Panel2.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(255, 8);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "đ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(4, 16);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BorderRadius = 17;
-            this.guna2Panel3.Controls.Add(this.label3);
-            this.guna2Panel3.Controls.Add(this.label4);
-            this.guna2Panel3.FillColor = System.Drawing.Color.Cyan;
-            this.guna2Panel3.Location = new System.Drawing.Point(104, 190);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(286, 50);
-            this.guna2Panel3.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Cyan;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(255, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "đ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Cyan;
-            this.label4.Location = new System.Drawing.Point(4, 12);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(486, 163);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 21);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Tổng chi phí ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(99, 163);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Tổng doanh thu";
-            // 
-            // guna2GroupBox1
-            // 
-            this.guna2GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2GroupBox1.BorderRadius = 20;
-            this.guna2GroupBox1.Controls.Add(this.guna2DateTimePicker1);
-            this.guna2GroupBox1.Controls.Add(this.label7);
-            this.guna2GroupBox1.Controls.Add(this.guna2DateTimePicker2);
-            this.guna2GroupBox1.Controls.Add(this.label8);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(1);
-            this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(4, 14);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(886, 117);
-            this.guna2GroupBox1.TabIndex = 0;
-            this.guna2GroupBox1.Text = "Khoảng thời gian";
-            // 
-            // guna2DateTimePicker1
-            // 
-            this.guna2DateTimePicker1.BorderRadius = 17;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(542, 65);
-            this.guna2DateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(2025, 4, 29, 23, 3, 25, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(287, 38);
-            this.guna2DateTimePicker1.TabIndex = 4;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2025, 4, 29, 0, 0, 0, 0);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(538, 38);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 21);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Đến ngày : ";
-            // 
-            // guna2DateTimePicker2
-            // 
-            this.guna2DateTimePicker2.BorderRadius = 17;
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(47, 65);
-            this.guna2DateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(287, 38);
-            this.guna2DateTimePicker2.TabIndex = 2;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2025, 4, 29, 22, 59, 43, 350);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 38);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 21);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Từ ngày : ";
-            // 
-            // guna2CustomGradientPanel1
-            // 
-            this.guna2CustomGradientPanel1.BorderRadius = 15;
-            this.guna2CustomGradientPanel1.Controls.Add(this.chart2);
-            this.guna2CustomGradientPanel1.Controls.Add(this.label9);
-            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(934, 382);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(383, 362);
-            this.guna2CustomGradientPanel1.TabIndex = 9;
-            // 
-            // chart2
-            // 
-            this.chart2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.chart2.BorderlineColor = System.Drawing.Color.Firebrick;
-            chartArea23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            chartArea23.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea23);
-            this.chart2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend23.Name = "Legend1";
-            this.chart2.Legends.Add(legend23);
-            this.chart2.Location = new System.Drawing.Point(0, 58);
-            this.chart2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.chart2.Name = "chart2";
-            series23.ChartArea = "ChartArea1";
-            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series23.Legend = "Legend1";
-            series23.Name = "Series1";
-            this.chart2.Series.Add(series23);
-            this.chart2.Size = new System.Drawing.Size(383, 304);
-            this.chart2.TabIndex = 2;
-            this.chart2.Text = "chart2";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(114, 12);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(147, 30);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Cơ cấu chi phí";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // guna2CustomGradientPanel2
-            // 
-            this.guna2CustomGradientPanel2.BorderRadius = 15;
-            this.guna2CustomGradientPanel2.Controls.Add(this.chart3);
-            this.guna2CustomGradientPanel2.Controls.Add(this.label10);
-            this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(934, 6);
-            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(383, 362);
-            this.guna2CustomGradientPanel2.TabIndex = 8;
-            // 
-            // chart3
-            // 
-            this.chart3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chart3.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chart3.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
-            chartArea24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            chartArea24.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            chartArea24.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea24);
-            this.chart3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend24.Name = "Legend1";
-            this.chart3.Legends.Add(legend24);
-            this.chart3.Location = new System.Drawing.Point(0, 45);
-            this.chart3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.chart3.Name = "chart3";
-            this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series24.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
-            series24.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series24.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series24.ChartArea = "ChartArea1";
-            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series24.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series24.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
-            series24.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series24.LabelBorderColor = System.Drawing.Color.Cyan;
-            series24.LabelForeColor = System.Drawing.Color.Silver;
-            series24.Legend = "Legend1";
-            series24.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            series24.MarkerColor = System.Drawing.Color.Lime;
-            series24.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
-            series24.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
-            series24.Name = "Series1";
-            series24.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series24.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series24.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
-            this.chart3.Series.Add(series24);
-            this.chart3.Size = new System.Drawing.Size(383, 317);
-            this.chart3.TabIndex = 1;
-            this.chart3.Text = "chart3";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(99, 14);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(183, 30);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Cơ cấu doanh thu";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.BorderRadius = 30;
+            this.guna2Panel4.Controls.Add(this.bar_chart_TQ);
+            this.guna2Panel4.Controls.Add(this.guna2Panel5);
+            this.guna2Panel4.Controls.Add(this.guna2Panel6);
+            this.guna2Panel4.Controls.Add(this.label17);
+            this.guna2Panel4.Controls.Add(this.label18);
+            this.guna2Panel4.Controls.Add(this.guna2GroupBox2);
+            this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            this.guna2Panel4.Location = new System.Drawing.Point(8, 6);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(911, 738);
+            this.guna2Panel4.TabIndex = 10;
+            // 
+            // bar_chart_TQ
+            // 
+            this.bar_chart_TQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            chartArea4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            chartArea4.Name = "ChartArea1";
+            this.bar_chart_TQ.ChartAreas.Add(chartArea4);
+            this.bar_chart_TQ.Dock = System.Windows.Forms.DockStyle.Bottom;
+            legend4.Name = "Legend1";
+            this.bar_chart_TQ.Legends.Add(legend4);
+            this.bar_chart_TQ.Location = new System.Drawing.Point(0, 261);
+            this.bar_chart_TQ.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bar_chart_TQ.Name = "bar_chart_TQ";
+            series4.ChartArea = "ChartArea1";
+            series4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.bar_chart_TQ.Series.Add(series4);
+            this.bar_chart_TQ.Size = new System.Drawing.Size(911, 477);
+            this.bar_chart_TQ.TabIndex = 7;
+            this.bar_chart_TQ.Text = "Biểu đồ";
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BorderRadius = 17;
+            this.guna2Panel5.Controls.Add(this.label13);
+            this.guna2Panel5.Controls.Add(this.tongchiphi_label);
+            this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.guna2Panel5.Location = new System.Drawing.Point(490, 201);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(286, 50);
+            this.guna2Panel5.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(231, 12);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 25);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "VNĐ";
+            // 
+            // tongchiphi_label
+            // 
+            this.tongchiphi_label.AutoSize = true;
+            this.tongchiphi_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tongchiphi_label.Location = new System.Drawing.Point(4, 12);
+            this.tongchiphi_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tongchiphi_label.Name = "tongchiphi_label";
+            this.tongchiphi_label.Size = new System.Drawing.Size(61, 21);
+            this.tongchiphi_label.TabIndex = 3;
+            this.tongchiphi_label.Text = "label14";
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.BorderRadius = 17;
+            this.guna2Panel6.Controls.Add(this.label15);
+            this.guna2Panel6.Controls.Add(this.tongdoanhthu_label);
+            this.guna2Panel6.FillColor = System.Drawing.Color.Cyan;
+            this.guna2Panel6.Location = new System.Drawing.Point(103, 201);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(286, 50);
+            this.guna2Panel6.TabIndex = 2;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Cyan;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(231, 12);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 25);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "VNĐ";
+            // 
+            // tongdoanhthu_label
+            // 
+            this.tongdoanhthu_label.AutoSize = true;
+            this.tongdoanhthu_label.BackColor = System.Drawing.Color.Cyan;
+            this.tongdoanhthu_label.Location = new System.Drawing.Point(4, 12);
+            this.tongdoanhthu_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tongdoanhthu_label.Name = "tongdoanhthu_label";
+            this.tongdoanhthu_label.Size = new System.Drawing.Size(61, 21);
+            this.tongdoanhthu_label.TabIndex = 3;
+            this.tongdoanhthu_label.Text = "label16";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(485, 174);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(104, 21);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Tổng chi phí ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(98, 174);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(126, 21);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Tổng doanh thu";
+            // 
+            // guna2GroupBox2
+            // 
+            this.guna2GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            this.guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2GroupBox2.BorderRadius = 20;
+            this.guna2GroupBox2.Controls.Add(this.xuatExcel_bnt);
+            this.guna2GroupBox2.Controls.Add(this.lammoi_bnt);
+            this.guna2GroupBox2.Controls.Add(this.thoidiem_label);
+            this.guna2GroupBox2.Controls.Add(this.thoidiem_cbb);
+            this.guna2GroupBox2.Controls.Add(this.label31);
+            this.guna2GroupBox2.Controls.Add(this.chuki_cbb);
+            this.guna2GroupBox2.Controls.Add(this.endDay_date);
+            this.guna2GroupBox2.Controls.Add(this.Denngay_label);
+            this.guna2GroupBox2.Controls.Add(this.startDay_date);
+            this.guna2GroupBox2.Controls.Add(this.Tungay_label);
+            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(1);
+            this.guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2GroupBox2.Location = new System.Drawing.Point(4, 14);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.guna2GroupBox2.Name = "guna2GroupBox2";
+            this.guna2GroupBox2.Size = new System.Drawing.Size(886, 147);
+            this.guna2GroupBox2.TabIndex = 0;
+            this.guna2GroupBox2.Text = "Khoảng thời gian";
+            // 
+            // lammoi_bnt
+            // 
+            this.lammoi_bnt.BorderRadius = 20;
+            this.lammoi_bnt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.lammoi_bnt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.lammoi_bnt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.lammoi_bnt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.lammoi_bnt.FillColor = System.Drawing.Color.Brown;
+            this.lammoi_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lammoi_bnt.ForeColor = System.Drawing.Color.White;
+            this.lammoi_bnt.Location = new System.Drawing.Point(696, 109);
+            this.lammoi_bnt.Name = "lammoi_bnt";
+            this.lammoi_bnt.Size = new System.Drawing.Size(174, 34);
+            this.lammoi_bnt.TabIndex = 9;
+            this.lammoi_bnt.Text = "Làm mới";
+            this.lammoi_bnt.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // thoidiem_label
+            // 
+            this.thoidiem_label.AutoSize = true;
+            this.thoidiem_label.Location = new System.Drawing.Point(410, 41);
+            this.thoidiem_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.thoidiem_label.Name = "thoidiem_label";
+            this.thoidiem_label.Size = new System.Drawing.Size(130, 21);
+            this.thoidiem_label.TabIndex = 8;
+            this.thoidiem_label.Text = "Chọn thời điểm :";
+            // 
+            // thoidiem_cbb
+            // 
+            this.thoidiem_cbb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            this.thoidiem_cbb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.thoidiem_cbb.BorderRadius = 17;
+            this.thoidiem_cbb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.thoidiem_cbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.thoidiem_cbb.FillColor = System.Drawing.SystemColors.Control;
+            this.thoidiem_cbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.thoidiem_cbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.thoidiem_cbb.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thoidiem_cbb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.thoidiem_cbb.ItemHeight = 30;
+            this.thoidiem_cbb.Location = new System.Drawing.Point(405, 72);
+            this.thoidiem_cbb.Name = "thoidiem_cbb";
+            this.thoidiem_cbb.Size = new System.Drawing.Size(208, 36);
+            this.thoidiem_cbb.TabIndex = 7;
+            this.thoidiem_cbb.SelectedIndexChanged += new System.EventHandler(this.thoidiem_cbb_SelectedIndexChanged);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(56, 41);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(102, 21);
+            this.label31.TabIndex = 6;
+            this.label31.Text = "Chọn chu kì :";
+            // 
+            // chuki_cbb
+            // 
+            this.chuki_cbb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            this.chuki_cbb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.chuki_cbb.BorderRadius = 17;
+            this.chuki_cbb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.chuki_cbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.chuki_cbb.FillColor = System.Drawing.SystemColors.Control;
+            this.chuki_cbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chuki_cbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chuki_cbb.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chuki_cbb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.chuki_cbb.ItemHeight = 30;
+            this.chuki_cbb.Items.AddRange(new object[] {
+            "Theo tháng",
+            "Theo năm",
+            "Tùy chỉnh"});
+            this.chuki_cbb.Location = new System.Drawing.Point(61, 72);
+            this.chuki_cbb.Name = "chuki_cbb";
+            this.chuki_cbb.Size = new System.Drawing.Size(210, 36);
+            this.chuki_cbb.TabIndex = 5;
+            this.chuki_cbb.SelectedIndexChanged += new System.EventHandler(this.chuki_cbb_SelectedIndexChanged);
+            // 
+            // endDay_date
+            // 
+            this.endDay_date.BorderRadius = 17;
+            this.endDay_date.Checked = true;
+            this.endDay_date.FillColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.endDay_date.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDay_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.endDay_date.Location = new System.Drawing.Point(399, 99);
+            this.endDay_date.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.endDay_date.MaxDate = new System.DateTime(2025, 4, 29, 23, 3, 25, 0);
+            this.endDay_date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.endDay_date.Name = "endDay_date";
+            this.endDay_date.Size = new System.Drawing.Size(214, 38);
+            this.endDay_date.TabIndex = 4;
+            this.endDay_date.Value = new System.DateTime(2025, 4, 29, 0, 0, 0, 0);
+            this.endDay_date.ValueChanged += new System.EventHandler(this.endDay_pick_ValueChanged);
+            // 
+            // Denngay_label
+            // 
+            this.Denngay_label.AutoSize = true;
+            this.Denngay_label.Location = new System.Drawing.Point(395, 72);
+            this.Denngay_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Denngay_label.Name = "Denngay_label";
+            this.Denngay_label.Size = new System.Drawing.Size(90, 21);
+            this.Denngay_label.TabIndex = 3;
+            this.Denngay_label.Text = "Đến ngày : ";
+            // 
+            // startDay_date
+            // 
+            this.startDay_date.BorderRadius = 17;
+            this.startDay_date.Checked = true;
+            this.startDay_date.FillColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.startDay_date.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDay_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.startDay_date.Location = new System.Drawing.Point(399, 31);
+            this.startDay_date.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.startDay_date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.startDay_date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.startDay_date.Name = "startDay_date";
+            this.startDay_date.Size = new System.Drawing.Size(214, 38);
+            this.startDay_date.TabIndex = 2;
+            this.startDay_date.Value = new System.DateTime(2025, 4, 29, 22, 59, 43, 350);
+            this.startDay_date.ValueChanged += new System.EventHandler(this.startDay_date_ValueChanged);
+            // 
+            // Tungay_label
+            // 
+            this.Tungay_label.AutoSize = true;
+            this.Tungay_label.Location = new System.Drawing.Point(395, 0);
+            this.Tungay_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Tungay_label.Name = "Tungay_label";
+            this.Tungay_label.Size = new System.Drawing.Size(80, 21);
+            this.Tungay_label.TabIndex = 1;
+            this.Tungay_label.Text = "Từ ngày : ";
             // 
             // guna2CustomGradientPanel3
             // 
             this.guna2CustomGradientPanel3.BorderRadius = 15;
-            this.guna2CustomGradientPanel3.Controls.Add(this.chart4);
+            this.guna2CustomGradientPanel3.Controls.Add(this.CPTQ_piechart);
             this.guna2CustomGradientPanel3.Controls.Add(this.label11);
             this.guna2CustomGradientPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -921,27 +462,27 @@
             this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(383, 362);
             this.guna2CustomGradientPanel3.TabIndex = 9;
             // 
-            // chart4
+            // CPTQ_piechart
             // 
-            this.chart4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.chart4.BorderlineColor = System.Drawing.Color.Firebrick;
-            chartArea25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            chartArea25.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea25);
-            this.chart4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend25.Name = "Legend1";
-            this.chart4.Legends.Add(legend25);
-            this.chart4.Location = new System.Drawing.Point(0, 58);
-            this.chart4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.chart4.Name = "chart4";
-            series25.ChartArea = "ChartArea1";
-            series25.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series25.Legend = "Legend1";
-            series25.Name = "Series1";
-            this.chart4.Series.Add(series25);
-            this.chart4.Size = new System.Drawing.Size(383, 304);
-            this.chart4.TabIndex = 2;
-            this.chart4.Text = "chart4";
+            this.CPTQ_piechart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.CPTQ_piechart.BorderlineColor = System.Drawing.Color.Firebrick;
+            chartArea5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            chartArea5.Name = "ChartArea1";
+            this.CPTQ_piechart.ChartAreas.Add(chartArea5);
+            this.CPTQ_piechart.Dock = System.Windows.Forms.DockStyle.Bottom;
+            legend5.Name = "Legend1";
+            this.CPTQ_piechart.Legends.Add(legend5);
+            this.CPTQ_piechart.Location = new System.Drawing.Point(0, 58);
+            this.CPTQ_piechart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.CPTQ_piechart.Name = "CPTQ_piechart";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.CPTQ_piechart.Series.Add(series5);
+            this.CPTQ_piechart.Size = new System.Drawing.Size(383, 304);
+            this.CPTQ_piechart.TabIndex = 2;
+            this.CPTQ_piechart.Text = "chart4";
             // 
             // label11
             // 
@@ -959,7 +500,7 @@
             // guna2CustomGradientPanel4
             // 
             this.guna2CustomGradientPanel4.BorderRadius = 15;
-            this.guna2CustomGradientPanel4.Controls.Add(this.chart5);
+            this.guna2CustomGradientPanel4.Controls.Add(this.DTTQ_piechart);
             this.guna2CustomGradientPanel4.Controls.Add(this.label12);
             this.guna2CustomGradientPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -970,52 +511,52 @@
             this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(383, 362);
             this.guna2CustomGradientPanel4.TabIndex = 8;
             // 
-            // chart5
+            // DTTQ_piechart
             // 
-            this.chart5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chart5.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chart5.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
-            chartArea26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            chartArea26.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            chartArea26.Name = "ChartArea1";
-            this.chart5.ChartAreas.Add(chartArea26);
-            this.chart5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend26.Name = "Legend1";
-            this.chart5.Legends.Add(legend26);
-            this.chart5.Location = new System.Drawing.Point(0, 45);
-            this.chart5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.chart5.Name = "chart5";
-            this.chart5.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series26.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
-            series26.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series26.ChartArea = "ChartArea1";
-            series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series26.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series26.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
-            series26.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series26.LabelBorderColor = System.Drawing.Color.Cyan;
-            series26.LabelForeColor = System.Drawing.Color.Silver;
-            series26.Legend = "Legend1";
-            series26.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            series26.MarkerColor = System.Drawing.Color.Lime;
-            series26.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
-            series26.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
-            series26.Name = "Series1";
-            series26.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series26.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series26.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
-            this.chart5.Series.Add(series26);
-            this.chart5.Size = new System.Drawing.Size(383, 317);
-            this.chart5.TabIndex = 1;
-            this.chart5.Text = "chart5";
+            this.DTTQ_piechart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.DTTQ_piechart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.DTTQ_piechart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+            chartArea6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            chartArea6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            chartArea6.Name = "ChartArea1";
+            this.DTTQ_piechart.ChartAreas.Add(chartArea6);
+            this.DTTQ_piechart.Dock = System.Windows.Forms.DockStyle.Bottom;
+            legend6.Name = "Legend1";
+            this.DTTQ_piechart.Legends.Add(legend6);
+            this.DTTQ_piechart.Location = new System.Drawing.Point(0, 45);
+            this.DTTQ_piechart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.DTTQ_piechart.Name = "DTTQ_piechart";
+            this.DTTQ_piechart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series6.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
+            series6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series6.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
+            series6.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series6.LabelBorderColor = System.Drawing.Color.Cyan;
+            series6.LabelForeColor = System.Drawing.Color.Silver;
+            series6.Legend = "Legend1";
+            series6.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            series6.MarkerColor = System.Drawing.Color.Lime;
+            series6.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
+            series6.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
+            series6.Name = "Series1";
+            series6.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series6.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series6.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
+            this.DTTQ_piechart.Series.Add(series6);
+            this.DTTQ_piechart.Size = new System.Drawing.Size(383, 317);
+            this.DTTQ_piechart.TabIndex = 1;
+            this.DTTQ_piechart.Text = "chart5";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(99, 14);
+            this.label12.Location = new System.Drawing.Point(78, 5);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(183, 30);
@@ -1023,208 +564,54 @@
             this.label12.Text = "Cơ cấu doanh thu";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // guna2Panel4
+            // phim_tab
             // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.BorderRadius = 30;
-            this.guna2Panel4.Controls.Add(this.chart9);
-            this.guna2Panel4.Controls.Add(this.guna2Panel5);
-            this.guna2Panel4.Controls.Add(this.guna2Panel6);
-            this.guna2Panel4.Controls.Add(this.label17);
-            this.guna2Panel4.Controls.Add(this.label18);
-            this.guna2Panel4.Controls.Add(this.guna2GroupBox2);
-            this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(8, 6);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(911, 738);
-            this.guna2Panel4.TabIndex = 10;
+            this.phim_tab.BackColor = System.Drawing.Color.White;
+            this.phim_tab.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phim_tab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.phim_tab.Location = new System.Drawing.Point(4, 44);
+            this.phim_tab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.phim_tab.Name = "phim_tab";
+            this.phim_tab.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.phim_tab.Size = new System.Drawing.Size(1317, 751);
+            this.phim_tab.TabIndex = 3;
+            this.phim_tab.Text = "Phim";
             // 
-            // chart9
+            // sanpham_tab
             // 
-            this.chart9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            chartArea27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            chartArea27.Name = "ChartArea1";
-            this.chart9.ChartAreas.Add(chartArea27);
-            this.chart9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend27.Name = "Legend1";
-            this.chart9.Legends.Add(legend27);
-            this.chart9.Location = new System.Drawing.Point(0, 261);
-            this.chart9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.chart9.Name = "chart9";
-            series27.ChartArea = "ChartArea1";
-            series27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series27.Legend = "Legend1";
-            series27.Name = "Series1";
-            this.chart9.Series.Add(series27);
-            this.chart9.Size = new System.Drawing.Size(911, 477);
-            this.chart9.TabIndex = 7;
-            this.chart9.Text = "Biểu đồ";
+            this.sanpham_tab.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sanpham_tab.Location = new System.Drawing.Point(4, 44);
+            this.sanpham_tab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.sanpham_tab.Name = "sanpham_tab";
+            this.sanpham_tab.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.sanpham_tab.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.sanpham_tab.Size = new System.Drawing.Size(1317, 751);
+            this.sanpham_tab.TabIndex = 4;
+            this.sanpham_tab.Text = "Sản phẩm";
+            this.sanpham_tab.UseVisualStyleBackColor = true;
             // 
-            // guna2Panel5
+            // guna2BorderlessForm1
             // 
-            this.guna2Panel5.BorderRadius = 17;
-            this.guna2Panel5.Controls.Add(this.label13);
-            this.guna2Panel5.Controls.Add(this.label14);
-            this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2Panel5.Location = new System.Drawing.Point(491, 190);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(286, 50);
-            this.guna2Panel5.TabIndex = 5;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // label13
+            // xuatExcel_bnt
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(255, 8);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(23, 25);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "đ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label14.Location = new System.Drawing.Point(4, 12);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 21);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "label14";
-            // 
-            // guna2Panel6
-            // 
-            this.guna2Panel6.BorderRadius = 17;
-            this.guna2Panel6.Controls.Add(this.label15);
-            this.guna2Panel6.Controls.Add(this.label16);
-            this.guna2Panel6.FillColor = System.Drawing.Color.Cyan;
-            this.guna2Panel6.Location = new System.Drawing.Point(104, 190);
-            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(286, 50);
-            this.guna2Panel6.TabIndex = 2;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Cyan;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(255, 8);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 25);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "đ";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Cyan;
-            this.label16.Location = new System.Drawing.Point(4, 12);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 21);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "label16";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(486, 163);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(104, 21);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "Tổng chi phí ";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(99, 163);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(126, 21);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Tổng doanh thu";
-            // 
-            // guna2GroupBox2
-            // 
-            this.guna2GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2GroupBox2.BorderRadius = 20;
-            this.guna2GroupBox2.Controls.Add(this.guna2DateTimePicker3);
-            this.guna2GroupBox2.Controls.Add(this.label29);
-            this.guna2GroupBox2.Controls.Add(this.guna2DateTimePicker4);
-            this.guna2GroupBox2.Controls.Add(this.label30);
-            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(1);
-            this.guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(4, 14);
-            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(886, 117);
-            this.guna2GroupBox2.TabIndex = 0;
-            this.guna2GroupBox2.Text = "Khoảng thời gian";
-            // 
-            // guna2DateTimePicker3
-            // 
-            this.guna2DateTimePicker3.BorderRadius = 17;
-            this.guna2DateTimePicker3.Checked = true;
-            this.guna2DateTimePicker3.FillColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guna2DateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker3.Location = new System.Drawing.Point(542, 65);
-            this.guna2DateTimePicker3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2DateTimePicker3.MaxDate = new System.DateTime(2025, 4, 29, 23, 3, 25, 0);
-            this.guna2DateTimePicker3.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker3.Name = "guna2DateTimePicker3";
-            this.guna2DateTimePicker3.Size = new System.Drawing.Size(287, 38);
-            this.guna2DateTimePicker3.TabIndex = 4;
-            this.guna2DateTimePicker3.Value = new System.DateTime(2025, 4, 29, 0, 0, 0, 0);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(538, 38);
-            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(90, 21);
-            this.label29.TabIndex = 3;
-            this.label29.Text = "Đến ngày : ";
-            // 
-            // guna2DateTimePicker4
-            // 
-            this.guna2DateTimePicker4.BorderRadius = 17;
-            this.guna2DateTimePicker4.Checked = true;
-            this.guna2DateTimePicker4.FillColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guna2DateTimePicker4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker4.Location = new System.Drawing.Point(47, 65);
-            this.guna2DateTimePicker4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2DateTimePicker4.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker4.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker4.Name = "guna2DateTimePicker4";
-            this.guna2DateTimePicker4.Size = new System.Drawing.Size(287, 38);
-            this.guna2DateTimePicker4.TabIndex = 2;
-            this.guna2DateTimePicker4.Value = new System.DateTime(2025, 4, 29, 22, 59, 43, 350);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(42, 38);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(80, 21);
-            this.label30.TabIndex = 1;
-            this.label30.Text = "Từ ngày : ";
+            this.xuatExcel_bnt.BorderRadius = 20;
+            this.xuatExcel_bnt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.xuatExcel_bnt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.xuatExcel_bnt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.xuatExcel_bnt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.xuatExcel_bnt.FillColor = System.Drawing.Color.Brown;
+            this.xuatExcel_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xuatExcel_bnt.ForeColor = System.Drawing.Color.White;
+            this.xuatExcel_bnt.Location = new System.Drawing.Point(696, 58);
+            this.xuatExcel_bnt.Name = "xuatExcel_bnt";
+            this.xuatExcel_bnt.Size = new System.Drawing.Size(174, 35);
+            this.xuatExcel_bnt.TabIndex = 10;
+            this.xuatExcel_bnt.Text = "Xuất Excel";
+            this.xuatExcel_bnt.Click += new System.EventHandler(this.xuatExcel_bnt_Click);
             // 
             // StatisticsView
             // 
@@ -1238,53 +625,21 @@
             this.Size = new System.Drawing.Size(1329, 805);
             this.guna2TabControl1.ResumeLayout(false);
             this.Tongquat_tab.ResumeLayout(false);
-            this.sanpham_tab.ResumeLayout(false);
-            this.guna2CustomGradientPanel6.ResumeLayout(false);
-            this.guna2CustomGradientPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart8)).EndInit();
-            this.guna2CustomGradientPanel5.ResumeLayout(false);
-            this.guna2CustomGradientPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart7)).EndInit();
-            this.guna2Panel7.ResumeLayout(false);
-            this.guna2Panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart6)).EndInit();
-            this.guna2Panel8.ResumeLayout(false);
-            this.guna2Panel8.PerformLayout();
-            this.guna2Panel9.ResumeLayout(false);
-            this.guna2Panel9.PerformLayout();
-            this.guna2GroupBox3.ResumeLayout(false);
-            this.guna2GroupBox3.PerformLayout();
-            this.phim_tab.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
-            this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox1.PerformLayout();
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            this.guna2CustomGradientPanel2.ResumeLayout(false);
-            this.guna2CustomGradientPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
-            this.guna2CustomGradientPanel3.ResumeLayout(false);
-            this.guna2CustomGradientPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
-            this.guna2CustomGradientPanel4.ResumeLayout(false);
-            this.guna2CustomGradientPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bar_chart_TQ)).EndInit();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
+            this.guna2CustomGradientPanel3.ResumeLayout(false);
+            this.guna2CustomGradientPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CPTQ_piechart)).EndInit();
+            this.guna2CustomGradientPanel4.ResumeLayout(false);
+            this.guna2CustomGradientPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DTTQ_piechart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1298,70 +653,34 @@
         private Guna.UI2.WinForms.Guna2MouseStateHandler guna2MouseStateHandler1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel6;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart8;
-        private System.Windows.Forms.Label label28;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel5;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart7;
-        private System.Windows.Forms.Label label27;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart6;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker5;
-        private System.Windows.Forms.Label label25;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker6;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage phim_tab;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart9;
+        private System.Windows.Forms.DataVisualization.Charting.Chart bar_chart_TQ;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label tongchiphi_label;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label tongdoanhthu_label;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker3;
-        private System.Windows.Forms.Label label29;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker4;
-        private System.Windows.Forms.Label label30;
+        private Guna.UI2.WinForms.Guna2DateTimePicker endDay_date;
+        private System.Windows.Forms.Label Denngay_label;
+        private Guna.UI2.WinForms.Guna2DateTimePicker startDay_date;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart CPTQ_piechart;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart DTTQ_piechart;
         private System.Windows.Forms.Label label12;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
-        private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
-        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2ComboBox chuki_cbb;
+        private System.Windows.Forms.Label thoidiem_label;
+        private Guna.UI2.WinForms.Guna2ComboBox thoidiem_cbb;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label Tungay_label;
+        private Guna.UI2.WinForms.Guna2Button lammoi_bnt;
+        private Guna.UI2.WinForms.Guna2Button xuatExcel_bnt;
     }
 }
