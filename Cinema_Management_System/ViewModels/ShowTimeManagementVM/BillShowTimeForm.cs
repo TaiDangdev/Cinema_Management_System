@@ -205,7 +205,8 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
             dataRow["Ghe"] = this.txt_Seats.Text;
             dataRow["GiaVe"] = showTimSelect.SeatTicketPrice.ToString("F2")+"VND";
             dataRow["NgayGioChieu"] = showTimSelect.StartTime.ToString("dd/MM/yyyy HH:mm:ss");
-            dataRow["NhanVien"] = "NV001"; // Thay thế bằng tên nhân viên thực tế
+            AboutAccount_Form.GetNameStaff();
+            dataRow["NhanVien"] = AboutAccount_Form.currentUserName; // Thay thế bằng tên nhân viên thực tế
             dataRow["TheHoiVien"] = this.txt_member.Text.Trim();
             dataRow["GiamGia"] = this.txt_discount.Text.Trim();
             long total = Convert.ToInt64(this.showTimSelect.SeatTicketPrice) * seatsShowTime.Count;

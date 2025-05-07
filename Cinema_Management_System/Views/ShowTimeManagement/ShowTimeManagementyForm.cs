@@ -177,6 +177,8 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             ShowTimeByMovieForm frm = new ShowTimeByMovieForm((int)btn.Tag, idAutoriumSelect);
             frm.ShowDialog();
             this.load_ShowTimeMovie((int)btn.Tag);
+            //this.load_ShowTimeMovie((int)btn.Tag);
+            //idAutoriumSelect = (int)btn.Tag;
             // load lai du lieu neu thuc da chinh sua xong 
             this.load_ShowTimeMovie(-1);
             idAutoriumSelect = -1;
@@ -190,8 +192,8 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             frm.ShowDialog();
             this.DTP_SearchTimeMovie_ValueChanged(this, EventArgs.Empty);
             //// load lai du lieu neu thuc da chinh sua xong
-            this.load_ShowTimeMovie(-1);
-            idAutoriumSelect = -1;
+            //this.load_ShowTimeMovie(-1);
+            //idAutoriumSelect = -1;
         }
 
 

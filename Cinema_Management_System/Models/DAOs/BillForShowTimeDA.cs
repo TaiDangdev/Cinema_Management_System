@@ -164,5 +164,24 @@ namespace Cinema_Management_System.Models.DAOs
             }
         }
 
+
+        public List<int> GetYearInBills()
+        {
+            try
+            {
+                List<int> years = (from bill in Connect.Bills
+                                   select bill.BillDate.Year)
+                                  .Distinct()
+                                  .OrderByDescending(y => y)
+                                  .ToList();
+
+                return years;
+            }
+            catch
+            {
+                return new List<int>();
+            }
+        }
+
     }
 }

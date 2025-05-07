@@ -37,7 +37,6 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_AddShowTimeMovie = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Cancel = new Guna.UI2.WinForms.Guna2Button();
-            this.txt_TimeMovieStart = new Guna.UI2.WinForms.Guna2TextBox();
             this.DTP_DateShowTimeMovie = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txt_PriceTicket = new Guna.UI2.WinForms.Guna2TextBox();
             this.CB_Auditorium = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -49,6 +48,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.control_Panel.SuspendLayout();
+            this.txt_TimeMovieStart = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2Panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,9 +99,9 @@
             this.guna2Panel4.BackColor = System.Drawing.Color.White;
             this.guna2Panel4.BorderColor = System.Drawing.Color.Red;
             this.guna2Panel4.BorderRadius = 10;
+            this.guna2Panel4.Controls.Add(this.txt_TimeMovieStart);
             this.guna2Panel4.Controls.Add(this.btn_AddShowTimeMovie);
             this.guna2Panel4.Controls.Add(this.btn_Cancel);
-            this.guna2Panel4.Controls.Add(this.txt_TimeMovieStart);
             this.guna2Panel4.Controls.Add(this.DTP_DateShowTimeMovie);
             this.guna2Panel4.Controls.Add(this.txt_PriceTicket);
             this.guna2Panel4.Controls.Add(this.CB_Auditorium);
@@ -152,16 +153,14 @@
             // 
             // txt_TimeMovieStart
             // 
-            this.txt_TimeMovieStart.BorderColor = System.Drawing.Color.Black;
             this.txt_TimeMovieStart.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_TimeMovieStart.DefaultText = "";
-            this.txt_TimeMovieStart.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.txt_TimeMovieStart.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txt_TimeMovieStart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txt_TimeMovieStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_TimeMovieStart.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_TimeMovieStart.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
+            this.txt_TimeMovieStart.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_TimeMovieStart.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.txt_TimeMovieStart.ForeColor = System.Drawing.Color.Black;
             this.txt_TimeMovieStart.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_TimeMovieStart.Location = new System.Drawing.Point(12, 99);
             this.txt_TimeMovieStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -298,6 +297,22 @@
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // txt_TimeMovieStart
+            // 
+            this.txt_TimeMovieStart.Checked = true;
+            this.txt_TimeMovieStart.CustomFormat = "HH:mm";
+            this.txt_TimeMovieStart.FillColor = System.Drawing.Color.White;
+            this.txt_TimeMovieStart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_TimeMovieStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txt_TimeMovieStart.Location = new System.Drawing.Point(13, 101);
+            this.txt_TimeMovieStart.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.txt_TimeMovieStart.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.txt_TimeMovieStart.Name = "txt_TimeMovieStart";
+            this.txt_TimeMovieStart.ShowUpDown = true;
+            this.txt_TimeMovieStart.Size = new System.Drawing.Size(156, 36);
+            this.txt_TimeMovieStart.TabIndex = 13;
+            this.txt_TimeMovieStart.Value = new System.DateTime(2025, 3, 31, 14, 10, 18, 9);
+            // 
             // AddShowTimeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -341,5 +356,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_Cancel;
         private Guna.UI2.WinForms.Guna2HtmlLabel Label_Title;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker txt_TimeMovieStart;
     }
 }
