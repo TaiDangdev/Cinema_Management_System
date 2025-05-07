@@ -105,7 +105,7 @@
             this.SDT_txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.SDT_txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.SDT_txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.SDT_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SDT_txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.SDT_txt.ForeColor = System.Drawing.Color.Black;
             this.SDT_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.SDT_txt.Location = new System.Drawing.Point(25, 177);
@@ -150,7 +150,7 @@
             this.email_txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.email_txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.email_txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.email_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.email_txt.ForeColor = System.Drawing.Color.Black;
             this.email_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.email_txt.Location = new System.Drawing.Point(308, 177);
@@ -195,7 +195,7 @@
             this.TenKH_txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TenKH_txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TenKH_txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            this.TenKH_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenKH_txt.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.TenKH_txt.ForeColor = System.Drawing.Color.Black;
             this.TenKH_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.TenKH_txt.Location = new System.Drawing.Point(25, 81);
@@ -368,18 +368,6 @@
             this.xacnhan_bnt.TabIndex = 109;
             this.xacnhan_bnt.Text = "Xác nhận";
             this.xacnhan_bnt.Click += new System.EventHandler(this.xacnhan_bnt_Click_1);
-            // 
-            // guna2HtmlLabel2
-            // 
-            //this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            //this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
-            //this.guna2HtmlLabel2.Location = new System.Drawing.Point(25, 55);
-            //this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
-            //this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            //this.guna2HtmlLabel2.Size = new System.Drawing.Size(141, 26);
-            //this.guna2HtmlLabel2.TabIndex = 42;
-            //this.guna2HtmlLabel2.Text = "Tên khách hàng";
             // 
             // AddCustomer
             // 

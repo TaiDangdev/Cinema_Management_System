@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
+using Cinema_Management_System.Views.MessageBox;
 using Guna.UI2.WinForms;
 using TheArtOfDevHtmlRenderer.Adapters;
 
@@ -18,10 +19,12 @@ namespace Cinema_Management_System.Views.CustomerManagement
     {
         private CustomerDTO currentCustomer;
         private Guna2ShadowForm shadowForm;
-        public UpdateCustomer()
+
+        public UpdateCustomer(CustomerDTO customer)
         {
             InitializeComponent();
             SetupUI();
+            LoadCustomerData(customer);
         }
 
         private void SetupUI()
@@ -40,9 +43,8 @@ namespace Cinema_Management_System.Views.CustomerManagement
             shadowForm.SetShadowForm(this);
         }
 
-        public UpdateCustomer(CustomerDTO customer)
+        private void LoadCustomerData(CustomerDTO customer)
         {
-            InitializeComponent();
             currentCustomer = customer;
             TenKH_txt.Text = currentCustomer.FullName;
             SDT_txt.Text = currentCustomer.PhoneNumber;
@@ -52,23 +54,13 @@ namespace Cinema_Management_System.Views.CustomerManagement
                 radnam.Checked = true;
             else
                 radnu.Checked = true;
-
-            tenKH_error.Visible = false;
-            sdt_error.Visible = false;
-            email_error.Visible = false;
-            DragHelper.EnableDrag(this, control_Panel);
-            shadowForm = new Guna2ShadowForm
-            {
-                ShadowColor = Color.Black,
-                BorderRadius = 20
-            };
-            shadowForm.SetShadowForm(this);
         }
+
+        
 
         private void UpdateCustomer_Load(object sender, EventArgs e)
         {
             ngaysinh_date.MaxDate = DateTime.Now;
-
         }
 
         private void SDT_txt_TextChanged_1(object sender, EventArgs e)
@@ -116,14 +108,10 @@ namespace Cinema_Management_System.Views.CustomerManagement
 
         private void huy_bnt_Click(object sender, EventArgs e)
         {
-            DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có chắc chắn muốn hủy!",
-                                                    "Thông báo",
-                                                    MessageBoxButtons.YesNo,
-                                                    MessageBoxIcon.Question);
+            DialogResult result = MessageBoxHelper.ShowQuestion("Thông báo", "Bạn có chắc chắn muốn hủy!");
             if (result == DialogResult.Yes)
             {
                 this.Close();
-
             }
         }
 
@@ -181,15 +169,12 @@ namespace Cinema_Management_System.Views.CustomerManagement
 
             if (CustomerDA.Instance.UpdateCustomer(newcustomer))
             {
-                System.Windows.Forms.MessageBox.Show("Chỉnh sửa thông tin khách hàng thành công!",
-                                                        "Thông báo",
-                                                        MessageBoxButtons.OK,
-                                                        MessageBoxIcon.Information);
+                MessageBoxHelper.ShowSuccess("Thông báo", "Chỉnh sửa thông tin khách hàng thành công!");
                 this.Close();
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("Chỉnh sửa thông tin khách hàng thất bại.");
+                MessageBoxHelper.ShowError("Lỗi", "Cập nhật thông tin khách hàng không thành công!");
             }
         }
     }

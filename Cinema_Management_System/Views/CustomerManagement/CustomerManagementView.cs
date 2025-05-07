@@ -157,10 +157,11 @@ namespace Cinema_Management_System.Views.CustomerManagement
         {
             if (Application.OpenForms["UpdateCustomer"] == null)
             {
-                UpdateCustomer updateForm = new UpdateCustomer
+                UpdateCustomer updateForm = new UpdateCustomer(customer)
                 {
                     Opacity = 0
-                };
+                }
+                ;
                 updateForm.Show();
 
                 Timer fadeTimer = new Timer { Interval = 10 };
@@ -181,7 +182,7 @@ namespace Cinema_Management_System.Views.CustomerManagement
             }
             else
             {
-                Application.OpenForms["AddCustomer"].Activate();
+                Application.OpenForms["UpdateCustomer"].Activate();
             }
         }
 
