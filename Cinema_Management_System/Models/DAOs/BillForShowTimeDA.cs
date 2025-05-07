@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Cinema_Management_System.ViewModels.CustomerManagement.CustomerManagementVm;
 using System.Windows.Input;
+using System.Windows;
 
 namespace Cinema_Management_System.Models.DAOs
 {

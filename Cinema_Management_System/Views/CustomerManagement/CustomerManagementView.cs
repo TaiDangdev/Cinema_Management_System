@@ -70,7 +70,7 @@ namespace Cinema_Management_System.Views.CustomerManagement
             this.BackColor = SystemColors.Control;
         }
 
-        private void LoadCustomerData()
+        public void LoadCustomerData()
         {
             if (CustomerDA.Instance == null)
             {

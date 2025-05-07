@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Navigation;
+using static Cinema_Management_System.AboutAccount_Form;
 
 namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
 {
@@ -46,7 +47,7 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
         {
             this.txt_Seats.Clear();
             if (!seatsShowTime.Any(s => s.IdSeatForShowTimes == seat.IdSeatForShowTimes))
-            {   
+            {
                 seatsShowTime.Add(seat);
                 // Cập nhật giao diện hóa đơn nếu cần, ví dụ:
                 this.txt_Seats.Text = string.Join(", ", seatsShowTime.Select(s => s.location));
@@ -74,15 +75,16 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                 }
                 try
                 {
-                    
                     string note = this.txt_Note.Text;
                     string discountText = this.txt_discount.Text.Trim();
                     double discount = 0;
                     int MaBill;
                     if (string.IsNullOrEmpty(discountText))
                     {
+                        
                         discount = 0;
-                        MaBill = _addBillShowTimeViewModel.AddBillShowTime(showTimSelect, seatsShowTime.Count, note, (int)discount, 1);
+                        MaBill = _addBillShowTimeViewModel.AddBillShowTime(showTimSelect, seatsShowTime.Count, note, (int)discount, CurrentUser.StaffId);
+                        
                     }
                     else
                     {
@@ -94,9 +96,8 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                         {
                             MessageBoxHelper.ShowWarning("Giảm giá không hợp lệ", "Cảnh báo");
                         }
-                        MaBill = _addBillShowTimeViewModel.AddBillShowTime(showTimSelect, seatsShowTime.Count, note, (int)discount, 1,this.txt_member.Text.Trim());
+                        MaBill = _addBillShowTimeViewModel.AddBillShowTime(showTimSelect, seatsShowTime.Count, note, (int)discount, CurrentUser.StaffId, this.txt_member.Text.Trim());
                     }
-
                     if (MaBill != -1)
                     {
                         DataSet BillDataSet = this.InfoBill(MaBill);
@@ -139,6 +140,7 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                     this.seatsShowTime.Clear();
                     this.txt_discount.Clear();
                     this.txt_member.Clear();
+                    this.txt_Note.Clear();
                 }
                 catch
                 {
@@ -161,9 +163,9 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                 if (member != null)
                 {
                     long total = Convert.ToInt64(this.showTimSelect.SeatTicketPrice) * seatsShowTime.Count;
-                    int  discount = member.Point /20;
-                    double GiamGia= total * discount / 100;
-                    this.txt_discount.Text= GiamGia.ToString("F2");
+                    int discount = member.Point / 20;
+                    double GiamGia = total * discount / 100;
+                    this.txt_discount.Text = GiamGia.ToString("F2");
                     this.txt_TotalPrice.Text = (total - GiamGia).ToString("F2") + "VND";
                 }
                 else
@@ -183,7 +185,7 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
         private DataSet InfoBill(int idBill)
         {
             DataSet billDataSet = new DataSet();
-            DataTable billTable= new DataTable("BillReport");
+            DataTable billTable = new DataTable("BillReport");
             // tao dataTable
             billTable.Columns.Add("SoDon", typeof(string));
             billTable.Columns.Add("TenPhim", typeof(string));
@@ -203,14 +205,14 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
             dataRow["TenPhim"] = showTimSelect.MovieTitle.ToString();
             dataRow["Phong"] = showTimSelect.AuditoriumName.ToString();
             dataRow["Ghe"] = this.txt_Seats.Text;
-            dataRow["GiaVe"] = showTimSelect.SeatTicketPrice.ToString("F2")+"VND";
+            dataRow["GiaVe"] = showTimSelect.SeatTicketPrice.ToString("F2") + "VND";
             dataRow["NgayGioChieu"] = showTimSelect.StartTime.ToString("dd/MM/yyyy HH:mm:ss");
             AboutAccount_Form.GetNameStaff();
             dataRow["NhanVien"] = AboutAccount_Form.currentUserName; // Thay thế bằng tên nhân viên thực tế
             dataRow["TheHoiVien"] = this.txt_member.Text.Trim();
             dataRow["GiamGia"] = this.txt_discount.Text.Trim();
             long total = Convert.ToInt64(this.showTimSelect.SeatTicketPrice) * seatsShowTime.Count;
-            dataRow["TongTienVe"] = total.ToString("F2")+"VND";
+            dataRow["TongTienVe"] = total.ToString("F2") + "VND";
             dataRow["Tong"] = this.txt_TotalPrice.Text.Trim();
             billTable.Rows.Add(dataRow);
 

@@ -33,6 +33,13 @@ namespace Cinema_Management_System.Views.Statistics
             ShowstaticMonthinYear(0);
         }
 
+        public void LoadChartMovie()
+        {
+            ShowTopMovieByRevenue(0, 0);
+            ShowGeneStatistic(0, 0);
+            ShowstaticMonthinYear(0);
+        }
+
         private void guna2TabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
             int[] allowedTabs = { 2, 3, 4 };
@@ -393,7 +400,7 @@ namespace Cinema_Management_System.Views.Statistics
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 ExportToExcel(data, saveFileDialog.FileName);
-                MessageBoxHelper.ShowInfo("Thông báo", "Xuất file thành công!");
+                MessageBoxHelper.ShowSuccess("Thông báo", "Xuất file thành công!");
             }
         }
     }

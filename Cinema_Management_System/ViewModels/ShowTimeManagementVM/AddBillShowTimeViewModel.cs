@@ -1,10 +1,12 @@
 ﻿using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
+using Cinema_Management_System.Views.MessageBox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
 {
@@ -29,7 +31,8 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
             }
             catch
             {
-                return -1;
+                 
+                 return -1;
             }
         }
 
@@ -59,6 +62,7 @@ namespace Cinema_Management_System.ViewModels.ShowTimeManagementVM
                     newBill.Customer_Id = customer.Id;
                 }
                 return BillForShowTimeDA.Instance.AddBillShowTime(newBill);
+
             }
             catch
             {

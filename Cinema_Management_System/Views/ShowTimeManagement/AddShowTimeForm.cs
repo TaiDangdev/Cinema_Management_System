@@ -71,7 +71,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             CB_NameShowTime.SelectedValue = showTimeUpdate.Movie_id;
             CB_Auditorium.SelectedValue = showTimeUpdate.Auditorium_Id;
             DTP_DateShowTimeMovie.Value = showTimeUpdate.StartTime.Date;
-            this.txt_TimeMovieStart.Text = showTimeUpdate.StartTime.ToString("HH:mm");
+            this.DTP_TimeStartShowTimes.Text = showTimeUpdate.StartTime.ToString("HH:mm");
             txt_PriceTicket.Text = showTimeUpdate.SeatTicketPrice.ToString("F0");
         }
 
@@ -124,7 +124,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
                 int movieID = (int)CB_NameShowTime.SelectedValue;
                 int auditoriumID = (int)CB_Auditorium.SelectedValue;
                 DateTime showDate = DTP_DateShowTimeMovie.Value.Date;
-                TimeSpan showTime = this.txt_TimeMovieStart.Value.TimeOfDay;
+                TimeSpan showTime = this.DTP_TimeStartShowTimes.Value.TimeOfDay;
                 int ticketPrice;
 
                 if (!int.TryParse(txt_PriceTicket.Text, out ticketPrice))

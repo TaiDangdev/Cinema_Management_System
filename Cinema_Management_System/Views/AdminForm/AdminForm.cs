@@ -70,6 +70,14 @@ namespace Cinema_Management_System
             {
                 movieManagementView1.LoadMovies();
             }
+            if (controlToShow == customerManagementView1)
+            {
+                customerManagementView1.LoadCustomerData();
+            }
+            if (controlToShow == statisticsView1)
+            {
+                statisticsView1.LoadChartMovie();
+            }
             controlToShow.Show();
         }
 
