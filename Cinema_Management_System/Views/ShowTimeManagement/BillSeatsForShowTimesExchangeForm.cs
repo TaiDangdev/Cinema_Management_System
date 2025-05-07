@@ -22,6 +22,8 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
         {
             InitializeComponent();
             this.LoadBillData();
+            btn_Del.UseColumnTextForButtonValue = true;
+            btn_Del.Text = "Xóa";
             //dulieutim_txt.TextChanged += dulieutim_txt_TextChanged;
             luachontim_cbb.SelectedIndexChanged += luachontim_cbb_SelectedIndexChanged;
 

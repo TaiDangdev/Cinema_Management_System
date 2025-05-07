@@ -111,10 +111,10 @@ namespace Cinema_Management_System.Views.Statistics
                     series.Points.AddXY(kvp.Key, kvp.Value);
                 DoanhThuText += kvp.Value;
                 }
-            this.lb_SoDoanhThu.Text = DoanhThuText.ToString() + "VND";
+            this.lb_SoDoanhThu.Text = DoanhThuText.ToString("N0") + "VND";
                 this.chart_DoanhThu.Series.Add(series);
             long ChiPhiText = StatisticDA.Instance.GetExpenseByTime(month,year);
-            this.lb_ChiPhiBaoCao.Text = ChiPhiText.ToString() + "VND";
+            this.lb_ChiPhiBaoCao.Text = ChiPhiText.ToString("N0") + "VND";
         }
 
 
@@ -137,10 +137,10 @@ namespace Cinema_Management_System.Views.Statistics
                 series.Points.AddXY(kvp.Key, kvp.Value);
                 DoanhThuText += kvp.Value;
             }
-            this.lb_SoDoanhThu.Text = DoanhThuText.ToString() + "VND";
+            this.lb_SoDoanhThu.Text = DoanhThuText.ToString("N0") + "VND";
             this.chart_DoanhThu.Series.Add(series);
             long ChiPhiText = StatisticDA.Instance.GetExpenseByTime(from, End);
-            this.lb_ChiPhiBaoCao.Text = ChiPhiText.ToString() + "VND";
+            this.lb_ChiPhiBaoCao.Text = ChiPhiText.ToString("N0") + "VND";
         }
 
         public void ShowGeneStatistic(int month , int year)

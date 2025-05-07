@@ -16,6 +16,7 @@ namespace Cinema_Management_System
     public partial class AboutAccount_Form : UserControl
     {
         public static string currentRole;
+        public static string currentUserName;
 
         public AboutAccount_Form()
         {
@@ -28,6 +29,9 @@ namespace Cinema_Management_System
         {
             public static int StaffId {  get; set; }
             public static string Role { get; set; }
+
+            public static string NameStaff { get; set; }
+
         }
 
         private void AboutAccount_Form_Load(object sender, EventArgs e)
@@ -54,6 +58,24 @@ namespace Cinema_Management_System
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        public static void GetNameStaff()
+        {   try 
+            {
+                using (var db = new ConnectDataContext())
+                {
+                    var staff = db.STAFFs.FirstOrDefault(s => s.Id == CurrentUser.StaffId);
+                    if (staff != null)
+                    {
+                        currentUserName = staff.FullName;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void loadUserData()

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.BillSeatsForShowTimesRP3 = new Cinema_Management_System.Views.ShowTimeManagement.BillSeatsForShowTimesRP();
             this.BillSeatsForShowTimesRP1 = new Cinema_Management_System.Views.ShowTimeManagement.BillSeatsForShowTimesRP();
             this.BillSeatsForShowTimesRP2 = new Cinema_Management_System.Views.ShowTimeManagement.BillSeatsForShowTimesRP();
-            this.BillSeatsForShowTimesRP3 = new Cinema_Management_System.Views.ShowTimeManagement.BillSeatsForShowTimesRP();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
