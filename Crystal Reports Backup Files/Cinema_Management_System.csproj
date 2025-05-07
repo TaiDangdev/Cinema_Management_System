@@ -51,10 +51,18 @@
     <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
       <HintPath>..\packages\ClosedXML.Parser.1.3.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="CsvHelper, Version=33.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\packages\CsvHelper.33.0.1\lib\net47\CsvHelper.dll</HintPath>
     </Reference>
@@ -63,12 +71,6 @@
     </Reference>
     <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="EPPlus, Version=8.0.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.8.0.3\lib\net462\EPPlus.dll</HintPath>
-    </Reference>
-    <Reference Include="EPPlus.Interfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.Interfaces.8.0.0\lib\net462\EPPlus.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
       <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
@@ -235,15 +237,15 @@
     </Compile>
     <Compile Include="Models\DAOs\Bills\BillAddMovieDA.cs" />
     <Compile Include="Models\DAOs\Bills\BillAddProductDA.cs" />
+    <Compile Include="Models\DAOs\Bills\BillDetailDA.cs" />
     <Compile Include="Models\DAOs\Bills\BillImportProductDA.cs" />
     <Compile Include="Models\DAOs\StaffDA.cs" />
-    <Compile Include="Models\DAOs\StaffSalaryDA.cs" />
-    <Compile Include="Models\DAOs\StatisticDA.cs" />
     <Compile Include="Models\DTOs\BillAddMovieDTO.cs" />
     <Compile Include="Models\DTOs\BillSeatsForShowTimesDTO.cs" />
     <Compile Include="Models\DTOs\StaffDTO.cs" />
     <Compile Include="Models\DTOs\MovieNotificationDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\BillAddProductDTO.cs" />
+    <Compile Include="Models\DTOs\ProductManagement\BillDetailDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\BillImportProductDTO.cs" />
     <Compile Include="Models\DTOs\ProductManagement\ProductDTO.cs" />
     <Compile Include="Models\DAOs\ProductDA.cs" />
@@ -254,7 +256,6 @@
     </Compile>
     <Compile Include="ViewModels\DragHelper.cs" />
     <Compile Include="ViewModels\PasswordHelper.cs" />
-    <Compile Include="ViewModels\SalaryHelper.cs" />
     <Compile Include="Views\InformationManagement\AboutAccount_Form.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -304,6 +305,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CustomerManagement\CustomerManagementVm.cs" />
     <Compile Include="ViewModels\ImageVsSQL.cs" />
+    <Compile Include="ViewModels\LoginVM\LoginViewModel.cs" />
     <Compile Include="ViewModels\MovieManagementVM\Feature\SearchMovieHelper.cs" />
     <Compile Include="Views\CustomerManagement\AddCustomer.cs">
       <SubType>Form</SubType>
@@ -371,6 +373,18 @@
     <Compile Include="Views\ProductManagement\EditProductView.Designer.cs">
       <DependentUpon>EditProductView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProductManagement\EditProductViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManagement\EditProductViews.Designer.cs">
+      <DependentUpon>EditProductViews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManagement\ImportProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManagement\ImportProductView.Designer.cs">
+      <DependentUpon>ImportProductView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProductManagement\PrintBillSale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,12 +402,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>reportBillSale.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Views\StaffForm\StaffForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\StaffForm\StaffForm.Designer.cs">
-      <DependentUpon>StaffForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StaffManagement\AddStaffView.cs">
       <SubType>Form</SubType>
@@ -544,6 +552,12 @@
     <EmbeddedResource Include="Views\ProductManagement\EditProductView.resx">
       <DependentUpon>EditProductView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManagement\EditProductViews.resx">
+      <DependentUpon>EditProductViews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManagement\ImportProductView.resx">
+      <DependentUpon>ImportProductView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductManagement\PrintBillSale.resx">
       <DependentUpon>PrintBillSale.cs</DependentUpon>
     </EmbeddedResource>
@@ -568,9 +582,6 @@
     <EmbeddedResource Include="Views\ShowTimeManagement\BillTicketForms.resx">
       <DependentUpon>BillTicketForms.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ShowTimeManagement\SeatForShowTimeForm.resx">
-      <DependentUpon>SeatForShowTimeForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ShowTimeManagement\SeatForShowTineUC.resx">
       <DependentUpon>SeatForShowTineUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -580,17 +591,8 @@
     <EmbeddedResource Include="Views\ShowTimeManagement\ShowTimeManagementyForm.resx">
       <DependentUpon>ShowTimeManagementyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\StaffForm\StaffForm.resx">
-      <DependentUpon>StaffForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\StaffManagement\AddStaffView.resx">
       <DependentUpon>AddStaffView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\StaffManagement\EditStaffView.resx">
-      <DependentUpon>EditStaffView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\StaffManagement\StaffDetailView.resx">
-      <DependentUpon>StaffDetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StaffManagement\StaffManagementView.resx">
       <DependentUpon>StaffManagementView.cs</DependentUpon>
@@ -703,7 +705,12 @@
   <ItemGroup>
     <Folder Include="Models\DTOs\ShowTimeManagement\" />
     <Folder Include="Models\DTOs\StaffManagement\" />
+    <Folder Include="ViewModels\ForgotPassword\" />
+    <Folder Include="ViewModels\InformationManagement\Feature\" />
     <Folder Include="ViewModels\ProductManagement\" />
+    <Folder Include="ViewModels\StaffManagementVM\" />
+    <Folder Include="ViewModels\StatisticsVM\" />
+    <Folder Include="Views\StaffForm\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\icons\film-reel.png" />
@@ -749,8 +756,6 @@
     <None Include="assets\movieManagementForm\add_icon.png" />
     <None Include="assets\icons8-notification-bell-48.png" />
     <None Include="assets\file_icon.png" />
-    <None Include="assets\coin_icon.png" />
-    <None Include="assets\preview_icon.png" />
     <Content Include="assets\StoryboardMovie\1.jpg" />
     <Content Include="assets\StoryboardMovie\2.jpg" />
     <Content Include="assets\StoryboardMovie\3.jpg" />
